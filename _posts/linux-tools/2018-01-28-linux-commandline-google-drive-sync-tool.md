@@ -15,6 +15,7 @@ rating: '5'
 ## Installing dependencies
 
 ### Download `go` prgramming tools
+Open the terminal and enter the following command to download `go` programming tools
 
 ```
 wget -c https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
@@ -88,7 +89,7 @@ Create a folder for syncing google drive files.
 mkdir ~/GDrive
 cd ~/GDrive
 ```
-Use the following command to add your google account to the current folder.
+Use the following command to add your google drive account to the current folder.
 ```
 drive init
 ```
