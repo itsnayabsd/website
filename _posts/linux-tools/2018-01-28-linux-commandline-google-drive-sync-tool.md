@@ -12,6 +12,8 @@ date: 2018-01-27T18:41:24.000Z
 thumbnail: /assets/img/google+drive.jpg
 rating: '5'
 ---
+`drive` is a small program to `pull` or `push` google drive files to or from your local system. Follow the below tutorial to get started using the command line client for google drive account.
+
 ## Installing dependencies
 
 ### Download `go` prgramming tools
