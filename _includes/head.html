@@ -1,0 +1,70 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}
+	  		{{ page.title | escape }}
+		{% else %}
+			{{ site.title | escape }}
+		{% endif %}
+  </title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include google-analytics.html %}
+  {% endif %}
+  <style>
+  ul a:before {
+	  content: "\203a\00a0";
+}
+  .autocenter
+  {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  text-align: center;
+  }
+  .round {
+	  height: 200px;
+	  border-radius: 50%;
+  }
+  .list-none {
+	  list-style-type: none;
+  }
+  h1 {
+	  font-size: 36px;
+  }
+  .marg-bot0 {
+	  margin-bottom: 0px;
+  }
+  .marg-bot10 {
+	  margin-bottom: 10px;
+  }
+  .marg-lef0 {
+	  margin-left: 0px;
+  }
+  .font-20 {
+	  font-size: 20px;
+	  color: #696969;
+  }
+  .font-18 {
+	  font-size: 18px;
+  }
+  .profile-icon {
+	  height: 30px;
+	  width: 30px;
+	  margin: 0px 5px;
+  }
+  .marg-top20 {
+	  margin-top: 20px;
+  }
+  .marg-top10 {
+	  margin-top: 20px;
+  }
+  </style>
+</head>

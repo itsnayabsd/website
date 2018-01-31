@@ -1,0 +1,5 @@
+_site
+myfeed
+.sass-cache
+vendor
+.bundle

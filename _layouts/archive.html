@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Archives</h1>
+  
+  {{ content }}
+
+  <div>
+
+   {% for post in site.posts %}
+       {% assign currentDate = post.date | date: "%Y" %}
+       {% if currentDate != myDate %}
+           {% unless forloop.first %}</ul>{% endunless %}
+           <h2>{{ currentDate }}</h2>
+           <ul class="list-none">
+           {% assign myDate = currentDate %}
+       {% endif %}
+       <li><a class="post-link" href="{{ post.url }}"> {{ post.title }}</a></li>
+       {% if forloop.last %}</ul>{% endif %}
+   {% endfor %}
+
+  </div>
+</div>
