@@ -1,11 +1,11 @@
 ---
 layout: post
-date: 2017-04-01 23:39:30 +5:30
 title: Master These Skills
-excerpt: World is changing a lot faster. Need to master some of skills to survive in Embedded Systems field.
 category: me
-comments: false
-google_adsense: false
+excerpt: >-
+  World is changing a lot faster. Need to master these skills to survive in
+  Embedded Systems field.
+date: 2017-04-01T18:09:30.000Z
 ---
 ## Gnome Terminal
 ## Tmux
