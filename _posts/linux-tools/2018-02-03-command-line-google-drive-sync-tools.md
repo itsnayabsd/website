@@ -14,7 +14,7 @@ rating: '6'
 ---
 Though there are some work arounds to get your Google Drive files in sync with any Linux based operating system, none of those are satisfiable (at least for me).
 
-But there are two command line tools available that does the job good.
+But there are two command line tools available that do the job nice.
 
 * Grive
 * Drive
