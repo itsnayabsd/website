@@ -1,7 +1,7 @@
 ---
 layout: catpage
-title: JavaScript Articles
-excerpt: All posts related to JavaScript lists here
+title: Linux Device Drivers
+excerpt: All posts related to Linux Device Drivers lists here
 ---
 {% assign cat = {{page.name | remove: '.md'}} %}
 <ul class="list-none">
