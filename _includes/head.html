@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% if page.thumbnail %}
+<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta property="og:image" content="{{page.thumbnail}}">
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
 {% endif %}
   <title>{% if page.title %}
 	  		{{ page.title | escape }}
@@ -13,6 +16,7 @@
 		{% endif %}
   </title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
