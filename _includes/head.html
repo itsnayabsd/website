@@ -6,7 +6,7 @@
 {% if page.thumbnail %}
 <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
 <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-<meta property="og:image" content="{{page.thumbnail}}">
+<meta property="og:image" content="{{site.url}}{{page.thumbnail}}">
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
 {% endif %}
   <title>{% if page.title %}
