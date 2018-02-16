@@ -1,11 +1,15 @@
 ---
-title: Linux Driver for Redragon Asura K501 gaming keyboard
-date: 2017-12-09 12:23:50 +5:30
 layout: post
+title: Linux Driver for Redragon Asura K501 gaming keyboard
 category: drivers
-excerpt: Linux driver installation for Redragon Asura K501 gaming keyboard. Ctrl, Alt and Windows keys not working or mapped to Shift key issue solved.
 comments: true
 google_adsense: true
+excerpt: >-
+  Linux driver installation for Redragon Asura K501 gaming keyboard. Ctrl, Alt
+  and Windows keys not working or mapped to Shift key issue solved.
+date: 2017-12-09T06:53:50.000Z
+thumbnail: /assets/img/redragon-k501-gaming-kbd.png
+rating: '5'
 ---
 I've been using Linux based operating system for a long time and I am [Steam](http://store.steampowered.com/) player.
 
