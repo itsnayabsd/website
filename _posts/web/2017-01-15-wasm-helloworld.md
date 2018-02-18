@@ -15,6 +15,9 @@ The web is about to get a lot faster by using WebAssembly (wasm). It's main focu
 This page is a quick guide to install all the packages related to WebAssembly, compile and run a simple Hello World! C program into WebAssembly and to execute that code in browser.
 
 Following are the steps to install necessary tools on Ubuntu Linux distribution.
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 
 <h2>Installation</h2>
 

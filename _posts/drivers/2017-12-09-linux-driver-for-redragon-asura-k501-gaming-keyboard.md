@@ -23,6 +23,9 @@ The issues resolved:
 
 Here are the steps to get the keyboard working on most of the Linux based distributions.
 
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 ## For Debian Based Systems
 ```
 sudo apt-get install mercurial build-essential linux-headers-generic dkms

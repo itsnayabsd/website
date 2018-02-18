@@ -31,6 +31,9 @@ this throw throws transient true try typeof
 var volatile void
 while with
 {% endhighlight %}
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 
 * JavaScript has a single number type. Internally, it is represented as 64-bit floating point.
 

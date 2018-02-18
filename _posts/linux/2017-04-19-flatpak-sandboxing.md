@@ -28,6 +28,9 @@ flatpak remote-add --if-not-exists gnome https://sdk.gnome.org/gnome.flatpakrepo
 # Now add gnome app repo
 flatpak remote-add gnome-apps https://sdk.gnome.org/gnome-apps.flatpakrepo
 ```
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 ## List all all added repositories
 ```basha
 flatpak remote-list

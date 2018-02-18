@@ -31,6 +31,9 @@ Additional features of `grive` are:
 
 Follow the below short tutorial to get started using `grive` tool.
 
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 ### Installing dependencies
 
 Install the following dependencies using the terminal.
