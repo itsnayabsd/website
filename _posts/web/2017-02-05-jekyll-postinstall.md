@@ -7,7 +7,7 @@ category: web
 comments: false
 google_adsense: false
 ---
-1\. To install jekyll on Ubuntu based system
+## To install jekyll on Ubuntu based system
 ```
 sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 sudo apt-get install ruby-full 
@@ -21,17 +21,43 @@ Go to the project directory and install supporting packages using `bundler`
 $ bundler install 
 {% endhighlight %}
 
-2\. Add an alias for date in <code>.bashrc</code> file.
-One of the formats supported by jekyll is like <code>2017-02-05 19:25:49 +5:30</code>. 
+## Add the following aliases in <code>.bashrc</code> file.
 Open <code>.bashrc</code> file.
-{% highlight bash %}
+```
 $ vi ~/.bashrc
-{% endhighlight %}
-And add following line at the end of file.
-<pre>alias jdate='echo "date: $(date "+%F %T") +5:30"'</pre>
-
-3\. Add aliases for building in .bashrc file.
-<pre>alias jbuild='JEKYLL_ENV=production bundle exec jekyll build'
+```
+And add following aliases at the end of file.
+```
+alias jdate='echo "date: $(date "+%F %T") +5:30"'
+alias jbuild='JEKYLL_ENV=production bundle exec jekyll build'
 alias jserve='bundle exec jekyll serve'
 alias jdserve='bundle exec jekyll serve --detach'
-alias jkill='pkill -f jekyll'</pre>
+alias jkill='pkill -f jekyll'
+```
+```
+source ~/.bashrc
+```
+## Create a vim template for markdown files
+```
+mkdir -p ~/.vim/templates
+vi ~/.vim/templates/md.skeleton
+```
+Add following line to `md.skeleton` file
+<pre>---
+layout:
+title:
+category:
+comments:
+google_adsense:
+excerpt:
+date:
+thumbnail:
+rating: '5'
+---</pre>
+```
+vi ~/.vimrc
+```
+Add following line to `~/.vimrc` file.
+```
+autocmd BufNewFile *.md 0r $HOME/.vim/templates/md.skeleton
+```
