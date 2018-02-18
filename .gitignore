@@ -3,3 +3,4 @@ myfeed
 .sass-cache
 vendor
 .bundle
+.vim/.netrwhist
