@@ -12,10 +12,6 @@ layout: default
     {{ content }}
   </div>
 
-  {% if jekyll.environment == 'production' and page.google_adsense %}
-  {% include google-adfooter.html %}
-  {% endif %}
-
   {% if page.comments %}
     {% include disqus_comments.html %}
   {% endif %}

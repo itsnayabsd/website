@@ -5,7 +5,7 @@ title: Test Your C Skills
 date: 2017-08-22 14:35:59 +5:30
 excerpt: Series of multiple choice questions to test your C skills.
 comments: true
-google_adsense: true
+google_adsense: false
 ---
 ## Find the output of following programs.
 
