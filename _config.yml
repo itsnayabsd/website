@@ -15,6 +15,7 @@ email: basha@naybas.org
 
 #Google Analytics
 google_analytics: UA-47925331-9
+google_adsense: false
 
 #Limit no of posts to parse and publish
 #limit_posts: 10
