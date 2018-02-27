@@ -1,7 +1,7 @@
-title: Nayab Basha Sayed | My personal blog that's all about embedded systems
+title: Nayab Basha Sayed | Embedded Software Engineer
 #email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-    This is my personal website. It's more like my personal notes about topics what I learned and what I've been learning. - Nayab Basha Sayed
+    This is my personal website. I've been working as an embedded systems software engineer. I write blog posts about embedded system technologies. This website is also like like my personal notes about topics what I learned and what I've been learning. - Nayab Basha Sayed
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.nayab.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: none
