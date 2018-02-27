@@ -68,7 +68,7 @@ Since ads can be from different advertisers, RPM is calculated by combining and 
 ### CPC (Cost per click)
 Advertiser set the CPC. Price the advertiser pays when an user clicks on the ad.
 ### CTR (Click through rate)
-CTR = (clicks /(impressions, views or queries)) * 100
+CTR = ((clicks on ads) /(ad impressions, views or queries)) * 100
 ### CPE (Cost per engagement)
 Advertiser pays only when an user interacts with the ad. These ads are video or rich media ads.
 ### Active view CPM
