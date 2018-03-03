@@ -81,6 +81,18 @@ Most of the websites like wikipedia, quora use nofollow attribution when any use
 
 Focus should be maximum on first two types of links. If you want to use blog comments or forums, give users a keyword to search that will direct traffic to your website. But don't post links.
 
+#### Getting Links
+*Small Goal*: 10 quality backlinks for the first 6-10 months
+
+*Big Goad*: Raise it to 20-30 quality backlinks per month.
+
+
+**Build great** content. Original and unique. So that people share it to create natural backlinks. Pasting by own on social sites might not generate quality backlinks (NEed to check). If people starts sharing this will go multiple from friends to friends.
+
+Find poeple interest in your topics. Cross exchange blogger links to link each other. But do not pay to other blogger.
+
+
+
 
 
 
