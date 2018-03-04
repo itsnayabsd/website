@@ -16,7 +16,7 @@ rating: '5'
 
 **Page rank**, a unit for measuring the importance of a web page. It will be calculated by counting the number and quality of links to that page.
 
-**no follow link**, tell google to not follow the specific link because website owner doesn't trust the link. If the linked site is spammy, google might penalize the site which linked to it.
+**no follow link**, tell google to not follow the specific link because the link might not be trusted to the full. If the linked site is spammy, google might penalize the site which linked to it.
 
 **Do follow links** are all the links other than no follow links. Search engines follow do follow links.
 
@@ -27,6 +27,11 @@ Make sure all pages of a website all linked somehow. Spider crawls all pages the
 
 Submit URL manually for search engine because this way crawling will be faster.
 
+<!--after two or more paragraphs-->
+
+  {% if jekyll.environment == 'production' and page.google_adsense %}
+  {% include goog_inart_2par.html %}
+  {% endif %}
 ## Improving SEO
 ### Developing keywords
 #### Keywords placing
@@ -44,7 +49,7 @@ Prepare keywords for different pages of your website. And then add that keyword 
 
 *Branded* keywords are brand specifice. ex: HP laptop. People are not interested in other brands.
 
-*Long tail* keywords are long and specific. ex: Gaming laptops under $500. 70% of searches on search engines are ling tail keywords. For new website build these keywords.
+*Long tail* keywords are long and specific. ex: Gaming laptops under $500. 70% of searches on search engines are long tail keywords. For new website build these keywords.
 #### Keyword research
 A perfect keyword for starters would be getting about 1000 searches per month, and have a low competition.
 
@@ -87,29 +92,37 @@ Focus should be maximum on first two types of links. If you want to use blog com
 *Big Goad*: Raise it to 20-30 quality backlinks per month.
 
 
-**Build great** content. Original and unique. So that people share it to create natural backlinks. Pasting by own on social sites might not generate quality backlinks (NEed to check). If people starts sharing this will go multiple from friends to friends.
+**Build great** content. Original and unique. So that people share it to create natural backlinks. Pasting by own on social sites won't generate quality backlinks. Instead if people starts sharing this will go multiple from friends to friends.
 
 Find poeple interest in your topics. Cross exchange blogger links to link each other. But do not pay to other blogger.
 
+**Social Networking Sites:**
 
+Build Instagram, reddit, twitter, linkedin, Pinterest etc..
 
+Put social networking share buttons on site.
 
+**Participate in forums**
 
+Quora
 
+### Speed up the site
+Check [pindom tools](https://tools.pingdom.com) to know which content is taking time. And optimize it.
 
+Check also google page speed insights tool to get recommended optimizations.
 
+*Chosing host*: If hosting server is goind down, search engines can list the site as unreliable. Should be a)Fast and SSD servers b)99% Uptime c)Reasonable price.
 
+Digital Ocean
 
+*CDN* Network of servers all over the world. Website is cached on all other servers all over the world. When a user visites website, nearest server will serve the user.
 
+Cloudfare, I think we host entrire website. Need to try it out.
+#### Optimizing Images
+[Fotor](https://www.fotor.com/) - jpeg images unless images require transparent background (png).
 
-
-
-
-
-
-
-
-
+[Tinyjpeg](https://tinyjpg.com/) for compress png or jpeg images
+### Domain
 Do not pay for WHOIS privacy. Instead use the fake address which looks real.
 
 Search for expired domains if anything interests you. Use [https://www.expireddomains.net/](https://www.expireddomains.net/). Check this site in [archive](https://archive.org/web/) so that there is no objectable content previously on this website.
@@ -117,14 +130,18 @@ Search for expired domains if anything interests you. Use [https://www.expireddo
 Check domain authority for a domain using domain authority tool to make sure whether it is new or expired site.
 
 Referring domains 30+ would be good. Atleast 3 contexual links from reputable sites.
-<!--after two or more paragraphs-->
-
-  {% if jekyll.environment == 'production' and page.google_adsense %}
-  {% include goog_inart_2par.html %}
-  {% endif %}
-
-Add post link to home page before posting it. Add links somewhere in the homepage to sites which domain autority is more than 50 (not the collaborative sites like wikipedia).
 
 500 words or more per article. Atleast an article a month.
 
 Convert all 404s to 301s. 404s are bad for SEO.
+
+### Getting Traffic
+
+Give / post keywords or social networking site link of the blog post when somebody asks for it. This will not show as direct accessing of website.
+
+Check the footer for available social networking websites.
+
+Keep active in certain niche groups, forums or QnA sites so that people visit the blog from the answers or blog profile.
+
+#### Forums
+For forums follow the links present in [master skills](/me/masterskills.html) page.
