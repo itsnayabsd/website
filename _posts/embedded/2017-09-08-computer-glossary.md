@@ -4,8 +4,8 @@ category: embedded
 layout: post
 excerpt: Terms and it's definitions related to computers and embedded systems
 title: Computer Glossary
-comments: false
-google_adsense: false
+comments: true
+google_adsense: true
 ---
 <h2 id="loadnstore">Load and Store</h2>
 To operate on data in main memory, the data is first copied into registers. A **load** operation copies data from main memory into a register. A **store** operation copies data from a register into main memory.
