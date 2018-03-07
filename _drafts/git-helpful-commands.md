@@ -1,7 +1,6 @@
 ---
 title: Git Helpful Commands
 layout: post
-date: 2017-04-10 19:19:55 +5:30
 category: linux-tools
 excerpt: Useful git commands for every day developer programming
 comments: false

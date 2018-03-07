@@ -2,7 +2,6 @@
 layout: post
 title: WLAN Interface
 excerpt: All wifi related information for wlan interface programmers
-date: 2017-06-14 14:12:36 +5:30
 category: networking
 comments: false
 google_adsense: false

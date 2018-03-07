@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-04-19 01:03:43 +5:30
 category: web
 title: Nginx Tutorials for DigitalOcean
 comments: false

@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-02-05 17:46:46 +5:30
 title: Jekyll Package Post Installation.
 excerpt: Things to do After Installing Jekyll Package
 category: web

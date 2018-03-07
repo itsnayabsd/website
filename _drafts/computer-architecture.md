@@ -1,5 +1,4 @@
 ---
-date: 2017-08-20 13:49:17 +5:30
 layout: post
 title: Computer Architecture Notes
 category: embedded

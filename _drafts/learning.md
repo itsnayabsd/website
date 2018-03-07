@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-09-12 15:58:20 +5:30
 title: Learning and Memorizing
 category: me
 excerpt: Tips to learn and remember permanently anything new.

@@ -1,5 +1,4 @@
 ---
-date: 2017-09-14 11:31:29 +5:30
 title: Wireless Glossary
 layout: post
 excerpt: Terms and it's definitions related to Wi-Fi, Bluetooth and other wireless technologies

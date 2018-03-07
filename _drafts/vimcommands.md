@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-04-01 23:22:34 +5:30
 title: Useful Vim or Vimdiff Commands
 excerpt: Useful Vi Vim or Vimdiff Editor Commands for Faster Programming
 category: linux-tools

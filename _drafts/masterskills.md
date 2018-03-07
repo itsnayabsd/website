@@ -5,7 +5,6 @@ category: me
 excerpt: >-
   World is changing a lot faster. Need to master these skills to survive in
   Embedded Systems field.
-date: 2017-04-01T18:09:30.000Z
 google_adsense: false
 ---
 ## Gnome Terminal

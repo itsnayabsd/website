@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-05-21 03:11:52 +5:30
 title: LS Colors
 excerpt: Customizing colors of ls command output. It uses the configuration file ~/.dircolors.
 category: linux

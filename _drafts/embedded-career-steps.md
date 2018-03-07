@@ -3,7 +3,6 @@ layout: post
 title: Embedded Systems Career Steps
 category: me
 excerpt: Career steps for an embedded systems engineer to master embedded systems.
-date: 2018-02-04 17:47:25 +5:30
 thumbnail:
 comments: true
 google_adsense: false

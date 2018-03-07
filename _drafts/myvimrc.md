@@ -1,5 +1,4 @@
 ---
-date: 2017-04-07 01:48:31 +5:30
 layout: post
 title: My .vimrc file
 category: me

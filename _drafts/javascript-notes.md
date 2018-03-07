@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-02-18 15:05:12 +5:30
 category: web
 title: My JavaScript Notes
 excerpt: Some key point to remember while writing javascript coding.

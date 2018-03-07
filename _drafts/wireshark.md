@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-04-11 10:51:08 +5:30
 excerpt: Usage and Commands for better capturing of traffic using wireshark
 category: linux-tools
 title: Wireshark Usage

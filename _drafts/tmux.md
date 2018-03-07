@@ -1,5 +1,4 @@
 ---
-date: 2017-07-06 11:57:18 +5:30
 layout: post
 category: linux-tools
 title: Tmux

@@ -1,5 +1,4 @@
 ---
-date: 2017-05-01 13:18:07 +5:30
 layout: post
 title: My Vim Editor Notes
 excerpt: Installing and Updating VIM plugins

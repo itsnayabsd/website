@@ -1,5 +1,4 @@
 ---
-date: 2017-08-18 14:06:21 +5:30
 layout: post
 category: linux
 title: Linux kernel build and install steps

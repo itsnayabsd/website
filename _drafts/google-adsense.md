@@ -5,7 +5,6 @@ category: me
 comments: true
 google_adsense: false
 excerpt: My notes about google adsense best practices adhering to google adsense rules.
-date: 2016-12-31 14:26:18 +5:30
 thumbnail: 
 rating: '5'
 ---

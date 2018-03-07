@@ -1,5 +1,4 @@
 ---
-date: 2017-07-02 22:05:11 +5:30
 layout: post
 title: ZeroMQ Library for C Language
 excerpt: General points to remember while writing programs with ZeroMQ library.

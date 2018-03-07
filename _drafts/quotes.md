@@ -1,7 +1,6 @@
 ---
 title: Quotes
 layout: post
-date: 2017-04-21 21:57:12 +5:30
 category: me
 excerpt: This page gathers valuable quotes I found from various online sources
 comments: false

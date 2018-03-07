@@ -1,5 +1,4 @@
 ---
-date: 2017-07-05 12:33:46 +5:30
 title: Be Healthy
 layout: post
 excerpt: Follow these steps to get better and happy life.

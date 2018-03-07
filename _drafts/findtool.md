@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-03-31 10:30:44 +05:30
 excerpt: Linux <code>find</code> command examples for every day developer programming.
 title: find command examples
 category: linux-tools

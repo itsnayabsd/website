@@ -1,7 +1,6 @@
 ---
 title: Important Repositories
 layout: post
-date: 2017-04-06 14:19:59 +5:30
 excerpt: Repositories of tools and packages that would be useful for developers.
 category: me
 comments: false

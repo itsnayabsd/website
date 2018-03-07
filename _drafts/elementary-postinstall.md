@@ -1,6 +1,5 @@
 ---
 layout: post
-date: 2017-02-05 17:46:46 +5:30
 title: Elementary OS Post Installtion
 excerpt: Some tweaks, software installations required after installing Elementary OS
 category: linux

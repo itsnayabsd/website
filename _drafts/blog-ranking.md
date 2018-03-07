@@ -5,7 +5,6 @@ category: me
 comments: true
 google_adsense: false
 excerpt: Guide to get started using a blog, building a strong network and SEO optimization to produce significant google search results and improve blog ranking.
-date: 2017-01-01 19:22:37 +5:30
 thumbnail: 
 rating: '5'
 ---
