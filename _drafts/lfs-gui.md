@@ -37,3 +37,78 @@ X was originally designed to use over network connections rather than attached d
 An OS with a native Window system can host another Window system as a client. For example *Wayland window system* can host *X Window system* as a client and manages it's appearance through the Wayland window system.
 
 **Desktop environment** includes set of applications that use consistent user interface along with X.
+## Preparing for the build
+### Installing openssl
+Download the package from [here](https://openssl.org/source/openssl-1.1.0g.tar.gz)
+```
+cd /sources
+tar xvf openssl-1.1.0g.tar.gz
+cd openssl-1.1.0g/
+```
+```
+./config --prefix=/usr         \
+         --openssldir=/etc/ssl \
+         --libdir=lib          \
+         shared                \
+         zlib-dynamic
+```
+```
+make
+```
+```
+sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
+make MANSUFFIX=ssl install
+```
+```
+mv -v /usr/share/doc/openssl /usr/share/doc/openssl-1.1.0g
+cp -vfr doc/* /usr/share/doc/openssl-1.1.0g
+```
+### Installing wget
+Download wget from [here](https://ftp.gnu.org/gnu/wget/wget-1.19.4.tar.gz).
+```
+cd /sources
+tar xvf wget-1.19.4.tar.gz
+cd wget-1.19.4
+```
+```
+./configure --prefix=/usr      \
+            --sysconfdir=/etc  \
+            --with-ssl=openssl
+```
+```
+make
+make install
+```
+### Create resolv.conf
+```
+rm -rf /etc/resolv.conf
+```
+Add the following lines to /etc/resolv.conf file
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+### Installing sudo
+```
+cd /sources
+wget --no-check-certificate -c http://www.sudo.ws/dist/sudo-1.8.22.tar.gz
+```
+```
+tar xvf sudo-1.8.22.tar.gz
+cd sudo-1.8.22
+```
+```
+./configure --prefix=/usr              \
+            --libexecdir=/usr/lib      \
+            --with-secure-path         \
+            --with-all-insults         \
+            --with-env-editor          \
+            --docdir=/usr/share/doc/sudo-1.8.22 \
+            --with-passprompt="[sudo] password for %p: "
+```
+```
+make
+make install
+ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
+```
+Use visudo to edit sudoers file.
