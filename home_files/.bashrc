@@ -176,3 +176,5 @@ alias jserve='bundle exec jekyll serve'
 alias jdserve='bundle exec jekyll serve --detach'
 alias jsdraft='bundle exec jekyll serve --drafts'
 alias jkill='pkill -f jekyll'
+export LFS=/mnt/lfs
+alias lfs_chroot='sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='"'"'\u:\w\$ '"'"' PATH=/bin:/usr/bin:/sbin:/usr/sbin1 /bin/sh --login'
