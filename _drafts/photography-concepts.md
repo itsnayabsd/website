@@ -57,7 +57,7 @@ Turn off image stabilizer when we are on tripod
 
 ISO can be 100 or 200 on tripod.
 
-Shutter speed lower. Preferably 1/3. Takes time to capture.
+Shutter speed higher. Preferably 1/3. Takes time to capture. But captures good details. Even laptop screen can be captured well.
 
 Aperture can be from f/8 to f/11
 Exposure: Adjust shutter speed so that you can see exposure indicator exactly at 0. Exposure measure on a scale this,
