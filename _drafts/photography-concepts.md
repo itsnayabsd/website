@@ -24,6 +24,8 @@ Photo seems like it got shrink from center to corners
 
 ### Sensor
 The larger the sensor size, the better low light performance. Greater control over depth of field. Produce higher resolution images with less noise.
+### Focal length
+Focal length is measured in mm. Lower the value means the lens has less capable of zooming. Wide angle lenses comes with less focal length. Higher the value, the lens zoomed in (object seems nearer).
 ## Types of Cameras
 Full frame sensor
 
@@ -47,7 +49,7 @@ Downfall is bulbus distortion. Person can stand very near to object.
 Lense with focal lenght between 35 to 50 mm. These lenses captures images which seems real in nature to human eye.
 
 ### Telephoto lense
-A 70-200mm f/2.8 lense. Minimizes distortion. We can stay far away from object.
+A 70-200mm f/2.8 lense. Minimizes distortion. We can stay far away from object. Bulky.
 ### Tilt shift lense.
 A 17mm lense. Has the ability of a wide angle lense. And at the same it can tilt and shift to minimize the distortions.
 <!--after two or more paragraphs-->
@@ -63,6 +65,10 @@ Cable release or shutter grigger.
 Cam ranger
 
 Tripod
+## Sensor size
+Point and shoot cameras comes with smaller sensors. Wide angle lense cameras uses large sensors and gives better low light performance.
+## Megapixels
+The more the mega pixels of the sensor, generally the more the noise. So mega pixels is not always about clarity of the picture. Small sensor with more mega pixels product so much noise.
 ## Camera Settings
 ### Daylight photography
 Manual mode
