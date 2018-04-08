@@ -9,6 +9,12 @@ thumbnail:
 rating: '5'
 ---
 ## Teminology
+### Aperture
+Aperture of a camera lense is the opening of the lense through which light comes through. Aperture generally represents as `f / f-number`.
+
+Examples f/1.8, f/2.8 etc.
+
+The lesser the f-number (or f-stop) value, the more the aperture of a lense. for example, f/2.8 has more aperture than f/16.
 ### Dynamic Range
 Capturing details like doors in an architecture.
 ### Keystone distortion
@@ -16,15 +22,30 @@ In the pictures, buildings or persons seem like fallen backwards.
 ### Bulbus distortion
 Photo seems like it got shrink from center to corners
 
+### Sensor
+The larger the sensor size, the better low light performance. Greater control over depth of field. Produce higher resolution images with less noise.
 ## Types of Cameras
 Full frame sensor
 
 Crop frame sensor
 ## Types of lenses
 ### Wide angle
+Lense with focal length of less than 35 mm. Used to take photos of closer objects.
+
+The lesser the f-stop value, the more the wide angle lense capabillity.
+
+Aperture is more. Obsorbs good amount of light.
+
 A good wide angle lense for full frame sensor is 16-35mm f/2.8 and crop frame sensor is 10-20mm f/2.8. Downfall of this lense is keystone distortion.
 ### FishEye lense
-A 15mm f/2.8 lense for full framse sensor and 10 mm f/2.8 for crop framse sensor. Wideangle photos. Downfall is bulbus distortion. Person can stand very near to object.
+An extreme wide angle lense.
+
+A 15mm f/2.8 lense for full framse sensor and 10 mm f/2.8 for crop framse sensor.
+
+Downfall is bulbus distortion. Person can stand very near to object.
+### Standard lense
+Lense with focal lenght between 35 to 50 mm. These lenses captures images which seems real in nature to human eye.
+
 ### Telephoto lense
 A 70-200mm f/2.8 lense. Minimizes distortion. We can stay far away from object.
 ### Tilt shift lense.
