@@ -1,0 +1,7 @@
+Open about:config in address bar.
+
+Disable following preferences
+
+app.update.auto - false
+app.update.enabled - false
+app.update.silent - false
