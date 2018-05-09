@@ -1,0 +1,7 @@
+Search for default-config file
+Change version on that file
+Add new strings in that file
+md5sum default-config > .config.md5
+cd to configs/etc/diffs
+Add new strings to diff_6.4_6.5.txt (diff_old_new.txt)
+Execute creat_diff.sh
