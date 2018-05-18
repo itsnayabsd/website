@@ -1,0 +1,3 @@
+gdb binary coredump
+sdk/build/toolchain/WAC505/toolchain/bin/arm-openwrt-linux-gdb arada_nms/nddmp_src/nddmp coredump_path
+set sysroot sdk/build/rootfs/WAC505
