@@ -27,6 +27,9 @@ google_adsense: false
 ## ZeroMQ for C
 * Check Stackoverflow [ZeroMQ](https://stackoverflow.com/questions/tagged/zeromq) tag.
 
+## openWRT
+* [LEDE Forum](https://forum.lede-project.org/). Ask and answer questions there.
+
 ## ProtoBuff
 ## RADIUS
 * Check FreeRADIUS [Documentation](http://wiki.freeradius.org/Home#documentation)
