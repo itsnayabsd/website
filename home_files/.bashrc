@@ -178,3 +178,5 @@ alias jsdraft='bundle exec jekyll serve --drafts'
 alias jkill='pkill -f jekyll'
 export LFS=/mnt/lfs
 alias lfs_chroot='sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='"'"'\u:\w\$ '"'"' PATH=/bin:/usr/bin:/sbin:/usr/sbin1 /bin/sh --login'
+alias ethvvdn='nmcli device disconnect `ip link | awk -F: '"'"'$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'"'"'`; nmcli connection up ethvvdn'
+alias 0domain='nmcli device disconnect `ip link | awk -F: '"'"'$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'"'"'`; nmcli connection up 0domain'
