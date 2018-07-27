@@ -1,2 +1,8 @@
 Latest jobs available and if it has anything to do with intermediate courses
 zoo environment. Is it really exciting visiting zoo. How do you feel by visiting wild animals.
+
+
+Networking commands:
+nmcli networking off //enable flight mode
+nmcli radio wifi off // disable Wi-Fi
+Command to disable usb ethernet (usb tethering)
