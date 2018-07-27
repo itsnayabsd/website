@@ -53,3 +53,7 @@ cd rtl8723de
 make
 sudo make install
 sudo modprobe -v 8723de
+# Modifying and adding ethernet connections
+nmcli connection modify "Wired connection 1" connection.id ethvvdn
+nmcli connection add con-name 0domain ifname `ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'` type ethernet ip4 192.168.0.15/24
+nmcli connection add con-name 1domain ifname `ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'` type ethernet ip4 192.168.1.15/24
