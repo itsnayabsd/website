@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Run this script after installing elementary OS
-## Run with the command
+## Run with the following command
 ## source elementary_post_install.sh
 
 cd
@@ -21,7 +21,7 @@ sudo apt -y dist-upgrade
 # Package installations
 sudo apt -y purge vim
 sudo apt -y install vim git google-chrome-stable software-properties-common \
-ruby-full
+ruby-full openssh-server
 
 # Install gem packages
 sudo gem install bundler
@@ -45,3 +45,11 @@ cd ~/website
 bundle install
 git config user.email "nayabbashasyed@gmail.com"
 git config user.name "Nayab Basha Sayed"
+
+## Drivers
+# For office
+git clone https://github.com/nayabbashasayed/rtl8723de.git
+cd rtl8723de
+make
+sudo make install
+sudo modprobe -v 8723de
