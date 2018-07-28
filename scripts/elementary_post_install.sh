@@ -21,7 +21,9 @@ sudo apt -y dist-upgrade
 # Package installations
 sudo apt -y purge vim
 sudo apt -y install vim git google-chrome-stable software-properties-common \
-ruby-full openssh-server
+ruby-full openssh-server build-essential device-tree-compiler libz-dev \
+autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev \
+libncursesw5-dev cmake
 
 # Install gem packages
 sudo gem install bundler
