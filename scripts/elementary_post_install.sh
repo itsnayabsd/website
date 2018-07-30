@@ -35,27 +35,47 @@ sudo gem update --system
 sudo rm -r /bin/sh
 sudo ln -s /bin/bash /bin/sh
 
-# Cleaning software packages
-sudo apt -y autoremove
-sudo apt -y autoclean
-
-# Cloning repositories
+## Cloning repositories
+#Personal website
 git clone https://github.com/nayabbashasayed/website.git
-
-# Installing repository dependency packages
 cd ~/website
 bundle install
 git config user.email "nayabbashasyed@gmail.com"
 git config user.name "Nayab Basha Sayed"
 
-## Drivers
-# For office
+## For office
+# Zeromq
+wget -c https://github.com/zeromq/libzmq/releases/download/v4.2.5/zeromq-4.2.5.tar.gz
+tar xvf zeromq-4.2.5.tar.gz
+cd zeromq-4.2.5
+./configure --enable-drafts=yes
+make
+sudo make install
+
+# Drivers
+cd
 git clone https://github.com/nayabbashasayed/rtl8723de.git
 cd rtl8723de
 make
 sudo make install
 sudo modprobe -v 8723de
+
 # Modifying and adding ethernet connections
 nmcli connection modify "Wired connection 1" connection.id ethvvdn
 nmcli connection add con-name 0domain ifname `ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'` type ethernet ip4 192.168.0.15/24
 nmcli connection add con-name 1domain ifname `ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'` type ethernet ip4 192.168.1.15/24
+
+# INstalling skype
+wget -c https://repo.skype.com/latest/skypeforlinux-64.deb
+sudo dpkg -i skypeforlinux-64.deb
+sudo apt -y install -f
+
+# Installing zoom
+wget -c https://d11yldzmag5yn.cloudfront.net/prod/2.3.128305.0716/zoom_amd64.deb
+sudo dpkg -i zoom_amd64.deb
+sudo apt -y install -f
+
+# Cleaning software packages
+sudo apt -y autoremove
+sudo apt -y autoclean
+
