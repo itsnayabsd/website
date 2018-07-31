@@ -5,6 +5,8 @@
 ## source elementary_post_install.sh
 
 cd
+mkdir sda4
+mkdir sda3
 # Key bindings
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
 
@@ -23,7 +25,7 @@ sudo apt -y purge vim
 sudo apt -y install vim git google-chrome-stable software-properties-common \
 ruby-full openssh-server build-essential device-tree-compiler libz-dev \
 autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev \
-libncursesw5-dev cmake
+libncursesw5-dev cmake minicom virtualbox
 
 # Install gem packages
 sudo gem install bundler
