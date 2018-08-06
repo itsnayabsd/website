@@ -7,8 +7,6 @@
 cd
 mkdir sda4
 mkdir sda3
-# Key bindings
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
 
 # Third party repositories
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
@@ -25,7 +23,17 @@ sudo apt -y purge vim
 sudo apt -y install vim git google-chrome-stable software-properties-common \
 ruby-full openssh-server build-essential device-tree-compiler libz-dev \
 autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev \
-libncursesw5-dev cmake minicom virtualbox
+libncursesw5-dev cmake minicom virtualbox cscope exuberant-ctags \
+gnome-terminal
+
+## Key bindings
+# Pantheon-terminal full screen
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
+# Gnome terminal
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'gnome-terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'gnome-terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Alt><Ctrl>t'
 
 # Install gem packages
 sudo gem install bundler
