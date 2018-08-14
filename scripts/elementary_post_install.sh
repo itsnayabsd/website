@@ -8,11 +8,14 @@ cd
 mkdir sda4
 mkdir sda3
 
-# Third party repositories
+## Third party repositories
+# Google Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
 | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
 | sudo tee /etc/apt/sources.list.d/google-chrome.list
+# WoeUSB
+sudo add-apt-repository -y ppa:nilarimogard/webupd8
 
 # Latest packages update
 sudo apt update
@@ -24,7 +27,7 @@ sudo apt -y install vim git google-chrome-stable software-properties-common \
 ruby-full openssh-server build-essential device-tree-compiler libz-dev \
 autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev \
 libncursesw5-dev cmake minicom virtualbox cscope exuberant-ctags \
-gnome-terminal
+gnome-terminal woeusb
 # wps-office
 wget -c http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb
 wget -c http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb
