@@ -16,10 +16,15 @@ echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
 | sudo tee /etc/apt/sources.list.d/google-chrome.list
 # WoeUSB
 sudo add-apt-repository -y ppa:nilarimogard/webupd8
+# Flatpak
+sudo add-apt-repository -y ppa:alexlarsson/flatpak
 
 # Latest packages update
 sudo apt update
 sudo apt -y dist-upgrade
+
+# Flathub repository
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 ## Package installations
 sudo apt -y purge vim
@@ -27,12 +32,17 @@ sudo apt -y install vim git google-chrome-stable software-properties-common \
 ruby-full openssh-server build-essential device-tree-compiler libz-dev \
 autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev \
 libncursesw5-dev cmake minicom virtualbox cscope exuberant-ctags \
-gnome-terminal woeusb
+gnome-terminal woeusb flatpak
 # wps-office
 wget -c http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb
 wget -c http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb
 sudo dpkg -i wps-office_10.1.0.5707~a21_amd64.deb
 sudo dpkg -i wps-office-fonts_1.0_all.deb
+# vlc
+flatpak install -y flathub org.videolan.VLC
+# Feed Reader
+flatpak install -y flathub org.gnome.FeedReader
+
 
 ## Key bindings
 # Pantheon-terminal full screen
