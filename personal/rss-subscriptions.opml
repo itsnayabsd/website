@@ -7,5 +7,6 @@
     <body>
         <outline text="Going Linux | Learn how to use Linux and its applications | Move from Windows to Ubuntu, Mint or other Linux operating systems" title="Going Linux" type="rss" xmlUrl="http://goinglinux.com/mp3podcast.xml"/>
         <outline text="Weekly Linux Talk Show with no script, no limits, surpise guests and tons of opinion." title="LINUX Unplugged" type="rss" xmlUrl="http://linuxunplugged.com/rss"/>
+        <outline text="LWN.net is a comprehensive source of news and opinions from and about the Linux community. This is the main LWN.net feed, listing all articles which are posted to the site front page." title="LWN.net" type="rss" xmlUrl="https://lwn.net/headlines/rss"/>
     </body>
 </opml>
