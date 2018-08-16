@@ -70,6 +70,8 @@ flatpak install --from <path_to_.flatpakref_file>
 flatpak install --from ~/Downloads/org.blender.Blender.flatpakref
 # or
 flatpak install --from https://www.daitauha.fr/static/flatpak/blender.flatpakref
+# or
+flatpak install flathub org.gimp.GIMP	#GIMP is an application
 ```
 
 ### Install from downloaded **_.flatpak_** package
