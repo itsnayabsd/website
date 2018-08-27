@@ -1,0 +1,129 @@
+MTD (Memory Technology Deivces) device is not char/block device. So we can't compare MTD device with char/block device. NAND/NOR raw flash devices which are being used in embedded systems technology are MTD devices. Thumb/flash/pen drives are not MTD devices.
+
+SSD, MMC, eMMC, RS-MMC, SD, mini-SD, micro-SD, USB flash (thumb/ pen) drives, CompactFlash are block devices, not raw flash devices. Of course, hard drives are also block devices
+------------------------
+------------------------
+The following can be in the separate post
+Differences between block devices and MTD devices.
+=================================================
+Block devices have sectors where MTD devices have eraseblocks.
+Sectors are small (512 or 1024 bytes) where as erase blocks are in the order of KBs. (typically 128KB).
+Block devices have two types of operations. Write to sector and read to sector. Raw flash has three types of operations. Read from eraseblock, write to eraseblock and erase the eraseblock.
+Sectors can be written or be read unlimited times. MTD devies have limited number of erase cycles. Typically 10³ (for MLC NAND) to 10⁵ (NOR, SLC NAND) erase cycles(read, write or erase operations). After this limit MTD devices can't be used.
+--------------------------
+--------------------------
+
+Then why embedded devices using MTD devices?
+============================================
+TBD
+
+------------------------
+------------------------
+The following can be in the separate post
+How to mount MTD devices?
+=========================
+We can't mount MTD devices using conventional file systems like ext*, FAT, XFS, JFS etc. To use conventional file systems over MTD deives, we need a software layer which emulates block device over MTD. This layer is called `Flash translation layer (FTL)`. We have a kernel module called `mtdblock` to do this. But using mtdblock is not efficient and might lose nand erase cycles. (Why? TBD.). `mtdblock_ro` can be used for read only operations.
+We can use UBI to mount MTD devices.
+
+How to mount TBD using UBI?
+===========================
+TBD
+--------------------------
+--------------------------
+
+Installing MTD and UBI tools for Ubuntu
+=======================================
+sudo apt install mtd-utils
+
+Booting from the NAND flash
+==========================
+We can't boot from bare NAND flash. But we can boot from NOR flash (WHY? TBD.).
+Some NAND flash chips have internal circuitry which is capable of reading and booting from the first page of NAND (typically 256/512 bytes). U-Boot can be installed as a primary and secondary boot loader in the first page of NAND and subsequent pages respectively.
+
+Erasing and formatting the MTD partition on NAND flash
+======================================================
+`flash_erase` or `flash_eraseall` tools can be used to erase NAND flash. If this partition is going to be used with JFFS2 then erase with -j or --jffs2 option. No further fomattting needed. If it is formatted with `mkfs.jffs2`, make sure the erase size set is same as erase size of the chip. This is also necessary if file system image is to be copied to chip.
+
+Difference between JFFS2 and UBIFS
+==================================
+TBD
+
+Copying JFFS2 image to NAND via /dev/mtdX
+========================================
+Use `nandwrite` to do that. This tool is aware of bad blocks and copies accordingly. JFSS2 and other bad block aware file systems handles the gaps in flash.
+
+NAND simulator
+==============
+TBD
+Using `nandsim` we can emulate the nand flash in the RAM.
+```
+modprobe nandsim first_id_byte=0xef second_id_byte=0xaa
+```
+We can get id_byte info from kernel source code: In the function `nand_get_flash_type`
+
+UBI
+===
+What is UBI? (TBD)
+
+Attaching MTD devices using UBI
+===============================
+`cat /proc/mtd` command gives the mtd number and name. Preferred way is to use the name for attaching.
+```
+modprobe ubi mtd=rootfs
+#or
+modprobe ubi mtd=3 #mtd partition number
+```
+One more way to attach or detach
+```
+ubiattach /dev/ubi_ctrl -m 3
+```
+What is `ubi_ctrl`?(TBD)
+
+Erasing flash using ubiformat
+=============================
+`ubiformat /dev/mtd0`
+Sample output:
+```
+ubiformat: mtd0 (NAND), size 536870912 bytes (512.0 MiB), 131072 eraseblocks of
+131072 bytes (128.0 KiB), min. I/O size 2048 bytes
+libscan: scanning eraseblock 4095 -- 100 % complete
+ubiformat: 4094 eraseblocks have valid erase counter, mean value is 104
+ubiformat: bad eraseblocks: 13, 666
+ubiformat: formatting eraseblock 4095 -- 100 % complete
+```
+Finding out min I/O size, sub-page size and LEB size
+====================================================
+LEB depends on PEB(physical erase blocks), min I/O unit size and sub page size
+TBD
+
+Flash UBI images
+================
+```
+ubiformat /dev/mtd0 -f ubi.img
+ubiformat: mtd0 (NAND), size 536870912 bytes (512.0 MiB), 131072 eraseblocks of 131072 bytes (128.0 KiB), min. I/O size 2048 bytes
+libscan: scanning eraseblock 4095 -- 100 % complete
+ubiformat: 4094 eraseblocks have valid erase counter, mean value is 105
+ubiformat: bad eraseblocks: 13, 666
+ubiformat: flashing eraseblock 50 -- 100 % complete
+ubiformat: formatting eraseblock 4095 -- 100 % complete
+```
+Do not use `nandwrite` for writing UBIFS images to NAND flash.
+
+
+
+
+NAND commands
+=============
+MTD device size: 52MB
+nand info:
+----------
+Page size	2048 b
+OOB size	64 b
+Erase size	131072 b
+
+
+Misc
+====
+The PEB size if 131072 b
+JFFS2 images can't be loop mounted. Loop device is a driver which represents a block device.
+Mounting the JFFS2 filesystem doen't require `mtdblock`. Two cases it is required 1.Busybox version of mount requires mtdblock device to mount JFFS2 file system. 2. If we want to mount to root file system.
