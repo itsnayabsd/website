@@ -22,3 +22,7 @@ sudo dnf -y install vim
 sudo dnf -y install ctags cscope
 ## Bookworm reader
 flatpak install flathub com.github.babluboy.bookworm
+## VLC
+sudo dnf -y remove totem-*
+sudo dnf -y dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install vlc
