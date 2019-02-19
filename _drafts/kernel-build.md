@@ -9,12 +9,12 @@ google_adsense: false
 ```bash
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 cd linux
-sudo make clean
-sudo make mrproper
-sudo make localmodconfig
-sudo make
-sudo make modules
-sudo make modules_install
+make clean
+make mrproper
+make localmodconfig
+make
+make modules
+make modules_install
 sudo make install
 sudo vi /etc/default/grub
 # Comment the line GRUB_HIDDEN_TIMEOUT_QUIET=true

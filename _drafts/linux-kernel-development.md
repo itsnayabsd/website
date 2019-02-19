@@ -17,7 +17,7 @@ If kernel module need to be built for already running kernel in a Linux distro l
 
 `sudo apt-get install linux-headers-$(uname -r)`
 
-If latest kernel is downloaded from [official](https://www.kernel.org/) website and built, then it has the configuration and header files already to build external kernel module. The external module built from this kernel can't be loaded into the system which is running other version of kernel. Once we install this kernel into system and boot from it, we can insert the module.
+Above command can be skipped, if latest Linux kernel source is downloaded from official git repository.
 
 <!--after two or more paragraphs-->
 
@@ -25,3 +25,20 @@ If latest kernel is downloaded from [official](https://www.kernel.org/) website 
   {% include goog_inart_2par.html %}
   {% endif %}
 
+### Building and installing latest kernel source
+
+To download latest kernel source,
+
+```
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+```
+
+To build the kernel,
+```
+make localmodconfig
+make -j4
+```
+
+### Submitting patches
+
+Documentation for the process of submitting patches can be found [here](https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git/tree/Documentation/process/submitting-patches.rst)
