@@ -14,7 +14,7 @@ make mrproper
 make localmodconfig
 make
 make modules
-make modules_install
+sudo make modules_install
 sudo make install
 sudo vi /etc/default/grub
 # Comment the line GRUB_HIDDEN_TIMEOUT_QUIET=true
