@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: nayab.xyz
+Token: b450bfd83ae6ebc50d15999233be5ac480bb915aa3e5ef33cb272009e0d92491
