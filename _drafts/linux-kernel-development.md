@@ -45,3 +45,15 @@ sudo make install
 ### Submitting patches
 
 Documentation for the process of submitting patches can be found [here](https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git/tree/Documentation/process/submitting-patches.rst)
+
+### Loading the kernel module dynamically
+
+Arch wiki [link](https://wiki.archlinux.org/index.php/udev) is very useful.
+
+Useful commands:
+```
+udevadm monitor --environment --udev		# To find ENV values. Can use these ENV in the udev rules
+udevadm info -a -p /dev_path			# To get product attributes. Can use in udev rules
+sudo udevadm control --reload			# Reload udev rules
+sudo udevadm trigger				# Force udev rules
+```
