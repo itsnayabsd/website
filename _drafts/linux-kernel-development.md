@@ -44,8 +44,32 @@ sudo make install
 
 ### Submitting patches
 
+Install git-email
+```
+sudo apt install git-email
+```
 Documentation for the process of submitting patches can be found [here](https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git/tree/Documentation/process/submitting-patches.rst)
 
+Remove line terminators with 
+```
+git config core.whitespace cr-at-eol
+```
+```
+git format-patch -s -1
+```
+The above command includes `PATCH` in the subject and `Signed-off-by` at the end of the body.
+
+#### git send-email settings
+
+```
+git config --global sendemail.smtpencryption tls
+git config --global sendemail.smtpserver smtp.gmail.com
+git config --global sendemail.smtpuser nayabbashasyed@gmail.com
+git config --global sendemail.smtpserverport 587
+git config sendemail.to basha@nayab.xyz		#Default destination address
+git config --global sendemail.confirm auto
+```
+More information can be found [here](https://www.freedesktop.org/wiki/Software/PulseAudio/HowToUseGitSendEmail/)
 ### Loading the kernel module dynamically
 
 Arch wiki [link](https://wiki.archlinux.org/index.php/udev) is very useful.
