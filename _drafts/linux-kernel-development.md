@@ -42,7 +42,7 @@ sudo make modules_install
 sudo make install
 ```
 
-### Submitting patches
+## Submitting patches
 
 Install git-email
 ```
@@ -59,7 +59,7 @@ git format-patch -s -1
 ```
 The above command includes `PATCH` in the subject and `Signed-off-by` at the end of the body.
 
-#### git send-email settings
+### git send-email settings
 
 ```
 git config --global sendemail.smtpencryption tls
@@ -70,7 +70,16 @@ git config sendemail.to basha@nayab.xyz		#Default destination address
 git config --global sendemail.confirm auto
 ```
 More information can be found [here](https://www.freedesktop.org/wiki/Software/PulseAudio/HowToUseGitSendEmail/)
-### Loading the kernel module dynamically
+
+## Loading the kernel module dynamically
+
+Kernel supports hotplug mechanism for a device through specific structure depends on the type of device.
+
+For ex: For USB devices `usb_device_id` structure can be initialized with the table fo supported devices for hotplugging. When a device type matches the entry in table, the current module loads automatically.
+
+Refer [writing_usb_driver](https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git/tree/Documentation/driver-api/usb/writing_usb_driver.rst) for more inforamtion.
+
+Module loading can be handled from userspace also by calling the script.
 
 Arch wiki [link](https://wiki.archlinux.org/index.php/udev) is very useful.
 
