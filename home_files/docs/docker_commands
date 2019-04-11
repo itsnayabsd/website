@@ -1,0 +1,12 @@
+sudo systemctl status docker
+sudo usermod -aG docker ${USER}
+docker search ubuntu:16.04
+docker pull ubuntu:16.04
+docker images
+docker rmi ubuntu:16.04
+docker run -it ubuntu:16.04
+docker ps -a	# Currently active/inactive images
+docker start container_id
+docker stop container_id(or Name)
+docker rm container_id(or Name)
+docker exec -it aa43551a3762 /bin/bash
