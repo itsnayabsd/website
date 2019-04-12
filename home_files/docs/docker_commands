@@ -9,4 +9,17 @@ docker ps -a	# Currently active/inactive images
 docker start container_id
 docker stop container_id(or Name)
 docker rm container_id(or Name)
-docker exec -it aa43551a3762 /bin/bash
+docker exec -it aa43551a4762 /bin/bash
+docker commit -m "Now sdk ready." -a "Nayab Basha Sayed" addc5cbec116 nayabsd/ubuntu-16.04-sdk-ready
+docker login -u nayabsd
+docker tag nayabsd/ubuntu-16.04-sdk-ready nayabsd/ubuntu-16.04-sdk-ready
+docker push nayabsd/ubuntu-16.04-sdk-ready
+
+
+Installing packages
+===================
+apt update
+apt install bc net-tools iputils-ping vim git build-essential device-tree-compiler libz-dev autoconf flex byacc bison sharutils libtool libssl-dev libncurses5-dev libncursesw5-dev cmake pkg-config gawk unzip wget python2.7 python
+rm /bin/sh
+ln -s /bin/bash /bin/sh
+ln -s /usr/bin/autom4te /usr/local/bin/autom4te
