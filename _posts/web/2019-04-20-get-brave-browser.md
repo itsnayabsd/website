@@ -7,6 +7,7 @@ google_adsense: true
 excerpt: An alternative to Chrome browser. Brave browser review with features ad-blocker, private window with tor, security, sync, chrome extension compatible and BAT token earning for publishers and users.
 keywords: Brave browser review with built-in ad blocker, chrome extensions campatible, earn BAT tokens, sync bookmarks.
 date: 2019-04-20 21:40:31 +5:30
+image: /assets/img/brave_download_300.png
 ---
 
 When Google introduced `Chrome browser` in 2008, I had a sense that it would surpass Microsoft IE in browser market share in no time. I even argued regarding this with my roommate. Now, as of writing this (2019, April), it has 62% of worldwide browser market share. And Microsoft itself now building it's browser `Micorsoft Edge` based on `Chromium`. Chromium is the open source project on which the Chrome browser is actually built.
