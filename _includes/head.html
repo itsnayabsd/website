@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
   <meta name="keywords" content="{{ page.keywords }}">
-  <meta name="twitter:image" content="{{ page.image }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
