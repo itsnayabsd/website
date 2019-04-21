@@ -20,19 +20,26 @@ So, people started using ad blockers. Ad blockers definitely work. They might ev
 This is where the [`Brave`](https://brave.com/nay530) browser comes in. When I heard about it in 2016 (It is developed by Mozilla co-founder Brenden Eich who also created JavaScript), it wasn't impressive then and was based on Mozilla firefox. Now the browser is based on Chromium and much evolved over time. By looks and user experience it is much similar to Google's Chrome browser. We can even install Chrome's extensions.
 
 ## So, How does it help normal users?
- * `Inbuilt ad blocker` - By default, prevents autoplay media, pop up windows and advertisements. One can turn off this feature for a particular website.
- * `Private window with Tor` - Browse anonymously and access any website if is blocked by your corporate / ISP.
- * `Enforcing HTTPS` - Switches insecured http websites to secured https.
- * `Security` - Prevents websites to track the browsing requests.
- * `Earn BAT` - You can opt in for Brave rewards. You can still watch advertisements (upto you) in a separate window and earn BAT tokens. BAT is the block chain based digital currency. And advertisers directly pay you. No middle man. (As of now, advertisements appear only in certain countries.).
- * `Chrome compatible` - You won't feel the much difference by looks wise. Chrome extensions supported.
- * `Sync` - Sync your bookmarks (for now only bookmarks can be synced) among different devices.
- * `Support your favorite creators` - You can support your favorite websites, blogs, youtube / twitch channels by donating BAT tokens to them.
+**Inbuilt ad blocker** - By default, prevents autoplay media, pop up windows and advertisements. One can turn off this feature for a particular website.
+
+**Private window with Tor** - Browse anonymously and access any website if is blocked by your corporate/ISP.
+
+**Enforcing HTTPS** - Switches insecured http websites to secured https.
+
+**Security** - Prevents websites to track the browsing requests.
+
+**Earn BAT** - You can opt in for Brave rewards. You can still watch advertisements (upto you) in a separate window and earn BAT tokens. BAT is the block chain based digital currency. And advertisers directly pay you. No middle man. (As of now, advertisements appear only in certain countries.).
+
+**Chrome compatible** - You won't feel the much difference by looks wise. Chrome extensions supported.
+
+**Sync** - Sync your bookmarks (for now only bookmarks can be synced) among different devices.
+
+**Support your favorite creators** - You can support your favorite websites, blogs, youtube / twitch channels by donating BAT tokens to them.
  
 With the above features enabled, I can see improvement in the web page load time, pop ups are blocked, and any media is not playing automatically.
 
 ## How does it help publishers?
- * `Earn BAT` - [Verify](https://publishers.basicattentiontoken.org/) your blog or website or any video channel and get BAT tokens from the readers contributions (Yes. Readers do contribute).
+**Earn BAT** - [Verify](https://publishers.basicattentiontoken.org/) your blog or website or any video channel and get BAT tokens from the readers contributions (Yes. Readers do contribute).
  
 ## How many publishers have signed up for this?
 There are aporoximately 30,000 (by 2019, April) publishers / creators signed up for this program. Including search engine [Duck Duck Go](https://duckduckgo.com), websites like, [The Washington Post](https://www.washingtonpost.com), [Vimeo](https://vimeo.com/), [WikiHow](https://www.wikihow.com), [The Guardian](https://www.theguardian.com), [BitTorrent](https://www.bittorrent.com), [Freecodecamp](https://www.freecodecamp.org/) et cetera.
