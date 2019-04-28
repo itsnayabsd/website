@@ -31,9 +31,9 @@ This is where the [`Brave`](https://brave.com/nay530) browser comes in. When I h
 
 **Earn BAT** - You can opt in for Brave rewards. You can still watch advertisements (upto you) in a separate window and earn BAT tokens. BAT is the block chain based digital currency. And advertisers directly pay you. No middle man. (As of now, advertisements appear only in certain countries.).
 
-**Chrome compatible** - You won't feel the much difference by looks wise. Chrome extensions supported.
+**Chrome compatible** - You won't feel much difference by looks wise. Chrome extensions are supported.
 
-**Sync** - Sync your bookmarks (for now only bookmarks can be synced) among different devices.
+**Sync** - Sync your bookmarks (only bookmarks can be synced for now) among different devices.
 
 **Support your favorite creators** - You can support your favorite websites, blogs, youtube / twitch channels by donating BAT tokens to them.
  
@@ -42,6 +42,9 @@ With the above features enabled, I can see improvement in the web page load time
 ## How does it help publishers?
 **Earn BAT** - [Verify](https://publishers.basicattentiontoken.org/) your blog or website or any video channel and get BAT tokens from the readers contributions (Yes. Readers do contribute).
  
+## What to do after installing Brave?
+Enable brave wallet by going into Menu (three dots or bars on top right corner) -> Brave rewards. If you are a publisher, signup for publisher account at [https://publishers.basicattentiontoken.org](https://publishers.basicattentiontoken.org).
+
 ## How many publishers have signed up for this?
 There are aporoximately 30,000 (by 2019, April) publishers / creators signed up for this program. Including search engine [Duck Duck Go](https://duckduckgo.com), websites like, [The Washington Post](https://www.washingtonpost.com), [Vimeo](https://vimeo.com/), [WikiHow](https://www.wikihow.com), [The Guardian](https://www.theguardian.com), [BitTorrent](https://www.bittorrent.com), [Freecodecamp](https://www.freecodecamp.org/) et cetera.
 
