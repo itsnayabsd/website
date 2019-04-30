@@ -43,7 +43,7 @@ With the above features enabled, I can see improvement in the web page load time
 **Earn BAT** - [Verify](https://publishers.basicattentiontoken.org/) your blog or website or any video channel and get BAT tokens from the readers contributions (Yes. Readers do contribute).
  
 ## What to do after installing Brave?
-Enable brave wallet by going into Menu (three dots or bars on top right corner) -> Brave rewards. If you are a publisher, signup for publisher account at [https://publishers.basicattentiontoken.org](https://publishers.basicattentiontoken.org).
+[Open Brave rewards](brave://rewards/) tab and click `Yes. I'm in` button to enable Brave wallet. [Backup](brave://rewards/#backup-restore) the recovery key and store it somewhere safe (I saved it in my google drive). Restore your wallet from the recovery key if something happens to your browser. If you are a publisher, signup for [publisher account](https://publishers.basicattentiontoken.org) to earn BAT crypto currency.
 
 ## How many publishers have signed up for this?
 There are aporoximately 30,000 (by 2019, April) publishers / creators signed up for this program. Including search engine [Duck Duck Go](https://duckduckgo.com), websites like, [The Washington Post](https://www.washingtonpost.com), [Vimeo](https://vimeo.com/), [WikiHow](https://www.wikihow.com), [The Guardian](https://www.theguardian.com), [BitTorrent](https://www.bittorrent.com), [Freecodecamp](https://www.freecodecamp.org/) et cetera.
