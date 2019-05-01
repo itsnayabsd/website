@@ -1,0 +1,17 @@
+# Install tools first
+dnf install android-tools # For Fedora family
+apt install adb # For Debian family
+# Enable USB debugging in the android mobile
+# Restart the adb server
+sudo adb kill-server
+sudo adb start-server
+# On your android screen, press OK to allow usb debugging for the system
+adb shell # To login to android shell for executing subsequent commands.
+pm list packages # To find all installed packages
+# To uninstall bloatware from my coolpad note 3:
+pm uninstall -k --user 0 com.yulong.android.memo
+pm uninstall -k --user 0 com.kpt.xploree.app
+pm uninstall -k --user 0 com.cube26.coolstore
+pm uninstall -k --user 0 com.cube26.nearestservicecenter
+pm uninstall -k --user 0 in.amazon.mShop.android.shopping
+
