@@ -1,0 +1,5 @@
+# To upgrade fedora to a specific release version
+
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --refresh --releasever=20 # Replace 20 with release version
