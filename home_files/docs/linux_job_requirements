@@ -3,6 +3,8 @@ Keep remember following points
 ------------------------------
 Linux jobs are like no other. Focus on what you want and don't make it harder than it has to be.
 The vast majority of job openings are never advertised; they are filled by word of mouth.
+Certifications help demonstrate employer that you know what you say you know.
+Keeping your skillset current is one of the tasks you will spend the most of the time on.
 
 
 
@@ -20,13 +22,68 @@ Cover letter - Highlight the relevant experience for the position being applied.
 	. Cover letter should be unique for each type of job. Don't reuse the same template for all.
 	. Attach the cover letter even it is not required.
 Training and certifications - Key indicators of employee competence in any information technology related field.
+Key terms and experience - Distro, package management, repositories, Desktop, root, kernel,
 
 
 ------
 Fields
 ------
-Linux administration
-Virtualisation
+Basics
+	- Service Management : Install. configure, stop, start and troubleshooting applications and services (Tomcat, web services, MuSQL etc.) and troubleshooting them.
+	- User management : Manage local, remote and VPN users and passwords securely with proper permissions and limitations on disks.
+	- System Management : Configure new disk, upgrade packages and kernel, system libraries and security patches.
+	- Working with infrastructure (Racking servers, cabling network or storage, deploying virtual machines from VMWare).
+Automation : Linux administration, Infrastructure engineer
+	- All the basics plus automation tools like Jenkins, Puppet, Chef, CRON, Red Hat MRG, Linux automation tool and Autopilot.
+Virtualisation : Infrastructure engineer, Linux engineer
+	- All the basics plus products like Openstack, Citrix and VMWare ESXi.
+Monitoring : Infrastructure engineer, Production support engineer
+	- All the basics plus System monitoring tools like Nagios, vmstat, sar, collectd and cacti.
+Operating systems and servers : Security engineer, network engineer, Help desk technician, Infrastructure engineer.
+	- All the basics plus Installing the OS and hardening it for physical or virtual instance.
+	- All the basics plus Manage local network device configurations, routing firewalls and remote connections.
+A Linux consultant
+	- Get the experience by solving peoples needs. They pay you.
+
+------------------
+Tailor your resume
+------------------
+Length
+	- Should not be more than 3 pages.
+Summary
+	- Should be technical.
+Accomplishments
+	- Write and highlight about the final useful product of your work. How that is useful for others.
+
+Sample template
+
+			Your Name
+Address line 1				  primary@mail | 00-000-00000
+City, State, Zip			secondary@mail | 00-000-00000
+_____________________________________________________________________
+
+Objective: To obtain a position_name
+
+Education: Master of Technology in Embedded Systems.
+
+Qualifications:
+. Based on job requirements
+. Elaborate the qualifications
+
+Technical skills: Linux distributions, Tomcat, Apache.....
+
+Professional Experience
+
+Company name, location			Month/Year to Month/Year
+Job title 1				Month/Year to Month/Year
+Job title 2				Month/Year to Month/Year
+
+Originally hired as Job title 1. I have done these features. After
+some time I got promoted to Job title 2 where I implemented these
+features.
+. Can tell briefly about those features in list here. 
+
+
 
 ------------------
 Where to find jobs
@@ -36,7 +93,17 @@ Where to find jobs
 ---------------------
 Prepare for interview
 ---------------------
+How do you prepare
+	- Cover letter, Resume, Targeted job hunt, qualifications and experience.
+Dress code
+	- Ask the HR of the company which fixed your appointment.
+How do you act
+	- Research about the company before you in.
+	- Lots of lots of eye contact
+	- Setup straight and place hands on table.
+	- Steering the conversation. Ask questions.
 
--------------------------
-Follow up after interview
--------------------------
+-------------
+Linux careers
+-------------
+Check linuxcareer.com for job descriptions, MNCs in India and required skills.
