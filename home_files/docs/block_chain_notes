@@ -1,0 +1,67 @@
+Block chain technology requires Leaders.
+
+Blockchain technology applications:
+	- Peer to peer exchange of values : Money, security, intellectual
+	property, data and identities.
+	- Banks, businees, make a living of creations
+	- Cryptocurrencies
+	- Self-sovereign identity : No need to give our data to big conglomarates.
+	- Smart contracts : Code executed in Blockchain software. Could be
+	businees deals between consumers and producers.
+	- Decentralized business models : One example; Middleman can be omitted.
+	- Ledger of things : Transactions happens between devices; like a
+	power hungry device can ask/negotiate additional power from
+	neighbourhood solar panels. No human intervension required.
+	- Could be used in preventing fraud in our voting machines.
+
+What is Block chain?
+	- It's a tool to accomplish above applications.
+	- Internet is not designed to send or receive money without banks.
+	Banks verify identities and charges fee to send or receive assets
+	among people. Blockchain technology accomplishes the same without
+	banks.
+	- The technology called Internet of Value
+	- It's also called Trust Protocol.
+	- It's open source code that anybody can download, run it, use it for
+	free and create applications based on it to manage transactions online.
+
+Doing businees with Blockchain
+	- It requires a lot of faith.
+	- With peer to peer verification, there is no need of a third party.
+--------
+Glossary
+--------
+Trust protocol
+	- Transactions can be conducted directly between two or more parties.
+	Verification done through mass collaboration rather than through banks.
+	It's a trustworthy global platform for peer to peer transactions.
+Smart contracts
+	- Special purpose code executed in Block chain software to make a deal
+	between peers
+Blockchains
+	- Distributed ledgers which operates on trust protocol are called
+	Blockchains.
+
+-------
+Bitcoin
+-------
+	As long as a majority of CPU power is controlled by nodes that are not
+cooperating toattack the network,  they'll  generate the  longest  chain
+and  outpace attackers.
+
+	Messages are broadcast on a best effortbasis, and nodes can leave and
+rejoin the network at will, accepting the longestproof-of-work chain as proof
+of what happened while they were gone.
+
+----------
+References
+----------
+1. Jobes, J. (2018, February 26). A Brief History on the Origins of Blockchain.
+Retrieved from:
+medium.com/@jmrjobes/a-brief-history-on-the-origins-of-blockchain-6210ce345a21
+2. Nakamoto, S. (2008, October). Bitcoin: A Peer-to-Peer Electronic Cash
+System. Retrieved from https://bitcoin.org/bitcoin.pdf
+3. Szabo, N. (1997). The God Protocols. Retrieved from
+https://nakamotoinstitute.org/the-god-protocols/
+4. Blockchain Demo. https://anders.com/blockchain/
+5. Bitcoin Whitepaper - Programmer explains. https://www.youtube.com/watch?v=MCxOwPlVVgA
