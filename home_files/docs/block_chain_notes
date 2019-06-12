@@ -41,6 +41,10 @@ Smart contracts
 Blockchains
 	- Distributed ledgers which operates on trust protocol are called
 	Blockchains.
+Hash rate
+	- The Bitcoin network total processing power
+Proof of work
+	- The number of computations it took to find the Nonce.
 
 -------
 Bitcoin
@@ -52,6 +56,12 @@ and  outpace attackers.
 	Messages are broadcast on a best effortbasis, and nodes can leave and
 rejoin the network at will, accepting the longestproof-of-work chain as proof
 of what happened while they were gone.
+
+	After the proof of work completed by miner, the block along with the
+proof of work is broadcast to network. When the block is accepted by nodes in
+the network, the winning miner receives the pre set number of Bitcoins. The
+Bitcoin protocol mint the coins and send them to miner automatically. Then the
+hash block is added to the chain.
 
 ----------
 References
@@ -88,5 +98,25 @@ https://medium.com/cryptoeconomics-australia/the-blockchain-economy-a-beginners-
 12. Tapscott, D., & Tapscott, A. (2016, May 8). Here’s Why Blockchains Will
 Change the World. Retrieved from:
 http://fortune.com/2016/05/08/why-blockchains-will-change-the-world
-
-
+13. Casey, M. J., & Vigna, P. (2018, April 9). In blockchain we trust.
+https://www.technologyreview.com/s/610781/in-blockchain-we-trust/
+14. Antonopoulos, A. M. (2016, June 3). Bitcoin security model:
+Trust by computation.
+https://medium.com/@aantonop/bitcoin-security-model-trust-by-computation-d5b93a37da6e
+15. Kasireddy, P. (2018, February 3). ELI5: What do we mean by
+“blockchains are trustless”?
+https://medium.com/@preethikasireddy/eli5-what-do-we-mean-by-blockchains-are- trustless-aa420635d5f6
+16. Liebowitz, J. (2016, May 21). Blockchain’s Big Innovation is Trust, Not Money.
+Retrieved from https://www.coindesk.com/blockchain-innovation-trust-money/
+17. D’Aliessi, M. (2016, June 1). How Does the Blockchain Work?
+https://medium.com/s/story/how-does-the-blockchain-work-98c8cd01d2ae
+18. Savjee. (2017, November 13). How does a blockchain work - Simply Explained.
+https://youtu.be/SSo_EIwHSd4
+19. Antonopoulos, A. M. (2018). How Bitcoin Works. In Mastering Bitcoin 2nd Edition:
+Programming the Open Blockchain. Mastering Bitcoin.
+https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch02.asciidoc
+20. Lisk Academy. (n.d.). How Blockchain Works.
+https://lisk.io/academy/blockchain-basics/how-does-blockchain-work
+21. For a Good Technical Explanation
+Wattenhofer, R. (2017). Distributed Ledger Technology: The Science of the Blockchain (2nd edition).
+Aalborg: CreateSpace Independent Publishing Platform.
