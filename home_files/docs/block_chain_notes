@@ -28,6 +28,14 @@ What is Block chain?
 Doing businees with Blockchain
 	- It requires a lot of faith.
 	- With peer to peer verification, there is no need of a third party.
+
+Design principles underlying Blockchain
+	- Network Inegrity : Honesty, consideration (the value offered and
+	accepted by people entering into contracts), accountability
+	(responsibility) and transparancy are coded into blockchain.
+
+Etherium
+	- Instead of proof of work, it expects proof of stake.
 --------
 Glossary
 --------
@@ -43,8 +51,30 @@ Blockchains
 	Blockchains.
 Hash rate
 	- The Bitcoin network total processing power
+Consensus
+	- A general agreement.
 Proof of work
 	- The number of computations it took to find the Nonce.
+Proof of stake
+	-
+Proof of activity
+	- Combining proof or work and proof of stake.
+Proof of capacity
+	- Miners need to spend so much hard disk space for mining.
+Proof of storage
+	- Share their disk space in a distributed cloud.
+Byzantine fault tolerance
+Double spend problem
+	- If the internet thinks money just like any other digital information
+	( example photo), you will end up sending a single dollar/rupee to
+	multiple friends. This is called 'double spend problem'.
+	You can't spend the same money twice. Once you spent the money, that
+	is gone. Blockchain verifies your previous transactions, calculates your
+	assests and sends the money only if have assets in positive number. And
+	this transaction is also recorded to your assests. Once you send the
+	money through Block chain, that is recorded and is gone from your
+	balance unlike your cat photo, which can be shared multiple times on
+	social networks.
 
 -------
 Bitcoin
