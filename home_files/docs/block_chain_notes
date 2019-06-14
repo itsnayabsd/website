@@ -30,7 +30,7 @@ Doing businees with Blockchain
 	- With peer to peer verification, there is no need of a third party.
 
 Design principles underlying Blockchain
-	- Network Inegrity : Honesty, consideration (the value offered and
+	- Network Integrity : Honesty, consideration (the value offered and
 	accepted by people entering into contracts), accountability
 	(responsibility) and transparancy are coded into blockchain.
 
@@ -155,3 +155,25 @@ https://blockgeeks.com/guides/what-is-blockchain-technology/
 23. Tapscott, D., & Tapscott, A. (2018). Blockchain Revolution:
 How the Technology Behind Bitcoin and Other Cryptocurrencies
 is Changing the World (Updated Edition). Chapter 1 (pp. 3-26). Penguin.
+24. Basic Primer: Blockchain Consensus Protocol. (n.d.).
+https://blockgeeks.com/guides/blockchain-consensus/
+25. Dayal, P. (2018, April 19). 8 Famous Blockchain Consensus Mechanisms
+and their Benefits.
+https://www.newgenapps.com/blog/8-blockchain-consensus-mechanisms-and-benefits
+26. Buterin, V. (2016, December 30). A Proof of Stake Design Philosophy.
+https://medium.com/@VitalikButerin/a-proof-of-stake-design-philosophy-506585978d51
+27. Chan, J. (2017, Nov 12). Blockchain Consensus Algorithm: PoW, PoS and Beyond.
+https://medium.com/datadriveninvestor/blockchain-consensus-algorithm-pow-pos-and-beyond-21cafaa0ac32
+28. Schumann, T. (2018, April 5). Consensus Mechanisms Explained: PoW vs. PoS.
+https://hackernoon.com/consensus-mechanisms-explained-pow-vs-pos-89951c66ae10
+
+
+
+
+
+
+
+---------
+My doubts
+---------
+1. How proof of stake helpful for a new node as he doesn't have any coins as stake?
