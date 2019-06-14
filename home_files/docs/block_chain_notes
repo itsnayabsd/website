@@ -31,11 +31,15 @@ Doing businees with Blockchain
 
 Design principles underlying Blockchain
 	- Network Integrity : Honesty, consideration (the value offered and
+	- Distributed Power :
 	accepted by people entering into contracts), accountability
 	(responsibility) and transparancy are coded into blockchain.
+	- Value as incentive
 
 Etherium
 	- Instead of proof of work, it expects proof of stake.
+Bitcoin network
+	- A Bitcoin network node has four functionalities. Wallet, a full database, miner and network routing.
 --------
 Glossary
 --------
@@ -166,6 +170,9 @@ https://medium.com/@VitalikButerin/a-proof-of-stake-design-philosophy-506585978d
 https://medium.com/datadriveninvestor/blockchain-consensus-algorithm-pow-pos-and-beyond-21cafaa0ac32
 28. Schumann, T. (2018, April 5). Consensus Mechanisms Explained: PoW vs. PoS.
 https://hackernoon.com/consensus-mechanisms-explained-pow-vs-pos-89951c66ae10
+29. Antonopoulos, A. (2018). The Bitcoin Network. In Mastering Bitcoin: Programming
+the Open Blockchain (2nd Edition). Mastering Bitcoin.
+https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch08.asciidoc
 
 
 
