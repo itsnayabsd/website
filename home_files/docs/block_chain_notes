@@ -31,10 +31,13 @@ Doing businees with Blockchain
 
 Design principles underlying Blockchain
 	- Network Integrity : Honesty, consideration (the value offered and
-	- Distributed Power :
 	accepted by people entering into contracts), accountability
 	(responsibility) and transparancy are coded into blockchain.
+	- Distributed Power :
 	- Value as incentive
+	- Security : Private key if for encryption and public key is for decyption.
+	- Privacy : People should control and own their data.
+	- Rights Preserved : Samrt contracts
 
 Etherium
 	- Instead of proof of work, it expects proof of stake.
@@ -62,6 +65,10 @@ Proof of work
 Proof of stake
 	-
 Proof of activity
+Proof of existence
+	- A site that creates or registers cryptographic digests (hashes) of
+	assets such as deeds, titles, receipts, or licenses on a blockchain.
+	It doesn't hold the copy of files.
 	- Combining proof or work and proof of stake.
 Proof of capacity
 	- Miners need to spend so much hard disk space for mining.
@@ -79,6 +86,8 @@ Double spend problem
 	money through Block chain, that is recorded and is gone from your
 	balance unlike your cat photo, which can be shared multiple times on
 	social networks.
+PKI - Public key infrastructure
+	- A private and public keys to encrypt and decrypt the message
 
 -------
 Bitcoin
@@ -173,6 +182,24 @@ https://hackernoon.com/consensus-mechanisms-explained-pow-vs-pos-89951c66ae10
 29. Antonopoulos, A. (2018). The Bitcoin Network. In Mastering Bitcoin: Programming
 the Open Blockchain (2nd Edition). Mastering Bitcoin.
 https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch08.asciidoc
+30. Barrera, C. (2018, August 22). Blockchain Incentive Structures:
+What they are and why they matter.
+https://medium.com/prysmeconomics/blockchain-incentives-101-what-they-are-and-why-they-matter-5127afb56aeb
+31. Verbin, E. (2018, March 16). Behavioral Crypto-Economics:
+The challenge and promise of blockchain incentive design.
+https://medium.com/berlin-innovation-ventures/behavioral- crypto-economics-6d8befbf2175
+32. Computerphile. (2014, July 22). Public Key Cryptography.
+https://youtu.be/GSIDS_lvRv4
+33. Computerphile. (2017, April 11). Hashing Algorithms and Security -
+Computerphile. https://youtu.be/DMtFhACPnTY
+34. Orcutt, M. (2018, April 25). How secure is blockchain really?
+https://www.technologyreview.com/s/610836/how-secure-is-blockchain-really/
+35. Antonopoulos, A. (2018, September 18). Bitcoin Q&A:
+Is quantum computing a threat?
+https://youtu.be/wlzJyp3Qm7s
+36. Lee, S. (2018, July). Privacy Revolution: How Blockchain Is Reshaping Our Economy.
+https://www.forbes.com/sites/shermanlee/2018/07/31/privacy-revolution-how-blockchain-is-reshaping-our-economy/
+
 
 
 
