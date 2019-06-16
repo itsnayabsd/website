@@ -37,7 +37,18 @@ Design principles underlying Blockchain
 	- Value as incentive
 	- Security : Private key if for encryption and public key is for decyption.
 	- Privacy : People should control and own their data.
-	- Rights Preserved : Samrt contracts
+	- Rights Preserved : Samrt contracts. Example music cretors.
+	- Inclusion : Include more people in the economy. Stable payment system
+	available to all.
+
+
+Five forces of blockchain to protect artist rights
+	- Enable smart contracts
+	- Establish transparent person to person transactions
+	- Establish a reputation system
+	- Promote dynamic efficient pricing
+	- Allow micromitering and micromonitizing : Only few seconds of song can
+	be purchased for example.
 
 Etherium
 	- Instead of proof of work, it expects proof of stake.
@@ -88,6 +99,10 @@ Double spend problem
 	social networks.
 PKI - Public key infrastructure
 	- A private and public keys to encrypt and decrypt the message
+Simplified payment verification
+	- No bank account, identity, citizenship, home addrss or stable
+	local currency are required. Anybody can be able to connect to
+	blockchain.
 
 -------
 Bitcoin
@@ -199,6 +214,16 @@ Is quantum computing a threat?
 https://youtu.be/wlzJyp3Qm7s
 36. Lee, S. (2018, July). Privacy Revolution: How Blockchain Is Reshaping Our Economy.
 https://www.forbes.com/sites/shermanlee/2018/07/31/privacy-revolution-how-blockchain-is-reshaping-our-economy/
+37. Heap, I., & Tapscott, D. (2016, September). Blockchain Could Be Music’s Next Disruptor.
+Retrieved September 7, 2018, from http://fortune.com/2016/09/22/blockchain-music-disruption/
+38. O’Dair, M. (2017). How Blockchain is Transforming the Creative Industries: Copyright and Rights Management in the Second Era of the Internet (BRI Big Idea Whitepaper). Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/XDWONf5cEei5Kg7DUflKxA_5c6920c0fe5c11e89bcef970ce093d33_O_Dair-Copyright-and-IP-v6D_1_.pdf?Expires=1560816000&Signature=lYthvfEpGwsXZ1zlJY9CNd1iXFVJus~zgyOF8SlVGYIjB2eyKrRz2iKpFaNnzNUAwnIp1DrG1ShnlxdSlixYPo10uyC9DsQeA6vId6XWbs~GoWVbiTh6RJtQJPFYgTcmqNKQPrFWM9iU5EvTxRyWbvbIqMcxbgUftjp952ai2Bo_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+39. Takahashi, R. (2017, August). How can creative industries benefit from blockchain?
+https://www.mckinsey.com/industries/media-and-entertainment/our-insights/how-can-creative-industries-benefit-from-blockchain
+40. Robinson, R. W. (2018). Distributed and Collaborative Marketplaces: Blockchain Serving
+the Unbanked (BRI Big Idea Whitepaper). Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/n6gjZP5dEei5Kg7DUflKxA_9fca9eb0fe5d11e8b2ab2da631049aa9_Robinson_Distributed-and-Collaborative-Marketplaces_Blockchain-Research-Institute.pdf?Expires=1560816000&Signature=TsZCz9z-MYdFXI0i-K1Y002B04rn7eBgzKkSztqeli2bYwl~K3GEKxHJc1mFVW~2er6CLbp6W2j7QFjEPe9OCt9LW2z7uL5J4gQQHaRRiM6tU8dqYIdt89-q0KIIjk9sfzuGk8RJ5PsfvSi0VmkTDzbaj502RlQ6a~7xD7B6jKQ_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+
 
 
 
@@ -210,4 +235,3 @@ https://www.forbes.com/sites/shermanlee/2018/07/31/privacy-revolution-how-blockc
 ---------
 My doubts
 ---------
-1. How proof of stake helpful for a new node as he doesn't have any coins as stake?
