@@ -103,6 +103,9 @@ Simplified payment verification
 	- No bank account, identity, citizenship, home addrss or stable
 	local currency are required. Anybody can be able to connect to
 	blockchain.
+Zero knowledge proof
+	- Method of authenticating a transaction without revealing much
+	details about the transaction.
 
 -------
 Bitcoin
@@ -232,6 +235,10 @@ https://www.theglobeandmail.com/opinion/privacy-should-go-hand-in-hand-with-tran
 43. Tapscott, D., & Williams, A. D. (2013). Radical Openness:
 Four Unexpected Principles for Success. TED Books.
 https://blog.ted.com/a-brand-new-ted-book-radical-openness/
+44. Buterin, V. (2015, August 6). On Public and Priva
+https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains/
+
+
 
 
 
