@@ -106,6 +106,13 @@ Simplified payment verification
 Zero knowledge proof
 	- Method of authenticating a transaction without revealing much
 	details about the transaction.
+ZK-snarks
+	- Zero-Knowledge Succinct Non-Interactive Argument of Knowledge
+Ring signature
+	- Made up of actual signer's signature combined with the non signers
+	signatures in which all signatures are treated as equal and valid.
+	This feature hides the origin of transaction. With key image, the
+	network validates the transaction and sender.
 
 -------
 Bitcoin
