@@ -13,6 +13,8 @@ Blockchain technology applications:
 	power hungry device can ask/negotiate additional power from
 	neighbourhood solar panels. No human intervension required.
 	- Could be used in preventing fraud in our voting machines.
+	- Public and permissionless blockchains : Bitcoin or Ethereum.
+	- Private and permissioned blockchain : Ripple or Hyperledger
 
 What is Block chain?
 	- It's a tool to accomplish above applications.
@@ -131,6 +133,18 @@ the network, the winning miner receives the pre set number of Bitcoins. The
 Bitcoin protocol mint the coins and send them to miner automatically. Then the
 hash block is added to the chain.
 
+
+---------------------
+Blockchain Governance
+---------------------
+Three levels
+	- Platform level : Bitcoin peer to peer electronic cash system,
+	and Ethereum
+	- Application level : Dapps and ICOs.
+	- The ecosystem level : Stake holders belong to same industry or protocol
+	come to gether to change the industry.
+
+
 ----------
 References
 ----------
@@ -244,6 +258,19 @@ Four Unexpected Principles for Success. TED Books.
 https://blog.ted.com/a-brand-new-ted-book-radical-openness/
 44. Buterin, V. (2015, August 6). On Public and Priva
 https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains/
+45. Antonopoulos, A. (2018). Wallets. In Mastering Bitcoin:
+Programming the Open Blockchain (2nd Edition). Mastering Bitcoin.
+https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc
+46. Blockgeeks. (n.d.). What is zkSNARKs: Spooky Moon Math.
+https://blockgeeks.com/guides/what-is-zksnarks/
+47. Monero. (June 2017). Ring Signatures.
+https://youtu.be/zHN_B_H_fCs?t=38
+48. https://d3c33hcgiwev3.cloudfront.net/bQ04FgSdEemYdRIT0BhLtg_6d470be0049d11e993ae63b806a994f3_Park-Transparency-v6D_1_.pdf?Expires=1560988800&Signature=gGM7clABd7RSkIxoJkJrjHboEuAl8D3UXEfl-G0tPLV0SQMxf7fPcUBPgEnCaQK-PpkY7U5-BPgB~3zVWkd0Rw-7iVTrrU4wRyoMLssRe7IbU3hJ1Zee-5zkI761axmIieL-Q~I3Mt-JqKfv8DjPgRHsOPH4kyuNxAy0fDYXP38_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+49. Tapscott, D., & Tapscott, A. (2018). Blockchain Revolution:
+How the Technology Behind Bitcoin and Other Cryptocurrencies is
+Changing the World (Updated Edition). Preface pp. xli-xliv. Penguin.
+
+
 
 
 
