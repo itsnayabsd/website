@@ -134,6 +134,13 @@ Bitcoin protocol mint the coins and send them to miner automatically. Then the
 hash block is added to the chain.
 
 
+--------------------
+Blockchain challeges
+--------------------
+How it scales?
+Can we scale without consuming too much power?
+Can we agree on standards wihtout reverting to hierarchy?
+
 ---------------------
 Blockchain Governance
 ---------------------
@@ -143,6 +150,10 @@ Three levels
 	- Application level : Dapps and ICOs.
 	- The ecosystem level : Stake holders belong to same industry or protocol
 	come to gether to change the industry.
+Stake holders
+	- Industry pioneers
+	- Venture capitalists
+	- Banks and financial services
 
 
 ----------
