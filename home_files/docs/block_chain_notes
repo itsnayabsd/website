@@ -115,6 +115,11 @@ Ring signature
 	signatures in which all signatures are treated as equal and valid.
 	This feature hides the origin of transaction. With key image, the
 	network validates the transaction and sender.
+Steward
+	- A person responsible for something
+Showstoppers
+	- Are obstacles to the development and widespread adoption of
+	blockchain technology.
 
 -------
 Bitcoin
@@ -144,16 +149,58 @@ Can we agree on standards wihtout reverting to hierarchy?
 ---------------------
 Blockchain Governance
 ---------------------
-Three levels
+Stweardship is required at three levels
 	- Platform level : Bitcoin peer to peer electronic cash system,
-	and Ethereum
-	- Application level : Dapps and ICOs.
+	and Ethereum. Standards, use cases and robust roll-out. For self-governance.
+	- Application level : Dapps and ICOs. Standards and common applications.
 	- The ecosystem level : Stake holders belong to same industry or protocol
-	come to gether to change the industry.
-Stake holders
+	come to gether to change the industry. This level belong to advocasy
+	groups.
+Stakeholders
 	- Industry pioneers
 	- Venture capitalists
 	- Banks and financial services
+	- Developers
+	- Academia
+	- Leadership
+	- Users
+	- Governments and regulators
+	- NGOs
+Blockchain networks and operations can be regulated but not the software.
+Blockchain next era required even more government involvement than did
+the internet.
+Blockchain needs to be self-governed using multi-stakeholder approach. This
+approach is called Globale solution networks.
+Global solutions framework
+	- Use standard networks for coding
+	- Networked institutions to welcome people with diversified idea to
+	conclude what needs to be done.
+	- Advocacy networks : To respect each other's interests and constraints.
+	- Watchdog networks : To make sure no one does any harm to network.
+	- Policy networks : To join policy debates and coordinate regulation.
+	- Knowledge networks : Create and extend knowledge to get up to speed.
+	- Delivery networks : Keep incentives for mass collaboration.
+
+------------------------------------
+Blockchain implementation challenges
+------------------------------------
+Overcoming showstoppers
+	- The technology is not ready for prime time
+		. The infrastructure is unevenly distributed
+		. System lacks the transactional capacity for mass usage.
+		. Inaccessibility to the average person : Often UI and wallets.
+		. Liquidity : Out of 21 million bitcoins by 2140, fewer than
+		this number will be of use because of lost wallets or unspend
+		bitcoins hoping the increment in value.
+		. High latency : For a transaction.
+		. Behavioral changes : People need to change their behavior
+		towards Cryptocurrency backups. They generally don't accustomed
+		to backup their money.
+		. Societal change : Is it really socially unhealthy to record
+		every transaction on blockchain?
+		. Lack of legal choices in a world of transaction finality:
+		Blockchain works on smart contracts and parites can't go to
+		court upon disagreement.
 
 
 ----------
@@ -280,6 +327,26 @@ https://youtu.be/zHN_B_H_fCs?t=38
 49. Tapscott, D., & Tapscott, A. (2018). Blockchain Revolution:
 How the Technology Behind Bitcoin and Other Cryptocurrencies is
 Changing the World (Updated Edition). Preface pp. xli-xliv. Penguin.
+50. Tapscott, D., & Tapscott, A. (2017). The Players in The Blockchain Ecosystem.
+In Governance of the Internet’s Second Era: A Multi-Stakeholder Approach to the Stewardship
+of Blockchain and Cryptocurrencies (pp. 34–37).
+http://gsnetworks.org/wp-content/uploads/Governance-of-the-Internet-2d-Era_BRI_2017.07.28-v.6.pdf#page=37
+51. Said Business School, University of Oxford. (2018, June 15). Blockchain's effects on stakeholders.
+https://www.getsmarter.com/presentations/uk/oxford-said/what-stakeholders-are-involved-in-the-blockchain-strategy-system
+52. Tapscott, D., & Tapscott, A. (2018). The Blockchain Ecosystem:
+You Can't Tell the Players Without a Roster. In Blockchain Revolution:
+How the Technology Behind Bitcoin and Other Cryptocurrencies is Changing
+the World (Updated Edition).(pp. 283-289). Penguin.
+53. Tapscott, D., & Tapscott, A. (2017). Governance of the Internet’s Second Era:
+A Multi-Stakeholder Approach to the Stewardship of Blockchain and Cryptocurrencies.
+http://gsnetworks.org/wp-content/uploads/Governance-of-the-Internet-2d-Era_BRI_2017.07.28-v.6.pdf
+54. Andree. (2018, December 13). Product and Usability Challenges of Decentralized Services - Part I.
+https://blog.blended.io/en/post/product-and-usability-challenges-of-decentralized-services-part-i/
+55. Blenkinsop, C. (2018, August 22). Blockchain’s Scaling Problem, Explained.
+Retrieved January 30, 2019, from
+https://cointelegraph.com/explained/blockchains-scaling-problem-explained
+56. Frauenfelder, M. (2017, October 29). ‘I Forgot My PIN’: An Epic Tale of Losing $30,000 in Bitcoin.
+Wired. https://www.wired.com/story/i-forgot-my-pin-an-epic-tale-of-losing-dollar30000-in-bitcoin/
 
 
 
