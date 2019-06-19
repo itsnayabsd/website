@@ -185,7 +185,7 @@ Global solutions framework
 Blockchain implementation challenges
 ------------------------------------
 Overcoming showstoppers
-	- The technology is not ready for prime time
+	- The technology is not ready for prime time.
 		. The infrastructure is unevenly distributed
 		. System lacks the transactional capacity for mass usage.
 		. Inaccessibility to the average person : Often UI and wallets.
@@ -201,6 +201,32 @@ Overcoming showstoppers
 		. Lack of legal choices in a world of transaction finality:
 		Blockchain works on smart contracts and parites can't go to
 		court upon disagreement.
+	- The energy consumed is unsustainable.
+		. Applicable for Bitcoin mining. Proof of work conusmes a lot
+		of power. Proof of stake, proof of disk and federal consensus
+		algorithms don't burn like Bitcoin mining. These blockchain
+		networks might malfunction and need constant checking.
+	- Government will stifle or twist it.
+		. Tries to stifle the untested app without knowing the full
+		potential of blockchain technology.
+		. Need stable regulation, ligislation and international
+		negotiation.
+		. Throughput, tech and regulation should be ready.
+	- Powerful incumbants of the old paradism will usurp it.
+		. A despot could cease all mining power in reach and purchase
+		from other countries. A 51% attack is inevitable. He may blacklist
+		some addresses in the block chain. Or despot create regulations
+		that can't be survived by start-ups.
+	- The incentives are inadequate
+		. Bitcoin miners receives bitcoin for proof of work. After all
+		21 million bitcoins, the blockchain charges trasaction fees.
+	- Blockchain is a job killer
+		. Could become an excellent automation tool.
+	- Governing the protocols
+
+
+
+
 
 
 ----------
@@ -347,6 +373,36 @@ Retrieved January 30, 2019, from
 https://cointelegraph.com/explained/blockchains-scaling-problem-explained
 56. Frauenfelder, M. (2017, October 29). ‘I Forgot My PIN’: An Epic Tale of Losing $30,000 in Bitcoin.
 Wired. https://www.wired.com/story/i-forgot-my-pin-an-epic-tale-of-losing-dollar30000-in-bitcoin/
+57. The Economist. (2018). Why bitcoin uses so much energy.
+https://www.economist.com/the-economist-explains/2018/07/09/why-bitcoin-uses-so-much-energy
+58. Jackson, R. (2018, November 16). Bitcoin mining uses as much energy as mining for gold,
+according to new research.
+https://www.weforum.org/agenda/2018/11/study-reveals-that-bitcoin-mining-uses-as-much-energy-as-mining-for-gold/
+59. MIT Technology Review (2017). Blockchains use massive amounts of energy -
+but there’s a plan to fix that.
+https://www.technologyreview.com/s/609480/bitcoin-uses-massive-amounts-of-energybut-theres-a-plan-to-fix-it/
+60. Wong, J. I., & Simon, J. (2017, August 17). Photos: Inside one of the
+world’s largest bitcoin mines.
+https://qz.com/1055126/photos-china
+61. Krause, M. J., & Tolaymat, T. (2018). Quantification of energy and carbon costs
+for mining cryptocurrencies. Nature Sustainability, 1(11), 711.
+https://doi.org/10.1038/s41893-018-0152-7
+62. https://d3c33hcgiwev3.cloudfront.net/JjkrlCVrEemdvRIYWfQePg_267d8740256b11e99646d70ae9e6c56d_Telpner_Regulation.pdf?Expires=1561075200&Signature=jThDZwBsEu2SmLupL3CrSwONqk3zmGVZjsASDmf0jdsBG5hkDR1rosPKLdFgoS-ojVVfklOw8VDx4qlhCMzZcBZbRawmN2wEMbGFe0vNciHpLZ1u0iBhww59nl5xSxUA8M0nN0OMyMPAnzKGSnTEH6lZErUhM9bIZr6g6QVD9vU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A (Not completed)
+63. https://d3c33hcgiwev3.cloudfront.net/QofgPyVrEem9_wqPhE1wLA_429e74c0256b11e99646d70ae9e6c56d_2018_Blockchain_Regulation_Roundtable.pdf?Expires=1561075200&Signature=kVACuzZsbt4LdpMIsKIODhL6fzxqEX163tCVbQhM2M0Msefao5ATzJlO6H7fWUeY1hsgpakdHsBS~ISjuCSRrHhO8Tz1FjVd8mH7F8FvJmTZwae7-UgL5WmjQZXnd-ihcG2BA1NtfNAfLJfUDGxbhNnT2BrAglPrjdxTHRZ-1pM_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A (Not completed)
+64. CBInsights (2018, December 12). How Blockchain Could Disrupt Banking.
+https://www.cbinsights.com/research/blockchain-disrupting-banking
+65. Higgins, S. (2014, July 14). 8 Million Vericoin Hack Prompts Hard Fork to Recover Funds.
+https://www.coindesk.com/bitcoin-protected-vericoin-stolen-mintpal-wallet-breach
+66. Pickering, J (2017). Bitcoin is surging towards a serious mining problem. 
+http://uk.businessinsider.com/bitcoin-surging-towards-a-serious-mining-problem-why-finance-2017-12
+67. S, J. (2018, May 5). Blockchain: How a 51% attack works (double spend attack). (Not completed)
+https://medium.com/coinmonks/what-is-a-51-attack-or-double-spend-attack-aa108db63474
+68. Anslow, L. (2016, May 16). Robots have been about to take all the jobs for more than 200 years.
+https://timeline.com/robots-have-been-about-to-take-all-the-jobs-for-more-than-200-years-5c9c08a2f41d
+69. Casey, M (2018). Blockchain will make today’s accountants obsolete.
+https://www.marketwatch.com/story/blockchain-will-make-todays-accountants-and-many-wall-street-jobs-obsolete-2018-02-28
+
+
 
 
 
