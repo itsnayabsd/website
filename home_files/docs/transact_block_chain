@@ -1,3 +1,53 @@
 Seven types of crpto assets, tokens, ICOs, smart contracts, four phases of
-deal cycle, identity, six inefficiencies in current financial industry,
+deal cycle, self-sovereign identity, six inefficiencies in current financial industry,
 eight core functions to improve opportunities and triple-entry accounting
+
+------------
+Cryptoassets
+------------
+Crypto asset does
+	- Regulation of new units
+	- Verify transactions
+	- Secure transactions without middleman
+The seven types of cryptoassets:
+Cryptocurrencies  
+	- Zcash, Bitcoin, Monero, Metronome, Dash
+Protocol tokens
+	- Designed to pay for the computational resources required to execute
+	smart contracts as part of a DApp
+	- Ether. Ethereum is leading platform for ICOs and is the platform
+	to run Dapps. Dapps are powered by smart contracts. Ethereum is the
+	first automated investment bank.
+	- When more apps on built on the network, demand for protocol
+	token grows.
+	- Neo, Aion and ICON are the networks similar to Ethereum.
+	- Palkodat and Cosmos promise to combine all blockchains into seamless
+	internet.
+	- If Ethereum is the protocol, Augur is the application built on top
+	on it and REP are the protocol tokens.
+Utility tokens (app coins)
+	- A programmable blockchain asset that provides consumers with access
+	to services or resources within a DApp.
+	- Token created to use on single application built on parent blockchain
+Security tokens
+	- Stocks and bonds moves to blockchain technology and dominates current
+	cryptoassets. These can help restore public trust in cryptoassets.
+	- Security token offerings are similar to ICOs. Security tokens needs
+	to be backed up by comapny's profits or shares.
+Natural asset
+
+
+
+
+----------
+References
+----------
+1. Tillier, M. (2018, January 25). What Is A Cryptocurrency?
+https://www.nasdaq.com/article/what-is-a-cryptocurrency-cm910816
+2. Blockgeeks. (2018, November 01). Understanding Protocol and Protocol Tokens.
+In The Ultimate Guide to App Coins and Protocol Tokens.
+https://blockgeeks.com/guides/app-coins-protocol-tokens/#Understanding_Protocol_and_Protocol_Tokens
+3. Aru, L. (2018, March 05). The Fundamental Principles of Utility Tokens.
+https://www.ccn.com/fundamental-principles-utility-tokens-blockchain-ecosystem/
+4. Charania, N. (2018, August 07). The era of security tokens has begun.
+https://venturebeat.com/2018/08/04/the-era-of-security-tokens-has-begun
