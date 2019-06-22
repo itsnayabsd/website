@@ -84,6 +84,43 @@ Smart vs traditional contracts
 	We can still rely on Performance verification code which is a
 	failure of execution.
 
+--------------------------
+Smartcontract applications
+--------------------------
+Retail payments
+	- Second layer on blockchain network like Lightening for Bitcoin, Sprite or
+	Raiden for Ethereum solves the scaling problem. Long chain of offline
+	transactions will finally reach settlement on chain without excess energy.
+Worry minimized customers
+	- Shortening forms that customer must fill, overcharges for services, preventing
+	saving credit card information on server, implementing blockchain based payment
+	systems.
+Insurance
+	- Paramatrice contract : Pays insurance based on measurable data. Not on
+	some laws.
+Logistics
+	- Tracking. Could speed up inventory management, transportation, distribution,
+	accounting, payment processes and more...
+Algorithmic management
+
+-------------------------
+Smart contract strategies
+-------------------------
+. Audit the organization for any processes that can be measurable. If it is
+measurable, put in on the blockchain.
+. Consider using public blockchain wherever possible.
+. Use smartcontracts in place of intermediaries.
+. Consider hiring lawyers who knows computer science or software engineers
+who know law.
+
+------------------------
+Identity and Identifiers
+------------------------
+Self-sovereign identity
+	- We own our identity, we own our data.
+
+
+
 
 
 ----------
@@ -131,4 +168,15 @@ https://coincentral.com/what-is-a-smart-contract/
 18. Szabo, N. (2017, December). Winning Strategies for Smart Contracts
 (BRI Big Idea Whitepaper) (pp. 1-17). Blockchain Research Institute.
 https://d3c33hcgiwev3.cloudfront.net/G86cMijOEemm8wp4g3TKTg_1c16c8a028ce11e999f58be72bb04114_Szabo-Smart-Contracts-v6D_1_.pdf?Expires=1561334400&Signature=M-96VlmdJ4MrRMIH0AE4uaKPi30JYEUiWcrOAsknmZokYt94FE4A2rPSYDUW8lg2OtJlIz2LvX-T0NcnjziY9XTEOWH5yaIBVASw8n6mApJp6MMoFXzV3PLoMvl-~gdctZQ-IoyyuKNfw40rbE79qgmMkzmdn4S9FKHfFTJaB0c_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
-
+19. Chamber of Digital Commerce. (2016). Smart Contracts: 12 Use Cases for Business & Beyond
+(White Paper) (p. 56).
+http://digitalchamber.org/assets/smart-contracts-12-use-cases-for-business-and-beyond.pdf
+20. Ream, J., Chu, Y., & Schatsky, D. (2016, June 8). Upgrading blockchains:
+Smart contract use cases in industry. Deloitte Insights.
+https://www2.deloitte.com/insights/us/en/focus/signals-for-strategists/using-blockchain-for-smart-contracts.html
+21. Szabo, N. (2017, December). Winning Strategies for Smart Contracts
+(BRI Big Idea Whitepaper) (pp. 1-17, 27-34). Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/G86cMijOEemm8wp4g3TKTg_1c16c8a028ce11e999f58be72bb04114_Szabo-Smart-Contracts-v6D_1_.pdf?Expires=1561334400&Signature=M-96VlmdJ4MrRMIH0AE4uaKPi30JYEUiWcrOAsknmZokYt94FE4A2rPSYDUW8lg2OtJlIz2LvX-T0NcnjziY9XTEOWH5yaIBVASw8n6mApJp6MMoFXzV3PLoMvl-~gdctZQ-IoyyuKNfw40rbE79qgmMkzmdn4S9FKHfFTJaB0c_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+22. Tapscott, D., & Tapscott, A. (2018). Smart Contracts Come of Age. In Blockchain Revolution:
+How the Technology Behind Bitcoin and Other Cryptocurrencies is Changing the World
+(Updated Edition) (pp. lii-lvi). Penguin.
