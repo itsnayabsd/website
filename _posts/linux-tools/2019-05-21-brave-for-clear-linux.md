@@ -17,6 +17,8 @@ Google Chrome and Brave browser are not available in their software repositories
 So, I have written below the simplified version of the [official forum thread discussion](https://community.clearlinux.org/t/install-brave-browser/377) about the same topic on how to install Chrome and Brave browsers. Even though [I prefer Brave to Chrome](http://www.nayab.xyz/web/get-brave-browser.html), I have given instructions on how to install both.
  * <a href="#brave-install">Instructions on how to install Brave browser</a>
  * <a href="#chrome-install">Instructions on how to install Chrome browser</a>
+ * <a href="#brave-uninstall">Brave browser uninstallation steps</a>
+ * <a href="#chrome-uninstall">Chrome browser uninstallation steps</a>
 
 <h2 id="brave-install">Instructions on how to install Brave browser</h2>
 Run the following command in a terminal to get the root privileges.
@@ -90,3 +92,24 @@ Reboot your system
 reboot
 ```
 
+<h2 id="brave-uninstall">Brave browser uninstallation steps</h2>
+```
+sudo -s
+```
+```
+f=brave*; rm -f /etc/cron.daily/$f /usr/bin/$f /usr/share/appdata/$f /usr/share/applications/$f /usr/share/gnome-control-center/default-apps/$f /usr/share/man/man1/$f /etc/pki/rpm-gpg/*brave
+```
+```
+rm -rf /opt/brave.com
+```
+
+<h2 id="chrome-uninstall">Chrome browser uninstallation steps</h2>
+```
+sudo -s
+```
+```
+f=google-chrome*; rm -f /etc/cron.daily/$f /usr/bin/$f /usr/share/appdata/$f /usr/share/applications/$f /usr/share/gnome-control-center/default-apps/$f /usr/share/man/man1/$f
+```
+```
+rm -rf /opt/google
+```

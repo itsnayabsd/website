@@ -58,6 +58,33 @@ Augur : First ICO happened in the history.
 ICO happens on blockchain offering tokens or crypto-securities (equity in company
 or even bonds). Anyone in the world can become capital venture investor.
 
+--------------
+Smartcontracts
+--------------
+. Reduces transaction fees by eliminating intermediateries.
+. Improve the security and privacy of parties involved.
+. To enfore the terms of agreement
+. Sets incentives in the form of rewards or penalties.
+. In code, those are set of if-then statements.
+Benefits:
+	- Reducing mental transaction costs : Computer can do it
+	more precisely.
+	- Increased predictability
+	- Broad security
+Smartcontracts phases
+	- Search : Matching drivers with riders in case of Uber.
+	- Negotiation : Agreeing upon and committing to deal terms.
+	Prices in case of Uber.
+	- Performance : When the terms of contract is performed.
+	- Post-performance : Incentives, ratings, credit card block in case of
+	fraud performance etc..
+Smart vs traditional contracts
+	- Traditional contracts called wet code and smart contracts
+	called dry code. Both needs to work together for better results.
+	We can still rely on Performance verification code which is a
+	failure of execution.
+
+
 
 ----------
 References
@@ -97,3 +124,11 @@ https://www.technologyreview.com/s/610764/the-problem-with-icos-is-that-theyre-c
 15. Wall, J. (2018, November 23). Security Token Offerings (STOs) - The Future of Fundraising
 in the Blockchain Industry.
 http://www.investinblockchain.com/security-token-offerings/
+16. Szabo, N. (1997). The Idea of Smart Contracts.
+https://nakamotoinstitute.org/the-idea-of-smart-contra
+17. Ray, K. (2018, August 29). What Is a Smart Contract? Explanation for Beginners.
+https://coincentral.com/what-is-a-smart-contract/
+18. Szabo, N. (2017, December). Winning Strategies for Smart Contracts
+(BRI Big Idea Whitepaper) (pp. 1-17). Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/G86cMijOEemm8wp4g3TKTg_1c16c8a028ce11e999f58be72bb04114_Szabo-Smart-Contracts-v6D_1_.pdf?Expires=1561334400&Signature=M-96VlmdJ4MrRMIH0AE4uaKPi30JYEUiWcrOAsknmZokYt94FE4A2rPSYDUW8lg2OtJlIz2LvX-T0NcnjziY9XTEOWH5yaIBVASw8n6mApJp6MMoFXzV3PLoMvl-~gdctZQ-IoyyuKNfw40rbE79qgmMkzmdn4S9FKHfFTJaB0c_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+
