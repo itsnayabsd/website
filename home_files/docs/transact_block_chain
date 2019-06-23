@@ -118,8 +118,83 @@ Identity and Identifiers
 ------------------------
 Self-sovereign identity
 	- We own our identity, we own our data.
+Identity: Identifier + the data generated with that identifier. Examples
+	of identifiers: Aadhar, PAN, gmail etc.
+Problems with Identifiers:
+	- There needs a overarching identifier like birth certificate.
+	- Centralised govt. identifiers are vulnerable cancellation, forgery
+	and theft.
+	- Each identifiers data is stored in somebody else's database.
+	- This identifier-centric system is very user un-friendly.
+Identity on Blockchain
+	Identity commons:
+		. Free of corporate, government or third party.
+		. Outlive users, so Can transfer our assets to our heirs.
+		. Must enforce the right to be forgotten
+		. Must be inclusive : Userfriendly.
+Identity applications
+	- Apps which gives identities : Civi, showCard, uPort, Shyft network
+		. uPort has 20 byte hexadecimal string as identifier. This identifier
+		serves as the address of proxy contract (code that lets us sign
+		and verify a transaction, an action or a claim). It can be used to
+		manage cryptocurrencies and token assets.
+			* Proxy contracts can interact with smart contracts or offline data
+			that gives access to read or write access if user willing to pay us.
+			* Controller contract separates our cryptographic keys from proxy
+			contracts. It contains a logic for identity recovery. If device is
+			stolen, we can replace our private key without having to replace
+			proxy identifier and all the assets associated with it.
+		. Shyft reduces cost of compliance and increases data security.
+	- Decentralized identity foundation
+		. Consortium consists of Hyperledger, R3, Sovrin, accenture, Micorsoft, IBM
+		etc.
+		. Focuses on :
+			* Identifiers and recovery
+			* Storage and computation of data
+			* Attestation and reputation
+Managing health data on blockchain
+	- Doctors can find right participants for each study. Participants can reap the value
+	of their contributions.
+	- AI + IoT + Blockchain could :
+		. Improve quality of treatment
+		. Improve the accuracy of diagnoses.
+		. Improve the efficiency of clinical processes.
+		. Improve the integrity of data
+		. Help cut research medical costs
+		. System less vulnerable to hackers
+	- Phenomic data is data on physical and biochemical traits as they change because of
+	our behavior, food, work etc.
 
-
+-----------------------------
+Rethinking financial services
+-----------------------------
+Six inefficiencies
+	- Attestation : Eliminates intermediaries and establishes trust.
+	- Cost
+	- Speed : Trades, Money transfers
+	- Risk management : Settlement risk, counterparty risk, systemic risk (Hersatt risk).
+	- Value innvovation
+	- Opensource
+The golden eight
+	- Authenticating identity and values
+	- Moving value : No dollar spent twice
+	- Storing value
+	- Lending value
+	- Exchanging value : Trading
+	- Funding and investing
+	- Insuring value and managing risk
+	- Accounting and auditing
+Problems with modern accounting
+	- Tracking assets and verifying their ownerships
+	- Greed
+	- Human error
+	- Fraud
+	- Inability to support new businees models.
+New frameworks for Accounting
+	- The world wide ledger
+		. Streamline compliance and reduce risk for bankers.
+		. Regulators would have real time access.
+		. Bakes integrity into financial system.
 
 
 
@@ -180,3 +255,40 @@ https://d3c33hcgiwev3.cloudfront.net/G86cMijOEemm8wp4g3TKTg_1c16c8a028ce11e999f5
 22. Tapscott, D., & Tapscott, A. (2018). Smart Contracts Come of Age. In Blockchain Revolution:
 How the Technology Behind Bitcoin and Other Cryptocurrencies is Changing the World
 (Updated Edition) (pp. lii-lvi). Penguin.
+23. Allen, C. (2016, April 27). The Path to Self-Sovereign Identity. Retrieved from https://www.coindesk.com/path-self-sovereign-identity
+24. Gisolfi, D. (2018, June 13). Self-sovereign identity: Why blockchain?
+https://www.ibm.com/blogs/blockchain/2018/06/self-sovereign-identity-why-blockchain/
+25. Sovrin Foundation. (2018, January). Sovrin: A Protocol and Token for Self-Sovereign
+Identity and Decentralized Trust (White Paper).
+https://sovrin.org/wp-content/uploads/2018/03/Sovrin-Protocol-and-Token-White-Paper.pdf
+26. Windley, P. J. (2016). How Sovrin Works: A Technical Guide From the Sovrin Foundation.
+Sovrin Foundation.
+https://www.evernym.com/wp-content/uploads/2017/07/How-Sovrin-Works.pdf
+27. Bennett, G. (2018, September 3). Introducing the ERC-725 Alliance.
+https://medium.com/erc725alliance/introducing-the-erc725-alliance-2fe0682e3515
+28. Schumacher, A. (2018, January). Reinventing Healthcare on the Blockchain:
+Toward a New Era in Precision Medicine. Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/Bf0OUilVEemj-RKX93anOA_06400a50295511e98a5f3bbfdcb3df53_Schumacher_Reinventing-Healthcare-on-the-Blockchain_Blockchain-Research-Institute.pdf?Expires=1561420800&Signature=T6rgI6Mt59kS6dQ-DN6JfKmzUlDRWoTnrtyH8A9g7iNEzIB83aIsYCTq6ZoRMjleanf1cKNASxn5wFQQYNsaicrNtAx7DezSGvsSUTq7yiruXlAhDDZgv3DNzbrNYdEzUsN52r0HHlxaXFUCWDIVgbLJKbjIHYfHF3fLZiVqopU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+29. Tapscott, A. (2019, January 30). Can blockchain give us back our privacy?
+Financial Post. https://business.financialpost.com/technology/can-blockchain-give-us-back-our-privacy
+30. Tapscott, D., & Tapscott, A. (2018). Blockchain Revolution: How the Technology Behind Bitcoin
+and Other Cryptocurrencies is Changing the World (Updated Edition) (pp. xliv-lii; 14-17). Penguin.
+31. Tapscott, A., & Tapscott, D. (2017, March 1). How Blockchain Is Changing Finance.
+https://hbr.org/2017/03/how-blockchain-is-changing-finance
+32. Mack Institute for Innovation Management. (2018, October 11). “The Implications Are Profound
+for the Entire Financial Industry” with Don Tapscott. Mastering Innovation (Episode 21).
+https://mackinstitute.wharton.upenn.edu/2018/blockchain-research-institute-tapscott/
+33. Tapscott, A (2016). Blockchain is a disruption we simply have to embrace.
+https://www.theglobeandmail.com/report-on-business/rob-commentary/blockchain-is-a-disruption-we-simply-have-to-embrace/article29936789/
+34. Deloitte (2018). 5 blockchain technology use cases in financial services. (Page doesn't exist. Report to Coursera)
+https://www2.deloitte.com/nl/nl/pages/financial-services/articles/blockchain-technology-use-cases-in-financial-services.html
+35. Chartered Professional Accountants Canada. (2016). Technological Disruption of
+Capital Markets and Reporting: An Introduction to Blockchain (pp. 16–22).
+https://www.cpacanada.ca/-/media/site/business-and-accounting-resources/docs/g10157-rg-technological-disruption-of-capital-markets-reporting-introduction-to-blockchain-october-2016.pdf
+36. Taylor, B. (2017, November 28). Triple-Entry Accounting And Blockchain. Forbes.
+https://www.forbes.com/sites/forbesfinancecouncil/2017/11/28/triple-entry-accounting-and-blockchain-a-common-misconception
+37. Casey, M. J., & Vigna, P. (2018, April 9). In blockchain we trust.
+https://www.technologyreview.com/s/610781/in-blockchain-we-trust/
+38. Tapscott, D., & Tapscott, A. (2018). Chapter 3: Reinventing Financial Services.
+In Blockchain Revolution: How the Technology Behind Bitcoin and Other
+Cryptocurrencies is Changing the World (Updated Edition) (pp. 55-86). Penguin.
