@@ -58,6 +58,46 @@ Hacking your future : Boundary decisions
 -----------------------------
 Distributed Business Entities
 -----------------------------
+Simple smart contracts
+	- Required very few to no people. A single exchange value.
+Complex contracts
+	- Involves more people and exchanges. Called Open network enterprises.
+	Good at coordinating resources anywhere in the world.
+Autonomous agents
+	- Smart contracts with machine learning. Selling and buying services
+	with it's own wallet.
+Distributed autonomous enterprises
+	- Autonomous agents collaborate to form different types of business
+	models. This corporation or organization can have shares as initial
+	coin offerings. Example is ConsenSys.
+DAOs
+	- Slock.it company is a disaster that to DAO can ever happen. Users sent
+	ether to DAO smart contract to purchase DAO tokens. Token holders vote
+	for the projects (DAOs) to fund the project on Ethereum network. The DAO
+	is supposed to work as venture capital fund. If the token holders don't like
+	the project they could call the split function and transfer their funds
+	to child DAO. There was a flaw in the code. An attacker transfered almost
+	1/6 th of Ether received to the child DAO because that flaw didn't update
+	the balance on the network.
+	- Effective blockchain governance is required on both on-chain and off-chain
+	mechanisms.
+New Business Models
+	- Blockchain cooperatives : Blochchain based AriBNB, blockchain based Uber
+	etc.
+	- Creators of Intellectual property : Writers, singers etc.
+	- Peer to peer production : Blockchain based Reddit for example.
+	- The metering economy : Renting our excess capacity for all kinds of
+	things on Internet of Things.
+	- The platform builders : Let users use the platform technology to create value.
+	- Animating the physical world : Making things come alive on blockchain.
+	- Enterprise collaborators : Like Jive, Outlook etc.
+DApps
+	- Anybody can put certain piece of code on the blockchain to run securely.
+Intellectual property
+	- Blockchain essential patents are those that are foundational to a blockchain
+	ecosystem
+Payments, attribution and licensing
+Distributed ownership
 
 
 --------
@@ -83,7 +123,36 @@ https://onlinelibrary.wiley.com/doi/full/10.1111/j.1468-0335.1937.tb00002.x
 4. Carson, B., Romanelli, G., Walsh, P., & Zhumaev, A. (June 2018). Blockchain Beyond
 the Hype: What is the Strategic Business Value?
 https://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/blockchain-beyond-the-hype-what-is-the-strategic-business-value
-
-
-
-
+5. Falkon, S. (2017, December 24). The Story of the DAO: Its History and Consequences.
+https://medium.com/swlh/the-story-of-the-dao-its-history-and-consequences-71e6a8a551ee
+6. Marr, B. (2018, February 9). Why Blockchain Could Kill Uber.
+https://www.forbes.com/sites/bernardmarr/2018/02/09/why-blockchain-could-kill-uber/
+7. Prisco, G. (2018, January 18). Decentralizing the Sharing Economy With Blockchain Technology.
+https://bitcoinmagazine.com/articles/decentralizing-sharing-economy-blockchain-technology/
+8. Tapscott, D., & Tapscott, A. (2017, March 22). Blockchain Could Help Artists Profit More
+from Their Creative Works.
+https://hbr.org/2017/03/blockchain-could-help-artists-profit-more-from-their-creative-works
+9. IBM. (2018, January 9). Combining IoT and Blockchain Toward New Levels of Trust.
+https://www.technologyreview.com/s/609932/combining-iot-and-blockchain-toward-new-levels-of-trust/
+10. Pauw, C. (2018, December 4). How Significant Is Blockchain in Internet of Things?
+https://cointelegraph.com/news/how-significant-is-blockchain-in-internet-of-things
+11. Pop, S. (2018, March 5). Collaboration 2.0: The Future of Work is on the Blockchain.
+https://media.consensys.net/collaboration-2-0-the-future-of-work-is-on-the-blockchain-3ec520a80e22
+12. Tapscott, A. (2016, August 8). The Internet of Things Needs A Ledger of Things.
+https://www.forbes.com/sites/alextapscott/2016/08/08/the-internet-of-things-needs-a-ledger-of-things/
+13. Blockgeeks. (2018). What Are Dapps? The New Decentralized Future.
+https://blockgeeks.com/guides/dapps/   
+14. CoinDesk. (2018). What is a Decentralized Application?
+https://www.coindesk.com/information/what-is-a-decentralized-application-dapp
+15. Schiller, B. (2018, February 5). On This Blockchain-Based Version Of Airbnb,
+There’s No Middleman.
+https://www.fastcompany.com/40524021/on-this-blockchain-based-version-of-airbnb-theres-no-middleman
+16. Isaacson, T. M. (2018, January). Patents and Blockchain Innovation: Strategic Approaches
+to Intellectual Property (BRI Big Idea Whitepaper). Blockchain Research Institute.
+https://d18ky98rnyall9.cloudfront.net/gHmblzhrEemnrA4AsaAhFA_80afece0386b11e9b4f8bd2d638915d1_Isaacson_Patents-and-Blockchain-Innovation_Blockchain-Research-Institute.pdf?Expires=1561593600&Signature=DdAEa6IhkOU6U8XckLCxnrwkCw1WlwHpYuNyLIBKizGla~A5vu~FzfPN4j2gxWurOsz-CyFV7FXL0abcSOFNePmK9DtTbnvmCwoc4-mS0GOqBB4GGOvEE~wwOmxdrWOPMWH6JOIHfavb2yVXEoW-WiwHgDt61RSk4wm~XvVoIIM_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+17. O’Dair, M. (2017, November). How Blockchain is Transforming the Creative Industries:
+Copyright and Rights Management in the Second Era of the Internet (BRI Big Idea Whitepaper).
+Blockchain Research Institute.
+https://d3c33hcgiwev3.cloudfront.net/AA1drDhsEemFOA6Hm29iNA_0021a860386c11e9b19693a79822fd5f_O_Dair-Copyright-and-IP-v6D_1_.pdf?Expires=1561593600&Signature=C9XJusuBSKxAfUBX8y8MdtMRtJbmF1hCUCqnGMiPFw6~FdsTd3N-RMlWTuPdyINZs0xvJeWn1pC0KNQhdv0uHtwo8LAdTehbdrHpbm6KumKCrAVcG4bZVbGPddGKG1BelcTOAbi6Jxd8588h5pBFz~fV1opF7RQzabZ4M-7N81c_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+18. Mustatea, K. (2018, January 31). Meet Plantoid: Blockchain Art With A Life Of Its Own. Forbes.
+https://www.forbes.com/sites/katmustatea/2018/01/31/meet-plantoid-blockchain-art-with-a-life-of-its-own/
