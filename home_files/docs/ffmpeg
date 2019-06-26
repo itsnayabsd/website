@@ -1,0 +1,4 @@
+ffmpeg -i file_in.aa file_out.mp3	# Convert .aa audiobook to .mp3 file
+Use https://openaudible.org/ binary to convert .aax file to .mp3
+ffmpeg -i input.mp3 -ss 00:00:00 -to 07:38:25 -c copy output.mp3	# To cut a .mp3 file for a duration
+ffmpeg -f concat -safe 0 -i temp.txt -c copy output.mp3		# temp.txt has all the file paths to be concatenated
