@@ -208,6 +208,26 @@ Blockchain governance
 		related to stewardship, colloboration and incentifying work.
 		* Value creation and control are not regulated.
 
+Blockchain stack
+	- The internet layer : ISPs can control transportation layer of internet,
+	which in turn affects how blockchain works. They can regulate the internet
+	for blockchain traffic.
+	- The blockchain layer
+	- The application layer
+
+Multiple layers of blockchain governance
+	- Governance structures
+		* Governance by the Infrastructure : Rules directly encoded into
+		blockchain. Called on-chain governance.
+		* Governance of the infrastructure : All influences forces outside
+		of techinical platform. Example: government. Called off-chain governance.
+	- Each of these governance structures can be either:
+		* Endogenous rules : Rules, social norms and other governance structure
+		originated within community.
+		* Exogenous rules : Influencing activity of community which originated
+		outside of community.
+
+Framework for blockchain governance
 
 --------
 Glossary
