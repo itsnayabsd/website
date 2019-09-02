@@ -9,7 +9,9 @@ keywords: journey to financial freedom, race rate to financial freedom, financia
 date: 2019-08-31 23:00:23 +5:30
 image: /assets/img/financial_freedom_by_manoj_arora.jpg
 ---
-This page gives the overview of what I learned from the book **From Rat Race to Financial Freedom** by *Manoj Arora*. This page also updates my progressive journey towards my financial freedom updating periodically.
+This page gives the overview of what I learned from the book **From Rat Race to Financial Freedom** by *Manoj Arora*.
+
+This page also updates my progressive journey towards my financial freedom updating periodically.
 
 ![Financial Freedom by Manoj Arora](/assets/img/financial_freedom_by_manoj_arora.jpg )
 
@@ -29,29 +31,76 @@ I don't want my family to feel any difference financially with or with out me ar
 
 Financial freedom is only possible if you can beat the inflation after paying all of your taxes and still able to get decent returns on your investment.
 
-## Where I am not investing
+## Where I don't invest
 **Fixed deposits** - The interest rates given by banks generally less than inflation rate and can't beat inflation. Plus the returns are taxable. The effective returns fall way below 6% for the tax slab I belong to.
 
 **PPF** - Generally less interest rate than EPF. Lockin period is too long, 15 years.
 
+**NPS** - The returns are taxable. I am not going to be in the lower tax slab rate when I become financially free. So not an option for me.
+
 > What's the relation among stock market, inflation and bank FDs?
 
-## Where I am investing
-**EPF** - This is automatically deducted from the salary account. 12% of my basic salary. I am not going to withdraw this money until 2029. The investmet amount and the interest generated on this amount are not taxable. Generally the interate would be between 8% to 9.5%. Currently it is 8.65%.
+## Where I am investing right now
+**EPF** - This is automatically deducted from the salary account. 12% of my basic salary. My employer too contributing exactly 12% of my basic salary (8.33 % towards pension scheme and 3.67% towards providend fund) to my EPFO account.
 
-Employer's share of 12% is split between EPS and EPF.
+Generally the interest rate varies from 8% to 9.5%. Currently it is 8.65%. The investmet amount and the interest generated on this amount are not taxable.
+
+I am not going to withdraw this money until I retire. I will transfer this EPFO account to new employer if I change my job.
 
 References :
   * [https://www.paisabazaar.com/saving-schemes/difference-between-epf-and-ppf/](https://www.paisabazaar.com/saving-schemes/difference-between-epf-and-ppf/)
 
-The following are assets I would like to invest in.
- * Fixed Interest
- * Mutual funds
- * Stock
+**Mutual funds** - Start SIPs for consistent growth. Use systematic transfer plans for SIPs investment.
 
-## Where I want to invest
-**VPF** - I would like to double (may be triple) my share of contribution towards my EPF next year. I need to make sure KYC in epfindia website is successful.
+The mutual funds currently I am investing in
+* [SBI Mutual fund](https://www.sbimf.com/en-us)
+* [DSP Mutual fund](https://www.dspim.com)
+* [Axis Mutual fund](https://www.axismf.com)
+* [Aditya Birla Capital Mutual funds](https://mutualfund.adityabirlacapital.com/)
 
+## Where I will invest next
+**VPF** - I would like to double (may be triple) my contribution towards my EPF next year.
+
+I will continue to invest in VPF until I have good knowledge on other better investment options.
+
+I need to make sure KYC update in epfindia website is successful before next year.
+
+**Gold** - Gold has inverse relationship with stock market. As market collapse, gold value increases. Invest in gold exchange traded funds (gold ETFs). Needs Demat account. Systematic monthly investments can be done in gold ETFs. Good for beginners in financial freedom journey. Study gold ETFs vs gold bonds, which is better for investment?
+
+**Bonds** - Capital gain tax exemption bonds. Study before buying any.
+
+**Stocks** - Dividends, IPOs
+
+**Real Estate** - 
+
+**Cash flow** - Need more study. They say invest in cash flow rather than capital gains.
+
+**SSS** - I don't have a girl child. Otherwise I would consider investing in it. Generally higher interest than PPF. The investment and returns are not taxable.
+
+
+> Which Demat account is good?
+
+## Wealth protection
+
+**Life Insurance** - Take term life insurance policy
+
+**Health Insurance** - My employer is providing one already. But doesn't cover the expenses unless the medical condition is serious enough to admit in the hospital. Need to find if there are any better alternatives.
+
+**Home Insurance** - Don't have own house yet.
+
+**Vehicle Insurance** - Don't have a vehicle yet.
+
+## There is limit for beginner
+```
+Bank accounts (Savings)		- Max 3 banks (Mine : HDFC, ICICI and SBI)
+Bank deposits (FDs or RDs)	- Max 3 banks (Mine : HDFC, ICICI and SBI)
+Mutual funds			- Max 5 fund houses
+				  (Mine : Mirae, SBI, Axis, Aditya, DSP)
+Stocks				- 10 to 20 stocks (Not yet)
+EPF/PPF/VPF			- 1
+Gold/Commodities		- 1 to 2 securities (Not yet)
+Life Insurance			- 1 to 2 insurance providers (Not yet)
+```
 ## The formulae required
 ```
 Future value = Present value * (1 + r)ⁿ <br/>
