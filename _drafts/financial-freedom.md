@@ -31,6 +31,19 @@ I don't want my family to feel any difference financially with or with out me ar
 
 Financial freedom is only possible if you can beat the inflation after paying all of your taxes and still able to get decent returns on your investment.
 
+## Investment options for me
+
+Following are the investment options for my age group (25 - 40 years).
+```
+Equity mutual funds	- 25%
+Debt funds		- 15%
+Real estate		- 15%
+Equity stocks		- 10%
+EPF+PPF			- 10%
+FDs/RDs			- 10%
+Savings			- 10%
+Gold			- 05%
+```
 ## Where I don't invest
 **Fixed deposits** - The interest rates given by banks generally less than inflation rate and can't beat inflation. Plus the returns are taxable. The effective returns fall way below 6% for the tax slab I belong to.
 
