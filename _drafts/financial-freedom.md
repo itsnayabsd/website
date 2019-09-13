@@ -45,7 +45,7 @@ Savings			- 10%
 Gold			- 05%
 ```
 ## Where I don't invest
-**Fixed deposits** - The interest rates given by banks generally less than inflation rate and can't beat inflation. Plus the returns are taxable. The effective returns fall way below 6% for the tax slab I belong to.
+<!--**Fixed deposits** - The interest rates given by banks generally less than inflation rate and can't beat inflation. Plus the returns are taxable. The effective returns fall way below 6% for the tax slab I belong to.-->
 
 **PPF** - Generally less interest rate than EPF. Lockin period is too long, 15 years.
 
@@ -73,6 +73,10 @@ The mutual funds currently I am investing in
 * [Aditya Birla Capital Mutual funds](https://mutualfund.adityabirlacapital.com/)
 
 ## Where I will invest next
+This is the order in which I will invest next.
+
+**Fixed Deposits** - I do not have any right now. Befor investing, what's the relation between repo rate and fixed deposits? When banks give high interest rates on FDs?
+
 **VPF** - I would like to double (may be triple) my contribution towards my EPF next year.
 
 I will continue to invest in VPF until I have good knowledge on other better investment options.
@@ -128,7 +132,6 @@ Actual purchase price * (CII during sale year / CII during purchase year)
 	- CII is the cost inflation index, can be retrieved from
 	  https://cleartax.in/s/cost-inflation-index
 ```
-## The tools to track your financial freedom
 ## My sources for extra income
 
 **Blog** - Currently I am earning very negligible money through my blog, but earning.
