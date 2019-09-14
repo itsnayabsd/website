@@ -33,28 +33,40 @@ Financial freedom is only possible if you can beat the inflation after paying al
 
 ## Investment options for me
 
-Following are the investment options for my age group (25 - 40 years).
+Following are the investment options allocation for my age group (25 - 40 years) *given in the book*. I will change this allocation once I have enough knowledge of all the investment options.
 ```
 Equity mutual funds	- 25%
 Debt funds		- 15%
 Real estate		- 15%
 Equity stocks		- 10%
-EPF+PPF			- 10%
-FDs/RDs			- 10%
+EPF			- 10%
+FDs			- 10%
 Savings			- 10%
 Gold			- 05%
 ```
+
+### The current allocation of my investments
+I need to tune the following allocation.
+```
+Equity mutual funds	- 27.79%
+Debt funds		- 0%
+Real estate		- 0%
+Equity stocks		- 0%
+EPF			- 22.92%
+FDs			- 42.86%
+Savings			- 01.35%
+Gold			- 0%
+Other funds		- 05.05%
+```
+
 ## Where I don't invest
-<!--**Fixed deposits** - The interest rates given by banks generally less than inflation rate and can't beat inflation. Plus the returns are taxable. The effective returns fall way below 6% for the tax slab I belong to.-->
 
 **PPF** - Generally less interest rate than EPF. Lockin period is too long, 15 years.
 
 **NPS** - The returns are taxable. I am not going to be in the lower tax slab rate when I become financially free. So not an option for me.
 
-> What's the relation among stock market, inflation and bank FDs?
-
 ## Where I am investing right now
-**EPF** - This is automatically deducted from the salary account. 12% of my basic salary. My employer too contributing exactly 12% of my basic salary (8.33 % towards pension scheme and 3.67% towards providend fund) to my EPFO account.
+**EPF** - This is automatically deducted from the salary account. 12% of my basic salary. My employer too contributing exactly 12% of my basic salary (8.33 % up to 1250/- towards pension scheme and 3.67% or remaining towards providend fund) to my EPFO account.
 
 Generally the interest rate varies from 8% to 9.5%. Currently it is 8.65%. The investmet amount and the interest generated on this amount are not taxable.
 
@@ -72,10 +84,21 @@ The mutual funds currently I am investing in
 * [Axis Mutual fund](https://www.axismf.com)
 * [Aditya Birla Capital Mutual funds](https://mutualfund.adityabirlacapital.com/)
 
+**Fixed Deposits** - More the RBI repo rate -> more the interest rate on fixed deposits. Break the existing FDs (do necessary calculations to avoid loss befor breaking )when RBI increases repo rate
+
+> What's the relation among *inflation*, *stock market* and *repo rate*? <br/>
+>> With the decrease in the repo rate, the banks borrow more money from RBI and in turn banks offer low interest on loans. Thus the flow of money (inflation rate) in a country increases. <br/>
+
+>> With the increase in inflation rate, the purchasing power of rupee decreases. The evidence is clear that the **value stocks** perform better when inflation is high. The **income stocks** performs the other way.
+
+I have FDs opened in the following accounts.
+* [SBI Online](https://retail.onlinesbi.com/retail/login.htm)
+
+References :
+* [https://www.investopedia.com/articles/investing/052913/inflations-impact-stock-returns.asp](https://www.investopedia.com/articles/investing/052913/inflations-impact-stock-returns.asp)
+
 ## Where I will invest next
 This is the order in which I will invest next.
-
-**Fixed Deposits** - I do not have any right now. Befor investing, what's the relation between repo rate and fixed deposits? When banks give high interest rates on FDs?
 
 **VPF** - I would like to double (may be triple) my contribution towards my EPF next year.
 
@@ -89,7 +112,7 @@ I need to make sure KYC update in epfindia website is successful before next yea
 
 **Stocks** - Dividends, IPOs
 
-**Real Estate** - 
+**Real Estate** - Need more study.
 
 **Cash flow** - Need more study. They say invest in cash flow rather than capital gains.
 
