@@ -15,8 +15,8 @@ This page gives the overview of what I learned from the book **From Rat Race to 
 
 ![Financial Freedom by Manoj Arora](/assets/img/financial_freedom_by_manoj_arora.jpg )
 
-<a class="autocenter" target="_blank" href="https://amzn.to/2PwNaMA">Buy from Amazon</a>
-<a class="autocenter" href="https://www.flipkart.com/rat-race-financial-freedom/p/itmdj747qaxjr36u?affid=nayabbash">Buy from Flipkart</a>
+<a class="buy_from_amazon" target="_blank" href="https://amzn.to/2PwNaMA">Buy from Amazon</a>
+<a class="buy_from_flipkart" href="https://www.flipkart.com/rat-race-financial-freedom/p/itmdj747qaxjr36u?affid=nayabbash">Buy from Flipkart</a>
 
 ## Why I want financial freedom?
 I want to guide my children through out their education. Most of the schools and colleges in southern India don't provide the enough infrastructure for their career development. Worst part, they focus on teaching students how to get more marks in exam rather than how to improve their knowledge.

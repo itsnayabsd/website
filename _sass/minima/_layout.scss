@@ -250,3 +250,37 @@
 	font-size: 14px;
 	line-height: 10px;
 }
+
+.buy_from_amazon {
+	display: block;
+	margin: 10px auto;
+	width: 11em;
+	color: #fff;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 90%;
+	font-weight: bold;
+	text-align: center;
+	border-radius: .5em;
+	padding: .2em;
+	background-color: #f90;
+	box-shadow: 1px 1px 2px #888888;
+	background-image: linear-gradient(to top, #FF9900 60%, #FFBB44 100%);
+}
+
+.buy_from_flipkart {
+	display: block;
+	margin: 10px auto;
+	width: 11em;
+	color: #fff;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 90%;
+	font-weight: bold;
+	text-align: center;
+	border-radius: .5em;
+	padding: .2em;
+	background-color: #069;
+	box-shadow: 1px 1px 2px #888888;
+	background-image: linear-gradient(to top, #006699 60%, #0088cc 100%);
+}
