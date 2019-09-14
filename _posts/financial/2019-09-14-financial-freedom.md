@@ -2,16 +2,16 @@
 layout: post
 title: Lessons and My Journey From Rat Race to Financial Freedom
 category: financial
-comments: false
-google_adsense: false
+comments: true
+google_adsense: true
 excerpt: The lessons I learned form the book From Rat Race to the Financial Freedom by Manoj Arora and my journey after that to reach financial freedom
 keywords: journey to financial freedom, race rate to financial freedom, financial freedom book, how to achieve financial freedom, financial freedom India
-date: 2019-08-31 23:00:23 +5:30
+date: 2019-09-14 22:24:47 +5:30
 image: /assets/img/financial_freedom_by_manoj_arora.jpg
 ---
 This page gives the overview of what I learned from the book **From Rat Race to Financial Freedom** by *Manoj Arora*.
 
-This page also updates my progressive journey towards my financial freedom updating periodically.
+> I will update my progressive journey towards financial freedom in this page on dates 10<sup>th</sup>, 20<sup>th</sup> and 30<sup>th</sup> of every month.
 
 ![Financial Freedom by Manoj Arora](/assets/img/financial_freedom_by_manoj_arora.jpg )
 
@@ -27,36 +27,37 @@ I want to travel and enjoy the nature - forests, rivers, fields etc.
 
 I don't want my family to feel any difference financially with or with out me around.
 
-> **It takes at least 10 years for me to reach financial freedom. Still this much time to go**
+> **I am planning to reach my financial freedom within 10 years by 2029.**
 
 Financial freedom is only possible if you can beat the inflation after paying all of your taxes and still able to get decent returns on your investment.
 
 ## Investment options for me
 
-Following are the investment options allocation for my age group (25 - 40 years) *given in the book*. I will change this allocation once I have enough knowledge of all the investment options.
+Following are the investment options allocation for my age group (25 - 40 years) *given in the book*. I may change this allocation once I have enough knowledge of all the investment options.
 ```
 Equity mutual funds	- 25%
 Debt funds		- 15%
-Real estate		- 15%
+Real estate		- 10%
 Equity stocks		- 10%
 EPF			- 10%
 FDs			- 10%
 Savings			- 10%
 Gold			- 05%
+Chits			- 05%
 ```
 
 ### The current allocation of my investments
-I need to tune the following allocation.
+I need to tune the following allocation as it suits above allocation.
 ```
-Equity mutual funds	- 27.79%
+Equity mutual funds	- 26.49%
 Debt funds		- 0%
 Real estate		- 0%
 Equity stocks		- 0%
-EPF			- 22.92%
-FDs			- 42.86%
-Savings			- 01.35%
+EPF			- 21.85%
+FDs			- 40.85%
+Savings			- 05.97%
 Gold			- 0%
-Other funds		- 05.05%
+Chits			- 04.82%
 ```
 
 ## Where I don't invest
@@ -84,10 +85,10 @@ The mutual funds currently I am investing in
 * [Axis Mutual fund](https://www.axismf.com)
 * [Aditya Birla Capital Mutual funds](https://mutualfund.adityabirlacapital.com/)
 
-**Fixed Deposits** - More the RBI repo rate -> more the interest rate on fixed deposits. Break the existing FDs (do necessary calculations to avoid loss befor breaking )when RBI increases repo rate
+**Fixed Deposits** - More the RBI repo rate -> more the interest rate on fixed deposits. Break the existing FDs (do necessary calculations to avoid loss befor breaking) to invest in new FDs when RBI increases repo rate
 
 > What's the relation among *inflation*, *stock market* and *repo rate*? <br/>
->> With the decrease in the repo rate, the banks borrow more money from RBI and in turn banks offer low interest on loans. Thus the flow of money (inflation rate) in a country increases. <br/>
+>> With the decrease in the repo rate, the banks borrow more money from RBI and in turn banks offer low interest rate on loans. Thus the flow of money (inflation rate) increases in country. <br/>
 
 >> With the increase in inflation rate, the purchasing power of rupee decreases. The evidence is clear that the **value stocks** perform better when inflation is high. The **income stocks** performs the other way.
 
@@ -108,11 +109,15 @@ I need to make sure KYC update in epfindia website is successful before next yea
 
 **Gold** - Gold has inverse relationship with stock market. As market collapse, gold value increases. Invest in gold exchange traded funds (gold ETFs). Needs Demat account. Systematic monthly investments can be done in gold ETFs. Good for beginners in financial freedom journey. Study gold ETFs vs gold bonds, which is better for investment?
 
+I will start investing in gold by January, 2020.
+
+Gold can't give more returns than mutual funds or stocks. So 10% investment allocation is enough just to escape the inflation for some extent.
+
 **Bonds** - Capital gain tax exemption bonds. Study before buying any.
 
-**Stocks** - Dividends, IPOs
+**Stocks** - Dividends, IPOs. I will invest in stocks by October, 2021. Need more study.
 
-**Real Estate** - Need more study.
+**Real Estate** - Need more study. Will start investing in real estate by October, 2023.
 
 **Cash flow** - Need more study. They say invest in cash flow rather than capital gains.
 
