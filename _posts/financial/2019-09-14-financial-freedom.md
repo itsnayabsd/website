@@ -49,15 +49,15 @@ Chits			- 05%
 ### The current allocation of my investments
 I need to tune the following allocation as it suits above allocation.
 ```
-Equity mutual funds	- 26.49%
+Equity mutual funds	- 26.30%
 Debt funds		- 0%
 Real estate		- 0%
 Equity stocks		- 0%
-EPF			- 21.85%
-FDs			- 40.85%
-Savings			- 05.97%
+EPF			- 22.58%
+FDs			- 40.48%
+Savings			- 05.83%
 Gold			- 0%
-Chits			- 04.82%
+Chits			- 04.77%
 ```
 
 ## Where I don't invest
