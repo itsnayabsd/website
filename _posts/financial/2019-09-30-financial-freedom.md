@@ -6,7 +6,7 @@ comments: true
 google_adsense: true
 excerpt: The lessons I learned form the book From Rat Race to the Financial Freedom by Manoj Arora and my journey after that to reach financial freedom
 keywords: journey to financial freedom, race rate to financial freedom, financial freedom book, how to achieve financial freedom, financial freedom India
-date: 2019-09-14 22:24:47 +5:30
+date: 2019-09-30 22:24:47 +5:30
 image: /assets/img/financial_freedom_by_manoj_arora.jpg
 ---
 This page gives the overview of what I learned from the book **From Rat Race to Financial Freedom** by *Manoj Arora*.
