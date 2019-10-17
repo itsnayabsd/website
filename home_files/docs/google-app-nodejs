@@ -1,0 +1,51 @@
+# After installing google cloud SDK use the following command to create a
+# project.
+gcloud init
+
+# Create an app.
+gcloud app create
+
+# Prepare for the nodejs env.
+## Install nvm (node version manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+source ~/.bashrc
+## Install nodejs with nvm
+nvm install stable
+
+# Initialize the project
+npm init # Will create package.json
+
+# Add following lines to the package.json file
+  "scripts": {
+    "start": "node index.js"
+  },
+
+# Install Express web framwork
+npm install --save express
+
+# Paste the following code in index.js file
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+const server = app.listen(8080, () => {
+  const host = server.address().address;
+  const port = server.address().port;
+
+  console.log(`Example app listening at http://${host}:${port}`);
+});
+
+# To test locally
+npm start # browser localhost:8080
+
+# Create app.yaml file with following content
+runtime: nodejs12
+
+# Deploy to gcloud
+gcloud app deploy
+
+# Browse the app
+gcloud app browse
