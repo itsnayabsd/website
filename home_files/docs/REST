@@ -1,0 +1,7 @@
+HTTP Methods
+------------
+GET - Fetch the information from server - Idempotent (Safe)
+POST - To create the content in the server - Not Idempotent - Content will be
+	updated multiple times. We don't want that.
+PUT - To update the content in the server - Idenpotent
+DELETE - To delete the resource. - Idenpotent
