@@ -2,4 +2,4 @@ Important node modules to learn :
 
 Inbuilt : fs, process
 
-Downloadable : yargs, chalk, validator
+Downloadable : yargs, chalk, validator, request
