@@ -2,6 +2,6 @@ Important node modules to learn :
 
 Inbuilt : fs, process, path
 
-Downloadable : yargs, chalk, validator, request, express, hbs (internally uses handlebars), mongodb, mongoose
+Downloadable : yargs, chalk, validator, request, express, hbs (internally uses handlebars), mongodb, mongoose, becryptjs, jsonwebtoken
 
 google cloud platform : cloud firestore noSQL npm module available
