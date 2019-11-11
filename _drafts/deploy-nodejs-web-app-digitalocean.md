@@ -8,6 +8,8 @@ google_adsense: false
 ---
  * Select a LTS Linux distribution for digitalocean droplet and raspberry pi.
  * Make the local development setup using raspberry pi with the same LTS distribution.
+    * Flash the image
+    * Connect RaspberryPi to network and get ssh credentials
  * Install latest LTS node version.
  * Deploy github repository to digitalocean droplet.
  * Run the app and test in the browser
