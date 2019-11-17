@@ -9,3 +9,4 @@ google_adsense: false
 
 ## Nginx
 [Nginx stackoverflow](https://stackoverflow.com/questions/tagged/nginx)
+[Nginx Digital Ocean Questions](https://www.digitalocean.com/community/questions?q=nginx)
