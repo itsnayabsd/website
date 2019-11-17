@@ -39,9 +39,18 @@ http {
 	server {
 		listen 80;
 		# Domain name below. This can be ip address also
-		server_name asstracker.in;
+		server_name asstracker.in www.asstracker.in;
 		# Website root path below
 		root  /home/pi/demo;
+		index index.html;
 	}
 }
+```
+To see all the configuration at one place
+```
+nginx -T
+```
+To check whether the new configuration is without any errors before reloading nginx server,
+```
+nginx -t
 ```
