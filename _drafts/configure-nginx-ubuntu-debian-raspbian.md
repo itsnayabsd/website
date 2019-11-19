@@ -46,6 +46,9 @@ http {
 	}
 }
 ```
+Nginx uses Perl compatible regular expressions.
+Src : [Wiki PCRE](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
+
 To see all the configuration at one place
 ```
 nginx -T
@@ -53,4 +56,8 @@ nginx -T
 To check whether the new configuration is without any errors before reloading nginx server,
 ```
 nginx -t
+```
+To check with which configurations nginx is built,
+```
+nginx -V
 ```
