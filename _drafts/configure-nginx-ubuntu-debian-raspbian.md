@@ -37,12 +37,30 @@ http {
 	include mime.types;
 
 	server {
-		listen 80;
+		listen 127.0.0.1:3000;
 		# Domain name below. This can be ip address also
-		server_name asstracker.in www.asstracker.in;
+		server_name .asstracker.in; # Combinding both www.asstracker.in and *.asstracker.in
 		# Website root path below
 		root  /home/pi/demo;
 		index index.html;
+	}
+	server {
+		listen 127.0.0.1:4000;
+		# Domain name below. This can be ip address also
+		server_name asstrack.in;
+		# Website root path below
+		root  /home/pi/demoblog;
+		index index.html;
+	}
+	server {
+		listen 127.0.0.1;
+
+		root /home/nayab/website/_site;
+		index index.html;
+
+		location / {
+			proxy_pass http://127.0.0.1:4000/;
+		}
 	}
 }
 ```
