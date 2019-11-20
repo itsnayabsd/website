@@ -64,6 +64,16 @@ http {
 	}
 }
 ```
+
+location directive syntax
+```
+location [=|~|~*|^~|@] pattern { ... }
+=	# Exact match
+~	# Case sensitive
+~*	# Case in-sensitive
+@	# Defines named location block
+```
+
 Nginx uses Perl compatible regular expressions.
 Src : [Wiki PCRE](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
 
