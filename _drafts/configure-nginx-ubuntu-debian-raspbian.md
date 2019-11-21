@@ -11,8 +11,8 @@ The following configuration is tested on Ubuntu 18.04 and later versions, Debian
  * [Install nginx and verify test server](#install)
  * [Configure the localhost or domain](#conf_domain)
  * [Configure multiple virtual hosts for multiple apps or websites](#multiple_hosts)
- * Configure SSL certificate
- * Some troubleshooting commands
+ * Configure SSL certificate for domain names
+ * [Some troubleshooting commands](#troubleshooting)
 
 
 <hr id="install">
@@ -65,8 +65,13 @@ We will recreate the same file with our localhost / domain configuration.
 ```
 sudo vi /etc/nginx/sites-enabled/default
 ```
+If you don't have any domain name to configure, skip this section and proceed to [next](#domain_not_available).
 ### If domain name available :
-Put the following content in that file
+You need to point your domain dns server settings to your app/website host provider. I bought my domain from [Namecheap](https://namecheap.com) and I am using [digitalocean](https://digitalocean.com/) to host my website and the [instructions given here for changing my domain name dns server settings to digitalocean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). The process is similar for any host provider.
+
+Once the above step is completed, the settings might take upto 24 hrs to take effect.
+
+Meanwhile, put the following configuration in the *default* configuration file.
 ```
 server {
         listen 80;
@@ -91,8 +96,9 @@ server {
 ```
 Don't forge to replace the **domain.com**, **www.domain.com** with your domain name. Or this can be ***localhost*** if you don't have domain name.
 
+<span id="domain_not_available"></span>
 ### If domain name is not available :
-You can still configure server with localhost. Put the following content in that file
+You can still configure server with localhost on your local system. Put the following content in that file
 ```
 server {
         listen 80;
@@ -133,9 +139,7 @@ Reload the configuration with the following command.
 sudo systemctl reload nginx
 ```
 
-## ***Pointing domain name servers ip address ***
-
-Visit the domain name or simply ***localhost*** in the browser to see your website working.
+If you configure using ***localhost*** visit [here](http://localhost) or visit the domain name in the browser to see your website working.
 
 The above configuration for a single website/app is called ***virtual host***. We can configure more than one virtual hosts within the same config file.
 
@@ -149,7 +153,10 @@ sudo rm /etc/nginx/sites-enabled/default
 ```
 In the following configuration, we will be creating three virtual hosts for the domains **nayab.xyz**, **asstracker.in** and the blog **blog.nayab.xyz**.
 
-Replace above domains with yours.
+Replace above domains with yours or for local development with different apps, replace these domain names with ***localhost:port*** values. For example,
+ * localhost:3000	# For website 1
+ * localhost:4000	# For app 1
+ * localhost:5000	# For app 2
 
 Create same file with our configuration
 ```
@@ -157,7 +164,7 @@ sudo rm /etc/nginx/sites-enabled/default
 ```
 ```
 	server {
-		# Domain name below. This can be ip address also
+		# Domain name below. This can be localhost:port also
 		server_name www.asstracker.in asstracker.in;
 
                 # Replace the following root path to your website or app folder
@@ -225,8 +232,10 @@ Reload the configuration with the following command.
 ```
 sudo systemctl reload nginx
 ```
-Now browse the domain name in the browser.
->>>>>>> Modify configure-nginx-ubuntu-debian-raspbian.md
+Now browse the domain names or localhost:port addresses in the browser.
+
+<hr id="troubleshooting">
+## Some troubleshooting commands
 
 To see all the configuration at one place
 ```
