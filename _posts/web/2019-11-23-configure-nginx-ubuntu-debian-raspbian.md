@@ -1,10 +1,12 @@
 ---
 layout: post
-category: linux
-excerpt: Step by step tutorial on how to install nginx web server and configure it for multiple websites hosting.
-comments: false
 title: Configure Nginx web server on Ubuntu or Debian or Raspbian
-google_adsense: false
+category: web
+comments: true
+google_adsense: true
+excerpt: Step by step tutorial on how to install nginx web server and configure it for multiple websites hosting. Raspbian, Ubuntu or Debian
+date: 2019-11-23 01:46:16 +5:30
+image: /assets/img/nginx_conf_linux.png
 ---
 The following configuration is tested on Ubuntu 18.04 and later versions, Debian 10 (Buster) and the Raspbian Buster Lite operating systems.
 
@@ -18,6 +20,8 @@ The following configuration is tested on Ubuntu 18.04 and later versions, Debian
 
 <hr id="install">
 ## Install nginx and verify test server
+![Raspbian On RPI](/assets/img/nginx_conf_linux.png )
+<br/>
 If you are using Raspberry Pi, [install Raspbian and take SSH of the board](/linux/rpi-local-dev-setup.html).
 
 If you are using [digitalocean](https://m.do.co/c/e80679853c2f) to host your app or website, use [this tutorial](https://www.digitalocean.com/docs/droplets/how-to/create/) to create droplet and take SSH of the digitalocean droplet.
