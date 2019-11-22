@@ -10,6 +10,7 @@ The following configuration is tested on Ubuntu 18.04 and later versions, Debian
 
  * [Install nginx and verify test server](#install)
  * [Configure the localhost or domain](#conf_domain)
+ * [Check the configuration syntax before reloading the server](#check)
  * [Configure multiple virtual hosts for multiple apps or websites](#multiple_hosts)
  * Configure SSL certificate for domain names
  * [Some troubleshooting commands](#troubleshooting)
@@ -94,7 +95,7 @@ server {
 }
 
 ```
-Don't forge to replace the **domain.com**, **www.domain.com** with your domain name. Or this can be ***localhost*** if you don't have domain name.
+Don't forge to replace the **domain.com**, **www.domain.com** with your domain name.
 
 <span id="domain_not_available"></span>
 ### If domain name is not available :
@@ -123,7 +124,8 @@ server {
 ```
 
 Replace **root** path also with your website path for any one of above configurations.
-
+<hr id="check">
+## Check the configuration syntax before reloading the server
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
 ```
@@ -146,21 +148,21 @@ The above configuration for a single website/app is called ***virtual host***. W
 <hr id="multiple_hosts">
 ## Configure multiple virtual hosts for multiple apps or websites.
 
-First remove the configuration file created above if you are going to use the below configuration.
+First remove the configuration file created above to start fresh with multiple virtual hosts.
 
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
 In the following configuration, we will be creating three virtual hosts for the domains **nayab.xyz**, **asstracker.in** and the blog **blog.nayab.xyz**.
 
-Replace above domains with yours or for local development with different apps, replace these domain names with ***localhost:port*** values. For example,
+**Replace** above domains with yours. If you don't have domain names, for local development, replace these domain names with ***localhost:port*** values for each app/website. For example,
  * localhost:3000	# For website 1
  * localhost:4000	# For app 1
  * localhost:5000	# For app 2
 
 Create same file with our configuration
 ```
-sudo rm /etc/nginx/sites-enabled/default
+sudo vi /etc/nginx/sites-enabled/default
 ```
 ```
 	server {
