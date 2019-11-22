@@ -12,7 +12,7 @@ The following configuration is tested on Ubuntu 18.04 and later versions, Debian
  * [Configure the localhost or domain](#conf_domain)
  * [Check the configuration syntax before reloading the server](#check)
  * [Configure multiple virtual hosts for multiple apps or websites](#multiple_hosts)
- * Configure SSL certificate for domain names
+ * [Install SSL certificates for domains and redirect http to https using certbot](#ssl)
  * [Some troubleshooting commands](#troubleshooting)
 
 
@@ -164,71 +164,72 @@ First remove the configuration file created above to start fresh with multiple v
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
-In the following configuration, we will be creating three virtual hosts for the domains **nayab.xyz**, **asstracker.in** and the blog **blog.nayab.xyz**.
+In the following configuration, we will be creating three virtual hosts with and without domain names.
 
-**Replace** above domains with yours. If you don't have domain names, replace these domain names with ***localhost:port*** values for each app/website. For example,
- * localhost:3000	# For website 1
- * localhost:4000	# For app 1
- * localhost:5000	# For app 2
+### If domain names available :
+We will be creating the virtual hosts for these three domains **nayab.xyz**, **asstracker.in** and the blog **blog.nayab.xyz**.
+
+Replace above **domain** names with yours.
 
 Create same file with our configuration
 ```
 sudo vi /etc/nginx/sites-enabled/default
 ```
 ```
-	server {
-		# Domain name below. This can be localhost:port also
-		server_name www.asstracker.in asstracker.in;
+server {
+	# Domain name below.
+	server_name www.asstracker.in asstracker.in;
 
-                # Replace the following root path to your website or app folder
-		root  /home/pi/demo;
+        # Replace the following root path to your website or app folder
+	root  /home/domain;
 
-                # This is the order in which server searches for the file names.
-                # If index.html is not found, it will search for index.htm and so on.
-	        index index.html index.htm index.nginx-debian.html;
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
 
-	        location / {
-		        # First attempt to serve request as file, then
-		        # as directory, then fall back to displaying a 404.
-		        try_files $uri $uri/ =404;
-	        }
-	}
-	server {
-		# Domain name below. This can be ip address also
-		server_name nayab.xyz www.nayab.xyz;
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
+server {
+	# Domain name below.
+	server_name nayab.xyz www.nayab.xyz;
 
-                # Replace the following root path to your website or app folder
-		root  /home/pi/demoblog;
+        # Replace the following root path to your website or app folder
+	root  /home/website;
 
-                # This is the order in which server searches for the file names.
-                # If index.html is not found, it will search for index.htm and so on.
-	        index index.html index.htm index.nginx-debian.html;
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
 
-	        location / {
-		        # First attempt to serve request as file, then
-		        # as directory, then fall back to displaying a 404.
-		        try_files $uri $uri/ =404;
-	        }
-	}
-	server {
-		# Domain name below. This can be ip address also
-		server_name blog.nayab.xyz;
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
+server {
+	# Domain name below.
+	server_name blog.nayab.xyz;
 
-                # Replace the following root path to your website or app folder
-		root  /home/pi/blog;
+        # Replace the following root path to your website or app folder
+	root  /home/blog;
 
-                # This is the order in which server searches for the file names.
-                # If index.html is not found, it will search for index.htm and so on.
-	        index index.html index.htm index.nginx-debian.html;
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
 
-	        location / {
-		        # First attempt to serve request as file, then
-		        # as directory, then fall back to displaying a 404.
-		        try_files $uri $uri/ =404;
-	        }
-	}
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
 ```
 Replace **root** path with your website or app path for everywhere.
+
 
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
@@ -244,10 +245,98 @@ Reload the configuration with the following command.
 ```
 sudo systemctl reload nginx
 ```
-Now browse the domain names or IP address along with the port number in the browser address bar. For example,
- * 192.168.1.10:3000, 192.168.1.10:4000 and 192.168.1.10:5000 for Raspberry Pi. Or
- * http://206.189.132.174:3000, http://206.189.132.174:4000 and http://206.189.132.174:5000 for digitalocean droplets.
+Now, open the browser and browse the websites using the domain names.
 
+### If domain names not available :
+```
+server {
+	listen 3000;
+
+        # Replace the following root path to your website or app folder
+	root  /home/domain;
+
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
+
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
+server {
+	listen 4000;
+
+        # Replace the following root path to your website or app folder
+	root  /home/website;
+
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
+
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
+server {
+	listen 5000;
+
+        # Replace the following root path to your website or app folder
+	root  /home/blog;
+
+        # This is the order in which server searches for the file names.
+        # If index.html is not found, it will search for index.htm and so on.
+        index index.html index.htm index.nginx-debian.html;
+
+        location / {
+	        # First attempt to serve request as file, then
+	        # as directory, then fall back to displaying a 404.
+	        try_files $uri $uri/ =404;
+        }
+}
+```
+
+Replace **root** path with your website or app path for everywhere.
+
+Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
+
+```
+sudo nginx -t
+```
+If syntax is correct, it will display following output.
+```
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+Reload the configuration with the following command.
+
+```
+sudo systemctl reload nginx
+```
+
+Now browse the domain names or IP address along with the port number in the browser address bar.
+
+A few examples,
+ * `192.168.1.10:3000`, `192.168.1.10:4000` and `192.168.1.10:5000` for Raspberry Pi. Or
+ * `http://206.189.132.174:3000`, `http://206.189.132.174:4000` and `http://206.189.132.174:5000` for digitalocean droplets. Or
+ * `localhost:3000`, `localhost:4000` and `localhost:5000` if you are configuring Nginx server on your local system.
+
+
+<hr id="ssl">
+## Install SSL certificates for domains and redirect http to https using certbot
+We are going to use a tool called `certbot` which automates the ssl certificates installation process for domains.
+
+To install `Let's encrypt` certificates for domain name, in ther terminal, execute the following commands
+```
+sudo apt-get install certbot python-certbot-nginx
+```
+```
+sudo certbot --nginx
+```
+Follow the onscreen instructions. The certbot will install SSL certificates and modify the Nginx configuration file so that all http traffic will redirect to https.
 <hr id="troubleshooting">
 ## Some troubleshooting commands
 
