@@ -18,7 +18,13 @@ The following configuration is tested on Ubuntu 18.04 and later versions, Debian
 
 <hr id="install">
 ## Install nginx and verify test server
-Update the repositories with the following command.
+If you are using Raspberry Pi, [install Raspbian and take SSH of the board](/linux/rpi-local-dev-setup.html).
+
+If you are using [digitalocean](https://m.do.co/c/e80679853c2f) to host your app or website, use [this tutorial](https://www.digitalocean.com/docs/droplets/how-to/create/) to create droplet and take SSH of the digitalocean droplet.
+
+If you want to test the nginx configuration on your local Ubuntu/Debian system, open `Terminal` to proceed with the following tutorial.
+
+First step is to update the repositories with the following command.
 ```
 sudo apt update
 ```
@@ -26,10 +32,6 @@ sudo apt update
 Install the Nginx web server.
 ```
 sudo apt install nginx
-```
-Enable auto start of Nginx on next boot.
-```
-sudo systemctl enable nginx
 ```
 Check whether Nginx is running successfully with the following command.
 ```
@@ -41,7 +43,12 @@ The output should have **active (running)** in the result.
 ```
 If it's not, there must be some problem with the installation.
 
-Now, open the browser and visit the address **http://127.0.0.1** in the address bar. The test server should be running and show the following greeting on the web page.
+Now, open the browser and,
+ * If you are using raspberry pi, visit the raspberry pi IP address in the address bar.
+ * If you are using digitalocean droplet, enter the droplet IP address in the address bar. IP address can get from [digitalocean dashboard](https://cloud.digitalocean.com/).
+ * If you are using local Ubuntu/Debian system enter **http://127.0.0.1** in the address bar.
+
+The test server should be running and show the following greeting on the web page.
 ```
                 Welcome to nginx!
 
@@ -66,11 +73,11 @@ We will recreate the same file with our localhost / domain configuration.
 ```
 sudo vi /etc/nginx/sites-enabled/default
 ```
-If you don't have any domain name to configure, skip this section and proceed to [next](#domain_not_available).
+If you don't have any domain name to configure, skip this section and proceed to [next](#domain_not_available) for localhost configuration.
 ### If domain name available :
-You need to point your domain dns server settings to your app/website host provider. I bought my domain from [Namecheap](https://namecheap.com) and I am using [digitalocean](https://digitalocean.com/) to host my website and the [instructions given here for changing my domain name dns server settings to digitalocean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). The process is similar for any host provider.
+You need to point your domain dns server settings to your app/website host provider. I bought my domain from [Namecheap](https://namecheap.pxf.io/m356a) and I am using [digitalocean](https://m.do.co/c/e80679853c2f) to host my website and the [instructions given here for changing my domain name dns server settings to digitalocean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). The process is similar for any host provider.
 
-Once the above step is completed, the settings might take upto 24 hrs to take effect.
+Once the above step is completed, the domain settings might take upto 24 hrs to take effect.
 
 Meanwhile, put the following configuration in the *default* configuration file.
 ```
@@ -97,9 +104,11 @@ server {
 ```
 Don't forge to replace the **domain.com**, **www.domain.com** with your domain name.
 
+Replace **root** path also with your website path for any one of above configurations.
+
 <span id="domain_not_available"></span>
 ### If domain name is not available :
-You can still configure server with localhost on your local system. Put the following content in that file
+You can still configure server with localhost on your device. Put the following content in that file
 ```
 server {
         listen 80;
@@ -123,7 +132,7 @@ server {
 
 ```
 
-Replace **root** path also with your website path for any one of above configurations.
+Replace **root** path with your website path for any one of above configurations.
 <hr id="check">
 ## Check the configuration syntax before reloading the server
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
@@ -141,7 +150,9 @@ Reload the configuration with the following command.
 sudo systemctl reload nginx
 ```
 
-If you configure using ***localhost*** visit [here](http://localhost) or visit the domain name in the browser to see your website working.
+Now in the browser address bar,
+ * If domain name is configured, visit the domain name in the address bar.
+ * If domain name is not configured, visit the IP address of digitalocean droplet or Raspberry PI or http://127.0.0.1 depends on the platform you are using.
 
 The above configuration for a single website/app is called ***virtual host***. We can configure more than one virtual hosts within the same config file.
 
@@ -155,7 +166,7 @@ sudo rm /etc/nginx/sites-enabled/default
 ```
 In the following configuration, we will be creating three virtual hosts for the domains **nayab.xyz**, **asstracker.in** and the blog **blog.nayab.xyz**.
 
-**Replace** above domains with yours. If you don't have domain names, for local development, replace these domain names with ***localhost:port*** values for each app/website. For example,
+**Replace** above domains with yours. If you don't have domain names, replace these domain names with ***localhost:port*** values for each app/website. For example,
  * localhost:3000	# For website 1
  * localhost:4000	# For app 1
  * localhost:5000	# For app 2
@@ -216,9 +227,8 @@ sudo vi /etc/nginx/sites-enabled/default
 		        try_files $uri $uri/ =404;
 	        }
 	}
-}
 ```
-Replace **root** path also with your website path for any one of above configurations.
+Replace **root** path with your website or app path for everywhere.
 
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
@@ -234,7 +244,9 @@ Reload the configuration with the following command.
 ```
 sudo systemctl reload nginx
 ```
-Now browse the domain names or localhost:port addresses in the browser.
+Now browse the domain names or IP address along with the port number in the browser address bar. For example,
+ * 192.168.1.10:3000, 192.168.1.10:4000 and 192.168.1.10:5000 for Raspberry Pi. Or
+ * http://206.189.132.174:3000, http://206.189.132.174:4000 and http://206.189.132.174:5000 for digitalocean droplets.
 
 <hr id="troubleshooting">
 ## Some troubleshooting commands
