@@ -5,6 +5,7 @@ category: linux
 comments: true
 google_adsense: true
 excerpt: Step by step tutorial on how to install Raspbian OS on Raspberry Pi, enable SSH and login to console.
+keywords: raspberry pi raspbian, write raspbian to SD card, ssh enable raspberry pi, login to ssh raspberry pi.
 date: 2019-11-12 22:59:08 +5:30
 image: /assets/img/raspbian_on_rpi.jpg
 ---

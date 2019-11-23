@@ -5,6 +5,7 @@ category: web
 comments: true
 google_adsense: true
 excerpt: Step by step tutorial on how to install nginx web server and configure it for multiple websites hosting. Raspbian, Ubuntu or Debian
+keywords: Install Nginx, Raspbian, Ubuntu. Debian, Digitalocean droplet, local development, multiple virtual hosts, certbot ssl certificates, namecheap domain, nginx troubleshooting nginx, redirect http to https
 date: 2019-11-23 01:46:16 +5:30
 image: /assets/img/nginx_conf_linux.png
 ---
