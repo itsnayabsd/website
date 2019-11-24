@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Mirror and sync github repo with remote and local repositories
+title: Repository mirroring from digitalocean repo to other git platforms
 category: cloud
-comments: false
-google_adsense: false
-excerpt:
-keywords:
+comments: true
+google_adsense: true
+excerpt: Repository mirroring github, gitlab, bitbucket and other git platforms with our own remote development git hosting server like digitalocean. When a commit pushes to digitalocean git repo, using git hooks, it pushes changes to git platforms
+keywords: Repository mirroring gitlab, github, bitbucket, sync github gitlab bitbucket with local git repository, mirror digitalocean git to gitlab github bitbucket, git hook mirror git repository.
 date: 2019-11-23 01:46:16 +5:30
 image: /assets/img/mirror_git_platforms.png
 ---
