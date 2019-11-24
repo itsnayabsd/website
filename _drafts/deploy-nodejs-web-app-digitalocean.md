@@ -14,6 +14,7 @@ google_adsense: false
  * Deploy github repository to digitalocean droplet.
  * Run the app and test in the browser
     * Install git hooks for CI/CD.
+    * Use codeship.com for CI/CD.
  * Configure nginx server
     * Host multiple websites on single droplet
     * Host sub domains on single droplet

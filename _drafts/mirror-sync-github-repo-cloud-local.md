@@ -7,28 +7,33 @@ google_adsense: false
 excerpt:
 keywords:
 date: 2019-11-23 01:46:16 +5:30
-image: /assets/img/nginx_conf_linux.png
+image: /assets/img/mirror_git_platforms.png
 ---
-Github, Gitlab, Bitbucker or any other code hosting platforms are great for hosting websites, apps or any other software. Each platform has it's own large user base. It would be great if our code base is in sync across all emerging platforms like these. I have seen some great software already doing this. For example [Linux kernel](https://www.kernel.org/) has it's own repository hosting at [https://git.kernel.org/](https://git.kernel.org/) and a [mirror exists on Github](https://github.com/torvalds/linux).
+Github, Gitlab, Bitbucker or any other code hosting platforms are great for hosting websites, apps or any other software. Each platform has it's own large user base. It would be great if our code base is in sync across all emerging platforms. I have seen some great software already doing this. For example [Linux kernel](https://www.kernel.org/) has it's own git repository hosting at [https://git.kernel.org/](https://git.kernel.org/) and a [mirror exists on Github](https://github.com/torvalds/linux).
 
-I am using [digitalocean](https://m.do.co/c/e80679853c2f) droplet as my own git hosting platform. Refer the [official documentation] (https://www.digitalocean.com/docs/droplets/how-to/) for setting up droplet and taking SSH into it. After that [add an user with sudo permissions](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10).
+I am going to use [digitalocean](https://m.do.co/c/e80679853c2f) droplet as my own git hosting platform. Whenever you see *digitalocean droplet* in this article, it means our *own git hosting platform*.
 
-## Remote server configuration for own git repo hosting
-### Creating --bare repositories
+Refer the [official documentation](https://www.digitalocean.com/docs/droplets/how-to/) for setting up digitalocean droplet and taking SSH into it. After that, [add an user with sudo permissions](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10).
+
+![Mirror Git platforms](/assets/img/mirror_git_platforms.png )
+
+## Step 1 : Create --bare repository on digitalocean droplet
 Login using SSH to digitalocean droplet with new user account.
 
 ```
 ssh username@droplet_ip_addr  # ex: ssh pi@206.189.134.23
 ```
-You can start an empty repository or clone an existing repository.
+You can start an empty *--bare* repository or clone an existing repository.
 
-To start an empty repository, use the following command
+To start an empty repository, use the following command. Replace REPO_NAME with any name you wanted. I am using `website.git`.
 ```
-git init --bare
+mkdir REPO_NAME && cd REPO_NAME && git init --bare
 ```
 To clone an existing repository, use *git clone --bare* option.
 
-git clone --bare https://github.com/`username`/`repo`.git
+```
+git clone --bare https://github.com/USERNAME/REPOSITORY.git
+```
 
 For example, I am cloning my existing repository from the Github to digitalocean droplet.
 
@@ -36,51 +41,110 @@ For example, I am cloning my existing repository from the Github to digitalocean
 
 The *--bare* option allows this repo to receive/send push operations from/to remote repositories.
 
-### Create empty repositories on other hosting platforms
-#### Create empty repo on Gitlab
+## Step 2 : Create empty repositories on the hosting platforms
+### Create empty repo on Gitlab
 Visit [https://gitlab.com/](https://gitlab.com/) and create an empty repository and note down the repo URL. It looks something like this.
 
-https://gitlab.com/`username`/`repository`.git
-#### Create empty repo on Github
+```
+https://gitlab.com/USERNAME/REPOSITORY.git
+```
+ex: `https://gitlab.com/nayabbashasayed/website.git`
+### Create empty repo on Github
 Visit [https://github.com/](https://github.com/) and create an empty repository. The repo URL looks like following.
-
-https://github.com/`username`/`repository`.git`
-#### Create empty repo on Bitbucket
+```
+https://github.com/USERNAME/REPOSITORY.git
+```
+ex: `https://github.com/nayabbashasayed/website.git`
+### Create empty repo on Bitbucket
 Visit [https://bitbucket.org/](https://bitbucket.org/) and create an empty repository. The repo URL looks like this.
+```
+https://USERNAME@bitbucket.org/USERNAME/REPOSITORY.git
+```
 
-https://`username`@bitbucket.org/`username`/`repository`.git
+ex: `https://nayabbashasayed@bitbucket.org/nayabbashasayed/website.git`
 
-ex: https://nayabbashasayed@bitbucket.org/nayabbashasayed/website.git
-remote server*) every time I push some commit to my Github repository. I came across some solutions like [Jenkins](https://jenkins.io/), [Codeship](https://codeship.com/), [HookDoo](https://www.hookdoo.com/) etc. All these are third party apps that need to be configured, which I feel is additional overhead.
+## Step 3 : Add remote URLs to digitalocean droplet
+Login using SSH to digitalocean droplet with new user account.
 
-What I needed is without integrating third party apps
-On remote :
-git clone --bare https://github.com/nayabbashasayed/website.git
+```
+ssh username@droplet_ip_addr  # ex: ssh pi@206.189.134.23
+```
+Change directory to the --bare repository you have created in step 1. In my case,
 
-vi /home/pi/website.git/hooks/post-receive
+`cd /home/pi/website.git`
 
+Add remote server URLs created in the step 2 to current repository with the following commands. Replace USERNAME and REPOSITORY with yours.
+<div class="isa_warning"><b>Warning</b>: In Step 1, if you initialized an empty --bare repo, do not add any existing remote repository in this step. This might erase your existing content. </div>
+
+```
+git remote add github_repo https://github.com/USERNAME/REPOSITORY.git
+git remote add gitlab_repo https://gitlab.com/USERNAME/REPOSITORY.git
+git remote add bitbucket_repo https://USERNAME@bitbucket.org/USERNAME/REPOSITORY.git
+```
+## Step 4 : Add git credentials for remote servers
+Create `.netrc` file in the home directory and add the following content.
+```
+vi ~/.netrc
+```
+```
+machine github.com
+login USERNAME
+password PASSWORD
+
+machine gitlab.com
+login USERNAME
+password PASSWORD
+
+machine bitbucket.org
+login USERNAME
+password PASSWORD
+
+```
+Replace USERNAME and PASSWORD with the respective git platform username and password.
+
+## Step 5 : Add a git hook on the remote server
+
+Create `post-receive` file in the `hooks` directory.
+```
+vi hooks/post-receive
+```
+And add the following content to that file. Do not forget the first line `#!/bin/sh`.
+```
 #!/bin/sh
 
-git --git-dir=/home/pi/website.git push -f origin master
+git --git-dir=/REPO_PATH_DIGITALOCEAN push -f github_repo master
+git --git-dir=/REPO_PATH_DIGITALOCEAN push -f gitlab_repo master
+git --git-dir=/REPO_PATH_DIGITALOCEAN push -f bitbucket_repo master
+```
+My *post_receive* file content is below
+```
+#!/bin/sh
 
-To store username and password
-vi ~/.git-credentials
+git --git-dir=/home/pi/website.git push -f github_repo master
+git --git-dir=/home/pi/website.git push -f gitlab_repo master
+git --git-dir=/home/pi/website.git push -f bitbucket_repo master
+```
+Make this file executable
+```
+chmod +x hooks/post-receive
+```
+## Step 6 : Cloning the digitalocean repo to local system.
+Clone the repo created in Step 1 to ***local laptop*** or ***desktop***.
 
-https://my_username:my_password@github.com
-Following line might not needed
+```
+git clone ssh://DROPLET_USERNAME@DROPLET_IP_ADDR/REPO_PATH_DIGITALOCEAN
+```
+ex: `git clone ssh://pi@206.189.134.23/home/pi/website.git`
 
-git config --global credential.helper store
+## Step 7 : Test the setup
+Go to cloned repository directory in your local system. ex: `cd website`.
 
-
-On local laptop/Desktop/Raspberry Pi :
-
-clone the github repo on local system.
-cd ~/cloned/repo/path
-
-git remote add asst ssh://pi@192.168.1.10/home/pi/website
-
-create dummy for testing.
-
-git push asst master
-
-![Raspbian On RPI](/assets/img/nginx_conf_linux.png )
+Create a dummy file, commit and push
+```
+echo dummy > dummy
+git add dummy
+git commit -m "New file dummy"
+git push origin master
+```
+This should push the commit to ditigalocean droplet which in turn pushes this commit to github, gitlab and bitbucket platforms.
+<div class="isa_info">Info : <b>push -f</b> option won't work with gitlab as the master branch is protected. You can turn it off by going into Settings->Repository->Protected Branches</div>
