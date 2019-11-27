@@ -20,6 +20,13 @@ google_adsense: false
 #Limit no of posts to parse and publish
 #limit_posts: 10
 
+facebook_url: https://facebook.com/nayab.xyz
+twitter_url: https://twitter.com/nayabbashasayed
+linkedin_url: https://www.linkedin.com/in/nayabsd/
+googleplus_url: 
+pinterest_url:  
+instagram_url: https://www.instagram.com/nayab.xyz/
+
 # Build settings
 markdown: kramdown
 #theme: minima
