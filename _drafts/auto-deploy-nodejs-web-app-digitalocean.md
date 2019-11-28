@@ -12,11 +12,22 @@ It's already assumed that,
  * The node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/nayabbashasayed/node_hello_world.git).
 .eposIf it's not, clone the .
 Setup digitalocean droplets and configuration. Point appropriate URLs for that.
+Initial server setup. https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10 .
 Configure web server and point domain name and install ssl certificates on digitalocean
 install nodejs on digitalocean https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10
 Install pm2 module
 
 Git clone the repo. Make sure you have access to the repository so that you can give permissions to the third party apps. It is necessary for the next step.
+
+Run the following commands in the terminal to create a script called `node_app_start` in home directory.
+```
+echo '#!/bin/sh' > ~/node_app_start
+path=$(echo `which npm` | sed 's/.\{3\}$//')
+echo "path=$path" >> ~/node_app_start
+echo 'PATH=$PATH:$path' >> ~/node_app_start
+echo "export PATH" >> ~/node_app_start
+chmod +x ~/node_app_start 
+```
 Create an account on codeship.com. After sign up, it will guide you through creating new project. Other way to create project is to click on `Projects` tab on top navigation bar.
 
 New project : Involves three steps
@@ -37,7 +48,7 @@ Now, the configuration takes you to *Project Settings* in which you see sub navi
 <br/>
  In the *Deployment Commands* window, add the following commands.
 ```
-ssh USERNAME@DROPLET_IP 'cd PATH_TO_CLONED_NODE_REPO; git checkout master; git pull; npm install; npm restart;'
+ssh USERNAME@DROPLET_IP 'cd PATH_TO_CLONED_NODE_REPO; git checkout master; git pull; source /home/$USER/node_app_start;npm install; npm restart || npm start;'
 
 ```
 Replace *USERNAME*, *DROPLET_IP* and *PATH_TO_CLONED_REPO* with your digitalocean droplet credentials.
@@ -53,15 +64,6 @@ Copy the SSH public key. Login to digitalocean droplet using SSH. Paste the key 
 Create a droplet on digitalocean.
 Take SSH into it.
 
- * Select a LTS Linux distribution for digitalocean droplet and raspberry pi.
- * Make the local development setup using raspberry pi with the same LTS distribution.
-    * Flash the image
-    * Connect RaspberryPi to network and get ssh credentials
- * Install latest LTS node version.
- * Deploy github repository to digitalocean droplet.
- * Run the app and test in the browser
-    * Install git hooks for CI/CD.
-    * Use codeship.com for CI/CD.
  * Configure nginx server
     * Host multiple websites on single droplet
     * Host sub domains on single droplet
