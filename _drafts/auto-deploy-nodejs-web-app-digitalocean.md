@@ -1,25 +1,65 @@
 ---
 layout: post
+title: Auto deploy of node app on digitalocean using codeship
 category: cloud
-excerpt: Step by step tutorial on how to automatically deploy nodejs web app hosted on github to digitalocean cloud platform.
-comments: false
-title: Automatically deploy nodejs web app from Github to digitalocean
-google_adsense: false
+comments: true
+google_adsense: true
+excerpt: Step by step tutorial on how to automatically deploy nodejs web app hosted on github to digitalocean cloud platform using codeship build platform.
+keywords: automatically deploy node app to digitalocean, nginx reverse proxy, point name servers to digitalocean, codeship build to digitalocean integration, run node app in the background using pm2
+image: /assets/img/codeship_deploy_script.png
 ---
 
-Prerequisites :
+This tutorial explains how to deploy *node* application automatically to digitalocean droplet every time there is a new commit pushed to Github, Gitlab or Bitbucket.
+
+Supported OS :
+ * Ubuntu 18.04 and later
+ * Debian 9 and later
+ * Raspbian 9 and later
+
+Following are the contents.
+ * [Prerequisites](#prereq)
+ * [Install PM2 npm module on digitalocean](#pm2)
+ * [Setup repository on digitalocean](#digirepo)
+ * [Configure the project on Codeship](#codeship)
+ * [Copy codeship SSH public key to digitalocean user account](#cpsshkey)
+ * [Push a dummy commit to verify functionality](#dummypush)
+ * [Configure Nginx as reverse proxy server](#revproxy)
+
+<hr id="prereq"/>
+
+## Prerequisites
 It's already assumed that,
- * The node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/nayabbashasayed/node_hello_world.git).
-.eposIf it's not, clone the .
-Setup digitalocean droplets and configuration. Point appropriate URLs for that.
-Initial server setup. https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10 .
-Configure web server and point domain name and install ssl certificates on digitalocean
-install nodejs on digitalocean https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10
-Install pm2 module
+ * Your node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/nayabbashasayed/node_hello_world.git) to your git hosting account.
+ * You already have a Digitalocean account. If not, [Signup one on digitalocean](https://m.do.co/c/e80679853c2f).
+ * [Initial server setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10) has been done on digitalocean.
+ * [Already installed nodejs](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10) on digitalocean. I prefer installing node with *nvm*
+ * Your [domain nameservers pointed to digitalocean droplet](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). If you don't have a domain name yet, you can buy one [from Namecheap](https://namecheap.pxf.io/m356a), one of the lead domain name provider for less price.
+ * You already [installed Nginx with ssl certificates for your domain](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-10).
 
-Git clone the repo. Make sure you have access to the repository so that you can give permissions to the third party apps. It is necessary for the next step.
+<hr id="pm2"/>
+## Install PM2 npm module on digitalocean
+PM2 npm module allows your node application to run in the background, restarting the application without stopping it.
 
-Run the following commands in the terminal to create a script called `node_app_start` in home directory.
+Login to digitalocean droplet using SSH and install the PM2 npm module.
+```
+ssh USERNAME@DROPLET_IP
+```
+Replace USERNAME and DROPLET_IP with your user account on digitalocean droplet and it's IP address respectively.
+
+Install PM2 module.
+```
+npm install pm2 -g
+```
+<hr id="digirepo"/>
+## Setup repository on digitalocean
+Git clone the node app repository to your droplet. Make sure you have access to the repository so that you can give permissions to the third party app called *codeship* in the next step.
+
+```
+git clone CLONE_URL
+```
+ex: `git clone https://github.com/nayabbashasayed/node_hello_world.git`
+
+The following script is needed and will be invoked from codeship. Run the following commands in the terminal to create a script called `node_app_start` in home directory.
 ```
 echo '#!/bin/sh' > ~/node_app_start
 path=$(echo `which npm` | sed 's/.\{3\}$//')
@@ -28,20 +68,26 @@ echo 'PATH=$PATH:$path' >> ~/node_app_start
 echo "export PATH" >> ~/node_app_start
 chmod +x ~/node_app_start 
 ```
-Create an account on codeship.com. After sign up, it will guide you through creating new project. Other way to create project is to click on `Projects` tab on top navigation bar.
+<hr id="codeship"/>
+## Configure the project on Codeship
+Create an account on [https://codeship.com/](https://codeship.com/). After sign up, it will guide you through creating new project. Other way to create project is to click on `Projects` tab on top navigation bar.
 
-New project : Involves three steps
- * Select an SCM (Source code management) : Select one among Github, Gitlab or Bitbucket. You may need to grant permissions to codeship from the selected SCM.
- * Connect repository. Select your node app here.
- * Configure project. Select *Codeship Basic*.
+### Creating a project
+Creating a project involves three steps
+ * *Select an SCM (Source code management)* : Select one among Github, Gitlab or Bitbucket. You may need to grant permissions to codeship from the selected SCM.
+ * *Connect repository*: Select your node app here.
+ * *Configure project*: Select *Codeship Basic*.
 
+### Configure project settings
 Now, the configuration takes you to *Project Settings* in which you see sub navigation bar with tabs `Tests`, `Deploy`, `Build Triggers` etc. Do the following steps.
- * **`Tests`**: In the *Setup Commands* window, type `npm install`. Go to the bottom of the page and click on `Save changes`.
+#### Tests
+In the *Setup Commands* window, type `npm install`. Go to the bottom of the page and click on `Save changes`.
 
 {% include image.html url="codeship_tests_setup_commands.png" description="Codeship tests setup commands" %}
 
 <br/>
- * **`Deploy`**: Click on *Deploy* buttion. Write the branch name and click on *Save Pipeline Settings*. On the next step, select the script under *Add Deployment* section.
+#### Deploy
+Click on *Deploy* buttion. Write the branch name and click on *Save Pipeline Settings*. On the next step, select the script under *Add Deployment* section.
 {% include image.html url="codeship_deploy_branch.png" description="Codeship deploy branch" %}
 <br/>
 {% include image.html url="codeship_deploy_script.png" description="Codeship deploy script" %}
@@ -56,16 +102,41 @@ Replace *USERNAME*, *DROPLET_IP* and *PATH_TO_CLONED_REPO* with your digitalocea
 <br/>
 Click on *Save Deployment*.
 
- * **`General`** :
+We can skip configuring remaining tabs except for the last tab `General`. We will configure that in the next step.
+<hr id="cpsshkey"/>
+## Copy codeship SSH public key to digitalocean user account
+We need to allow codeship build system to login to our digitalocean droplet using SSH. For that we will be storing codeship SSH public key into our droplet.
+### General
 {% include image.html url="codeship_project_general.png" description="Codeship Project General Settings" %}
 <br/>
-Copy the SSH public key. Login to digitalocean droplet using SSH. Paste the key into **~/.ssh/authorized_keys** file.
+Copy the SSH public key. Login to your droplet user account using SSH. Create and paste the key into **~/.ssh/authorized_keys** file.
+<hr id="dummypush"/>
+## Push a dummy commit to verify functionality
+Create some dummy file with dummy content on your local laptop or desktop. Push that file to github/gitlab or bitbucket.
 
-Create a droplet on digitalocean.
-Take SSH into it.
+```
+# On your local laptop or system
+git clone https://github.com/nayabbashasayed/node_hello_world.git
+cd node_hello_world
+echo "codeship" > codeship
+git add codeship
+git commit -m "Codeship dummy"
+git push origin master
+```
+As soon as the commit push finished, codeship started executing build scripts.
 
- * Configure nginx server
-    * Host multiple websites on single droplet
-    * Host sub domains on single droplet
- * Configure domain name
- * Configure SSL certificates for core domain and sub domains
+In your browser address bar, enter `http://DROPLET_IP:3000/` or `DOMAIN.COM:3000`. Ex: `http://139.59.61.221:3000/` or `nayab.xyz:3000`. Node runs on the port 3000 by default.
+
+You should be greeted with your node app home page. In the above case, a white page with the message *Hello World!*.
+<hr id="revproxy"/>
+## Configure Nginx as reverse proxy server
+Replace the `location / { .... }` block in your existing nginx config file with the below block of code.
+```
+  location / {
+      proxy_pass http://localhost:3000/;
+  }
+```
+The above code passes all the http requests receive to node server. We can now visit the above URLs without port numbers.
+
+ex: *http://139.59.61.221* or *nayab.xyz*. The node app is loaded now on this address.
+
