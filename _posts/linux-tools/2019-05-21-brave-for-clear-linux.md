@@ -25,14 +25,14 @@ Run the following command in a terminal to get the root privileges.
 ```
 sudo su -
 ```
-Get the `dnf`, `rpm`, `cpio` and `rpm2cpio` tools
+Get the `dnf` and `rpm` tools
 ```
-swupd bundle-add package-utils cpio
+swupd bundle-add package-utils
 ```
 
 Add the Brave repository
 ```
-dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ --releasever 31
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 ```
 Download the Brave browser
@@ -50,7 +50,7 @@ rm -f brave-*.rpm
 ```
 Add the mission menu icon
 ```
-sed 's/Icon=brave-browser/Icon=brave/g' /usr/share/applications/brave-browser.desktop 
+sed -i 's/Icon=brave-browser/Icon=brave/g' /usr/share/applications/brave-browser.desktop 
 
 ```
 Adjust the fonts
