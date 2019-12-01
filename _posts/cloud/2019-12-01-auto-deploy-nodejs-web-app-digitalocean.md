@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Auto deploy node app on digitalocean using codeship
+title: Auto deploy node app to digitalocean using codeship
 category: cloud
 comments: true
 google_adsense: true
