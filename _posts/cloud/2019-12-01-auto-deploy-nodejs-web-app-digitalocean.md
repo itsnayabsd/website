@@ -25,7 +25,7 @@ Following are the contents.
  * [Push a dummy commit to verify functionality](#dummypush)
  * [Configure Nginx as reverse proxy server](#revproxy)
 
-`{% include image.html url="deploy_node_app_droplet_codeship.png" description="Deploy node app on drigitalocean droplet wiht codeship" %}`
+{% include image.html url="deploy_node_app_droplet_codeship.png" description="Deploy node app on digitalocean droplet wiht codeship" %}
 <hr id="prereq"/>
 
 ## Prerequisites
