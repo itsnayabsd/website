@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Auto deploy of node app on digitalocean using codeship
+title: Auto deploy node app on digitalocean using codeship
 category: cloud
 comments: true
 google_adsense: true
 excerpt: Step by step tutorial on how to automatically deploy nodejs web app hosted on github to digitalocean cloud platform using codeship build platform.
-keywords: automatically deploy node app to digitalocean, nginx reverse proxy, point name servers to digitalocean, codeship build to digitalocean integration, run node app in the background using pm2
-image: /assets/img/codeship_deploy_script.png
+keywords: automatically deploy node app to digitalocean, nginx reverse proxy, point name servers to digitalocean, codeship build to digitalocean integration, run node app in the background using pm2, install ssl digitalocean droplet letsencrypt, deploy node app on production server
+image: /assets/img/deploy_node_app_droplet_codeship.png
 ---
 
 This tutorial explains how to deploy *node* application automatically to digitalocean droplet every time there is a new commit pushed to Github, Gitlab or Bitbucket.
 
-Supported OS :
+Tested on the OS :
  * Ubuntu 18.04 and later
  * Debian 9 and later
  * Raspbian 9 and later
@@ -19,12 +19,13 @@ Supported OS :
 Following are the contents.
  * [Prerequisites](#prereq)
  * [Install PM2 npm module on digitalocean](#pm2)
- * [Setup repository on digitalocean](#digirepo)
+ * [Setup node app git repository on digitalocean](#digirepo)
  * [Configure the project on Codeship](#codeship)
  * [Copy codeship SSH public key to digitalocean user account](#cpsshkey)
  * [Push a dummy commit to verify functionality](#dummypush)
  * [Configure Nginx as reverse proxy server](#revproxy)
 
+`{% include image.html url="deploy_node_app_droplet_codeship.png" description="Deploy node app on drigitalocean droplet wiht codeship" %}`
 <hr id="prereq"/>
 
 ## Prerequisites
@@ -32,8 +33,9 @@ It's already assumed that,
  * Your node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/nayabbashasayed/node_hello_world.git) to your git hosting account.
  * You already have a Digitalocean account. If not, [Signup one on digitalocean](https://m.do.co/c/e80679853c2f).
  * [Initial server setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10) has been done on digitalocean.
- * [Already installed nodejs](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10) on digitalocean. I prefer installing node with *nvm*
- * Your [domain nameservers pointed to digitalocean droplet](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). If you don't have a domain name yet, you can buy one [from Namecheap](https://namecheap.pxf.io/m356a), one of the lead domain name provider for less price.
+ * [Already installed nodejs](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10) on digitalocean. I prefer installing node with *nvm*.
+ * Your [domain nameservers should be pointed to digitalocean droplet](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars). If you don't have a domain name yet, you can buy one [from Namecheap](https://namecheap.pxf.io/m356a), one of the lead domain name provider for less price.
+<p class="isa_warning">Do not forget to <a href="https://www.digitalocean.com/docs/networking/dns/how-to/manage-records/#a-records)">add an A record</a> pointing to your droplet</p>
  * You already [installed Nginx with ssl certificates for your domain](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-10).
 
 <hr id="pm2"/>
@@ -51,7 +53,7 @@ Install PM2 module.
 npm install pm2 -g
 ```
 <hr id="digirepo"/>
-## Setup repository on digitalocean
+## Setup node app git repository on digitalocean
 Git clone the node app repository to your droplet. Make sure you have access to the repository so that you can give permissions to the third party app called *codeship* in the next step.
 
 ```
@@ -70,6 +72,10 @@ chmod +x ~/node_app_start
 ```
 <hr id="codeship"/>
 ## Configure the project on Codeship
+> Codeship is a hosted continuous delivery service that focuses on speed, reliability and simplicity. You configure Codeship to build and deploy your application from GitHub to the staging or the production platform of your choice.
+
+So we use codeshitp to deploy to digitalocean droplet when there is a new commit pushed to Github or Gitlab or Bitbucket.
+
 Create an account on [https://codeship.com/](https://codeship.com/). After sign up, it will guide you through creating new project. Other way to create project is to click on `Projects` tab on top navigation bar.
 
 ### Creating a project
