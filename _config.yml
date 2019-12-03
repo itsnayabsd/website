@@ -9,6 +9,7 @@ permalink: none
 excerpt_separator: <!--more-->
 imgbase: /assets/img/
 email: nayabbashasyed@gmail.com
+author: Nayab Basha Sayed
 
 #twitter_username: jekyllrb
 #github_username:  jekyll
@@ -20,6 +21,7 @@ google_adsense: false
 #Limit no of posts to parse and publish
 #limit_posts: 10
 
+logo: /favicon.ico
 facebook_url: https://facebook.com/nayab.xyz
 twitter_url: https://twitter.com/nayabbashasayed
 linkedin_url: https://www.linkedin.com/in/nayabsd/
@@ -41,3 +43,8 @@ exclude:
 toc:
     min_level: 2
     max_level: 2
+twitter:
+    username: nayabbashasayed
+
+facebook:
+    publisher: https://www.facebook.com/nayab.xyz/
