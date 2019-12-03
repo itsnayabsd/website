@@ -7,6 +7,7 @@ google_adsense: true
 excerpt: Step by step tutorial on how to automatically deploy nodejs web app hosted on github to digitalocean cloud platform using codeship build platform.
 keywords: automatically deploy node app to digitalocean, nginx reverse proxy, point name servers to digitalocean, codeship build to digitalocean integration, run node app in the background using pm2, install ssl digitalocean droplet letsencrypt, deploy node app on production server
 image: /assets/img/deploy_node_app_droplet_codeship.png
+date: 2019-12-03 19:53:57 +5:30
 ---
 
 This tutorial explains how to deploy *node* application automatically to digitalocean droplet every time there is a new commit pushed to Github, Gitlab or Bitbucket.
