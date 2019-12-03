@@ -32,6 +32,10 @@ markdown: kramdown
 #theme: minima
 gems:
     #    - jekyll-feed
+  - jekyll-toc
 exclude:
     #- Gemfile
     #- Gemfile.lock
+toc:
+    min_level: 2
+    max_level: 2

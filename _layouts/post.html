@@ -9,6 +9,10 @@ layout: default
   </header>
 
   <div class="post-content" itemprop="articleBody">
+{% if page.toc %}
+    <h2> Table of Contents</h2>
+    {{ content | toc}}    	  
+{% endif %}
     {{ content }}
   </div>
 
