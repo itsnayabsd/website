@@ -10,7 +10,7 @@ layout: default
   <div class="post-content">
 {% if page.toc %}
     <h2> Table of Contents</h2>
-    {{ content | toc}}    	  
+    {{ content | toc_only }}    	  
 {% endif %}
     {{ content }}
   </div>
