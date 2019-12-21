@@ -19,6 +19,7 @@ variable names can have js : $,_,atoz, AtoZ
 ## Data types
 js : string, number
 undefined and null :
+js : strings ' (single quotes) or "  (double quotes)
 ```js
 let multipleArg = (a, b, c) => {
         console.log('a : ' + a);
@@ -62,7 +63,49 @@ let scope is same as C. Variable defined in a block can't access outside of bloc
 Semicolon is optional.
 ## String operations
 string concatenation, string copy or assign
+### String methods
+```js
+let mystring = 'Nayab Basha Sayed';
+
+let length = mystring.length;
+
+console.log(length);
+console.log(mystring.toUpperCase());
+```
+For more string methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
 ## Printing to the console
+Variables can be accessed wiht ${var} inside console.log. In C, we need to use specifiers.
+console.log(`Double the variable ${2 * var}`); // Those are not single quotes. Back tick.
+## Objects
+### Methods
+function definitions in an object.
+```js
+let restaurant = {
+        name : 'ABC',
+        guestCapacity : 75,
+        guestCount : 0,
+        seatParty(count) {
+                this.guestCount += count;
+        },
+        removeParty(count) {
+                this.guestCount -= count;
+        },
+        checkAvailability(count) {
+                let seatsLeft = this.guestCapacity - this.guestCount;
+                return count <= seatsLeft;
+        }
+}
+
+console.log(restaurant.checkAvailability(10));
+```
+### Creating object
+```js
+let obj = {};
+```
+In C we need structure definition first to create a structure variable.
+### Accessing object properties / structure members
+
 ## Functions
 Function definition:
 ```js
@@ -85,4 +128,6 @@ let result = square(10); // Point
 console.log(result);
 ```
 ### Callback functions
+### Passing arguments to functions
+Passing arguments to functions is always by reference. The same equivalent in C is passing arguments by it's address.
 ## Debugging
