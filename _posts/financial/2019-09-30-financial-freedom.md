@@ -35,29 +35,27 @@ Financial freedom is only possible if you can beat the inflation after paying al
 
 Following are the investment options allocation for my age group (25 - 40 years) *given in the book*. I may change this allocation once I have enough knowledge of all the investment options.
 ```
-Equity mutual funds	- 25%
-Debt funds		- 15%
-Real estate		- 10%
 Equity stocks		- 10%
-EPF			- 10%
-FDs			- 10%
-Savings			- 10%
-Gold			- 05%
-Chits			- 05%
+Equity mutual funds	- 35%
+Debt funds		- 08%
+Real estate		- 15%
+EPF/PPF			- 15%
+FDs/RDs/Chits		- 10%
+Savings			- 05%
+Gold			- 07%
 ```
 
 ### The current allocation of my investments
 I need to tune the following allocation as it suits above allocation.
 ```
-Equity mutual funds	- 27.28%
+Equity stocks		- 0%
+Equity mutual funds	- 24.83%
 Debt funds		- 0%
 Real estate		- 0%
-Equity stocks		- 0%
-EPF			- 21.98%
-FDs			- 39.41%
-Savings			- 05.72%
+EPF/PPF			- 20.90%
+FDs/RDs/Chits		- 22.22%
+Savings			- 32.02%
 Gold			- 0%
-Chits			- 05.58%
 ```
 
 ## Where I don't invest
