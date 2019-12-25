@@ -15,18 +15,7 @@
 			<link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
 			<guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
 		</item>
-        {% endfor %}
-        {% for category in site.categories %}
-        {% assign catg = {{category|first}} %}
-        {% if catg == "me" %}
-        {% continue %}
-        {% endif %}
-		<item>
-			<title>{{ category|first }}</title>
-            <link>{{ site.url }}/category/{{ category|first }}.html</link>
-            <guid isPermaLink="true">{{ site.url }}/category/{{ category|first }}.html</guid>
-        </item>
-        {% endfor %}
+        	{% endfor %}
 
 	</channel>
 </rss>
