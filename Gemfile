@@ -12,6 +12,7 @@ ruby RUBY_VERSION
 gem "jekyll", "3.3.1"
 gem 'jekyll-toc'
 gem 'jekyll-seo-tag'
+gem 'jekyll-feed'
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

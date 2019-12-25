@@ -31,6 +31,7 @@ markdown: kramdown
 gems:
   - jekyll-toc
   - jekyll-seo-tag
+  - jekyll-feed
 
 exclude:
     #- Gemfile
@@ -55,3 +56,5 @@ social:
         - https://www.instagram.com/nayab.xyz/
 
 lang: en_IN
+feed:
+    path: atom.xml
