@@ -5,7 +5,8 @@
     <!--<a class="site-title" href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>-->
     <a class="site-title" href="{{ "/" | relative_url}}">Nayab Basha Sayed</a>
 
-    <nav class="site-nav">
+    <nav>
+	    <div class="site-nav">
       <span class="menu-icon">
         <svg viewBox="0 0 18 15" width="18px" height="15px">
           <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
@@ -18,10 +19,20 @@
 	<a class="page-link" href="{{ "archives.html" | relative_url }}">Archives</a>
 	<a class="page-link" href="{{ "communities.html" | relative_url }}">Communities</a>
 	<a class="page-link" href="{{ "myreferences.html" | relative_url }}">References</a>
-	  	<a class="page-link" href="{{ "/feed.xml" | relative_url }}">Feed</a>
-		{% include buymeacoffee.html %}
       </div>
+	    </div>
     </nav>
+	    <div class="nav-icon">
+		    <a id="magnifier" href="#">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 3.552-.505 5.022-1.383l5.021 5.021c2.144 2.141 5.384-1.096 3.239-3.24zm-20.064-10.228c0-3.739 3.043-6.782 6.782-6.782s6.782 3.042 6.782 6.782-3.043 6.782-6.782 6.782-6.782-3.043-6.782-6.782zm2.01-1.764c1.984-4.599 8.664-4.066 9.922.749-2.534-2.974-6.993-3.294-9.922-.749z"/></svg>
+		    </a>
+		    <a id="buymeacoffee" href="https://www.buymeacoffee.com/nayabsd">
+			    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24"><title>Buy Me A Coffee icon</title><path d="M6.898 0L5.682 2.799H3.877v2.523h.695L5.277 9.8H4.172l1.46 8.23.938-.01L7.512 24h8.918l.062-.4.88-5.58.888.01 1.46-8.231h-1.056l.705-4.477h.756V2.8h-1.918L16.99 0H6.898zm.528.805h9.043l.771 1.78H6.652l.774-1.78zm-2.75 2.797H19.32v.92H4.676v-.92zm.453 6.998h13.635l-1.176 6.62-5.649-.06-5.636.06-1.174-6.62z"/></svg>
+		    </a>
+		    <a id="rssfeed" href="/feed.xml">
+			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>RSS icon</title><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+		    </a>
+	    </div>
 
   </div>
 
