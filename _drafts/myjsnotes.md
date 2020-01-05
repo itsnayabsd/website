@@ -182,4 +182,16 @@ console.log(result);
 ### Callback functions
 ### Passing arguments to functions
 Passing arguments to functions is always by reference. The same equivalent in C is passing arguments by it's address.
+## Interacting with web pages
+### DOM manipulation
+querySelector, querySelectorAll		# get references to html tags
+textContent				# Changes tag text content
+createElement
+appendChild
+addEventListener
+	Events : input, change, click etc
+## Libraries
+### Useful libraries
+links.mead.io/uuidv4
+momentjs library for date integration
 ## Debugging
