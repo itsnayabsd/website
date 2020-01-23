@@ -48,7 +48,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   vertical-align: middle;
-  box-shadow: 10px 37px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 
@@ -62,17 +62,19 @@ figure {
 
 figure > img {
   display: block;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 figcaption {
   font-size: $small-font-size;
-	background-color: #e6e6e6;
+	background-color: #eee;
 	border-radius: 0px 0px 5px 5px;
   max-width: 90%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px 0px;
+  padding: 3px 0px;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 
