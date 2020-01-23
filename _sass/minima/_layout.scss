@@ -28,6 +28,11 @@
   &:visited {
     color: $grey-color-dark;
   }
+	svg {
+		path {
+                	fill: $grey-color-dark;
+		}
+	}
 }
 
 .nav-icon {
