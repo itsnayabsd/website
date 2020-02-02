@@ -1,7 +1,1 @@
-# Website
-
-This repository contains files to generate my personal website [Nayab Basha Sayed](https://www.nayab.xyz).
-
-[jekyll](https://jekyllrb.com) - This is the static site generator used to build my personal website.
-
-I use [Netlify](https://www.netlify.com) to host my personal website and [Netlify CMS](https://www.netlifycms.org) to write or manage my posts.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.nayab.xyz" property="cc:attributionName" rel="cc:attributionURL">Sayed Nayab Basha</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/nayabbashasayed/website" rel="dct:source">https://github.com/nayabbashasayed/website</a>.
