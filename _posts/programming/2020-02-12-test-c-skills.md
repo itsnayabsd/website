@@ -237,7 +237,7 @@ int main(void)
 a) printf("%s" , *(char **)vptr);
 b) printf("%s" , *(vptr);
 c) Both
-d) Segmentation fault for a) or b)
+d) Segmentation fault for a) and b)
 ```
 ___
 ## Question 9
