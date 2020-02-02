@@ -735,3 +735,77 @@ b) 96
 c) 48
 d) Garbage value
 ```
+___
+## Question 29
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+        register float a = 2, b = 0;
+
+        printf("%f\n", a / b);
+        return 0;
+}
+```
+**Options**
+```
+a) Program won't compile
+b) inf
+c) Floating point exception (core dumped)
+d) 0
+```
+___
+## Question 30
+```C
+#include <stdio.h>
+
+register float d;
+
+int main(void)
+{
+        register float a = 2, b = 1;
+
+        d = b / a;
+        printf("%f\n", d);
+        return 0;
+}
+```
+**Options**
+```
+a) 0.500000
+b) 0
+c) Program won't compile
+d) Segmentation fault
+```
+___
+## Question 31
+```C
+#include<stdio.h>
+
+void function(int *p)
+{
+    int c=10;
+    p=&c;
+}
+
+int main()
+{
+    register int a=20;
+    int *p=&a;
+
+    function(p);
+    printf("%d\n",*p);
+
+    return 0;
+}
+
+```
+**Options**
+```
+a) 10
+b) 20
+c) Program won't compile
+d) Garbage value
+```
