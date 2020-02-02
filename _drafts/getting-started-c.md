@@ -87,5 +87,8 @@ Where string constants are stored?
 ```C
 char *p = "Hello World!";
 ```
+```
+The linker (ld on Linux systems), which is a part of binutils, is responsible for the placement of symbols (data, code, and so on) in the appropriate section in the generated binary in order to be processed by the loader when the program is executed
+```
 ### C program without main() function
 
