@@ -588,6 +588,7 @@ int main(void)
 {
     int var = 30;
 
+    func(var);
     printf("%d\n", var);
     return 0;
 }
