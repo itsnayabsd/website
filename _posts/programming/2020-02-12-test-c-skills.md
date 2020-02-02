@@ -237,7 +237,7 @@ int main(void)
 a) printf("%s" , *(char **)vptr);
 b) printf("%s" , *(vptr);
 c) Both
-d) Compile time error (or) Segmentation fault
+d) Segmentation fault for a) or b)
 ```
 ___
 ## Question 9
