@@ -25,3 +25,155 @@ collections:
 
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "drivers" # Used in routes, e.g., /admin/collections/blog
+    label: "Drivers" # Used in the UI
+    folder: "_posts/drivers" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "embedded" # Used in routes, e.g., /admin/collections/blog
+    label: "Embedded" # Used in the UI
+    folder: "_posts/embedded" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "financial" # Used in routes, e.g., /admin/collections/blog
+    label: "Financial" # Used in the UI
+    folder: "_posts/financial" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "gadgets" # Used in routes, e.g., /admin/collections/blog
+    label: "Gadgets" # Used in the UI
+    folder: "_posts/gadgets" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "linux" # Used in routes, e.g., /admin/collections/blog
+    label: "Linux" # Used in the UI
+    folder: "_posts/linux" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "linux-tools" # Used in routes, e.g., /admin/collections/blog
+    label: "Linux Tools" # Used in the UI
+    folder: "_posts/linux-tools" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "networking" # Used in routes, e.g., /admin/collections/blog
+    label: "Networking" # Used in the UI
+    folder: "_posts/networking" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "web" # Used in routes, e.g., /admin/collections/blog
+    label: "Web" # Used in the UI
+    folder: "_posts/web" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Comments", name: "comments", widget: "boolean"}
+      - {label: "Google Adsense", name: "google_adsense", widget: "boolean"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: "true"}
+
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
