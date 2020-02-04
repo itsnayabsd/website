@@ -12,7 +12,7 @@ date: 2020-01-23 00:19:30 +5:30
 ---
 ## Find the output of following programs.
 
-~~~C
+```C
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -27,7 +27,7 @@ int main(void)
     free(name_ptr);
     return 0;
 }
-~~~
+```
 a) nayab.xyz  
 b) Segmentation fault  
 c) Aborted (core dumped)  
