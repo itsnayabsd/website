@@ -51,61 +51,62 @@
 		margin-left: 42px;
 	}
 }
+
 .site-nav {
-        line-height: 50px;
+    line-height: 50px;
 
-        .menu-icon {
-                display: none;
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+    }
+
+
+    position: absolute;
+    top: 5px;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
+    z-index: 99;
+
+    .menu-icon {
+        display: block;
+        float: right;
+        width: 32px;
+        height: 22px;
+        line-height: 0;
+        padding-top: 8px;
+        text-align: center;
+
+        > svg path {
+            fill: $grey-color-dark;
         }
+    }
 
-        .page-link {
-                color: $text-color;
-                line-height: $base-line-height;
+
+    .trigger {
+        clear: both;
+        display: none;
+    }
+
+    &:hover .trigger {
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    .page-link {
+        display: block;
+        padding: 5px 10px;
+
+        &:not(:last-child) {
+            margin-right: 0;
         }
-
-
-        position: absolute;
-        top: 5px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-                display: block;
-                float: right;
-                width: 32px;
-                height: 22px;
-                line-height: 0;
-                padding-top: 8px;
-                text-align: center;
-
-                > svg path {
-                        fill: $grey-color-dark;
-                }
-	}
-
-
-        .trigger {
-                clear: both;
-                display: none;
-        }
-
-        &:hover .trigger {
-                display: block;
-                padding-bottom: 5px;
-                z-index: 99;
-        }
-
-        .page-link {
-                display: block;
-                padding: 5px 10px;
-
-                &:not(:last-child) {
-                        margin-right: 0;
-                }
-                margin-left: 20px;
-        }
+        margin-left: 20px;
+    }
 }
 
 
