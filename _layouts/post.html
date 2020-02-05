@@ -3,8 +3,11 @@ layout: default
 ---
 <article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <header class="post-header">
+        {% if jekyll.environment == 'production' and page.google_adsense %}
+        {% include google-adnav.html %}
+        {% endif %}
+        <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
   <div class="post-content">
