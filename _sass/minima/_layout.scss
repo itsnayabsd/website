@@ -94,6 +94,7 @@
         &:hover .trigger {
                 display: block;
                 padding-bottom: 5px;
+                z-index: 99;
         }
 
         .page-link {
