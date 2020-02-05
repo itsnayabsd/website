@@ -23,7 +23,11 @@
 	<a class="page-link" href="{{ "communities.html" | relative_url }}">Communities</a>
 	<a class="page-link" href="{{ "myreferences.html" | relative_url }}">References</a>
       </div>
-	    </div>
+        </div>
+        {% if jekyll.environment == 'production' and page.google_adsense %}
+        {% include google-adnav.html %}
+        {% endif %}
+
     </nav>
 	    <div class="nav-icon">
 		    <a id="magnifier" href="/cse.html">
