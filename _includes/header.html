@@ -42,8 +42,7 @@
 	    </div>
 
   </div>
-        {% if jekyll.environment == 'production' and page.google_adsense %}
-        {% include google-adnav.html %}
-        {% endif %}
-
 </header>
+{% if jekyll.environment == 'production' and page.google_adsense %}
+{% include google-adnav.html %}
+{% endif %}
