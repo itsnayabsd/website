@@ -9,8 +9,7 @@ keywords: YouCompleteMe Vim plugin for C, YouCompleteMe Vim plugin for JavaScrip
 image: /assets/img/youcompleteme-code-completion-engine.png
 date: 2020-01-23 00:19:30 +5:30
 ---
-## Find the output of following programs.
-### Question 1
+## Question 1
 
 ```C
 #include <stdio.h>
@@ -28,6 +27,7 @@ int main(void)
     return 0;
 }
 ```
+**Guess the output**
 ```
 a) nayab.xyz  
 b) Segmentation fault  
@@ -36,8 +36,7 @@ d) None of the above
 ```
 ___
 
-### Question 2
-
+## Question 2
 Assuming the address of `a` is `0xabcdef` and the address of `b` is `0xfedcba`
 
 ```C
@@ -56,9 +55,49 @@ int main(void)
     return 0;
 }
 ```
+**Guess the ouput.**
 ```
 a) a value : 10, *b value : 10, *c value : 0xabcdef
 b) a value : 10, *b value : 10, *c value : 0xfedcba
-c) Program won't compile
+c) Compilation error
 d) Segmentation fault
+```
+___
+## Question 3
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    printf("\z\n");
+    return 0;
+}
+```
+**Guess the output**
+```
+a) Compilation error
+b) z
+c) Garbage
+d) \z
+```
+___
+## Question 4
+```C
+#include <stdio.h>
+
+int b = 1;
+
+int main(void)
+{
+    b++;
+    b = b + 1;
+}
+```
+**Which line in the main function is a statement?**
+<!-- Expressions, including an assignment or a function call is a statement -->
+```
+a) b++;
+b) b = b + 1;
+c) Both
+d) None
 ```
