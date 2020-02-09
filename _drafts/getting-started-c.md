@@ -59,7 +59,15 @@ The process of compilation involves the following steps.
  * Linking and
  * Final compilation
 
+#### Preprocessing
+A preprocessing step by compiler includes macro substitution, inclusion of other source files and conditional compilation.
+
 ### Executing
+## Data types
+The size of data types are machine-dependent. How?
+
+## Storage classes
+Variables declared in the function are generally `automatic` storage class.
 ## Miscellaneous
 ### C program without main() function
 
