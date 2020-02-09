@@ -82,22 +82,27 @@ d) \z
 ```
 ___
 ## Question 4
+
+```
+Give an example of expression which is not a statement _________
+```
+___
+## Question 5
 ```C
 #include <stdio.h>
 
-int b = 1;
+#define SQUARE(x) x * x;
 
 int main(void)
 {
-    b++;
-    b = b + 1;
+    printf("%d\n", SQUARE(2 + 1));
+    return 0;
 }
 ```
-**Which line in the main function is a statement?**
-<!-- Expressions, including an assignment or a function call is a statement -->
+Guess the output
 ```
-a) b++;
-b) b = b + 1;
-c) Both
-d) None
+a) 9
+b) 5
+c) 6
+d) Program won't compile
 ```
