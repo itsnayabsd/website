@@ -17,6 +17,7 @@ Google Chrome and Brave browser are not available in their software repositories
 
 So, I have written below the simplified version of the [official forum thread discussion](https://community.clearlinux.org/t/install-brave-browser/377) about the same topic on how to install Chrome and Brave browsers.
 
+![Download Brave Browser](/assets/img/brave-for-clearlinux.png)
 ## Instructions on how to install Brave browser
 Run the following command in a terminal to get the root privileges.
 ```bash
@@ -35,7 +36,6 @@ dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86
 <strong>Ignore the following errors</strong><br>
 Unable to detect release version (use '--releasever' to specify release version) <br>
 Failed loading plugin: changelog<br>
-Adding repo from: https://brave-browser-rpm-release.s3.brave.com/x86_64/<br>
 </div>
 ```bash
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
@@ -67,7 +67,6 @@ Reboot your system
 ```bash
 reboot
 ```
-![Download Brave Browser](/assets/img/brave-for-clearlinux.png)
 ## Instructions on how to install Chrome browser
 Run the following command in a terminal to get the root privileges.
 ```bash
@@ -118,5 +117,5 @@ rpm -e brave-browser
 sudo -s
 ```
 ```bash
-rpm -e google-chrome*
+rpm -e google-chrome-stable
 ```
