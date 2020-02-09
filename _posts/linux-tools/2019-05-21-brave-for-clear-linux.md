@@ -100,3 +100,24 @@ sudo -s
 ```
 rpm -e google-chrome*
 ```
+<!--
+root@doclr~ # dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+Unable to detect release version (use '--releasever' to specify release version)
+Failed loading plugin: changelog
+Adding repo from: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+
+
+root@doclr~ # rpm -U --nodeps brave-browser*.rpm
+warning: brave-browser-1.2.43-1.x86_64.rpm: Header V4 RSA/SHA512 Signature, key ID 82d3dc6c: NOKEY
+/var/tmp/rpm-tmp.a0j6Nd: line 612: /etc/default/brave-browser: No such file or directory
+/var/tmp/rpm-tmp.a0j6Nd: line 646: service: command not found
+/var/tmp/rpm-tmp.a0j6Nd: line 665: /usr/sbin/update-alternatives: No such file or directory
+
+root@doclr~ # rpm -U --nodeps google-chrome*.rpm
+warning: google-chrome-stable_current_x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 7fac5991: NOKEY
+/var/tmp/rpm-tmp.xQxDUv: line 612: /etc/default/google-chrome: No such file or directory
+/var/tmp/rpm-tmp.xQxDUv: line 615: /etc/default/google-chrome: No such file or directory
+warning: %post(google-chrome-stable-80.0.3987.87-1.x86_64) scriptlet failed, exit status 1
+
+
+-->
