@@ -291,6 +291,7 @@ pre[class*="language-"].line-numbers > code {
     vertical-align:middle;
 }
 .isa_info, .isa_success, .isa_warning, .isa_error {
-    padding-left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
