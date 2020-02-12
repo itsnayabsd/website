@@ -83,11 +83,6 @@ d) \z
 ___
 ## Question 4
 
-```
-Give an example of expression which is not a statement _________
-```
-___
-## Question 5
 ```C
 #include <stdio.h>
 
@@ -105,4 +100,112 @@ a) 9
 b) 5
 c) 6
 d) Program won't compile
+```
+___
+## Question 5
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int data[5] = {10, 20, 30};
+    int i;
+
+    for (i = 0; i < sizeof(data)/sizeof(data[0]); i++) {
+        printf("%d ", *data);
+        data++;
+    }
+
+    return 0;
+}
+```
+**Guess the output**
+```
+a) 10 20 30
+b) 10 20 30 0 0
+c) Compile time error
+d) Segmentation fault
+```
+___
+## Question 6
+**Guess the output**
+```C
+#include<stdio.h>
+
+void function(int *p)
+{
+    int c=10;
+    p=&c;
+}
+
+int main()
+{
+    int a=20;
+    int *p=&a;
+
+    function(p);
+    printf("%d\n",*p);
+
+    return 0;
+}
+```
+**Options**
+```
+a) Garbage value
+b) 10
+c) 20
+d) Segmentation fault
+```
+___
+## Question 7
+**Guess the output**
+```C
+#include <stdio.h>
+
+int a;
+
+int main()
+{
+   a+=5;
+
+   if(a/2.0 == 2.5)
+       printf("if");
+   else if(a/2 == 2)
+       printf("else if");
+   else
+       printf("else");
+
+   return 0;
+}
+```
+**Options**
+```
+a) if
+b) else if
+c) else
+d) Prints nothing
+```
+___
+## Question 8
+```C
+#include<stdio.h>
+
+int main(void)
+{
+ char *ptr = "nayab.xyz";
+ void *vptr;
+
+ vptr = &ptr;
+
+ /* Print "nayab.xyz" using vptr */
+ return 0;
+}
+```
+
+**Print <i>nayab.xyz</i>  using vptr**
+```
+a) printf("%s" , *(char **)vptr);
+b) printf("%s" , *(vptr);
+c) Both
+d) Compile time error or Segmentation fault
 ```
