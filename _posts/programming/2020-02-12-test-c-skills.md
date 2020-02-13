@@ -367,3 +367,96 @@ b) un.a : 498, un.c : 178
 c) un.a : 178, un.c : 178
 d) un.a : 498, un.c : 255
 ```
+___
+## Question 15
+**Guess the output**
+```C
+#include <stdio.h>
+#include <string.h>
+
+char name[64];
+
+int main(void)
+{
+    extern char name[] = "nayab.xyz";
+
+    puts(name + 6);
+    return 0;
+}
+
+```
+**Options**
+```
+a) xyz
+b) extern variable can't have an initializer
+c) Compile time error
+d) b and c
+```
+___
+## Question 16
+
+Here are the contents of files `a.c`, `b.c` and `num.h`
+
+**File** : num.h
+```C
+int num = 5;
+```
+
+**File** : a.c
+```C
+#include <stdio.h>
+#include <string.h>
+#include "num.h"
+
+extern void func(void);
+
+int main(void)
+{
+    num = 6;
+    func();
+    return 0;
+}
+```
+
+**File** : b.c
+```C
+#include <stdio.h>
+#include "num.h"
+
+void func(void)
+{
+    printf("%d\n", num);
+}
+```
+
+***Compile the above files together and Guess the output***
+```
+a) 6
+b) Compile time error
+c) 5
+d) None of the above
+```
+## Question 17
+**Guess the output**
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    extern char name[];
+
+    puts(name + 6);
+    return 0;
+}
+
+char name[64] = "nayab.xyz";
+```
+**Options**
+```
+a) xyz
+b) Undefined reference to name.
+c) Compile time error
+d) b and c
+```
+_
