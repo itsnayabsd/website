@@ -63,6 +63,9 @@ The process of compilation involves the following steps.
 A preprocessing step by compiler includes macro substitution, inclusion of other source files and conditional compilation.
 
 ### Executing
+## Memory management
+Initialized data, uninitialized data, stack etc. Global variable initialized with uninitialized. ex : a.h have `int num` and b.c and c.c using that header file. What if `int num = 6`. compile error will be generated. Then how this data is being stored?
+
 ## Data types
 The size of data types are machine-dependent. How?
 
