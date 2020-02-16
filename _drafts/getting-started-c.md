@@ -66,6 +66,7 @@ A preprocessing step by compiler includes macro substitution, inclusion of other
 ## Memory management
 Initialized data, uninitialized data, stack etc. Global variable initialized with uninitialized. ex : a.h have `int num` and b.c and c.c using that header file. What if `int num = 6`. compile error will be generated. Then how this data is being stored?
 
+If the variable is not automatic, initialization is done before the program execution.
 ## Data types
 The size of data types are machine-dependent. How?
 
