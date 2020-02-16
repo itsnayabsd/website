@@ -7,10 +7,25 @@ google_adsense: true
 excerpt: C objective type questions to test your C skills. Each question has 4 options. Chose the correct one. If you find something new, run the programs in the system and find the concept behind it.
 keywords: Test your C skills, test your C skills online, test your C skills by Yashwant Kanetkar alternative, C objective questions, C objective questions online test, C multiple choice questions, C multiple choice questions geeks for geeks alternative, C multiple choice questions indiabix alternative, C assessment questions.
 image: /assets/img/test-c-skills.png
-date: 2020-02-12 23:04:36 +5:30
+date: 2020-02-16 22:48:57 +5:30
 ---
 ## Introduction
 All the following programs are run and verified in the ***Linux based operating system*** with ***GCC*** compiler. Each question has 4 options. Chose the correct one. If you find something new, change and run the programs in the system and find the concept behind it.
+
+<div class="isa_info"><strong>Note</strong> : For all the questions, the following <strong>data type sizes</strong> are considered.<br></div>
+
+|Data type|Size|
+|---------|----|
+|char| 1 byte|
+|short| 2 bytes|
+|int| 4 bytes|
+|long | 8 bytes|
+|long long | 8 bytes |
+|float| 4 bytes|
+|double| 8 bytes|
+|long double| 16 bytes|
+
+<br>
 
 {% include image.html url="test-c-skills.png" description="Test Your C Skills" %}
 ## Question 1
@@ -459,4 +474,128 @@ b) Undefined reference to name.
 c) Compile time error
 d) b and c
 ```
-_
+___
+## Question 18
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define VALUE 1999999999L
+
+int main(void)
+{
+    printf("The size of VALUE : %lu\n", sizeof(VALUE));
+    return 0;
+}
+```
+**Options**
+```
+a) 11
+b) 4
+c) 8
+d) Compile time error
+```
+___
+## Question 19
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define PI  3.1415
+
+int main(void)
+{
+    printf("The size of PI : %lu\n", sizeof(PI));
+    return 0;
+}
+```
+**Options**
+```
+a) 6
+b) 4
+c) 8
+d) Compile time error
+```
+___
+## Question 20
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define A 010
+#define B 200
+
+int main(void)
+{
+    printf("%02X %02X\n", A, B);
+    return 0;
+}
+```
+**Options**
+```
+a) 0A C8
+b) 08 C8
+c) 10 C8
+d) 10 D8
+```
+___
+## Question 21
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define A 100.23F
+#define B 200F
+
+int main(void)
+{
+    printf("%0.2f %0.2f\n", A, B);
+    return 0;
+}
+```
+**Options**
+```
+a) 100.23 200
+b) 100.23 200.00
+c) Compile time error
+d) 100.230000 200.000000
+```
+___
+## Question 22
+**What does the following line prints**
+```C
+printf("\012");
+```
+**Options**
+```
+a) 012
+b) A new line
+c) Veritcal tab
+d) Compile time error
+```
+___
+## Question 23
+**Guess the output**
+```C
+#include <stdio.h>
+
+int func(const int a)
+{
+    a++;
+    return a;
+}
+int main(void)
+{
+    int var = 30;
+
+    printf("%d\n", var);
+    return 0;
+}
+```
+**Options**
+```
+a) 31
+b) 30
+c) Compile time error
+d) Segmentation fault
+```
