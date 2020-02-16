@@ -1,13 +1,13 @@
 title: Nayab Basha Sayed | Sr. Embedded Software Engineer
 description: > # this means to ignore newlines until "baseurl:"
-    I am an embedded software engineer, blogger and Linux enthusiast. I write blog posts about the things I am learning daily. This website is also like like my personal notes. - Nayab Basha Sayed
+    Sr. Embedded software engineer, blogger and Linux enthusiast. This blog includes posts related to Linux and Embedded Systems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.nayab.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: none
 
 excerpt_separator: <!--more-->
 imgbase: /assets/img/
-email: nayabbashasyed@gmail.com
+email: basha@nayab.xyz
 author: "Nayab Basha Sayed"
 
 #Google Analytics
