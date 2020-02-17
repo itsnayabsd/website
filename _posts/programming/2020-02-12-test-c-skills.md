@@ -28,6 +28,10 @@ All the following programs are run and verified in the ***Linux based operating 
 <br>
 
 {% include image.html url="test-c-skills.png" description="Test Your C Skills" %}
+
+<br>
+<div class="isa_warning"><strong>Warning : </strong>Run the program to confirm the answer. Answers are not so obvious as it seems</div>
+
 ## Question 1
 **Guess the output**
 ```C
@@ -599,4 +603,49 @@ a) 31
 b) 30
 c) Compile time error
 d) Segmentation fault
+```
+___
+## Question 24
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    if (-1L > 1UL) {
+        printf("-1L > 1UL true\n");
+    } else {
+        printf("-1L > 1UL false\n");
+    }
+    return 0;
+}
+```
+**Options**
+```
+a) -1L > 1UL true
+b) -1L > 1UL false
+c) None of the above
+d) Compile time error
+```
+___
+## Question 25
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int x = 177;
+
+    int y = x & 0177;
+
+    printf("%d\n", y);
+    return 0;
+}
+```
+**Options**
+```
+a) 177
+b) 49
+c) 0
+d) None of the above
 ```
