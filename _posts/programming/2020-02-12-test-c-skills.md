@@ -649,3 +649,27 @@ b) 49
 c) 0
 d) None of the above
 ```
+___
+## Question 26
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int a = 2, b = 3, c = 4;
+
+    if (a > 2)
+        if (b > 3)
+            printf("3");
+    else
+        printf("else");
+}
+```
+**Options**
+```
+a) else
+b) 3
+c) Prints nothing
+d) None of the above
+```
