@@ -72,6 +72,10 @@ The size of data types are machine-dependent. How?
 
 ## Storage classes
 Variables declared in the function are generally `automatic` storage class.
+### Static Variables
+External variables or functions declared with `static` limits the scope of that variable or function to the file it is declared. Other files can't access this variable or functions.
+
+When local/automatic variables are declared with `static`, it's scope is limited to that function but the variable will be in existence through out the life of program.
 ## Miscellaneous
 ### C program without main() function
 
