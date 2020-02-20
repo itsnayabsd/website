@@ -24,6 +24,7 @@ All the following programs are run and verified in the ***Linux based operating 
 |float| 4 bytes|
 |double| 8 bytes|
 |long double| 16 bytes|
+|pointer| 8 bytes|
 
 <br>
 
@@ -672,4 +673,65 @@ a) else
 b) 3
 c) Prints nothing
 d) None of the above
+```
+___
+## Question 27
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int func();
+    func();
+    return 0;
+}
+
+int func(void)
+{
+    printf("func\n");
+    return 0;
+}
+```
+**Options**
+```
+a) Compile time error
+b) func
+c) Functions can't be declared inside a function
+d) a and c
+```
+___
+## Question 28
+*array.c*
+```C
+#include <stdio.h>
+
+int arr[24];
+extern void func(void);
+
+int main(void)
+{
+    func();
+    return 0;
+}
+```
+*array_extern.c*
+```C
+#include <stdio.h>
+
+extern int arr[];
+
+void func(void)
+{
+    printf("The arr size : %ld\n", sizeof(arr));
+}
+```
+**Compile above two files together and guess the output**
+
+**Options**
+```
+a) Compile time error
+b) 96
+c) 48
+d) Garbage value
 ```
