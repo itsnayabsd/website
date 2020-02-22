@@ -76,6 +76,9 @@ Variables declared in the function are generally `automatic` storage class.
 External variables or functions declared with `static` limits the scope of that variable or function to the file it is declared. Other files can't access this variable or functions.
 
 When local/automatic variables are declared with `static`, it's scope is limited to that function or block, but the variable will be in existence through out the life of program.
+
+Static or external variables are initialized only once before the execution of program.
+
 ### Register variables
 Variables declared with `register` tells the compiler that these variables will be used heavily so that the compilers may consider to place these variables in machine registers for faster execution.
 ## Miscellaneous

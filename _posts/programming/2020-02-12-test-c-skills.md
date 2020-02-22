@@ -191,18 +191,18 @@ ___
 ```C
 #include <stdio.h>
 
-int a;
+int a = 2;
 
 int main()
 {
-   a+=5;
+   int b = a + 3;
 
-   if(a/2.0 == 2.5)
-       printf("if");
-   else if(a/2 == 2)
-       printf("else if");
+   if(b/2.0 == 2.5)
+       printf("if\n");
+   else if(b/2 == 2)
+       printf("else if\n");
    else
-       printf("else");
+       printf("else\n");
 
    return 0;
 }
@@ -212,11 +212,11 @@ int main()
 a) if
 b) else if
 c) else
-d) Prints nothing
+d) Program won't compile
 ```
 ___
 ## Question 8
-**Guess the ouput.**
+**Print <i>nayab.xyz</i>  using vptr**
 ```C
 #include<stdio.h>
 
@@ -231,8 +231,7 @@ int main(void)
  return 0;
 }
 ```
-
-**Print <i>nayab.xyz</i>  using vptr**
+**Options**
 ```
 a) printf("%s" , *(char **)vptr);
 b) printf("%s" , *(vptr);
@@ -808,4 +807,57 @@ a) 10
 b) 20
 c) Program won't compile
 d) Garbage value
+```
+___
+## Question 32
+**Guess the output**
+```C
+#include <stdio.h>
+
+int a = 2;
+int b = a + 3;
+
+int main()
+{
+   if(b/2.0 == 2.5)
+       printf("if\n");
+   else if(b/2 == 2)
+       printf("else if\n");
+   else
+       printf("else\n");
+
+   return 0;
+}
+```
+**Options**
+```
+a) if
+b) else if
+c) else
+d) Program won't compile
+```
+___
+## Question 33
+**Guess the output**
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char name[] = "nayab.xyz blog";
+
+    printf("%lu ", sizeof(name));
+    snprintf(name, 128, "embed");
+    printf("%lu\n", sizeof(name));
+
+    return 0;
+}
+```
+**Options**
+```
+a) 15 6
+b) 15 15
+c) Aborted (core dumped)
+d) 15 128
 ```
