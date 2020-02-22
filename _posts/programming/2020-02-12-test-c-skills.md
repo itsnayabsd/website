@@ -861,3 +861,79 @@ b) 15 15
 c) Aborted (core dumped)
 d) 15 128
 ```
+___
+## Question 34
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define EMBEDDED "Embedded"
+#define SYSTEMS "Systems"
+
+int main(void)
+{
+    printf("%s\n", EMBEDDEDSYSTEMS);
+    return 0;
+}
+```
+**Options**
+```
+a) EmbeddedSystems
+b) Embedded Systems
+c) Compile time error
+d) None of the above
+```
+___
+## Question 35
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define printd(x) printf(#x"\n")
+
+int main(void)
+{
+    printd("nayab.xyz");
+    return 0;
+}
+```
+**Options**
+```
+a) nayab.xyz
+b) "nayab.xyz"
+c) Compile time error
+d) None of the above
+```
+___
+## Question 36
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define concat(x, y) x ## y
+#define nam(x) #x
+
+int main(void)
+{
+    char *concat(my, name) = nam(nayab.xyz);
+
+    printf("%s : %s\n", concat(my, name), nam(nayab.xyz));
+    return 0;
+}
+```
+**Options**
+```
+a) myname : nayab.xyz
+b) nayab.xyz : nayab.xyz
+c) Compile time error
+d) None of the above
+```
+___
+## Question 37
+**Which of the following preprocessor condition syntax is valid?**
+```
+a) #if (defined(A) || defined(B))
+b) #if defined(A) || defined(B)
+c) #if (defined(A) or defined(B))
+d) a and b
+```
