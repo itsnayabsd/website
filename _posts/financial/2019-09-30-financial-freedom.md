@@ -49,12 +49,12 @@ Gold			- 07%
 I need to tune the following allocation as it suits above allocation.
 ```
 Equity stocks		- 0%
-Equity mutual funds	- 26.48%
-Debt funds		- 1.22%
+Equity mutual funds	- 26.27%
+Debt funds		- 3.09%
 Real estate		- 0%
-EPF/PPF/Chits		- 33.62%
-FDs/RDs		        - 10.24%
-Savings			- 28.42%
+EPF/PPF/Chits		- 34.14%
+FDs/RDs		        - 09.34%
+Savings			- 27.13%
 Gold			- 0%
 ```
 
