@@ -937,3 +937,88 @@ b) #if defined(A) || defined(B)
 c) #if (defined(A) or defined(B))
 d) a and b
 ```
+___
+## Question 37
+**Guess the output**
+```C
+#include <stdio.h>
+
+void print_a(int *a, int len)
+{
+    int i = 0;
+
+    printf("a[] = ");
+    for (i = 0; i < len; i++) {
+        printf("%d ", a[i]);
+    }
+    puts("");
+}
+
+int main(void)
+{
+    int a[] = {2, 3, 4, 5, 6}, b = 0, *p = NULL;
+
+    p = a;
+
+    *p++;
+    ++*p;
+    b = (*p)++;
+
+    printf("b = %d and ", b);
+    print_a(a, sizeof(a)/sizeof(a[0]));
+    return 0;
+}
+```
+**Options**
+```
+a) b = 4 and a[] = 5 3 4 5 6
+b) b = 5 and a[] = 2 3 5 5 6
+c) b = 4 and a[] = 2 5 4 5 6
+d) None of the above
+```
+___
+## Question 38
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    char *p;
+    int a[] = {2, 3, 4, 5, 6};
+
+    p = a;
+    p += sizeof(int);
+    printf("%d\n", *(int *)p);
+    return 0;
+}
+```
+**Options**
+```
+a) Undefined behaviour
+b) 3
+c) 6
+d) None of the above
+```
+___
+## Question 39
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    char *p = "Hello";
+
+    p[3] = 'o';
+    putchar(p[3]);
+    return 0;
+}
+```
+**Options**
+```
+a) Heloo
+b) Segmentation fault (core dumped)
+c) Compile time error
+d) None of the above
+```
