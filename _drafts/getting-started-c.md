@@ -82,5 +82,10 @@ Static or external variables are initialized only once before the execution of p
 ### Register variables
 Variables declared with `register` tells the compiler that these variables will be used heavily so that the compilers may consider to place these variables in machine registers for faster execution.
 ## Miscellaneous
+Where string constants are stored?
+
+```C
+char *p = "Hello World!";
+```
 ### C program without main() function
 
