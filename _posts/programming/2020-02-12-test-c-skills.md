@@ -1022,3 +1022,51 @@ b) Segmentation fault (core dumped)
 c) Compile time error
 d) None of the above
 ```
+___
+## Question 40
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    char name[][32] = {"Hello World!", "Howdy"};
+    char *aname[] = {"Hello World!", "Howdy"};
+
+    printf("%lu %lu\n", sizeof(name[1]), sizeof(aname[1]));
+    return 0;
+}
+```
+**Options**
+```
+a) 32 32
+b) 6 6
+c) 32 8
+d) 32 6
+```
+___
+## Question 41
+**Guess the output**
+```C
+#include <stdio.h>
+
+void func(int arg[])
+{
+    printf("%d\n", *++arg);
+}
+
+int main(void)
+{
+    int arg[] = {2, 3, 4, 5};
+
+    func(arg);
+    return 0;
+}
+```
+**Options**
+```
+a) In func(), base address of arg can't be incremented
+b) Compile time error
+c) 3
+d) a and b
+```
