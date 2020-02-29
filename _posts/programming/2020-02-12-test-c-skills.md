@@ -1070,3 +1070,73 @@ b) Compile time error
 c) 3
 d) a and b
 ```
+___
+## Question 42
+**Guess the output**
+```C
+#include <stdio.h>
+
+struct name {
+    int len;
+    char *name;
+};
+
+int main(void)
+{
+    struct name data[2] = {
+        {5, "nayab"},
+        {3, "xyz"}
+    };
+
+    struct name *ptr = data;
+
+    printf("%d %s\n", ++ptr->len, ptr++->name);
+
+    return 0;
+}
+```
+**Options**
+```
+a) 4 xyz
+b) 3 xyz
+c) 3 nayab
+d) 4 nayab
+5) None of the above
+```
+___
+## Question 43
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define arr_size (sizeof(a) / sizeof(a[0]))
+
+int main(void)
+{
+    int a[] = {2, 3, 4, 5};
+
+    int *p = &a[0], *q = &a[arr_size];
+
+    int *mid = p + (q - p) / 2;
+
+    printf("%d\n", *mid);
+    return 0;
+}
+```
+**Options**
+```
+a) Behaviour undefined as the q pointing beyond the end of array
+b) 3
+c) 4
+d) Segmentation fault
+```
+<!-- Pointer arithmetic that involves the first element beyond the end of array will work correctly-->
+
+___
+## Question 44
+**What does the following line do?**
+
+```C
+typedef int (*PFI)(char *, char *);
+```
+<!-- Creates a type PFI for function to pointer returning int. Can be used like 'PFI strcmp, numcmp;'-->
