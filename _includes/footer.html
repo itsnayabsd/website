@@ -1,40 +1,9 @@
 <footer class="site-footer">
   <div class="wrapper">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">E-Mail Me</a></li>
-            {% endif %}
-        </ul>
+      <div class="footer-col-wrapper">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <a href="mailto:basha@nayab.xyz">Sayed Nayab Basha</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/nayabbashasayed/website" rel="dct:source">https://github.com/nayabbashasayed/website</a>.
       </div>
-
-      <!--
-      <div class="footer-col footer-col-2">
-          <ul style="list-style-type: none">
-              <div style="margin-bottom: 5px;">Categories</div>
-          {% for category in site.categories %}
-          {% assign catg = {{category|first}} %}
-          {% if catg == "me" %}
-          {% continue %}
-          {% endif %}
-          <li><a href="/category/{{ category | first }}.html" style="font-size: 16px;">{{ category | first }}</a></li>
-          {% endfor %}
-          </ul>
-      </div>
-      -->
-
-      <div class="footer-col footer-col-3">
-      <p>{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 500 | escape }}</p>
-      </div>
-    </div>
 
   </div>
 
