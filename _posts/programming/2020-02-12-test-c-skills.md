@@ -1204,3 +1204,45 @@ b) ./arg < dataFile
 c) ./arg This is temporary data
 d) None of the above
 ```
+___
+## Question 47
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = "Hello World!";
+
+    printf(s);
+    return 0;
+}
+```
+**Options**
+```
+a) Hello World!
+b) Compile time error
+c) Segmentation fault
+d) None of the above
+```
+___
+## Question 48
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = "Hello World!";
+
+    printf(":%-20.5s:\n", s);
+    return 0;
+}
+```
+**Options**
+```
+a) :               Hello:
+b) :Hello               :
+c) :Hello World!        :
+d) :        Hello World!:
+```
