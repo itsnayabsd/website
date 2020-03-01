@@ -1140,3 +1140,67 @@ ___
 typedef int (*PFI)(char *, char *);
 ```
 <!-- Creates a type PFI for function to pointer returning int. Can be used like 'PFI strcmp, numcmp;'-->
+___
+## Question 45
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    struct data {
+        int is_extern: 1;
+        int is_auto: 1;
+    } is_data = {1, 1};
+
+    printf("%d %d\n", is_data.is_extern, is_data.is_auto);
+    return 0;
+}
+```
+**Options**
+```
+a) 1 1
+b) -1 -1
+c) Behaviour undefined. Different for diffent machines. Implementation defined.
+d) 4294967295 4294967295
+```
+___
+## Question 46
+
+*File : arg.c*
+```C
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+    int i = 0;
+
+    while (i < argc) {
+        printf("%s ", argv[i]);
+        i++;
+    }
+    puts("");
+    return 0;
+}
+```
+<br>
+*File : dataFile*
+```
+This is temporary data
+```
+
+`arg.c` is compiled with:
+```bash
+gcc -Wall arg.c -o arg
+```
+**Guess the output of following**
+```bash
+./arg < dataFile
+```
+**Options**
+```
+a) ./arg
+b) ./arg < dataFile
+c) ./arg This is temporary data
+d) None of the above
+```
