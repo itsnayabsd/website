@@ -1246,3 +1246,35 @@ b) :Hello               :
 c) :Hello World!        :
 d) :        Hello World!:
 ```
+___
+## Question 49
+**Guess the output**
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *mac = "ab:bc:cd:de:ef:f0";
+    unsigned int macHex[6];
+    int i = 0, count = 0;
+
+    memset(macHex, 0, sizeof(macHex));
+    count = sscanf(mac, "%02X : %02X : %02X , %02X : %02X : %02X",
+            &macHex[0], &macHex[1], &macHex[2], &macHex[3],
+            &macHex[4], &macHex[5]);
+    for (i = 0; i < count; i++) {
+        printf("%02X ", macHex[i]);
+    }
+    puts("");
+    return 0;
+}
+```
+**Options**
+```
+a) AB BC CD 00 00 00
+b) ab:bc:cd:de:ef:f0
+c) AB BC CD DE EF F0
+d) AB BC CD
+e) ab bc cd de ef f0
+```
