@@ -1288,3 +1288,24 @@ b) int
 c) double
 d) structure
 ```
+___
+## Question 51
+**Guess the output**
+```C
+#include <stdio.h>
+
+#define 1ST_NAME(x) #x
+
+int main(void)
+{
+    puts(1ST_NAME(nayab));
+    return 0;
+}
+```
+**Options**
+```
+a) nayab
+b) "nayab"
+c) Compile time error
+d) None of the above
+```
