@@ -1278,3 +1278,13 @@ c) AB BC CD DE EF F0
 d) AB BC CD
 e) ab bc cd de ef f0
 ```
+___
+## Question 50
+
+<strong><i>FILE</i> is a type defined of a</strong>
+```
+a) char
+b) int
+c) double
+d) structure
+```
