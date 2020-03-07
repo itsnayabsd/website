@@ -111,7 +111,7 @@ ___
 ## Question 4
 **Guess the ouput.**
 
-```C
+```
 #include <stdio.h>
 
 #define SQUARE(x) x * x;
