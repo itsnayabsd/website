@@ -1309,3 +1309,33 @@ b) "nayab"
 c) Compile time error
 d) None of the above
 ```
+___
+## Question 52
+**Guess the output**
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+    char *p = 0;
+
+    p = malloc(10);
+    p = malloc(20);
+
+    memset(p, 0, 20);
+    strncpy(p, "nayab.xyz", 19);
+    puts(p);
+    free(p);
+
+    return 0;
+}
+```
+**Options**
+```
+a) nayab.xyz (with memory leak)
+b) Compile time error
+c) Segmentation fault
+d) nayab.xyz
+```

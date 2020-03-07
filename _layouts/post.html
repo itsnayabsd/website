@@ -8,6 +8,8 @@ layout: default
         {% include google-adnav.html %}
         {% endif %}
         <h1 class="post-title">{{ page.title | escape }}</h1>
+        {% include share-buttons.html %}
+        {% include suggest-change.html %}
   </header>
 
   <div class="post-content">
@@ -18,7 +20,6 @@ layout: default
     {{ content }}
   </div>
 
-  {% include share-buttons.html %}
   {% if page.comments %}
     {% include disqus_comments.html %}
   {% endif %}
