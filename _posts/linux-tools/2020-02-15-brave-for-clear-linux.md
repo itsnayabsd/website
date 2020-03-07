@@ -18,6 +18,7 @@ Brave browser is not available in their software repositories and it's hard to f
 So, I have written below the simplified version of the [official forum thread discussion](https://community.clearlinux.org/t/install-brave-browser/377) about the same topic on how to install Brave browser.
 
 {% include image.html url="brave-for-clearlinux.png" description="Brave browser for Clear Linux" %}
+
 ## Instructions on how to install Brave browser
 Run the following command in a terminal to get the root privileges.
 ```bash
