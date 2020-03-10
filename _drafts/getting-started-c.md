@@ -52,15 +52,172 @@ This should print the **Hello World!** output.
 ```
 Hello World!
 ```
-## Behind the compilation and executing
+## Behind the scenes of compilation and executing
 ### Compilation steps
 The process of compilation involves the following steps.
  * Preprocessing
- * Linking and
- * Final compilation
+ * Generating assembly code (Called compilation proper)
+ * Assembly
+ * Linking
 
 #### Preprocessing
 A preprocessing step by compiler includes macro substitution, inclusion of other source files and conditional compilation.
+
+Consider the following program,
+
+**File :** hello_new_world.c
+
+```C
+#include <stdio.h>
+
+#define HELLO_NEW_WORLD "Hello New World!"
+
+/* Program starts from here */
+int main(void)
+{
+#ifdef HELLO_NEW_WORLD
+    puts(HELLO_NEW_WORLD);
+#else
+    puts("Hello World!");
+#endif
+    return 0;
+}
+```
+Run the preprocessor on the above file and save the output in a separate file. We can use the following command.
+```bash
+gcc -E hello_new_world.c -o hello_new_world.i
+```
+The output file `hello_new_world.i` has `#include <stdio.h>` replaced with the *stdio.h* file content; removed comments; removed some lines of code from the `main` function based on conditional compilation (if HELLO_NEW_WORLD is defined first `puts` will be processed or the other one) and substituted the macro `HELLO_NEW_WORLD` macro with its value `"Hello New World!"` (please check the last lines of following file).
+
+**File :** hello_new_world.i
+```C
+# 1 "hello_new_world.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "hello_new_world.c"
+# 1 "/usr/include/stdio.h" 1 3 4
+# 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 446 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 460 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 461 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 462 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 447 "/usr/include/features.h" 2 3 4
+# 470 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 471 "/usr/include/features.h" 2 3 4
+# 34 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 2 3 4
+.
+.
+.
+.
+.
+.
+.
+extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+# 858 "/usr/include/stdio.h" 3 4
+extern int __uflow (FILE *);
+extern int __overflow (FILE *, int);
+# 873 "/usr/include/stdio.h" 3 4
+
+# 2 "hello_new_world.c" 2
+
+
+
+
+# 5 "hello_new_world.c"
+int main(void)
+{
+
+    puts("Hello New World!");
+
+
+
+    return 0;
+}
+```
+#### Generating assembly code
+The C code in the above file **hello_new_world.i** can be converted into assembly by one of the follwing commands.
+```bash
+gcc -S hello_new_world.i -o hello_new_world.s
+```
+The output file **hello_new_world.s** has the assembly code
+```C
+	.file	"hello_new_world.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"Hello New World!"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	.LC0(%rip), %rdi
+	call	puts@PLT
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 9.2.1-9ubuntu2) 9.2.1 20191008"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 "GNU"
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
+```
+#### Assembly
+This part converts the assembly file into relocatable object file in the ELF format.
+```bash
+gcc -c hello_new_world.s -o hello_new_world.o
+```
+At this point, this object file consists of following sections.
+ * .text - Program code
+ * .data - Initialized global variables
+ * .bss - Uninitialized global variables (Block storage start)
+ * .rodata - Read only data such as format strings
+ * Other custom fields.
+
+Run the following command to see above sections.
+```bash
+objdump -h hello_new_world.o
+```
+The *.text*, *.bss* and *.rodata* contain functions, global variables and format stirngs mapped to addresses starting with 0. These addresses can be relocable when linked with other relocatable objects to form final binary executable. The linking step is explained below clearly.
+
+#### Linking
 
 ### Executing
 ## Memory management
@@ -88,7 +245,10 @@ Where string constants are stored?
 char *p = "Hello World!";
 ```
 ```
+A loader allocates memory for the program. Then it loads the program and required libraries into memory.
+
 The linker (ld on Linux systems), which is a part of binutils, is responsible for the placement of symbols (data, code, and so on) in the appropriate section in the generated binary in order to be processed by the loader when the program is executed
 ```
 ### C program without main() function
 
+How local variables are stored in stack?
