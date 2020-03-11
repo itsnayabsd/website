@@ -13,6 +13,8 @@ toc: true
 ## Introduction
 A programmer's job typically involves writing a program, compiling, executing and debugging. This article helps any newbie to get started C programming language, including setting up the system for programming, the compilation process and debugging.
 
+{% include image.html url="getting-started-with-c.png" description="Getting started with C" %}
+
 ## Setting up the system
 Learning C programming language on Linux based system is recommended. I use [Ubuntu Linux Desktop](https://ubuntu.com/download/desktop) for programming. Setting up the system typically involves installing editor, compiler and other programming tools.
 ### Install editor, compiler and other tools
@@ -352,7 +354,7 @@ In the case of `static linking`, the symbols are defined in the final executable
 
 Let's check the size of the *c_static*.
 ```C
-ls -lh c_static
+$ ls -lh c_static
 -rwxr-xr-x 1 nayab nayab 875K Mar 11 19:48 c_static
 ```
 #### Dynamic linking
