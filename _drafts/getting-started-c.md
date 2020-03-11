@@ -20,8 +20,6 @@ Learning C programming language on Linux based system is recommended. I use [Ubu
 sudo apt install vim build-essential
 ```
 `Vim` is a terminal based editor. `build-essential` package consists of `gcc`, `g++`, `make` utility and Gnu C library.
-### Install code completion plugin
-There are many code completion plugins available for Vim editor. [YouCompleteMe](/linux-tools/you-complete-me-vim-plugin.html) is one of best code completion engines for Vim. Please follow the steps mentioned [here](/linux-tools/you-complete-me-vim-plugin.html).
 
 ## Compiling and executing **Hello World!** program
 Run the following command in the terminal to open the file `helloWorld.c` with vim editor.
@@ -207,7 +205,7 @@ At this point, this object file consists of following sections.
  * .text - Program code
  * .data - Initialized global variables
  * .bss - Uninitialized global variables (Block storage start)
- * .rodata - Read only data such as format strings
+ * .rodata - Read only data such as format strings, string constants
  * Other custom fields.
 
 Run the following command to see above sections.
@@ -221,37 +219,193 @@ The Linker's job can be explained clearly with multiple source files.
 
 Let's assume the files **a.c** and **b.c**.
 
-## Behind the scenes of execution
-
-## Memory management
-Initialized data, uninitialized data, stack etc. Global variable initialized with uninitialized. ex : a.h have `int num` and b.c and c.c using that header file. What if `int num = 6`. compile error will be generated. Then how this data is being stored?
-
-If the variable is not automatic, initialization is done before the program execution.
-## Data types
-The size of data types are machine-dependent. How?
-
-## Storage classes
-Variables declared in the function are generally `automatic` storage class.
-### Static Variables
-External variables or functions declared with `static` limits the scope of that variable or function to the file it is declared. Other files can't access this variable or functions.
-
-When local/automatic variables are declared with `static`, it's scope is limited to that function or block, but the variable will be in existence through out the life of program.
-
-Static or external variables are initialized only once before the execution of program.
-
-### Register variables
-Variables declared with `register` tells the compiler that these variables will be used heavily so that the compilers may consider to place these variables in machine registers for faster execution.
-## Miscellaneous
-Where string constants are stored?
-
+**File:** a.c
 ```C
-char *p = "Hello World!";
-```
-```
-A loader allocates memory for the program. Then it loads the program and required libraries into memory.
+extern void print_sqrt_random();
 
-The linker (ld on Linux systems), which is a part of binutils, is responsible for the placement of symbols (data, code, and so on) in the appropriate section in the generated binary in order to be processed by the loader when the program is executed
+int main(void)
+{
+    print_sqrt_random();
+    return 0;
+}
 ```
-### C program without main() function
+**File:** b.c
+```C
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
-How local variables are stored in stack?
+void print_sqrt_random(void)
+{
+    int rand_num = rand();
+    double x = sqrt(rand_num);
+    printf("sqrt of %d: %f\n", rand_num, x);
+}
+```
+We can generate object files directly for *a.c* and *b.c* using following commands
+```bash
+gcc -c a.c -o a.o
+gcc -c b.c -o b.o
+```
+We will use a tool called `nm` to check whether the functions (symbols) are defined in *.text* section of object file or not.
+```bash
+$ nm a.o
+                 U _GLOBAL_OFFSET_TABLE_
+0000000000000000 T main
+                 U print_sqrt_random
+```
+`T` indicates that the corresponding function is defined in `.text` section. `U` represents that the symbol is undefined. Here `print_sqrt_random` is undefined because the definition is in `b.o` object file.
+
+```bash
+$ nm b.o
+                 U _GLOBAL_OFFSET_TABLE_
+                 U printf
+0000000000000000 T print_sqrt_random
+                 U rand
+                 U sqrt
+```
+Here `print_sqrt_random` is defined in the `.text` section of `b.o` object file. And `printf`, `rand` and `sqrt` symbols are undefined because the definitions are defined in the `libc` and `math` libraries.
+
+The linker's job is to link these object files with the libraries.
+#### Static linking
+Let's create a final executable with the following command.
+```bash
+gcc a.o b.o -static -lm -lc -o c_static
+
+(Or)
+
+gcc a.o b.o /usr/lib/x86_64-linux-gnu/libm.a /usr/lib/x86_64-linux-gnu/libc.a -o c_static
+```
+In the above command *a.o* and *b.o* are linked with static libraries *libc.a* and *libm.a*.
+
+Let's check whether *rand*, *printf* and *sqrt* symbols are defined in the final executable.
+```bash
+$ nm c_static | grep -e "rand" -e "sqrt" -e "printf"
+000000000001c090 T ___asprintf
+000000000001c090 t __asprintf
+000000000001c090 W asprintf
+00000000000224d0 t buffered_vfprintf
+000000000007e740 t buffered_vfprintf
+000000000008c960 t _dl_debug_printf
+000000000008ca10 t _dl_debug_printf_c
+000000000008c320 t _dl_debug_vdprintf
+000000000008cac0 t _dl_dprintf
+00000000000c5760 D _dl_random
+0000000000078520 T __fprintf
+0000000000078520 t fprintf
+00000000000231e0 t __fxprintf
+0000000000023380 T __fxprintf_nocancel
+000000000000cfc0 T __ieee754_sqrt
+0000000000078520 W _IO_fprintf
+000000000001bfc0 T _IO_printf
+0000000000022f20 t locked_vfxprintf
+000000000001bfc0 T __printf
+000000000001bfc0 T printf
+00000000000c9728 B __printf_arginfo_table
+0000000000075f40 T ___printf_fp
+0000000000075f40 t __printf_fp
+0000000000076230 t __printf_fphex
+000000000000c856 t __printf_fphex.cold
+00000000000732c0 T __printf_fp_l
+000000000000c851 t __printf_fp_l.cold
+00000000000c9708 B __printf_function_table
+00000000000c9710 B __printf_modifier_table
+000000000001c6c0 t printf_positional
+00000000000789d0 t printf_positional
+00000000000c9730 B __printf_va_arg_table
+000000000000cf42 T print_sqrt_random
+000000000001b8a0 T rand
+0000000000072100 t __random
+0000000000072100 W random
+00000000000af1c0 r random_poly_info
+0000000000072570 t __random_r
+0000000000072570 W random_r
+00000000000c79a0 d randtbl
+00000000000760f0 T __register_printf_function
+00000000000760f0 W register_printf_function
+00000000000780b0 T __register_printf_modifier
+00000000000780b0 W register_printf_modifier
+0000000000075fb0 T __register_printf_specifier
+0000000000075fb0 W register_printf_specifier
+0000000000078410 T __register_printf_type
+0000000000078410 W register_printf_type
+000000000000cf90 T __sqrt
+000000000000cf90 W sqrt
+000000000000cf90 W sqrtf32x
+000000000000cf90 W sqrtf64
+000000000000cfc0 T __sqrt_finite
+0000000000071ec0 W srand
+0000000000071ec0 T __srandom
+0000000000071ec0 W srandom
+00000000000721c0 t __srandom_r
+00000000000721c0 W srandom_r
+0000000000025d70 T __vasprintf
+0000000000025d70 W vasprintf
+0000000000025bd0 t __vasprintf_internal
+000000000001f180 t __vfprintf_internal
+000000000007b4f0 t __vfwprintf_internal
+00000000000230e0 T __vfxprintf
+```
+As you can see here *rand*, *__sqrt* and *__printf*  symbols are defined in *.text* section of *c_static* final executable.
+
+In the case of `static linking`, the symbols are defined in the final executable before execution itself.
+
+Let's check the size of the *c_static*.
+```C
+ls -lh c_static
+-rwxr-xr-x 1 nayab nayab 875K Mar 11 19:48 c_static
+```
+#### Dynamic linking
+
+Let's create the final executable by linking *a.o*, *b.o* with the dynamic libraries (also called shared object files).
+```bash
+gcc a.o b.o -lm -lc -o c_dynamic
+
+(Or)
+
+gcc a.o b.o /usr/lib/x86_64-linux-gnu/libm.so /usr/lib/x86_64-linux-gnu/libc.so -o c_dynamic
+```
+Let's check whether *rand*, *printf* and *sqrt* symbols are defined in the final executable.
+```bash
+$ nm c_dynamic | grep -e printf -e rand -e sqrt
+                 U printf@@GLIBC_2.2.5
+00000000000011a2 T print_sqrt_random
+                 U rand@@GLIBC_2.2.5
+                 U sqrt@@GLIBC_2.2.5
+```
+As you can see all the symbols are undefined (`U`). These symbols are linked during run time.
+
+Let's see the size of *c_dynamic* executable file.
+```bash
+$ ls -lh c_dynamic
+-rwxr-xr-x 1 nayab nayab 17K Mar 11 20:01 c_dynamic
+```
+The size of the dynamically linked executable file much lesser than the statically linked executable. The reason for this is the symbols are not defined in the dynamically linked executable.
+
+## Behind the scenes of execution
+What happens when you execute the binary `c_static` or `c_dynamic` in the shell?
+
+To execute the binary, we run it in the shell prompt like following.
+```C
+./c_dynamic
+```
+The shell reads the input and invokes the system call `execve()` to create a new process for this binary execution. Remember, shell is just an application program like any other.
+
+The *execve()* is called **loader** and is responsible for allocating *stack*, *heap* and *data* segments in the memory for this process. It also copies *.data*, *.text* section from the executable into memory and transfers the control to the beginning of the program. That means all static or global/extern variables are initialized before the program execution itself.
+
+We will use a command called `ldd` to see the dependent libraries of *c_dynamic*.
+
+```bash
+$ ldd c_dynamic
+	linux-vdso.so.1 (0x00007ffeeedbf000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f0bcf22f000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0bcf03e000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f0bcf3ae000)
+```
+The above information is placed in the *c_dyamic* by linker during the *linking* stage so that the loader knows which libraries have these functions defined in and which runtime linker to use.
+
+The loader then loads the dependent shared libraries *libm.so* and *libc.so* into memory.
+
+The library `/lib64/ld-linux-x86-64.so.2` in the above command is *runtime linker* and links the undefined symbols *printf*, *sqrt* and *rand* with the definitions present in shared libraries during run time - *before the program execution*.
+
+
