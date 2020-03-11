@@ -52,16 +52,15 @@ This should print the **Hello World!** output.
 ```
 Hello World!
 ```
-## Behind the scenes of compilation and executing
-### Compilation steps
+## Behind the scenes of compilation
 The process of compilation involves the following steps.
  * Preprocessing
  * Generating assembly code (Called compilation proper)
  * Assembly
  * Linking
 
-#### Preprocessing
-A preprocessing step by compiler includes macro substitution, inclusion of other source files and conditional compilation.
+### Preprocessing
+A preprocessing step by compiler includes macro substitution, inclusion of other source files, removal of comments and conditional compilation.
 
 Consider the following program,
 
@@ -147,8 +146,8 @@ int main(void)
     return 0;
 }
 ```
-#### Generating assembly code
-The C code in the above file **hello_new_world.i** can be converted into assembly by one of the follwing commands.
+### Generating assembly code
+The C code in the above file **hello_new_world.i** can be converted into assembly by the follwing command.
 ```bash
 gcc -S hello_new_world.i -o hello_new_world.s
 ```
@@ -199,8 +198,8 @@ main:
 	.align 8
 4:
 ```
-#### Assembly
-This part converts the assembly file into relocatable object file in the ELF format.
+### Assembly
+This part converts the assembly file into relocatable object file (which is in [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) format).
 ```bash
 gcc -c hello_new_world.s -o hello_new_world.o
 ```
@@ -217,9 +216,13 @@ objdump -h hello_new_world.o
 ```
 The *.text*, *.bss* and *.rodata* contain functions, global variables and format stirngs mapped to addresses starting with 0. These addresses can be relocable when linked with other relocatable objects to form final binary executable. The linking step is explained below clearly.
 
-#### Linking
+### Linking
+The Linker's job can be explained clearly with multiple source files.
 
-### Executing
+Let's assume the files **a.c** and **b.c**.
+
+## Behind the scenes of execution
+
 ## Memory management
 Initialized data, uninitialized data, stack etc. Global variable initialized with uninitialized. ex : a.h have `int num` and b.c and c.c using that header file. What if `int num = 6`. compile error will be generated. Then how this data is being stored?
 
