@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Getting started with C programming language
+title: Getting started with C programming on Linux
 category: programming
 comments: true
 google_adsense: true
-excerpt:
-keywords:
-image:
-date: 2020-02-05 00:19:30 +5:30
+excerpt: Getting started with C on Ubuntu Linux system and behind the scenes of compilation and execution of a C program in the Linux.
+keywords: Getting started with C on Linux, C programming tutorial on Linux, C compilation steps explained, C static and dynamic linking, difference between C static and dynamic linking, C static vs dynamic linking, How program run on Linux, behind the scenes of C program compilation and execution, C program loader mechanism
+image: /assets/img/getting-started-with-c.png
+date: 2020-03-12 23:09:05 +5:30
 toc: true
 ---
 ## Introduction
@@ -16,10 +16,12 @@ A programmer's job typically involves writing a program, compiling, executing an
 {% include image.html url="getting-started-with-c.png" description="Getting started with C" %}
 
 ## Setting up the system
-Learning C programming language on Linux based system is recommended. I use [Ubuntu Linux Desktop](https://ubuntu.com/download/desktop) for programming. Setting up the system typically involves installing editor, compiler and other programming tools.
+Learning C programming language on Linux based system is recommended. I use [Ubuntu Linux Desktop](https://ubuntu.com/download/desktop) for programming. Setting up the system typically involves installing editor, compiler and other programming tools if you have Ubuntu OS already installed. Otherwise [install the Ubuntu OS](https://ubuntu.com/tutorials/tutorial-install-ubuntu-desktop#1-overview).
+
 ### Install editor, compiler and other tools
+Enter the following command in the terminal to install tools.
 ```shell
-sudo apt install vim build-essential
+sudo apt update && sudo apt install vim build-essential
 ```
 `Vim` is a terminal based editor. `build-essential` package consists of `gcc`, `g++`, `make` utility and Gnu C library.
 
@@ -270,6 +272,8 @@ Here `print_sqrt_random` is defined in the `.text` section of `b.o` object file.
 
 The linker's job is to link these object files with the libraries.
 #### Static linking
+
+{% include image.html url="static-linking-c.png" description="Static linking object files and static libraries" %}
 Let's create a final executable with the following command.
 ```bash
 gcc a.o b.o -static -lm -lc -o c_static
@@ -359,6 +363,7 @@ $ ls -lh c_static
 ```
 #### Dynamic linking
 
+{% include image.html url="dynamic-linking-c.png" description="Dynamic linking of shared libraries" %}
 Let's create the final executable by linking *a.o*, *b.o* with the dynamic libraries (also called shared object files).
 ```bash
 gcc a.o b.o -lm -lc -o c_dynamic
@@ -410,4 +415,6 @@ The loader then loads the dependent shared libraries *libm.so* and *libc.so* int
 
 The library `/lib64/ld-linux-x86-64.so.2` in the above command is *runtime linker* and links the undefined symbols *printf*, *sqrt* and *rand* with the definitions present in shared libraries during run time - *before the program execution*.
 
-
+## References
+ * [Linkers and Loaders](https://www.linuxjournal.com/article/6463)
+ * [How programs get run](https://lwn.net/Articles/630727/)
