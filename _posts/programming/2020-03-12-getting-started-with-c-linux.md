@@ -11,7 +11,7 @@ date: 2020-03-12 23:09:05 +5:30
 toc: true
 ---
 ## Introduction
-A programmer's job typically involves writing a program, compiling, executing and debugging. This article helps any newbie to get started C programming language, including setting up the system for programming, the compilation process and debugging.
+A programmer's job typically involves writing a program, compiling, executing and debugging. This article helps any newbie to get started C programming language, including setting up the system for programming, the compilation process and execution mechanism.
 
 {% include image.html url="getting-started-with-c.png" description="Getting started with C" %}
 

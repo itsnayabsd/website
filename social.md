@@ -15,3 +15,8 @@ https://www.facebook.com/nayab.xyz/
 Add the hashtags while posting.
 
 Is there any other way to use facebook page?
+
+## Twitter page
+https://twitter.com/nayabbashasayed
+
+How to use hashtags
