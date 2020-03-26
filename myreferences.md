@@ -14,3 +14,6 @@ google_adsense: false
 [Config pitfalls](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
 [Digital ocean tutorials](https://www.digitalocean.com/community/search?q=nginx)
 [Github nginx resources](https://github.com/fcambus/nginx-resources)
+
+## Device Tree
+[Device tree specification](https://www.devicetree.org/specifications/)
