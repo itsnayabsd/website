@@ -20,3 +20,11 @@ Is there any other way to use facebook page?
 https://twitter.com/nayabbashasayed
 
 How to use hashtags
+
+## Pinterest
+https://in.pinterest.com/nayabsd/
+
+## Google Hub
+https://questionhub.google.com/
+
+Search for the topic you have written, add category about it. If there are any questions related to that, link the post there.
