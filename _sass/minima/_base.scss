@@ -67,8 +67,9 @@ figure > img {
 
 figcaption {
   font-size: $small-font-size;
-	background-color: #eee;
-	border-radius: 0px 0px 5px 5px;
+  font-weight: bold;
+  background-color: #eee;
+  border-radius: 0px 0px 5px 5px;
   max-width: 90%;
   text-align: center;
   margin-left: auto;
