@@ -6,6 +6,7 @@ google_adsense: false
 ---
 ## Mastodon
 https://mastodon.social/@nayab
+https://fosstodon.org/@nayab
 
 **ToDo** : How Mastodon toots work? Whether toots support hashtags. Is there any other way people search for content on Mastodon?
 
