@@ -6,7 +6,7 @@ comments: true
 google_adsense: true
 excerpt: The lessons I learned form the book From Rat Race to the Financial Freedom by Manoj Arora and my journey after that to reach financial freedom
 keywords: journey to financial freedom, race rate to financial freedom, financial freedom book, how to achieve financial freedom, financial freedom India
-date: 2020-01-29 22:15:48 +5:30
+date: 2020-03-31 22:06:44 +5:30
 image: /assets/img/financial_freedom_by_manoj_arora.jpg
 ---
 This page gives the overview of what I learned from the book **From Rat Race to Financial Freedom** by *Manoj Arora*.
@@ -39,7 +39,7 @@ Equity stocks		- 10%
 Equity mutual funds	- 35%
 Debt funds		- 08%
 Real estate		- 15%
-EPF/PPF/Chits		- 15%
+EPF/PPF/Chits		- 10%
 FDs/RDs		        - 10%
 Savings			- 05%
 Gold			- 07%
@@ -48,14 +48,14 @@ Gold			- 07%
 ### The current allocation of my investments
 I need to tune the following allocation as it suits above allocation.
 ```
-Equity stocks		- 0%
-Equity mutual funds	- 26.27%
-Debt funds		- 3.09%
+Equity stocks		- 07.56%
+Equity mutual funds	- 25.80%
+Debt funds		- 03.08%
 Real estate		- 0%
-EPF/PPF/Chits		- 34.14%
-FDs/RDs		        - 09.34%
-Savings			- 27.13%
-Gold			- 0%
+EPF/PPF/Chits		- 40.98%
+FDs/RDs		        - 10.19%
+Savings			- 11.58%
+Gold			- 00.78%
 ```
 
 ## Where I don't invest
