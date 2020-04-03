@@ -5,7 +5,10 @@ excerpt: Share to the following social websites for each blog post completion.
 google_adsense: false
 ---
 ## Mastodon
+Add feature hash tags when publishing.
+
 https://mastodon.social/@nayab
+Go to https://fosstodon.org/settings/featured_tags and add feature hash tags
 https://fosstodon.org/@nayab
 
 **ToDo** : How Mastodon toots work? Whether toots support hashtags. Is there any other way people search for content on Mastodon?
