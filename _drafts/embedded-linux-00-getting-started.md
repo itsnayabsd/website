@@ -24,10 +24,11 @@ Generating cross toolchain using crosstool-ng for uClibc C library
 Downloading and installing crosstool-ng
 
 ```bash
+sudo rm -rf ~/x-tools/
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng/
 #git checkout eb65ba65       # Tested until this commit id. Newer commit ids need to be checked later.
-git checkout be1b5667
+git checkout 75d7525a
 ```
 ```
 ./bootstrap
@@ -39,6 +40,30 @@ Above will install crosstool-ng locally.
 Configure the toolchain to generate
 `./ct-ng list-samples` comes with pre defined configurations for different setups (architecture, library).
 
+## Generate toolchain for rpi3 model b
+Raspberry Pi 3 model b has BCM2837 chip. This chip has four ARM cortex A53 cores of ARMv8 architecture.
+
+Let's generate toolchain for ARMv8 architecture and uClibc library. `ct-ng` has pre defined configuration for rpi3.
+```
+./ct-ng armv8-rpi3-linux-gnueabihf
+```
+But above configuration is for `glibc`. Let's change the configuration.
+```
+./ct-ng menuconfig
+```
+ - In `Paths and misc options`, change *Maximum log level to see* to DEBUG.
+ - In `Toolchain options`
+   - Set *Tuple's alias* to *arm-linux-rpi3*. This generates names such as *arm-linux-rpi3-gcc* etc.
+ - In `Target options` - Change bitness to 64
+ - In `C library`, change *C library* to uClibc.
+ - In `Debug facilites`, disable everything.
+
+Build toolchain
+```bash
+./ct-ng build
+```
+
+## Generate toolchain for cortex a5 and uClibc library
 Let's generate configuration to compile toolchain for arm cortex a5 and uClibc library.
 
 ```bash
