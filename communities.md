@@ -16,3 +16,6 @@ google_adsense: false
 
 ## Question Hub
 [Google Question Hub](https://questionhub.google.com/)
+
+## Git commits
+Commit messages with `git commit -s`
