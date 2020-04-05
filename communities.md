@@ -5,6 +5,7 @@ excerpt: All communities list I have been participating.
 google_adsense: false
 ---
 ## Raspberry Pi
+[Official Raspberry Pi forums](https://www.raspberrypi.org/forums/)
 [Raspberry Pi stackexchange](https://raspberrypi.stackexchange.com/)
 
 ## Nginx
