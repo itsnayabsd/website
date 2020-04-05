@@ -43,9 +43,9 @@ Configure the toolchain to generate
 ## Generate toolchain for rpi3 model b
 Raspberry Pi 3 model b has BCM2837 chip. This chip has four ARM cortex A53 cores of ARMv8 architecture.
 
-Let's generate toolchain for ARMv8 architecture and uClibc library. `ct-ng` has pre defined configuration for rpi3.
+Let's generate toolchain (64bit) for ARMv8 architecture and uClibc library. `ct-ng` has pre defined configuration for rpi3.
 ```
-./ct-ng armv8-rpi3-linux-gnueabihf
+./ct-ng aarch64-rpi3-linux-gnu
 ```
 But above configuration is for `glibc`. Let's change the configuration.
 ```
@@ -54,7 +54,6 @@ But above configuration is for `glibc`. Let's change the configuration.
  - In `Paths and misc options`, change *Maximum log level to see* to DEBUG.
  - In `Toolchain options`
    - Set *Tuple's alias* to *arm-linux-rpi3*. This generates names such as *arm-linux-rpi3-gcc* etc.
- - In `Target options` - Change bitness to 64
  - In `C library`, change *C library* to uClibc.
  - In `Debug facilites`, disable everything.
 
