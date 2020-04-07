@@ -41,15 +41,19 @@ Other useful official pages :
 
 Here is the basic configuration required to start RPI3 model b and log into u-boot console.
 ```bash
-arm_64bit=1 # starts cores in 64 bit mode. kernel image must be uncompressed.
-kernel=u-boot.bin # Loads u-boot.bin in the place of actual Linux kernel
+arm_64bit=1
+kernel=u-boot.bin
 enable_uart=1
 device_tree=bcm2837-rpi-3-b.dtb
 core_freq=250
+device_tree_address=0x200000
 ```
-The RPI3 model B has two UARTs. A mini UART and other is PL011 UART. The early boot stage of RPI uses mini UART. To enable it, add `enable_uart=1` to the config.txt file. When PL011 is initialized and mini UART is not primary UART then to adjust the baud rate, add `core_freq=250` to the config.txt file.
 
-The `arm_64bit=1` tells the firmware to start ARM cores in 64 bit mode. The `kernel=u-boot.bin` loads u-boot.bin in the place of actual Linux kernel. The device tree binary `bcm2837-rpi-3-b.dtb` can be found in the u-boot directory post compilation.
+ - The RPI3 model B has two UARTs. A mini UART and other is PL011 UART. The early boot stage of RPI uses mini UART. To enable it, add `enable_uart=1` to the config.txt file. When PL011 is initialized and mini UART is not primary UART then to adjust the baud rate, add `core_freq=250` to the config.txt file.
+ - The `arm_64bit=1` tells the firmware to start ARM cores in 64 bit mode.
+ - The `kernel=u-boot.bin` loads u-boot.bin in the place of actual Linux kernel.
+ - The device tree binary `bcm2837-rpi-3-b.dtb` can be found in the u-boot directory post compilation.
+ - `device_tree_address=0x200000` loads the above dtb file into location `0x200000` into RAM.
 
 ## Copy the files to sd card
 Format the sd card to fat32 using fdisk and mkfs.vfat.
@@ -135,8 +139,8 @@ MESS:00:00:04.575019:0: dterror: No symbols found
 MESS:00:00:04.679646:0: dterror: No symbols found
 MESS:00:00:04.696113:0: dterror: No symbols found
 MESS:00:00:04.705732:0: gpioman: gpioman_get_pin_num: pin EMMC_ENABLE not defined
-MESS:00:00:04.776061:0: brfs: File read: /mfs/sd/kernel8.img
-MESS:00:00:04.780021:0: Loading 'kernel8.img' to 0x80000 size 0x7d5e8
+MESS:00:00:04.776061:0: brfs: File read: /mfs/sd/u-boot.bin
+MESS:00:00:04.780021:0: Loading 'u-boot.bin' to 0x80000 size 0x7d5e8
 MESS:00:00:04.786193:0: Device tree loaded to 0x7fec400 (size 0x3b3d)
 MESS:00:00:04.793584:0: uart: Set PL011 baud rate to 103448.300000 Hz
 MESS:00:00:04.800057:0: uart: Baud rate change done...
@@ -159,4 +163,43 @@ Bus usb@7e980000: scanning bus usb@7e980000 for devices... 3 USB Device(s) found
 Hit any key to stop autoboot:  0
 U-Boot>
 U-Boot>
+```
+By default `u-boot.bin` load at address `0x80000`. This can be changed with `kernel_address` parameter in the config.txt.
+## Enable tftp communication with host system
+
+Connect RPI to host system using Ethernet cable. Make sure [tftp server](/linux/install-tftpserver.html) is running on host system. In the RPI U-Boot console, set the `ipaddr` and `serverip` environment variables using following commands
+
+```bash
+setenv ipaddr 192.168.1.5
+setenv serverip 192.168.1.15 # IP address of host system ethernet interface
+```
+Copy some small *file* into *tftpboot* directory and check the connection with the following command.
+```bash
+tftp 0x1000000 file_name
+```
+Make sure the file is transferred successfully.
+
+## Useful commands
+### sdcard related commands
+```
+U-Boot> mmc
+mmc - MMC sub system
+
+Usage:
+mmc info - display info of the current MMC device
+mmc read addr blk# cnt
+mmc write addr blk# cnt
+mmc erase blk# cnt
+mmc rescan
+mmc part - lists available partition on current mmc device
+mmc dev [dev] [part] - show or set current mmc device [partition]
+mmc list - lists available devices
+mmc hwpartition [args...] - does hardware partitioning
+  arguments (sizes in 512-byte blocks):
+    [user [enh start cnt] [wrrel {on|off}]] - sets user data area attributes
+    [gp1|gp2|gp3|gp4 cnt [enh] [wrrel {on|off}]] - general purpose partition
+    [check|set|complete] - mode, complete set partitioning completed
+  WARNING: Partitioning is a write-once setting once it is set to complete.
+  Power cycling is required to initialize partitions after set to complete.
+mmc setdsr <value> - set DSR register value
 ```
