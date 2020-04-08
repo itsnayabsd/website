@@ -23,3 +23,12 @@ The Linux kenel has default config `bcm2835_defconfig` in the `arm/arch/configs`
 ```bash
 make bcm2835_defconfig
 ```
+For kernel :
+
+export ARCH=arm; export CROSS_COMPILE=arm-linux-gnueabi-
+
+For U-boot :
+```
+sudo apt-get install gcc-aarch64-linux-gnu
+export ARCH=arm; export CROSS_COMPILE=aarch64-linux-
+```
