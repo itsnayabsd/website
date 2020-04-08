@@ -52,8 +52,6 @@ But above configuration is for `glibc`. Let's change the configuration.
 ./ct-ng menuconfig
 ```
  - In `Paths and misc options`, change *Maximum log level to see* to DEBUG.
- - In `Toolchain options`
-   - Set *Tuple's alias* to *arm-linux-rpi3*. This generates names such as *arm-linux-rpi3-gcc* etc.
  - In `C library`, change *C library* to uClibc.
  - In `Debug facilites`, disable everything.
 
