@@ -13,7 +13,8 @@ RPI 3 model b has already a predefined configuration in the u-boot configs direc
 Let's compiel the u-boot for the platform.
 
 ```bash
-export CROSS_COMPILE=arm-linux-rpi3-
+make clean; make mrproper; make distclean
+export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
 make rpi_3_defconfig
 make
 ```

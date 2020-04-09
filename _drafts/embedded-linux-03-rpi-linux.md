@@ -15,9 +15,14 @@ ex: `git checkout -b 5.6.y v5.6`
 ## Compile kernel for RPI
 ```bash
 export ARCH=arm64 # This should match one of the directories in `arch` folder.
-export CROSS_COMPILE=arm-linux-rpi3-
+export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
+export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
 ```
 The Linux kenel does have a generic `defconfig` for arm64 in the `arch/arm64/configs` directory.
 ```bash
 make defconfig
+```
+Compile the linux
+```bash
+make
 ```

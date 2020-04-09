@@ -1,0 +1,52 @@
+--- Log opened Thu Apr 09 21:35:32 2020
+21:35 < ShorTie> tuning is easy
+21:35 < ShorTie> just takes time
+21:35 < Tenkawa> ShorTie: ha!!!
+21:36 -!- cccyRegeaneWolfe [~cccyRegea@92.119.178.26] has joined #raspberrypi
+21:36 < ShorTie> just start de-modulazing stuff and build in what you want
+21:36 < Tenkawa> not when you are trying to balance it for multiple customers with one base product
+21:37 < Tenkawa> ShorTie: that wasnt an option back then
+21:37 < Tenkawa> resources werent nearly as readily available
+21:37 < Tenkawa> builds took days instead of an hour
+21:38 < ShorTie> oh, thought that is how you tuned a kernel
+21:38 < Tenkawa> yeah.. but you had to tune, build, test, fix,
+21:38 < Tenkawa> we were regulated
+21:41 < angrycoa2t> can I use openvpn-unroot on the arm archetecture?
+21:42 -!- mrN0Where__ [~mrN0Where@37.120.39.238] has joined #raspberrypi
+21:42 -!- Spock_ncc1701 [~Spock_ncc@45.56.150.102] has joined #raspberrypi
+21:44 < lagzilla> Looking at the PKGBUILD is uses pretty standard packages, it should work
+21:44 < Tenkawa> can't say.. not familiar with that specific aspect of openvpn
+21:45 < Tenkawa> uggh I wish the warm weather would just here and stay here
+21:45 < ShorTie> i hear that
+21:45 < Tenkawa> er just get here
+21:45 < Tenkawa> ShorTie: we went from 75 yesterday to 45 today :(
+21:46 < ShorTie> oh my
+21:46 < Tenkawa> yeah
+21:46 < Tenkawa> It was great yesterday
+21:46 < Tenkawa> sunny too
+21:47 < Tenkawa> if you are going to be stuck at home... perfect weather for it
+21:47 -!- mrN0Where__ [~mrN0Where@37.120.39.238] has quit [Ping timeout: 260 seconds]
+21:48 -!- pgib [~textual@lmms/pgib] has joined #raspberrypi
+21:48 < Tenkawa> nice.. 5.6 has made it to rpi github.. time to dload
+21:49 -!- pgib [~textual@lmms/pgib] has quit [Client Quit]
+--- Log closed Thu Apr 09 21:52:05 2020
+--- Log opened Thu Apr 09 21:58:55 2020
+21:58 -!- nayab [~nayab@27.7.70.49] has joined #raspberrypi
+21:58 -!- Irssi: #raspberrypi: Total of 674 nicks [2 ops, 0 halfops, 0 voices, 672 normal]
+21:58 -!- Irssi: Join to #raspberrypi was synced in 2 secs
+22:01 < nayab> clever: I don't think there is support for Kenel low level debug functions in arch/arm64/Kconfig.debug file.
+22:02 -!- rsrx [~rsrx@87.116.187.102] has joined #raspberrypi
+22:03 < clever> nayab: ive only used them on 32bit linux so far
+22:03 -!- secntech [~secntech@unaffiliated/secntech] has quit [Quit: Leaving]
+22:04 -!- secntech [~secntech@unaffiliated/secntech] has joined #raspberrypi
+22:04 < nayab> clever: Hmm.. Is it a good idea to go with 64bit.. I am just getting started with embedded Linux.
+22:05 < clever> nayab: ive heard that the only real thing you gain from 64bit mode, is more and wider registers
+22:05 < clever> all other gains (larger address space) arent of use, when you have so little ram
+22:05 < clever> and larger pointers means you use MORE ram just to hold the pointers
+22:06 < clever> so running in 32bit mode would use less ram, but also require exchanging data with the cache/ram more, so it may run slightly slower
+22:06 < clever> depending on the work-load
+22:07 < nayab> clever: Ok. Shifting to 32 bit. Thanks for the info.
+22:07 -!- sdoherty [sdoherty@nat/redhat/x-sdkznnrrobdpfots] has quit [Ping timeout: 250 seconds]
+22:09 -!- themsay [~themsay@cpc87719-bexl9-2-0-cust38.2-3.cable.virginm.net] has joined #raspberrypi
+--- Log closed Thu Apr 09 22:11:00 2020
+Add CONFIG_EARLY_PRINTK and CONFIG_SERIAL_EARLYCON to .config
