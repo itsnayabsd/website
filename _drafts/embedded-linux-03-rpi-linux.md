@@ -3,7 +3,7 @@ layout : post
 ---
 ## Download the kernel
 
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+Download kernel from offical rpi repository.
 
 Note down the latest stable tag. Create a local branch for your development.
 ```bash
@@ -25,4 +25,15 @@ make defconfig
 Compile the linux
 ```bash
 make
+```
+```
+cp arch/arm64/boot/Image /tftpboot/kernel.img
+cp arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb /tftpboot/
+```
+
+In the U-boot console,
+```
+tftp 0x2000000 kernel.img
+tftp 0x200000 bcm2837-rpi-3-b.dtb
+booi 0x2000000 - 0x200000
 ```
