@@ -30,10 +30,15 @@ make
 cp arch/arm64/boot/Image /tftpboot/kernel.img
 cp arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb /tftpboot/
 ```
+Copy `overlays` directory from compiled kernel source to SD card. Path: `arch/arm/boot/dts/overlays`
+Copy `bcm2710-rpi-3-b.dtb` file too to the SD card. Path: `arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb`
 
 In the U-boot console,
 ```
 tftp 0x2000000 kernel.img
-tftp 0x200000 bcm2837-rpi-3-b.dtb
+tftp 0x200000 bcm2710-rpi-3-b.dtb
 booi 0x2000000 - 0x200000
+```
+```
+setenv bootcmd 'tftp 0x2000000 kernel_ubuntu_config.img; tftp 0x200000 bcm2837-rpi-3-b.dtb; booti 0x2000000 - 0x200000'
 ```

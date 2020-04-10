@@ -45,9 +45,10 @@ Here is the basic configuration required to start RPI3 model b and log into u-bo
 arm_64bit=1
 kernel=u-boot.bin
 enable_uart=1
-device_tree=bcm2837-rpi-3-b.dtb
+device_tree=bcm2710-rpi-3-b.dtb
 core_freq=250
-device_tree_address=0x200000
+overlay_prefix=overlays/
+dtoverlay=pi3-miniuart-bt
 ```
 
  - The RPI3 model B has two UARTs. A mini UART and other is PL011 UART. The early boot stage of RPI uses mini UART. To enable it, add `enable_uart=1` to the config.txt file. When PL011 is initialized and mini UART is not primary UART then to adjust the baud rate, add `core_freq=250` to the config.txt file.
