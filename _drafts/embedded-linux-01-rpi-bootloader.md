@@ -27,9 +27,9 @@ sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
 ```
 ## RPI3 model b boot sequence
 
- - The boot ROM on SoC loads `bootcode.bin` in the sd card into the local cache and jump on it.
+ - The boot ROM (the first stage bootloader) is programmed into SoC during manufacturing of the RPI. This code looks for the file `bootcode.bin` (second stage bootloader) in one of the partitions of SD card and executes it.
  - This code looks for the file `config.txt` for any third stage bootloader info. If nothing found, it loads the default bootloader `start.elf` from the sd card and runs it.
- - The `start.elf` code reads `config.txt` multiple times to initialize basic hardwarei, load dtb and kernel into RAM.
+ - The `start.elf` code reads `config.txt` multiple times to initialize basic hardware, load dtb and kernel into RAM.
 
 The official page to configure `config.txt` file can be found [here](https://www.raspberrypi.org/documentation/configuration/config-txt/README.md)
 
@@ -43,17 +43,30 @@ Other useful official pages :
 Here is the basic configuration required to start RPI3 model b and log into u-boot console.
 ```bash
 arm_64bit=1
-kernel=u-boot.bin
+# Uncomment below line if you work with Linux kernel, without U-boot as intermediatary.
+kernel=kernel.img
+# Uncomment below line if you work only with U-boot, without Linux kernel
+# kernel=u-boot.bin
 enable_uart=1
-device_tree=bcm2710-rpi-3-b.dtb
 core_freq=250
 overlay_prefix=overlays/
 dtoverlay=pi3-miniuart-bt
+# Uncomment the following line if you work with U-boot, without Linux kernel.
+# device_tree=bcm2837-rpi-3-b.dtb
+# Uncomment the following line if you work with Linux kernel, wihtout U-boot as intermediary.
+device_tree=bcm2710-rpi-3-b.dtb
+```
+```
+kernel=u-boot.bin
+arm_64bit=1
+enable_uart=1
+core_freq=250
 ```
 
- - The RPI3 model B has two UARTs. A mini UART and other is PL011 UART. The early boot stage of RPI uses mini UART. To enable it, add `enable_uart=1` to the config.txt file. When PL011 is initialized and mini UART is not primary UART then to adjust the baud rate, add `core_freq=250` to the config.txt file.
- - The `arm_64bit=1` tells the firmware to start ARM cores in 64 bit mode.
  - The `kernel=u-boot.bin` loads u-boot.bin in the place of actual Linux kernel.
+ - The `arm_64bit=1` tells the firmware to start ARM cores in 64 bit mode.
+ - The RPI3 model B has two UARTs. A mini UART and other is PL011 UART. The early boot stage of RPI uses mini UART. To enable it, add `enable_uart=1` to the config.txt file. When PL011 is initialized, the mini UART will no longer be a primary UART and won't work as Linux console unless we add `core_freq=250` to the config.txt file.
+
  - The device tree binary `bcm2837-rpi-3-b.dtb` can be found in the u-boot directory post compilation.
  - `device_tree_address=0x200000` loads the above dtb file into location `0x200000` into RAM.
 

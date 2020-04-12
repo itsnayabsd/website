@@ -62,29 +62,6 @@ Build toolchain
 ./ct-ng build
 ```
 
-## Generate toolchain for cortex a5 and uClibc library
-Let's generate configuration to compile toolchain for arm cortex a5 and uClibc library.
-
-```bash
-./ct-ng arm-cortexa5-linux-uclibcgnueabihf
-```
-Challenge : What to do to generate configuration for arm cortex a8 and uClibc?
-
-Modify configuration
-```bash
-./ct-ng menuconfig
-```
- - In `Paths and misc options`, change *Maximum log level to see* to DEBUG.
- - In `Toolchain options`
-   - Set *Tuple's vendor* to *training*
-   - Set *Tuple's alias* to *arm-linux*. This generates names such as *arm-linux-gcc* etc.
- - In `C library`, enabel IPV6 support
- - In `Debug facilites`, disable everything.
-
-Build toolchain
-```bash
-./ct-ng build
-```
 If the above step failed at some package downloading, download the package manually from the internet and copy to `~/src` directory and use the above step again.
 
 Resolve any patch apply conflicts happening.

@@ -20,7 +20,7 @@ export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
 ```
 The Linux kenel does have a generic `defconfig` for arm64 in the `arch/arm64/configs` directory.
 ```bash
-make defconfig
+make bcmrpi3_defconfig
 ```
 Compile the linux
 ```bash
