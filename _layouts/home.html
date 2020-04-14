@@ -20,7 +20,13 @@ layout: homedef_cms
 {% if catg == "me" %}
     {% continue %}
 {% endif %}
+{% if catg == "book" %}
+    {% continue %}
+{% endif %}
 {% if catg == "ref" %}
+    {% continue %}
+{% endif %}
+{% if catg == "rpi3b-elinux" %}
     {% continue %}
 {% endif %}
 <div style="display: inline-block; margin-bottom: 10px;">
