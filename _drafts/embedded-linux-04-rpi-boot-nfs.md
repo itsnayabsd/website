@@ -2,6 +2,14 @@
 layout : post
 ---
 ## Booting the RPI through NFS
+### Install kernel modules to NFS directory.
+
+Go to kenel source and install kernel modules to the NFS directory using the following command.
+```
+make INSTALL_MOD_PATH=<NFS_directory> modules_install
+``
+ex: make INSTALL_MOD_PATH=/home/nayab/rpi/fs/nfs/ modules_install
+
 ### Setting NFS server on host system
 ```
 sudo apt install nfs-kernel-server
@@ -23,9 +31,9 @@ sudo service nfs-kernel-server restart
 Set the `bootargs` env using following command
 ```
 setenv bootargs # Reset bootargs
-setenv bootargs root=/dev/nfs console=ttyAMA0,115200 console=tty1 root=/dev/nfs ip=<board_ip>:::::eth0 nfsroot=<host_ip>:<path_to_busybox_on_host>,nfsvers=3 rw
+setenv bootargs root=/dev/nfs console=ttyAMA0,115200 console=tty1 ip=<board_ip>:::::eth0 nfsroot=<host_ip>:<path_to_busybox_on_host>,nfsvers=3 rw
 ```
-ex: `editenv bootargs root=/dev/nfs console=ttyAMA0,115200 console=tty1 root=/dev/nfs ip=192.168.1.115:::::eth0 nfsroot=192.168.1.15:/home/nayab/rpi/fs/nfs,nfsvers=3 rw`
+ex: `setenv bootargs root=/dev/nfs console=ttyAMA0,115200 console=tty1 ip=192.168.1.115:::::eth0 nfsroot=192.168.1.15:/home/nayab/rpi/fs/nfs,nfsvers=3 rw`
 ```
 saveenv
 ```
