@@ -1,6 +1,18 @@
 ---
 layout : post
+category : book
 ---
+{% assign cat = "rpi3b-elinux" %}
+<ul class="list-none">
+{% for category in site.categories %}
+{% if category.first == cat %}
+{% for posts in category[1] %}
+<li><a class="post-link" href="{{ posts.url }}">{{ posts.title }}</a></li>
+{% endfor %}
+{% endif %}
+{% endfor %}
+</ul>
+
 While choosing the hardware make sure there is Linux and open source boot loader support for SoC.
 
 Embedded Linux development involves
@@ -21,16 +33,16 @@ Toolchain building utilities
 
 Generating cross toolchain using crosstool-ng for uClibc C library
 
-Downloading and installing crosstool-ng
+Downloading and installing crosstool-ng:
 
 ```bash
 sudo rm -rf ~/x-tools/
+mkdir -p ~/rpi && cd ~/rpi
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng/
-#git checkout eb65ba65       # Tested until this commit id. Newer commit ids need to be checked later.
-git checkout 75d7525a
+git checkout 75d7525a		## Tested until this commit id. Newer commit ids need to be checked later.
 ```
-```
+```bash
 ./bootstrap
 ./configure --enable-local
 make
@@ -53,7 +65,7 @@ But above configuration is for `glibc`. Let's change the configuration.
 ```
  - In `Paths and misc options`, change *Maximum log level to see* to DEBUG.
  - In `C library`, change *C library* to uClibc.
- - In `Debug facilites`, disable everything.
+ - In `Debug facilites`, disable all options for now as it takes forever to compile.
 
 **Note** We can not enable IPV6 support for uClibc library. Either build toolchain for glibc or build busybox (which expects IPV6 support) by disabling IPV6.
 

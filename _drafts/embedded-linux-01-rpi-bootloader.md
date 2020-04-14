@@ -1,5 +1,6 @@
 ---
 layout : post
+category : rpi3b-elinux
 ---
 ## Setting up usb to serial cable
 
