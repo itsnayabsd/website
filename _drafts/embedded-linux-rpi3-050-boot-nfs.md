@@ -1,5 +1,8 @@
 ---
+title : Booting file system from NFS
+category : rpi3-elinux
 layout : post
+date: 2020-04-05 21:53:12 +5:30
 ---
 ## Booting the RPI through NFS
 ### Install kernel modules to NFS directory.

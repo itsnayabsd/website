@@ -1,5 +1,8 @@
 ---
+title : Cross-compiling file system with busybox
+category : rpi3b-elinux
 layout : post
+date: 2020-04-04 21:53:12 +5:30
 ---
 ## Get the busybox source code
 ```

@@ -1,30 +1,12 @@
 ---
+title : Building a toolchain for cross-compilation
 layout : post
-category : book
+category : rpi3b-elinux
+date: 2020-04-15 22:15:28 +5:30
 ---
-{% assign cat = "rpi3b-elinux" %}
-<ul class="list-none">
-{% for category in site.categories %}
-{% if category.first == cat %}
-{% for posts in category[1] %}
-<li><a class="post-link" href="{{ posts.url }}">{{ posts.title }}</a></li>
-{% endfor %}
-{% endif %}
-{% endfor %}
-</ul>
+## Introduction
 
-While choosing the hardware make sure there is Linux and open source boot loader support for SoC.
-
-Embedded Linux development involves
- - Board support package development - Kernel, boot loader and device drivers development.
- - System integration - Kernel, boot loader, system libraries and apps.
-
-Embedded Linux Components
- - Binutils - as, ld, ar, ranlib, objdump, readelf, size, nm, strings, objcopy and strip. Official page : [http://www.gnu.org/software/binutils/](http://www.gnu.org/software/binutils/).
- - Kernel headers - Can be extracted from kernel sources using `make headers_install` target.
- - C/C++ libraries - Several C libraries available. glibc, uClibc, musl, klibc, newlib ...
- - C/C++ compiler - GCC : GNU compiler collection.
- - GDB debugger 
+We are going to use a development PC (called host sytem) like our laptop or desktop to create the embedded system (target system).
 
 Toolchain building utilities
  - Crosstool-ng - Dedicated to generate toolchain.

@@ -1,5 +1,8 @@
 ---
+title : Cross-compiling Linux kernel
+category : rpi3b-elinux
 layout : post
+date: 2020-04-03 21:53:12 +5:30
 ---
 ## Download the kernel
 

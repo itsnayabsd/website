@@ -1,6 +1,8 @@
 ---
+title : Cross compiling U-boot bootloader
 layout : post
 category : rpi3b-elinux
+date: 2020-04-02 21:53:12 +5:30
 ---
 ## Setting up usb to serial cable
 
