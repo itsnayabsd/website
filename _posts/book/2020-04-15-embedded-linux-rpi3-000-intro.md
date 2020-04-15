@@ -3,6 +3,12 @@ title : Embedded Linux with Raspberry Pi Model B
 layout : post
 category : book
 date: 2020-04-15 21:53:12 +5:30
+comments: true
+google_adsense: true
+excerpt : A series of articles about Embedded Linux and device driver development using Raspberry Pi Model B.
+kerwords : Embedded Linux book for Raspberry Pi Model B, Embedded Linux tutorial, Embedded Linux development, Embedded Linux tutorial, Embedded Linux with Raspberry Pi Model B, Device driver development on Raspberry Pi Model B, Embedded Linux OS, Learning device drivers on Rapsberry Pi Model B, Develop Linux from scratch on Raspberry Pi Model B
+image : /assets/img/rpi3b-elinux-intro.png
+toc : true
 ---
 ## Introduction
 
@@ -12,6 +18,7 @@ Embedded Linux development for any *single board computer* (SBC) or *embedded de
 
 Before chosing to develop the Embedded Linux system, make sure there is *Linux* and open source boot loader like *U-boot* support for SoC.
 
+{% include image.html url="rpi3b-elinux-intro.png" description="Embedded Linux with Rapsberry Pi Model B" %}
 ## Requirements
 The following hardware required to develop an Embedde Linux system.
 

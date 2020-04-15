@@ -6,6 +6,13 @@ date: 2020-04-15 22:15:28 +5:30
 ---
 ## Introduction
 
+A toolchain is the combination of following -
+ - Binutils - as, ld, ar, ranlib, objdump, readelf, size, nm, strings, objcopy and strip. Official page : [http://www.gnu.org/software/binutils/](http://www.gnu.org/software/binutils/).
+ - Kernel headers - Can be extracted from kernel sources using `make headers_install` target.
+ - C/C++ libraries - Several C libraries available. glibc, uClibc, musl, klibc, newlib ...
+ - C/C++ compiler - GCC : GNU compiler collection.
+ - GDB debugger 
+
 We are going to use a development PC (called host sytem) like our laptop or desktop to create the embedded system (target system).
 
 Toolchain building utilities
