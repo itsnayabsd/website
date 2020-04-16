@@ -4,7 +4,7 @@
 sudo apt update
 sudo apt -y dist-upgrade
 
-sudo apt install -y vim gnome-shell-extensions gnome-tweaks git gitk git-email ruby-full cscope libssl-dev bison flex gcc-arm-linux-gnueabi picocom gcc-arm-linux-gnueabi nfs-kernel-server build-essential autoconf texinfo help2man gawk libtool-bin libncurses5-dev device-tree-compiler zlib1g-dev locate python3-distutils python3-dev
+sudo apt install -y vim gnome-shell-extensions gnome-tweaks git gitk git-email ruby-full cscope libssl-dev bison flex gcc-arm-linux-gnueabi picocom gcc-arm-linux-gnueabi nfs-kernel-server build-essential autoconf texinfo help2man gawk libtool-bin libncurses5-dev device-tree-compiler zlib1g-dev locate python3-distutils python3-dev ccache gettext libapr1 libaprutil1 libcroco3 libserf-1-1 libsvn1 libutf8proc2 subversion xsltproc tree
 
 git config --global user.name "Nayab Basha Sayed"
 git config --global user.email "basha@nayab.xyz"
