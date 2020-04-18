@@ -229,6 +229,8 @@ Images directory :
 
 The images compiled are present in `bin/targets/bcm27xx/bcm2710/` for Raspberry Pi Model B.
 
+The `*factory.img` files are to flash for the first time. To update exiting openwrt images, use `*sysupgrade.img` files
+
 
 To compile single package :
 
@@ -250,3 +252,6 @@ The above command only removes the contents of `/bin` and `/build_dir` folders.
 `make dirclean` will delete the contents of `/bin`, `/build_dir`, `/staging_dir`, `/toolchain`, `/tmp/` and `/logs`.
 
 `make distclean` will reset to the state when you freshly cloned the repo.
+
+
+Creating `files` folder in the repo root directory. Add some files to this directory. Compile using `make -n4`. The final image when we flash into RPI, will have the same files into root diretory. Ex: <repo>/files/etc/config/my_config => /etc/config/my_config in the image.
