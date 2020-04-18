@@ -1,0 +1,3 @@
+Configure and build a cross toolchain using the crosstool-ng build tool for raspberry pi 3 model b. The cross toolchain is built for aarch64 architecture and uClibc library
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-010-toolchain.html
+#embeddedlinux #raspberrypi3 #toolchain
