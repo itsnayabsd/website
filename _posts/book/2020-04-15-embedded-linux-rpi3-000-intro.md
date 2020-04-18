@@ -1,5 +1,5 @@
 ---
-title : Embedded Linux with Raspberry Pi Model B
+title : Embedded Linux with Raspberry Pi 3 Model B
 layout : post
 category : book
 date: 2020-04-15 21:53:12 +5:30
@@ -18,7 +18,7 @@ Embedded Linux development for any *single board computer* (SBC) or *embedded de
 
 Before chosing to develop the Embedded Linux system, make sure there is *Linux* and open source boot loader like *U-boot* support for SoC.
 
-{% include image.html url="rpi3b-elinux-intro.png" description="Embedded Linux with Rapsberry Pi Model B" %}
+{% include image.html url="rpi3b-elinux-intro.png" description="Embedded Linux with Rapsberry Pi 3 Model B" %}
 ## Requirements
 The following hardware required to develop an Embedde Linux system.
 
