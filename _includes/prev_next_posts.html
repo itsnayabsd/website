@@ -4,8 +4,11 @@
 		{% assign sorted = (category[1] | sort: 'url') %}
 		{% for posts in sorted %}
 			{% if pre_post_title == page.title %}
-				<a class="post-link" href="{{ pre_post.url }}">Previous post</a>
-				<a class="post-link" href="{{ posts.url }}">Next post</a>
+			<div class="flex_container">
+				<a class="post-link" href="{{ pre_post.url }}"><span>Previous Section</span></a>
+				<a class="post-link" href="/category/{{ page.category }}.html"><span>Index</span></a>
+				<a class="post-link" href="{{ posts.url }}"><span>Next Section</span></a>
+			</div>
 				{% break %}
 			{% endif %}
 			{% assign pre_post = curr_post %}

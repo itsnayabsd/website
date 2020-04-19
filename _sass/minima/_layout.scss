@@ -311,3 +311,16 @@ div#mc_embed_signup {
 	border: 2px solid $grey-color-light;
 	border-radius: 5px;
 }
+
+.flex_container {
+	display : flex;
+	justify-content : space-between;
+}
+
+.flex_container span {
+	font-size : 20px;
+	background-color : #eee;
+	padding : 1px 5px;
+	border-radius : 5px;
+	overflow: hidden
+}
