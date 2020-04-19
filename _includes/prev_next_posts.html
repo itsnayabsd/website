@@ -1,0 +1,16 @@
+{% assign cat = page.category %}
+{% for category in site.categories %}
+	{% if category.first == cat %}
+		{% assign sorted = (category[1] | sort: 'url') %}
+		{% for posts in sorted %}
+			{% if pre_post_title == page.title %}
+				<a class="post-link" href="{{ pre_post.url }}">Previous post</a>
+				<a class="post-link" href="{{ posts.url }}">Next post</a>
+				{% break %}
+			{% endif %}
+			{% assign pre_post = curr_post %}
+			{% assign curr_post = posts %}
+			{% assign pre_post_title = posts.title %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
