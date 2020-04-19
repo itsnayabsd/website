@@ -38,7 +38,7 @@ Consider following list of articles as a *table of contents* or the *overview of
 <ul class="list-none">
 {% for category in site.categories %}
 {% if category.first == cat %}
-{% assign sorted = (category[1] | sort: 'date') %}
+{% assign sorted = (category[1] | sort: 'url') %}
 {% for posts in sorted %}
 <li><a class="post-link" href="{{ posts.url }}">{{ posts.title }}</a></li>
 {% endfor %}
