@@ -40,7 +40,7 @@ Consider following list of articles as a *table of contents* or the *overview of
 {% if category.first == cat %}
 {% assign sorted = (category[1] | sort: 'url') %}
 {% for posts in sorted %}
-<li><a class="post-link" href="{{ posts.url }}">{{ posts.title }}</a></li>
+<li><a class="post-link" href="{{ posts.url }}">{{ posts.title | remove : "for Raspberry Pi 3 Model B"}}</a></li>
 {% endfor %}
 {% endif %}
 {% endfor %}
