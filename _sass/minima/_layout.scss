@@ -317,6 +317,14 @@ div#mc_embed_signup {
 	justify-content : space-between;
 }
 
+.flex_container a:first-child span::before {
+	content : "\00ab\00a0";
+}
+
+.flex_container a:last-child span::after {
+	content : " \00bb\00a0";
+}
+
 .flex_container span {
 	font-size : 20px;
 	background-color : #eee;
