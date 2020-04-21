@@ -2,6 +2,9 @@
 {% for category in site.categories %}
 	{% if category.first == cat %}
 		{% assign sorted = (category[1] | sort: 'url') %}
+		{% assign pre_post = '' %}
+		{% assign curr_post = '' %}
+		{% assign pre_post_title = '' %}
 		{% for posts in sorted %}
 			{% if pre_post_title == page.title %}
 			<div class="flex_container">
