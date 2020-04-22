@@ -6,3 +6,13 @@ Cross compiling U-boot bootloader for Raspberry Pi 3 Model B
 The cross compilation steps to compile U-boot for the Raspberry Pi 3 Model B.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-020-compile-uboot.html
 #embeddedlinux #raspberrypi3 #uboot
+
+SD card or USB drive partitioning using fdisk
+Create partitions using fdisk tool for any SD card or USB drive. Build a file system in those partitions. In this tutorial we create two partitions, the first one with fat32 filesystem and the second one with ext4 filesystem.
+https://www.nayab.xyz/linux-tools/partitioning-using-fdisk.html
+#fdisk #mkfs #drivepartitioning #linux
+
+The boot sequence of Raspberry Pi 3 Model B
+The boot process is the different stages the system goes through from the powering up the device to start the operating system. This article explains the boot process of the Raspberry Pi 3 Model B.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-030-boot-process.html
+#booting #raspberrypi3

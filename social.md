@@ -26,7 +26,7 @@ https://twitter.com/nayabbashasayed
 How to use hashtags
 
 ## Pinterest
-https://in.pinterest.com/nayabsd/
+https://in.pinterest.com/
 
 ## Google Hub
 https://questionhub.google.com/
