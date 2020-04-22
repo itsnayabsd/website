@@ -7,7 +7,7 @@ comments : true
 google_adsense: true
 excerpt : The boot process is the different stages the system goes through from the powering up the device to start the operating system. This article explains the boot process of the Raspberry Pi 3 Model B.
 keywords : boot process raspberry pi 3 model b, boot sequence rpi 3 model b, raspberry pi boot SD card.
-image : /assets/img/rpi3b-elinux-toolchain.png
+image : /assets/img/rpi3b-boot-sequence.png
 toc : true
 ---
 ## Introduction
