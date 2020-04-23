@@ -5,8 +5,8 @@ category : rpi3b-elinux
 date: 2020-04-23 21:50:53 +5:30
 comments : true
 google_adsense: true
-excerpt :
-keywords :
+excerpt : The step by step tutorial to how to establish Ethernet communication using TFTP protocol with Raspberry Pi 3 Model B and to transfer files using TFTP to Raspberry Pi U-Boot.
+keywords : transfer files to Raspberry Pi using tftp, transfer files between PC and Raspberry Pi, transfer files from Ubuntu to Raspberry PI, Raspberry Pi tftpboot.
 image : /assets/img/rpi3b-elinux-tftp-comm.png
 toc : true
 ---
