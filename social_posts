@@ -26,5 +26,10 @@ https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-040-tftp-comm.html
 Cross-compile and load Linux kernel for Raspberry Pi 3 Model B
 This article shows how to cross compile Linux kernel for Raspberry Pi 3 Model B, load the kernel and device tree from tftp server every time the board boots up.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-050-linux.html
-#linux #u-boot #raspberrypi3
+#linux #uboot #raspberrypi3
+
+Generating minimal file system with busybox for Raspberry Pi 3 Model B
+Generating minimal root filesystem with busybox for Raspberry Pi 3 Modle B. Busybox install basic Linux utilities, an init program and a shell required to make Linux system usable.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-060-busybox.html
+#busybox #raspberrypi #raspberrypi3
 
