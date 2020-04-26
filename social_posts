@@ -16,3 +16,15 @@ The boot sequence of Raspberry Pi 3 Model B
 The boot process is the different stages the system goes through from the powering up the device to start the operating system. This article explains the boot process of the Raspberry Pi 3 Model B.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-030-boot-process.html
 #booting #raspberrypi3
+
+
+Setting up Ethernet communication with Raspberry Pi 3 Model B
+The step by step tutorial to how to establish Ethernet communication using TFTP protocol with Raspberry Pi 3 Model B and to transfer files using TFTP to Raspberry Pi U-Boot.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-040-tftp-comm.html
+#tftp #u-boot #raspberrypi3
+
+Cross-compile and load Linux kernel for Raspberry Pi 3 Model B
+This article shows how to cross compile Linux kernel for Raspberry Pi 3 Model B, load the kernel and device tree from tftp server every time the board boots up.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-050-linux.html
+#linux #u-boot #raspberrypi3
+
