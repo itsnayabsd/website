@@ -33,3 +33,7 @@ Generating minimal root filesystem with busybox for Raspberry Pi 3 Modle B. Busy
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-060-busybox.html
 #busybox #raspberrypi #raspberrypi3
 
+Network boot your Raspberry Pi 3B
+Let's make the Raspberry Pi 3B boot all essential software over network including Linux kernel, device tree binary, filesystem. Ubuntu system acts as server to host all these software.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-070-boot-nfs.html
+#raspberrypi #networkboot #raspberrypi3
