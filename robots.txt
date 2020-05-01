@@ -1,5 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.nayab.xyz/feed.xml
 Sitemap: https://www.nayab.xyz/sitemap.xml
