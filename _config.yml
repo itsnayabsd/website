@@ -54,6 +54,6 @@ social:
         - https://github.com/nayabbashasayed
         - https://www.instagram.com/nayab.xyz/
 
-lang: en_IN
+lang: en
 feed:
     path: atom.xml

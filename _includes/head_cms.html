@@ -12,10 +12,11 @@
   </title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 260 | escape }}">
   <meta name="keywords" content="{{ page.keywords }}">
+  <meta property="og:type" content="Blog" />
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  <link rel="alternate" hreflang="en" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   {% if jekyll.environment == 'production' and page.google_adsense %}
   {% include google-analytics.html %}
