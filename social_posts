@@ -37,3 +37,8 @@ Network boot your Raspberry Pi 3B
 Let's make the Raspberry Pi 3B boot all essential software over network including Linux kernel, device tree binary, filesystem. Ubuntu system acts as server to host all these software.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-070-boot-nfs.html
 #raspberrypi #networkboot #raspberrypi3
+
+System configuration and startup for Raspberry Pi 3 Model B
+Creating and editing the configuration file for the first user space program, /sbin/int, executed by Linux kernel. Add or modify the init scirpts to be executed at the system startup for Raspberry Pi 3B.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-080-system-startup.html
+#raspberrypi #raspberrypi3 #init
