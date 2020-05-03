@@ -42,3 +42,8 @@ System configuration and startup for Raspberry Pi 3 Model B
 Creating and editing the configuration file for the first user space program, /sbin/int, executed by Linux kernel. Add or modify the init scirpts to be executed at the system startup for Raspberry Pi 3B.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-080-system-startup.html
 #raspberrypi #raspberrypi3 #init
+
+Busybox filesystem with shared libraries for Raspberry Pi 3 Model B
+Compile busybox without static building enabled and copy all the necessary shared libraries to run a binary from the toolchain directory to busybox filesystem.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-090-busybox-sharedlib.html
+#raspberrypi #busybox #embeddedlinux
