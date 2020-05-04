@@ -93,7 +93,13 @@ The `~/rpi3/sdCardFiles/` directory must have the following files.
  - start.elf
  - u-boot.bin
 
-[Format the SD card first with `fat32`](/linux-tools/partitioning-using-fdisk.html) file system using `fdisk` and `mkfs.vfat` tools and then copy above files to SD card.
+### Prepare SD card
+Create three partitions using [fdisk and mkfs](/linux-tools/partitioning-using-fdisk.html)
+ - First partition is of size 1GB, type *fat32* with label *boot*
+ - Second partition is of size 512MB, type *Linux* with label *rootfs*
+ - The third partition is of remaining of the SD card storage with the type *Linux*
+
+Once the SD card partitioning is done, copy above mentioned files to SD card.
 ```bash
 cp -r ~/rpi3/sdCardFiles/. <path_to_sd_card_mount_point> # Use lsblk command to find the mount point
 ```

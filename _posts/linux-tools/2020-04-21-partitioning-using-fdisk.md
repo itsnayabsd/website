@@ -185,7 +185,7 @@ sudo mkfs.vfat /dev/mmcblk0p1 -n boot
 ```
 Build Linux filesystem for partition 2.
 ```
-sudo mkfs.ext4 /dev/mmcblk0p2
+sudo mkfs.ext4 /dev/mmcblk0p2 -L rootfs
 ```
 ## Check the partitions
 Remove the USB/Card reader device and then reinsert to verify the partitions using the lsblk command.
@@ -198,5 +198,5 @@ sda           8:0    0 223.6G  0 disk
 sr0          11:0    1  1024M  0 rom  
 mmcblk0     179:0    0    29G  0 disk 
 ├─mmcblk0p1 179:1    0     1G  0 part /media/nayab/boot
-└─mmcblk0p2 179:2    0    28G  0 part /media/nayab/f7117e79-9502-49aa-829b-75ec070eddda
+└─mmcblk0p2 179:2    0    28G  0 part /media/nayab/rootfs
 ```
