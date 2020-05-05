@@ -95,8 +95,8 @@ The `~/rpi3/sdCardFiles/` directory must have the following files.
 
 ### Prepare SD card
 Create three partitions using [fdisk and mkfs](/linux-tools/partitioning-using-fdisk.html)
- - First partition is of size 1GB, type *fat32* with label *boot*
- - Second partition is of size 512MB, type *Linux* with label *rootfs*
+ - First partition is of size 1GB, type *fat32* with label *boot*. Create filesystem with *mkfs.vfat*.
+ - Second partition is of size 512MB, type *Linux* with label *rootfs*. Create filesystem with *mkfs.ext4*.
  - The third partition is of remaining of the SD card storage with the type *Linux*
 
 Once the SD card partitioning is done, copy above mentioned files to SD card.
