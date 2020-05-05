@@ -5,8 +5,8 @@ category : rpi3b-elinux
 date : 2020-05-05 18:34:28 +5:30
 comments : true
 google_adsense: true
-excerpt : 
-keywords : 
+excerpt : In this tutorial, we are going to install Linux kernel modules in the busybox filesystem /lib directory.
+keywords : Install linux kernel modules busybox, install linux kernel modules, Raspberry pi 3 install linux kernel modules.
 image : /assets/img/rpi3b-elinux-linux-modules-install.png
 toc : true
 ---

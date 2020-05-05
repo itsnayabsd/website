@@ -47,3 +47,14 @@ Busybox filesystem with shared libraries for Raspberry Pi 3 Model B
 Compile busybox without static building enabled and copy all the necessary shared libraries to run a binary from the toolchain directory to busybox filesystem.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-090-busybox-sharedlib.html
 #raspberrypi #busybox #embeddedlinux
+
+Boot Raspberry Pi 3B from the SD card
+In this tutorial, we create squashfs root filesystem, copy kernel, filesystem and dtb to the SD card. We modify U-boot env variables so that the Linux kernel and the filesystem boots from the SD card.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-100-elinux-on-sdcard.html
+#raspberrypi #busybox #squashfs
+
+Install Linux kernel modules in busybox filesystem for Raspberry Pi 3 Model B
+In this tutorial, we are going to install Linux kernel modules in the busybox filesystem /lib directory.
+https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-065-linux-modules-install.html
+#raspberrypi #busybox #kernel
+
