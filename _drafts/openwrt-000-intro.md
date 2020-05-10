@@ -1,97 +1,53 @@
 ---
 layout : post
 ---
+## Install necessary packages for development
+```bash
 sudo apt install subversion build-essential libncurses5-dev zlib1g-dev gawk git ccache gettext libssl-dev xsltproc zip
-
+```
+## Download the OpenWRT build system
+```bash
 git clone https://git.openwrt.org/openwrt/openwrt.git
+```
 
 Check prerequisites
+```bash
 make prereq # Some warning are being generated. Need to see if some libraries need to be installed.
-
-OpenWRT tree when cloned.
-```
-.
-├── BSDmakefile
-├── config
-├── Config.in
-├── feeds.conf.default
-├── include
-├── LICENSE
-├── Makefile
-├── package
-├── README
-├── rules.mk
-├── scripts
-├── target
-├── toolchain
-└── tools
 ```
 
+When prompted, select *Target System (Broadcom BCM27XX)*, *Subtarget (BCM2710 boards (64 bits))* and *Target Profile (Raspberry Pi 2B-1.2/3B/3B+/3CM)*.
+
+## Package feeds
+
+Package feeds are source repositories being maintained somewhere on the web. Each package feed can have more than one packages.
+
+### Useful package feeds commands
+All of the following commands parses either the *feeds.conf* file or *feeds.conf.default* file for the package feeds information.
+
+ - To know list of feed names and their respective repository URLs on the web
+```bash
+cd ~/openwrt
+./scripts/feeds list -s
 ```
-4.0K	BSDmakefile
-64K	config
-4.0K	Config.in
-4.0K	feeds.conf.default
-372K	include
-20K	LICENSE
-4.0K	Makefile
-19M	package
-4.0K	README
-16K	rules.mk
-1.2M	scripts
-62M	target
-1.1M	toolchain
-3.1M	tools
+ - To know list of packages in a particular feed -
+```bash
+./scripts/feeds list -r <feed name>
+```
+Ex: *./scripts/feeds list -r luci*.
+
+You might encounter an error similar to the following.
+```
+Ignoring feed 'luci' - index missing
 ```
 
-Update feeds from other places. Either from a different URL or different path. Refers `feeds.conf.default` to update the feeds.
+If you face the above error, that means the feeds are not updated with the respective packges.
 
+ - To update the all the feeds with *feeds.conf* or *feeds.conf.default* -
+```bash
 ./scripts/feeds update -a
+```
+The feeds and respective packages Makefiles and patches are stored in *feeds* directory. At this point the *staging_dir* and *tmp* folders are created. The *tmp* folder consists of kernel config files and the *tmp/info* directory consists of the packages information.
 
-New folders will be created. `staging_dir`, `feeds` by using above command. `feeds` folder will be updated with the Makefiles, Config files, scripts and patches for the packages. `staging_dir` is created with symbolic links to host binutils.
-```
-$ ls feeds/packages/net/bridge-utils/
-Makefile  patches
-```
-
-
-```
-4.0K	BSDmakefile
-64K	config
-4.0K	Config.in
-137M	feeds
-4.0K	feeds.conf.default
-372K	include
-20K	LICENSE
-4.0K	Makefile
-19M	package
-4.0K	README
-16K	rules.mk
-1.2M	scripts
-40K	staging_dir
-62M	target
-24K	tmp
-1.1M	toolchain
-3.1M	tools
-```
-```
-$ du -sh feeds/packages/*
-456K	feeds/packages/admin
-12K	feeds/packages/CONTRIBUTING.md
-376K	feeds/packages/devel
-12K	feeds/packages/fonts
-72K	feeds/packages/ipv6
-72K	feeds/packages/kernel
-3.5M	feeds/packages/lang
-4.2M	feeds/packages/libs
-20K	feeds/packages/LICENSE
-488K	feeds/packages/mail
-760K	feeds/packages/multimedia
-12M	feeds/packages/net
-4.0K	feeds/packages/README.md
-4.3M	feeds/packages/sound
-5.0M	feeds/packages/utils
-```
 ___
 Make all the packages available for `make menuconfig` by running the following command.
 ```
