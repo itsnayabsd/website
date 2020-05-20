@@ -7,7 +7,7 @@ sudo apt install subversion build-essential libncurses5-dev zlib1g-dev gawk git 
 ```
 ## Download the OpenWRT build system
 ```bash
-git clone https://git.openwrt.org/openwrt/openwrt.git
+git clone https://github.com/openwrt/openwrt.git
 ```
 
 ### The directories explanation
@@ -19,12 +19,6 @@ git clone https://git.openwrt.org/openwrt/openwrt.git
  - /toolchain : Toolchain Makefile and configuration files
  - /tools : Various tools used in the build process
 
-### Check prerequisites
-```bash
-make prereq # Some warning are being generated. Need to see if some libraries need to be installed.
-```
-
-When prompted, select *Target System (Broadcom BCM27XX)*, *Subtarget (BCM2710 boards (64 bits))* and *Target Profile (Raspberry Pi 2B-1.2/3B/3B+/3CM)*.
 
 ## Package feeds
 
@@ -61,13 +55,36 @@ The feeds and respective packages Makefiles and patches are stored in *feeds* di
 The above command creates `package/feeds` directory and installs all the feeds in this directory. Any package of particular feed can be compiled only if the package feed is present in *package/feeds/* directory. The above command does that.
 
 Local feed also can be created with `src-link`. ex: src-link my_packages /home/$username/src/openwrt/my_packages
+### Check prerequisites
+```bash
+make prereq # Some warning are being generated. Need to see if some libraries need to be installed.
+```
+When prompted, select *Target System (Broadcom BCM27XX)*, *Subtarget (BCM2710 boards (64 bits))* and *Target Profile (Raspberry Pi 2B-1.2/3B/3B+/3CM)*.
+
 ## Select packages
 Run the following command to select/unselect the packages and save the *.config* file.
 ```bash
 make menuconfig
 ```
-When prompted, select *Target System (Broadcom BCM27XX)*, *Subtarget (BCM2710 boards (64 bits))* and *Target Profile (Raspberry Pi 2B-1.2/3B/3B+/3CM)*.
 
+## Compile a single package
+To compile a single package, we need to install necessary tools and toolchain first.
+```
+make -j4 V=s tools/install
+make -j4 V=s toolchain/install
+make target/compile
+```
+<!--
+make menuconfig -> check nano and libncurses
+make tools/install
+make toolchain/install
+make target/compile
+make package/ncurses/compile
+make package/ncurses/install
+make package/feeds/packages/nano/compile
+make package/feeds/packages/nano/install
+make package/index
+-->
 ## Building packages
 Let's build toolchain first.
 ```bash
@@ -123,3 +140,13 @@ The above command only removes the contents of `/bin` and `/build_dir` folders.
 
 
 Creating `files` folder in the repo root directory. Add some files to this directory. Compile using `make -n4`. The final image when we flash into RPI, will have the same files into root diretory. Ex: <repo>/files/etc/config/my_config => /etc/config/my_config in the image.
+
+## Important directories
+```
+target/linux/<arch>/base-files
+target/linux/<arch>/image
+target/linux/<arch>/<board>
+target/linux/<arch>/dts
+target/linux/<arch>/modules.mk
+```
+
