@@ -1,0 +1,136 @@
+make[2]: Entering directory '/home/nayab/openwrt/scripts/config'
+make[2]: Leaving directory '/home/nayab/openwrt/scripts/config'
+time: target/linux/prereq#0.10#0.04#0.14
+[33m make[1] world[m
+[33m make[2] tools/compile[m
+[33m make[3] -C tools/flock compile[m
+[33m make[3] -C tools/xz compile[m
+[33m make[3] -C tools/sed compile[m
+[33m make[3] -C tools/patch compile[m
+[33m make[3] -C tools/tar compile[m
+[33m make[3] -C tools/ccache compile[m
+[33m make[3] -C tools/m4 compile[m
+[33m make[3] -C tools/autoconf compile[m
+[33m make[3] -C tools/pkgconf compile[m
+[33m make[3] -C tools/automake compile[m
+[33m make[3] -C tools/missing-macros compile[m
+[33m make[3] -C tools/libtool compile[m
+[33m make[3] -C tools/gmp compile[m
+[33m make[3] -C tools/mpfr compile[m
+[33m make[3] -C tools/mpc compile[m
+[33m make[3] -C tools/libelf compile[m
+[33m make[3] -C tools/expat compile[m
+[33m make[3] -C tools/flex compile[m
+[33m make[3] -C tools/bison compile[m
+[33m make[3] -C tools/mklibs compile[m
+[33m make[3] -C tools/libressl compile[m
+[33m make[3] -C tools/cmake compile[m
+[33m make[3] -C tools/zlib compile[m
+[33m make[3] -C tools/sstrip compile[m
+[33m make[3] -C tools/make-ext4fs compile[m
+[33m make[3] -C tools/e2fsprogs compile[m
+[33m make[3] -C tools/mtd-utils compile[m
+[33m make[3] -C tools/mkimage compile[m
+[33m make[3] -C tools/firmware-utils compile[m
+[33m make[3] -C tools/patch-image compile[m
+[33m make[3] -C tools/findutils compile[m
+[33m make[3] -C tools/quilt compile[m
+[33m make[3] -C tools/padjffs2 compile[m
+[33m make[3] -C tools/mm-macros compile[m
+[33m make[3] -C tools/bc compile[m
+[33m make[3] -C tools/gengetopt compile[m
+[33m make[3] -C tools/patchelf compile[m
+[33m make[3] -C tools/mtools compile[m
+[33m make[3] -C tools/dosfstools compile[m
+[33m make[3] -C tools/lzma compile[m
+[33m make[3] -C tools/squashfskit4 compile[m
+[33m make[3] -C tools/zip compile[m
+[33m make[3] -C tools/b43-tools compile[m
+[33m make[2] toolchain/compile[m
+[33m make[3] -C toolchain/gdb compile[m
+[33m make[3] -C toolchain/binutils compile[m
+[33m make[3] -C toolchain/gcc/initial compile[m
+[33m make[3] -C toolchain/kernel-headers compile[m
+[33m make[3] -C toolchain/musl compile[m
+[33m make[3] -C toolchain/gcc/final compile[m
+[33m make[3] -C toolchain/fortify-headers compile[m
+[33m make[2] target/compile[m
+[33m make[3] -C target/linux compile[m
+[33m make[2] buildinfo[m
+[33m make[3] diffconfig buildversion feedsversion[m
+[33m make[2] package/cleanup[m
+[33m make[2] package/compile[m
+[33m make[3] -C package/libs/libjson-c host-compile[m
+[33m make[3] -C package/libs/libubox host-compile[m
+[33m make[3] -C package/system/opkg host-compile[m
+[33m make[3] -C package/libs/toolchain compile[m
+[33m make[3] -C package/libs/libnl-tiny compile[m
+[33m make[3] -C package/libs/libjson-c compile[m
+[33m make[3] -C package/utils/lua compile[m
+[33m make[3] -C package/libs/libubox compile[m
+[33m make[3] -C package/system/ubus compile[m
+[33m make[3] -C package/system/uci compile[m
+[33m make[3] -C package/network/config/netifd compile[m
+[33m make[3] -C package/firmware/linux-firmware compile[m
+[33m make[3] -C package/firmware/prism54-firmware compile[m
+[33m make[3] -C package/kernel/linux compile[m
+[33m make[3] -C package/system/ubox compile[m
+[33m make[3] -C package/libs/ncurses host-compile[m
+[33m make[3] -C package/libs/zlib compile[m
+[33m make[3] -C package/libs/ncurses compile[m
+[33m make[3] -C package/utils/util-linux compile[m
+[33m make[3] -C package/system/fstools compile[m
+[33m make[3] -C package/system/fwtool host-compile[m
+[33m make[3] -C package/system/fwtool compile[m
+[33m make[3] -C package/system/procd compile[m
+[33m make[3] -C package/system/usign host-compile[m
+[33m make[3] -C package/system/ucert host-compile[m
+[33m make[3] -C package/utils/jsonfilter compile[m
+[33m make[3] -C package/system/openwrt-keyring compile[m
+[33m make[3] -C package/system/usign compile[m
+[33m make[3] -C package/base-files compile[m
+[33m make[3] -C package/firmware/cypress-firmware compile[m
+[33m make[3] -C package/firmware/cypress-nvram compile[m
+[33m make[3] -C package/firmware/wireless-regdb compile[m
+[33m make[3] -C package/kernel/bcm27xx-gpu-fw compile[m
+[33m make[3] -C package/firmware/b43legacy-firmware compile[m
+[33m make[3] -C package/libs/openssl compile[m
+[33m make[3] -C package/libs/gettext compile[m
+[33m make[3] -C package/libs/libiconv compile[m
+[33m make[3] -C package/libs/libtool compile[m
+[33m make[3] -C package/libs/wolfssl compile[m
+[33m make[3] -C package/network/services/hostapd compile[m
+[33m make[3] -C package/network/utils/iw compile[m
+[33m make[3] -C package/kernel/mac80211 compile[m
+[33m make[3] -C package/libs/mbedtls compile[m
+[33m make[3] -C package/libs/ustream-ssl compile[m
+[33m make[3] -C package/libs/uclient compile[m
+[33m make[3] -C package/network/utils/iptables compile[m
+[33m make[3] -C package/network/config/firewall compile[m
+[33m make[3] -C package/network/ipv6/odhcp6c compile[m
+[33m make[3] -C package/network/services/dnsmasq compile[m
+[33m make[3] -C package/network/services/dropbear compile[m
+[33m make[3] -C package/network/services/odhcpd compile[m
+[33m make[3] -C package/libs/libpcap compile[m
+[33m make[3] -C package/network/utils/linux-atm compile[m
+[33m make[3] -C package/network/utils/resolveip compile[m
+[33m make[3] -C package/network/services/ppp compile[m
+[33m make[3] -C package/network/utils/iwinfo compile[m
+[33m make[3] -C package/system/mtd compile[m
+[33m make[3] -C package/system/opkg compile[m
+[33m make[3] -C package/system/urandom-seed compile[m
+[33m make[3] -C package/system/urngd compile[m
+[33m make[3] -C package/utils/bcm27xx-userland compile[m
+[33m make[3] -C package/utils/busybox compile[m
+[33m make[3] -C package/utils/e2fsprogs host-compile[m
+[33m make[3] -C package/utils/e2fsprogs compile[m
+[33m make[3] -C package/utils/f2fs-tools compile[m
+[33m make[2] package/install[m
+[33m make[2] target/install[m
+[33m make[3] -C target/linux install[m
+[33m make[3] -C target/sdk install[m
+[33m make[3] -C target/imagebuilder install[m
+[33m make[2] package/index[m
+[31mWARNING: Applying padding in /home/nayab/openwrt/bin/packages/aarch64_cortex-a53/base/Packages to workaround usign SHA-512 bug![m
+[33m make[2] json_overview_image_info[m
+[33m make[2] checksum[m
