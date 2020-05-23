@@ -22,6 +22,7 @@ gem install jekyll bundler
 sudo pip3 install protonvpn-cli
 
 flatpak install org.gabmus.gfeeds
+flatpak install flathub org.gpodder.gpodder
 
 echo "Install ruby manually from https://github.com/rbenv/rbenv-installer"
 echo "sudo updatedb might take a while"
