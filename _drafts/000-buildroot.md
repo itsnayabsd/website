@@ -17,7 +17,7 @@ Select Toolchain -> Toolchain -> Custom toolchain
 
 Select Toolchain -> Toolchain path  and enter the path to the toolchain. In my case it is, /home/nayab/x-tools/aarch64-rpi3-linux-uclibc
 
-Select Toolchain -> Toolchain prefix -> $(ARCH)-rpi3-linux-uclibc-
+Select Toolchain -> Toolchain prefix -> $(ARCH)-rpi3-linux-uclibc
 
 Select Toolchain -> External toolchain kernel headers series -> 5.4.x or later.
 
