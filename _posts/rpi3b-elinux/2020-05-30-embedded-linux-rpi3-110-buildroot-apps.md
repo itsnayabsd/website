@@ -2,7 +2,7 @@
 title : Install the apps using Buildroot build system for Raspberry Pi 3 Model B
 layout : post
 category : rpi3b-elinux
-date : 2020-05-05 22:59:59 +5:30
+date : 2020-06-07 22:59:59 +5:30
 comments : true
 google_adsense: true
 excerpt : In this tutorial, we create squashfs root filesystem, copy kernel, filesystem and dtb to the SD card. We modify U-boot env variables so that the Linux kernel and the filesystem boots from the SD card.
@@ -17,7 +17,6 @@ In the [earlier article](/rpi3b-elinux/embedded-linux-rpi3-100-elinux-on-sdcard.
 In this tutorial we will use a build system called *Buildroot* to see how to install other useful applications to the root filesystem. The Buildroot itself is a tool to generate toolchain, Linux kernel and root filesystem combiningly. But we are going to use it to generate the root filesystem with the other useful apps. Here I am going to take *dropbear* which is very small ssh server and client program. We are going to install dropbear into the root filesystem, copy the files to the SD card and boot the board.
 
 {% include image.html url="rpi3-elinux-sdcard.png" description="Boot Raspberry Pi 3B from the SD card" %}
-Download buildroot
 
 ## Download the Buildroot
 Download the build system from the official website.
@@ -39,14 +38,19 @@ Enable IPV6 support by checking the *C-libary -> Add support for IPV6* configura
 
 Go to the extracted Buildroot directory and configure the following options by running *make menuconfig*
 
- - Select Target options -> Target Architecture -> Aarch64 (Little endian)
- - Select Toolchain -> Toolchain type -> External toolchain. The overall build time will be reduced as we are not going to compile the toolchain again.
- - Select Toolchain -> Toolchain -> Custom toolchain
- - Select Toolchain -> Toolchain path. And enter the path to the toolchain. Ex: /home/USERNAME/x-tools/aarch64-rpi3-linux-uclibc
- - Select Toolchain -> Toolchain prefix -> $(ARCH)-rpi3-linux-uclibc
- - Select Toolchain -> External toolchain kernel headers series -> 4.19.x or later.
- - Select Target packages -> Networking applications -> dropbear
- - Select System configuration -> Root password. Enter the new password. We will use this password to login to the board console later.
+```bash
+cd ~/rpi3/buildroot-2020.02.2/
+make menuconfig
+```
+
+ - Select *Target options* -> *Target Architecture* -> *Aarch64 (Little endian)*
+ - Select *Toolchain* -> *Toolchain type* -> *External toolchain*. The overall build time will be reduced as we are not going to compile the toolchain again.
+ - Select *Toolchain* -> *Toolchain* -> *Custom toolchain*
+ - Select *Toolchain* -> *Toolchain path*. And enter the path to the toolchain. Ex: /home/USERNAME/x-tools/aarch64-rpi3-linux-uclibc
+ - Select *Toolchain* -> *Toolchain prefix* -> *$(ARCH)-rpi3-linux-uclibc*
+ - Select *Toolchain* -> *External toolchain kernel headers series* -> *4.19.x or later*.
+ - Select *Target packages* -> *Networking applications* -> *dropbear*
+ - Select *System configuration* -> *Root password*. Enter the new password. We will use this password to login to the board console later.
 
 ## Generate the root filesystem
 Generate the root filesystem using the following command.
@@ -59,10 +63,10 @@ The generated new filesystem is present as a tar file in the path `~/rpi3/buildr
 Extract the root filesystem tar file in some other directory.
 ```bash
 mkdir -p ~/rpi3/nfs_tmp
-tar -C ~/rpi3/nfs_tmp/ -xvf /home/nayab/rpi3/buildroot-2020.02.2/output/images/rootfs.tar
+tar -C ~/rpi3/nfs_tmp/ -xvf ~/rpi3/buildroot-2020.02.2/output/images/rootfs.tar
 ```
 ## Install Linux kernel modules
-Install the already compiled Linux modules into newly created root filesystem by following below commands.
+Install the already compiled Linux modules into newly created root filesystem by running below commands.
 
 ```bash
 cd ~/rpi3/linux
@@ -76,12 +80,26 @@ Insert the SD card into the system and copy the newly generated filesystem into 
 ```bash
 sudo mkfs.ext4 /dev/mmcblk0p2 -L rootfs
 ```
-Remove and insert again. Now the partition is mounted at location */media/USERNAME/rootfs*. Note that the mount point can be different for you. *lsblk* command will help to find mount point of partition. If it is not mounted, please mount it to some location in the filesystem.
+Remove and insert again in the system so that the mount point is */media/USERNAME/rootfs*. Otherwise it would be different if you manually mount it. *lsblk* command will help you to find mount point of partition.
 
-### Copy rootfs to SD card.
+### Copy rootfs files to SD card.
 ```bash
 # Copy from rootfs directory to SD card
 sudo cp -r ~/rpi3/nfs_tmp/. /media/<USERNAME>/rootfs/
 ```
+Replase *UERENAME* with yours. The copied root filesystem files have binaries and init scripts to start ssh server automatically.
 
-Reboot the board and try login using ssh from your system.
+If you want to add any additional packages, do `make menuconfig` in the buildroot directory, select the required packages and follow the same steps mentioned in this post.
+
+## Reboot the board
+Insert the SD card into Raspberry Pi card slot and reboot the board. You should be able to login to the Raspberry Pi using SSH from your system.
+
+If you are unable to login, it's likely that the Ethernet interface is not up in the board. You can make link up and assign some static IP using following commands in the baord.
+```bash
+ifup -a
+ifconfig eth0 192.168.1.120
+```
+Now you should be able to login using the following command from your system. Enter your Root password when prompted.
+```bash
+ssh root@192.168.1.120
+```
