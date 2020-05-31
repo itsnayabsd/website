@@ -1,13 +1,13 @@
 ---
-title : Install the apps using Buildroot build system for Raspberry Pi 3 Model B
+title : Install the apps using Buildroot for Raspberry Pi 3 Model B
 layout : post
 category : rpi3b-elinux
-date : 2020-06-07 22:59:59 +5:30
+date: 2020-05-31 12:28:56 +5:30
 comments : true
 google_adsense: true
-excerpt : In this tutorial, we create squashfs root filesystem, copy kernel, filesystem and dtb to the SD card. We modify U-boot env variables so that the Linux kernel and the filesystem boots from the SD card.
-keywords : Raspberry pi rootfs squashfs, raspberry pi squashfs root, raspberry pi squashfs, mksquashfs root, squashfs root mount, root squashfs format, raspberry pi boot from sd card, raspberry pi 3 boot from sd card
-image : /assets/img/rpi3-elinux-sdcard.png
+excerpt : In this tutorial, we generate ext4 root filesystem from the Buildroot build system, install the additional programs required, write the filesystem to SD card and boot the board using this root filesystem.
+keywords : Raspberry pi buildroot, buildroot root filesystem, buildroot Raspberry Pi 3b, buildroot custom toolchain, buildroot external toolchain.
+image : /assets/img/rpi3b-elinux-buildroot-install-apps.png
 toc : true
 ---
 ## Introduction
@@ -16,7 +16,7 @@ In the [earlier article](/rpi3b-elinux/embedded-linux-rpi3-100-elinux-on-sdcard.
 
 In this tutorial we will use a build system called *Buildroot* to see how to install other useful applications to the root filesystem. The Buildroot itself is a tool to generate toolchain, Linux kernel and root filesystem combiningly. But we are going to use it to generate the root filesystem with the other useful apps. Here I am going to take *dropbear* which is very small ssh server and client program. We are going to install dropbear into the root filesystem, copy the files to the SD card and boot the board.
 
-{% include image.html url="rpi3-elinux-sdcard.png" description="Boot Raspberry Pi 3B from the SD card" %}
+{% include image.html url="rpi3b-elinux-buildroot-install-apps.png" description="Buildroot for RPI 3B to install apps" %}
 
 ## Download the Buildroot
 Download the build system from the official website.
@@ -75,7 +75,7 @@ export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
 export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
 make modules_install INSTALL_MOD_PATH=~/rpi3/nfs_tmp/
 ```
-## Copy root filesystem to /dev/mmcblk0p2 of SD card
+## Copy root filesystem to SD card
 Insert the SD card into the system and copy the newly generated filesystem into */dev/mmcblk0p2* partition. Unmount the partition if it is mounted already and then format the partition using the following command.
 ```bash
 sudo mkfs.ext4 /dev/mmcblk0p2 -L rootfs
