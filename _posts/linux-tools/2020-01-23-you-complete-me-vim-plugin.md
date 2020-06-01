@@ -26,7 +26,7 @@ Some of the useful features listed below:
 
 * Fast identifier completion
 * File and path suggestions
-* Detecting common coding errors like mission semi colons, typos etc.
+* Detecting common coding errors like missing semi colons, typos etc.
 * Code formatting
 * Display documentation for functions/methods etc..
 
