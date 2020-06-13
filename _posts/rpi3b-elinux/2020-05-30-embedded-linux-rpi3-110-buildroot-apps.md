@@ -1,6 +1,6 @@
 ---
 title : Install the apps using Buildroot for Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date: 2020-05-31 12:28:56 +5:30
 comments : true

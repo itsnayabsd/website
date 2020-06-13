@@ -1,6 +1,6 @@
 ---
 title : The boot sequence of Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date: 2020-04-22 00:02:49 +5:30
 comments : true

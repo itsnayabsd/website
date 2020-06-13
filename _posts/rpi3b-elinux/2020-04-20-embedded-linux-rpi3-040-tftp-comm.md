@@ -1,6 +1,6 @@
 ---
 title : Setting up Ethernet communication with Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date: 2020-04-23 21:50:53 +5:30
 comments : true

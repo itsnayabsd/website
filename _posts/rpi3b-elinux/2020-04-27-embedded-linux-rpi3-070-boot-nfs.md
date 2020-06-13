@@ -1,6 +1,6 @@
 ---
 title : Network boot your Raspberry Pi 3B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date : 2020-04-27 21:15:28 +5:30
 comments : true

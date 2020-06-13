@@ -1,6 +1,6 @@
 ---
 title : Cross compiling U-boot bootloader for Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date: 2020-04-02 21:53:12 +5:30
 comments : true
@@ -11,7 +11,6 @@ image : /assets/img/rpi3b-elinux-compile-uboot.png
 toc : true
 ---
 ## Introduction
-
 Every time we made some changes to the Linux kernel, drivers or the file system, it's very cumbersome to copy the files to SD card and then inserting the card into Raspberry Pi. We automate this process using U-boot.
 
 We use U-boot to do the following -

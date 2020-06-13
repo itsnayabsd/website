@@ -1,6 +1,6 @@
 ---
 title : Busybox filesystem with shared libraries for Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date : 2020-05-03 18:34:28 +5:30
 comments : true

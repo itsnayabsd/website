@@ -1,0 +1,18 @@
+{% assign count = 0 %}
+{% for category in site.categories %}
+{% if category.first == page.category %}
+{% assign sorted = (category[1] | sort: 'url') %}
+{% for posts in sorted %}
+{% assign count = count | plus: 1 %}
+{% if posts.url == page.url %}
+	{% break %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+<div class="isa_success">
+	This is <strong><i style="font-size: initial; margin: 0px;">part {{ count }}</i></strong> of the series <a href="/book/embedded-linux-rpi3-000-intro.html#learning-path">Embedded Linux with Raspberry Pi 3 Model B</a>. {% if count !=1 %} Please check earlier articles to get the grasp of current one.{% endif %}
+</div>
+
+

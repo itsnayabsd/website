@@ -1,6 +1,6 @@
 ---
 title : Boot Raspberry Pi 3B from the SD card
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date : 2020-05-05 22:59:59 +5:30
 comments : true

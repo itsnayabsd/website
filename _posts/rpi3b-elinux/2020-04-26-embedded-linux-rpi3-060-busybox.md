@@ -1,6 +1,6 @@
 ---
 title : Generating minimal file system with busybox for Raspberry Pi 3 Model B
-layout : post
+layout : rpi3b-elinux-post
 category : rpi3b-elinux
 date: 2020-04-27 00:18:43 +5:30
 comments : true
