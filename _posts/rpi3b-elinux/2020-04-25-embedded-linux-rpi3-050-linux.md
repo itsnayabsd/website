@@ -71,12 +71,12 @@ Now powerup the board, enter into U-boot console and run the following commands.
 ```bash
 tftp 0x2000000 kernel.img
 tftp 0x200000 bcm2710-rpi-3-b.dtb
-booi 0x2000000 - 0x200000
+booti 0x2000000 - 0x200000
 ```
 
  - The **tftp 0x2000000 kernel.img** command will load *kernel.img* file from tftp server directory to the RAM address of *0x2000000*.
  - The **tftp 0x200000 bcm2710-rpi-3-b.dtb** command will load *bcm2710-rpi-3-b.dtb* device tree binary file from tftp server to the RAM address of *0x200000*.
- - The **booi** command is used to boot arm64 Linux image from the memory. It has 3 arguments. The first argument is the *kernel load address* - *0x2000000*. The second argument is *the initramfs load address*. We are not using any initramfs. So passing *-* (hyphen). The third argument is the *device tree binary load address* - *0x200000*.
+ - The **booti** command is used to boot arm64 Linux image from the memory. It has 3 arguments. The first argument is the *kernel load address* - *0x2000000*. The second argument is *the initramfs load address*. We are not using any initramfs. So passing *-* (hyphen). The third argument is the *device tree binary load address* - *0x200000*.
 
 
 <div class="isa_info"><strong>Note</strong>: The kernel crash is expected here as there is no proper filesystem or init program passed to the kernel.</div><br>
