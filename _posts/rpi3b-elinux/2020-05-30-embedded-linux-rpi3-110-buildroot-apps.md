@@ -34,6 +34,9 @@ cd ~/rpi3/crosstool-ng/
 ```
 Enable IPV6 support by checking the *C-libary -> Add support for IPV6* configuration.
 
+```C
+./ct-ng build
+```
 ## Configure the Buildroot system
 
 Go to the extracted Buildroot directory and configure the following options by running *make menuconfig*

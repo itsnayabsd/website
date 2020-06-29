@@ -32,6 +32,7 @@ Generic Embedded Devices Boot sequence
 ## Download the U-boot
 The U-Boot
 ```bash
+cd ~/rpi3
 git clone git://git.denx.de/u-boot.git
 cd u-boot
 ```
@@ -52,7 +53,7 @@ RPI 3 model b has already a predefined configuration in the u-boot configs direc
 make clean; make mrproper; make distclean
 export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
 make rpi_3_defconfig
-make
+make -j4
 ```
 
 Make sure that the U-boot is compiled for `ARM aarch64` architecture with the following command.

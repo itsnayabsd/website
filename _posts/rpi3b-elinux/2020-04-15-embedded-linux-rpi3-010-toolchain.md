@@ -41,7 +41,8 @@ Run the following commands to download and install crosstool-ng build tool.
 ```bash
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng/
-git checkout 75d7525a		## Tested until this commit id.
+## Tested until the following commit id.
+git checkout 75d7525a
 ```
 ### Configure and compile the build tool
 ```bash
@@ -64,8 +65,8 @@ But above configuration is for `glibc`. Let's change the configuration.
 ```
  - In **Paths and misc options**, change *Maximum log level to see* to DEBUG.
  - In **C library**, change *C library* to uClibc.
- - In **Debug facilites**, disable all options for now as it takes forever to compile.
  - In **Operating system**, select *Version of Linux* as *4.19.105* as we are going to use this version of Linux in the subsequent tutorials.
+ - In **Debug facilites**, disable all options for now as it takes forever to compile.
 
 **Note** We can NOT enable IPV6 support for uClibc library. It's fine for now as we are going to use IPV4 for Embedded Linux networking.
 

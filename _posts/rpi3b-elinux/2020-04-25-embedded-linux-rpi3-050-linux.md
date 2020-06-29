@@ -23,6 +23,7 @@ Raspberry Pi organization maintains it's own fork of Linux kernel to support all
 cd ~/rpi3
 git clone https://github.com/raspberrypi/linux.git
 cd linux
+git checkout rpi-4.19.y
 ```
 Create a branch for your local development.
 ```bash
