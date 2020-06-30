@@ -50,6 +50,7 @@ make menuconfig
  - Select *Toolchain* -> *Toolchain type* -> *External toolchain*. The overall build time will be reduced as we are not going to compile the toolchain again.
  - Select *Toolchain* -> *Toolchain* -> *Custom toolchain*
  - Select *Toolchain* -> *Toolchain path*. And enter the path to the toolchain. Ex: /home/USERNAME/x-tools/aarch64-rpi3-linux-uclibc
+ - Select *Toolchain* -> *Toolchain has SSP support*
  - Select *Toolchain* -> *Toolchain prefix* -> *$(ARCH)-rpi3-linux-uclibc*
  - Select *Toolchain* -> *External toolchain kernel headers series* -> *4.19.x or later*.
  - Select *Target packages* -> *Networking applications* -> *dropbear*
