@@ -1,13 +1,15 @@
----
+
 layout : post
 ---
 ## Install necessary packages for development
 ```bash
-sudo apt install subversion build-essential libncurses5-dev zlib1g-dev gawk git ccache gettext libssl-dev xsltproc zip
+sudo apt install build-essential libncurses5-dev zlib1g-dev gawk git ccache gettext libssl-dev xsltproc zip
 ```
 ## Download the OpenWRT build system
 ```bash
+cd ~/rpi3/
 git clone https://github.com/openwrt/openwrt.git
+git checkout 5667ccbf1662a1a9f510637ed3a6718f3350a873
 ```
 
 ### The directories explanation
@@ -29,7 +31,7 @@ All of the following commands parses either the *feeds.conf* file or *feeds.conf
 
  - To know list of feed names and their respective repository URLs on the web
 ```bash
-cd ~/openwrt
+cd ~/rpi3/openwrt
 ./scripts/feeds list -s
 ```
  - To know list of packages in a particular feed -
@@ -98,6 +100,22 @@ make V=s -j4 package/feeds/packages/zmq/download	# Download ZeroMQ source
 make V=s -j4 package/feeds/packages/zmq/compile		# Compile Zero MQ source
 ```
 ### Download all packages source files
+## change the kernel version
+Supported versions can be found from `include/kernel-version.mk` file.
+
+
+Let's change it to 4.19.
+
+Main folders
+```
+target/linux/generic/
+target/linux/bcm27xx/
+```
+ - Change KERNEL_PATCHVER to 4.19 in the file target/linux/bcm27xx/Makefile.
+ - Copy config file from `generic` folder to `bcm27xx/bcm2710` folder. `cp target/linux/generic/config-4.19 target/linux/bcm27xx/bcm2710/`
+ - make download V=s will download kernel
+
+## Download packages
 To download all the packages enabled in *.config* file -
 ```bash
 make download V=s
