@@ -47,13 +47,13 @@ Connect the Gnd, Tx and Rx pins of usb to serial cable to the Gnd, Rx and Tx pin
 -->
 
 ## Compile U-boot for Raspberry Pi 3 Model B
-RPI 3 model b has already a predefined configuration in the u-boot configs directory. Let's compiel the u-boot for this platform.
+RPI 3 model b has already a predefined configuration in the u-boot configs directory. Let's compile the u-boot for this platform.
 
 ```bash
 make clean; make mrproper; make distclean
-export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
+export CROSS_COMPILE=aarch64-rpi3-linux-gnu-
 make rpi_3_defconfig
-make -j4
+make -j`nproc`
 ```
 
 Make sure that the U-boot is compiled for `ARM aarch64` architecture with the following command.

@@ -25,18 +25,6 @@ cd ~/rpi3/
 wget -c https://buildroot.org/downloads/buildroot-2020.02.2.tar.gz
 tar xvf buildroot-2020.02.2.tar.gz
 ```
-
-## Re-compile the toolchain with IPV6 support
-The Buildroot build system expects IPV6 to be present in the libc library. Re-compile the toolchain with IPV6 enabled.
-```bash
-cd ~/rpi3/crosstool-ng/
-./ct-ng menuconfig
-```
-Enable IPV6 support by checking the *C-libary -> Add support for IPV6* configuration.
-
-```C
-./ct-ng build
-```
 ## Configure the Buildroot system
 
 Go to the extracted Buildroot directory and configure the following options by running *make menuconfig*
@@ -49,17 +37,30 @@ make menuconfig
  - Select *Target options* -> *Target Architecture* -> *Aarch64 (Little endian)*
  - Select *Toolchain* -> *Toolchain type* -> *External toolchain*. The overall build time will be reduced as we are not going to compile the toolchain again.
  - Select *Toolchain* -> *Toolchain* -> *Custom toolchain*
- - Select *Toolchain* -> *Toolchain path*. And enter the path to the toolchain. Ex: /home/USERNAME/x-tools/aarch64-rpi3-linux-uclibc
+ - Select *Toolchain* -> *Toolchain path*. And enter the path to the toolchain. Ex: /home/USERNAME/x-tools/aarch64-rpi3-linux-gnu
  - Select *Toolchain* -> *Toolchain has SSP support*
- - Select *Toolchain* -> *Toolchain prefix* -> *$(ARCH)-rpi3-linux-uclibc*
+ - Select *Toolchain* -> *Toolchain has RPC support*
+ - Select *Toolchain* -> *Toolchain prefix* -> *$(ARCH)-rpi3-linux-gnu*
  - Select *Toolchain* -> *External toolchain kernel headers series* -> *4.19.x or later*.
+ - Select *Toolchain* -> *External toolchain C library* -> *glibc/eglibc*
  - Select *Target packages* -> *Networking applications* -> *dropbear*
  - Select *System configuration* -> *Root password*. Enter the new password. We will use this password to login to the board console later.
 
+## Download the patch to fix the compilation issue
+You might see the following compile time error during compilation.
+```
+date.c:(.text.date_main+0x21c): undefined reference to `stime'
+collect2: error: ld returned 1 exit status
+Note: if build needs additional libraries, put them in CONFIG_EXTRA_LDLIBS.
+```
+Download the patch to fix the above compile time error.
+```bash
+curl https://www.nayab.xyz/patches/0003-compile-error-fix-stime.patch --output ~/rpi3/buildroot-2020.02.2/package/busybox/0003-compile-error-fix-stime.patch
+```
 ## Generate the root filesystem
 Generate the root filesystem using the following command.
 ```bash
-make -j4
+make -j`nproc`
 ```
 The generated new filesystem is present as a tar file in the path `~/rpi3/buildroot-2020.02.2/output/images`
 
@@ -75,8 +76,8 @@ Install the already compiled Linux modules into newly created root filesystem by
 ```bash
 cd ~/rpi3/linux
 export ARCH=arm64
-export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
-export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
+export CROSS_COMPILE=aarch64-rpi3-linux-gnu-
+export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-gnu/bin/
 make modules_install INSTALL_MOD_PATH=~/rpi3/nfs_tmp/
 ```
 ## Copy root filesystem to SD card
@@ -94,7 +95,13 @@ sudo cp -r ~/rpi3/nfs_tmp/. /media/<USERNAME>/rootfs/
 Replase *UERENAME* with yours. The copied root filesystem files have binaries and init scripts to start ssh server automatically.
 
 If you want to add any additional packages, do `make menuconfig` in the buildroot directory, select the required packages and follow the same steps mentioned in this post.
-
+## Change U-boot env values
+Power up the board. Stop at the U-boot console and add the following env variables to load RPI from SD card.
+```bash
+setenv bootargs earlyprintk root=/dev/mmcblk0p2 rootfs=ext4 rootwait noinitrd
+setenv bootcmd 'mmc dev 0; fatload mmc 0:1 0x2000000 kernel.img; fatload mmc 0:1 0x200000 bcm2710-rpi-3-b.dtb; booti 0x2000000 - 0x200000;'
+saveenv
+```
 ## Reboot the board
 Insert the SD card into Raspberry Pi card slot and reboot the board. You should be able to login to the Raspberry Pi using SSH from your system.
 

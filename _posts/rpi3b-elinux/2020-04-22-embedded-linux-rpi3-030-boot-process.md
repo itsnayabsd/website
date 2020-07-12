@@ -101,8 +101,9 @@ Create three partitions using [fdisk and mkfs](/linux-tools/partitioning-using-f
 
 Once the SD card partitioning is done, copy above mentioned files to SD card.
 ```bash
-cp -r ~/rpi3/sdCardFiles/. <path_to_sd_card_mount_point> # Use lsblk command to find the mount point
+cp -r ~/rpi3/sdCardFiles/. <PATH_TO_BOOT_PART_MOUNT_POINT> # Use lsblk command to find the mount point
 ```
+*Ex:* `cp -r ~/rpi3/sdCardFiles/. /media/nayab/boot/`
 ## Power up the board.
 Connect the USB keyboard to the Raspberry Pi USB. Attach TV/monitor to the Raspberry Pi with the HDMI cable.
 

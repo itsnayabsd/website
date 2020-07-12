@@ -45,7 +45,8 @@ For more information about *inittab* configuration file, please read *~/rpi3/bus
 Let's create */etc/inittab* file with the following configuration.
 ```bash
 mkdir -p ~/rpi3/nfs/etc
-
+```
+```bash
 cat << EOF >> ~/rpi3/nfs/etc/inittab
 ::sysinit:/etc/init.d/rcS
 tty1::askfirst:/bin/sh
@@ -64,12 +65,15 @@ The first line int the *inittab* file, *::sysinit:/etc/init.d/rcS* tells the ini
 We can add our *proc* and *sysfs* mounting commands in this file. Every time the board boots up, the *proc* and *sysfs* filesystems will be mounted automatically by the */etc/init.d/rcS* script.
 ```bash
 mkdir -p ~/rpi3/nfs/etc/init.d/
-
+```
+```bash
 cat << EOF >> ~/rpi3/nfs/etc/init.d/rcS
 #!/bin/sh
 
 mount -t proc nodev /proc
 mount -t sysfs nodev /sys
+LD_LIBRARY_PATH=/lib:/$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
 EOF
 ```
 Make the file executable by running following command

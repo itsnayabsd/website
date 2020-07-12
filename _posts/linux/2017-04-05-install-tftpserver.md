@@ -29,8 +29,10 @@ If output is nothing, start the server:
 ```
 $ sudo service tftpd-hpa start
 ```
-## By default, the directory to store files is `/var/lib/tftpboot`.  
-This can be changed in `tftpd-hpa` configuration file.  
+## Change the default folder if necessary
+By default, the directory to store files is either */srv/tftp* or */var/lib/tftpboot*.  
+
+We could change this directory in the *tftpd-hpa* configuration file.
 ```
 $ cat /etc/default/tftpd-hpa
 # /etc/default/tftpd-hpa

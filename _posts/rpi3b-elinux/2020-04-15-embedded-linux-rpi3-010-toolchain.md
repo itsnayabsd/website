@@ -29,7 +29,7 @@ Building a cross toolchain from scratch is difficult. Either we use the already 
  - Buildroot - Can build glibc, uClibc and musl based toolchains as well as compelte root filesystem.
  - OpenEmbedded - Used to generate a complete root filesystem build system. Also used to generate toolchain.
 
-## Generating cross toolchain using crosstool-ng for uClibc C library
+## Generating cross toolchain using crosstool-ng for glibc C library
 
 Let's create a folder called `rpi3` in the home directory. We are going to develop complete Embedded Linux for RPI3 Model B in this directory.
 ```bash
@@ -48,27 +48,24 @@ git checkout 75d7525a
 ```bash
 ./bootstrap
 ./configure --enable-local
-make
+make -j`nproc`
 ```
 Above will install crosstool-ng locally.
 
 ### Configure the build tool
 `./ct-ng list-samples` command shows the pre defined configurations for different setups (arch: armv7, armv8, aarch64 etc., library : uClibc, libc etc.) for different platforms.
 
-Let's generate toolchain (64bit) for ARMv8 architecture and uClibc library. `ct-ng` has pre defined configuration for RPI3 Model B.
+Let's generate toolchain (64bit) for ARMv8 architecture and *libc* library. `ct-ng` has pre defined configuration for RPI3 Model B.
 ```bash
 ./ct-ng aarch64-rpi3-linux-gnu
 ```
-But above configuration is for `glibc`. Let's change the configuration.
+By default the standard library is `glibc`.
 ```bash
 ./ct-ng menuconfig
 ```
  - In **Paths and misc options**, change *Maximum log level to see* to DEBUG.
- - In **C library**, change *C library* to uClibc.
  - In **Operating system**, select *Version of Linux* as *4.19.105* as we are going to use this version of Linux in the subsequent tutorials.
  - In **Debug facilites**, disable all options for now as it takes forever to compile.
-
-**Note** We can NOT enable IPV6 support for uClibc library. It's fine for now as we are going to use IPV4 for Embedded Linux networking.
 
 ### Build toolchain
 ```bash
@@ -77,10 +74,10 @@ But above configuration is for `glibc`. Let's change the configuration.
 
 <!--If the above step failed at some package downloading, download the package manually from the internet and copy to `~/src` directory and use the above step again. Resolve any patch apply conflicts happening.-->
 
-Now the toolchain is installed in `~/x-tools` directory. Add this `$HOME/x-tools/aarch64-rpi3-linux-uclibc/bin/` to PATH env varibale in **.bashrc** so that it can be detected for compiling the binaries.
+Now the toolchain is installed in *~/x-tools* directory. Add this *$HOME/x-tools/aarch64-rpi3-linux-gnu/bin/* to PATH env varibale in **.bashrc** so that it can be detected for compiling the binaries.
 
 ```bash
-echo 'export PATH=$PATH:$HOME/x-tools/aarch64-rpi3-linux-uclibc/bin/' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/x-tools/aarch64-rpi3-linux-gnu/bin/' >> ~/.bashrc
 source ~/.bashrc
 ```
 ## Test the toolchain
@@ -96,14 +93,14 @@ int main(void)
 ```
 ### Compile the program with cross toolchain
 ```bash
-aarch64-rpi3-linux-uclibc-gcc dummy.c -o dummy
+aarch64-rpi3-linux-gnu-gcc dummy.c -o dummy
 ```
 You shouldn't see any error or warnings.
 ### Check the binary architecture
 ```bash
 file dummy
 ```
-You should see output similar to the following. The output must have words `ARM aarch64` and `/lib/ld-uClibc.so.0`.
+You should see output similar to the following. The output must have words `ARM aarch64` and `ld-linux-aarch64.so.1`.
 ```
-dummy: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-uClibc.so.0, not stripped
+dummy: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, for GNU/Linux 4.19.105, with debug_info, not stripped
 ```

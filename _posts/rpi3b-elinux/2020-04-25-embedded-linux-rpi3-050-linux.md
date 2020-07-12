@@ -36,8 +36,8 @@ Let's use the cross-toolchain we compiled [here](/rpi3b-elinux/embedded-linux-rp
 
 ```bash
 export ARCH=arm64 # This should match one of the directories in `arch` folder.
-export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
-export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
+export CROSS_COMPILE=aarch64-rpi3-linux-gnu-
+export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-gnu/bin/
 ```
 This kenel does have a pre defined configuration file for Raspberry Pi 3 Model B called `bcmrpi3_defconfig` present in `arch/arm64/configs` directory. Let's generate `.config` file.
 

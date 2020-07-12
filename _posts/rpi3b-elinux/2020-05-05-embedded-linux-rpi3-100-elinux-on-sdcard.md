@@ -47,8 +47,8 @@ Make *squashfs* as inbuilt kernel module by going into *File systems ---> Miscel
 Save the config file and recompile the kernel by running following commands.
 ```bash
 export ARCH=arm64
-export CROSS_COMPILE=aarch64-rpi3-linux-uclibc-
-export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
+export CROSS_COMPILE=aarch64-rpi3-linux-gnu-
+export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-gnu/bin/
 make -j`nproc`
 ```
 

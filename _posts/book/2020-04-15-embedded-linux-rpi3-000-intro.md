@@ -12,9 +12,11 @@ toc : true
 ---
 ## Introduction
 
-Embedded Linux development for any *single board computer* (SBC) or *embedded development board* typically involves -
- - **Board support package development** - Kernel, boot loader and device drivers development.
- - **System integration** - Integration of kernel, boot loader, system libraries and developing applications.
+Embedded Linux development for any *single board computer* (SBC) or *embedded development board* typically involves integration of -
+ - Kernel
+ - Boot loader
+ - System libraries and
+ - Third party applications (if needed).
 
 Before chosing to develop the Embedded Linux system, make sure there is *Linux* and open source boot loader like *U-boot* support for SoC.
 

@@ -34,16 +34,25 @@ git checkout 1_31_1
 make menuconfig
 ```
  - Build busybox statically (without shared liraries) by enabling *Settings -> Build static binary (no shared libraries)*
- - Add cross compiler prefix (*aarch64-rpi3-linux-uclibc-*) by going into *Settings -> Cross compiler prefix*
- - Add installation directory by going into *Settings -> Destination path for 'make install'*. Give the full path. Ex: `/home/USERNAME/rpi/nfs`. Replace USERNAME with you Ubuntu system username.
- - Disable IPV6 support for busybox by going into *Networking Utilities -> Enable IPV6 support*.
+ - Add cross compiler prefix (*aarch64-rpi3-linux-gnu-*) by going into *Settings -> Cross compiler prefix*
+ - Add installation directory by going into *Settings -> Destination path for 'make install'*. Give the full path. Ex: `/home/USERNAME/rpi3/nfs`. Replace USERNAME with you Ubuntu system username.
 
-<div class="isa_warning"><strong>Note</strong>: We can not enable IPV6 support for uClibc library. Either build toolchain for glibc or build busybox by disabling IPV6.</div>
-
+## Download the patch to fix compile time issue
+You might see the following compile time error during compilation.
+```
+date.c:(.text.date_main+0x21c): undefined reference to `stime'
+collect2: error: ld returned 1 exit status
+Note: if build needs additional libraries, put them in CONFIG_EXTRA_LDLIBS.
+```
+Download and apply the patch to fix the above compile time error.
+```bash
+curl https://www.nayab.xyz/patches/0003-compile-error-fix-stime.patch --output ./0003-compile-error-fix-stime.patch
+git apply 0003-compile-error-fix-stime.patch
+```
 ## Compile the busybox
 ```bash
-export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-uclibc/bin/
-make
+export PATH=$PATH:~/x-tools/aarch64-rpi3-linux-gnu/bin/
+make -j`nproc`
 ```
 ## Install the minimal filesystem
 ```bash
