@@ -1,3 +1,4 @@
+{% if site.google_adsense %}
 {% if jekyll.environment == 'production' and page.google_adsense %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Below Navigation -->
@@ -10,4 +11,5 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+{% endif %}
 {% endif %}
