@@ -5,7 +5,7 @@ category : book
 date: 2020-04-13 22:14:31 +5:30
 comments: true
 google_adsense: true
-excerpt : A series of articles about Embedded Linux and device driver development using Raspberry Pi Model B.
+excerpt : A series of articles about Embedded Linux - Integration of bootloader, kernel, system libraries and the third party applications -  using Raspberry Pi Model B.
 kerwords : Embedded Linux book for Raspberry Pi Model B, Embedded Linux tutorial, Embedded Linux development, Embedded Linux tutorial, Embedded Linux with Raspberry Pi Model B, Device driver development on Raspberry Pi Model B, Embedded Linux OS, Learning device drivers on Rapsberry Pi Model B, Develop Linux from scratch on Raspberry Pi Model B
 image : /assets/img/rpi3b-elinux-intro.png
 toc : true
