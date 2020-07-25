@@ -1339,3 +1339,27 @@ b) Compile time error
 c) Segmentation fault
 d) nayab.xyz
 ```
+___
+## Question 53
+**Guess the output**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    const int a = 10;
+    int *p = &a;
+
+    printf("%d ", a);
+    *p = 100;
+    printf("%d\n", a);
+    return 0;
+}
+```
+**Options**
+```
+a) 10 100
+b) 10 10
+c) Compile time error
+d) Segmentation fault
+```
