@@ -1363,3 +1363,23 @@ b) 10 10
 c) Compile time error
 d) Segmentation fault
 ```
+___
+## Question 54
+**Write, compile and execute a program without main**
+
+<!--
+```
+  #include <stdlib.h>
+  #include <stdio.h>
+  
+>>f()
+  {
+          puts("Hello World!");
+          exit(0);
+  }
+```
+```
+gcc nostartfiles.c -nostartfiles -o nostartfiles
+```
+```
+-->
