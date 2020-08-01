@@ -12,7 +12,7 @@ author: "Nayab Basha Sayed"
 
 #Google Analytics
 google_analytics: UA-47925331-9
-google_adsense: false
+google_adsense: true
 
 #Limit no of posts to parse and publish
 #limit_posts: 10
