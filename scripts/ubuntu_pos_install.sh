@@ -19,7 +19,8 @@ echo "alias vi='vim'" >> ~/.bashrc
 echo "alias xo='xdg-open '" >> ~/.bashrc
 echo "alias gitc='git commit -s '" >> ~/.bashrc
 
-gem install jekyll bundler
+gem install jekyll
+gem install bundler -v 1.17.3
 
 sudo pip3 install protonvpn-cli
 
