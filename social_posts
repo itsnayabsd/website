@@ -58,8 +58,14 @@ In this tutorial, we are going to install Linux kernel modules in the busybox fi
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-065-linux-modules-install.html
 #raspberrypi #busybox #kernel
 
+=== === === === === === === === === === === === === === === === === ===
+
 Install the apps using Buildroot for Raspberry Pi 3 Model B
 In this tutorial, we generate ext4 root filesystem from the Buildroot build system, install the additional programs required, write the filesystem to SD card and boot the board using this root filesystem.
 https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-110-buildroot-apps.html
 #raspberrypi #buildroot
 
+Learning Linux Command Line
+A series of articles/tutorials explaining the everyday useful Linux commands along with the detailed examples.
+https://www.nayab.xyz/book/linux-cli-000-intro.html
+#cli #linux #linuxcommandline #linuxcommands
