@@ -19,7 +19,7 @@ google_adsense: true
 
 logo: /favicon.ico
 facebook_url: https://facebook.com/nayab.xyz
-twitter_url: https://twitter.com/nayabbashasayed
+twitter_url: https://twitter.com/nayabxyz
 linkedin_url: https://www.linkedin.com/in/nayabsd/
 pinterest_url:  
 instagram_url: https://www.instagram.com/nayab.xyz/
@@ -41,7 +41,7 @@ toc:
     max_level: 2
 twitter:
     card: summary
-    username: nayabbashasayed
+    username: nayabxyz
 
 facebook:
     publisher: https://www.facebook.com/nayab.xyz/
@@ -50,7 +50,7 @@ social:
     name: Nayab Basha Sayed
     links:
         - https://facebook.com/nayab.xyz
-        - https://twitter.com/nayabbashasayed
+        - https://twitter.com/nayabxyz
         - https://www.linkedin.com/in/nayabsd/
         - https://github.com/nayabbashasayed
         - https://www.instagram.com/nayab.xyz/
