@@ -2,23 +2,26 @@
 title : Processes and Controlling
 layout : linux-cli-post
 category : linux-cli
-date : 2020-11-14 10:50:15 +5:30
+date : 2020-12-06 20:38:08 +5:30
 comments : true
 google_adsense: true
-excerpt : 
-keywords : 
+excerpt : This post explains how to monitor, control, terminate the processes, run process in the background , pause the process and brigh back the same process to foregroud in Linux along with the examples.
+keywords : Linux top command, Linux ps command, Send process in the background, brigh process to foreground, Linux terminate process, Linux pause process, Linux fg command, Linux top command cpu usage, Linux kill command, Linux killall command, Linux ps aux, Linux ps pid, Linux top ps fg kill killall examples.
 image : /assets/img/rpi3b-elinux-toolchain.png
 toc : true
 ---
-Starting from the time computer power on, whatever you see is a running process. Running a shell is a process. Running web browser is a process. Running a command is a process. Playing movie is a process. Every running program is a process.
+## Introduction
+Starting the moment the computer is turned on, whatever you see is on the screen is a running process. Running a shell is a process. Running web browser is a process. Running a command is a process. Playing movie is a process. Every running program (whether it is running in the background as daemon or not) is a process.
 
-Monitoring Processes
+{% include image.html url="linux-cli-processes.png" description="Controlling Linux Processes" %}
 
-There are two commands for monitoring processes. ps and top.
+## Monitoring Processes
 
-Monitoring Processes with ps command
+There are two commands for monitoring processes. ***ps*** and ***top***.
 
-Run ps command in terminal.
+### Monitoring Processes with ps command
+
+Run *ps* command in terminal.
 
 ```bash
 me@linux ~ $ ps
@@ -26,9 +29,9 @@ me@linux ~ $ ps
  1864 pts/0    00:00:00 bash
  1927 pts/0    00:00:00 ps
 ```
-There are currently two processes/programs running. Shell (bash) and ps itself. Every running process is assigned a process id (PID). Here PID for bash is 1864 and PID for ps is 1927. PIDs differs from system to system and time to time.
+There are currently two processes/programs running. Shell (bash) and ps itself. Every running process is assigned a process id (PID). Here PID for *bash* is 1864 and PID for *ps* is 1927. PIDs differs from system to system and time to time.
 
-The second field TTY stands for teletype terminal. pts/0 is the controlling terminal 0. If we open second terminal and execute same commands there, TTY value would be pts/1.
+The second field *TTY* stands for teletype terminal. pts/0 is the controlling terminal 0. If we open second terminal and execute same commands there, TTY value would be pts/1.
 
 However, programs opened through GUI won't display in terminal using ps command because there is no terminal controlling those. There are other more processes run in background called demon processes. To view all these processes, ps x is used.
 
@@ -71,9 +74,9 @@ me@linux ~ $ ps x
  1862 ?        S      0:00 gnome-pty-helper
  1864 pts/0    Ss     0:00 bash
 ```
-TTY value ? means there is no terminal controlling these processes. TIME field indicates time taken by CPU to execute this process.
+TTY value ***?*** means there is no terminal controlling these processes. TIME field indicates time taken by CPU to execute this process.
 
-More detailed description of processes can be obtained by ps aux command.
+More detailed description of processes can be obtained by `ps aux` command.
 
 ```bash
 me@linux ~ $ ps aux
@@ -228,9 +231,9 @@ me        2053  3.3  0.7 223612 29264 ?        Sl   22:02   0:09 gedit /media/me
 me        2124  0.0  0.0  24304  2348 ?        Sl   22:05   0:00 /usr/lib/dconf/
 me        2129  0.0  0.0   5240  1168 pts/0    R+   22:07   0:00 ps aux
 ```
-Monitoring Process with top command
+### Monitoring Process with top command
 
-Command top is used to monitor processes sorted by the CPU usage. This command updates its result for every 3 seconds. Information like how many users exists on computer, how much time since computer is on called up time, information about memory and more can be find out using this command. Press Q to return to shell prompt.
+Command ***top*** is used to monitor processes sorted by the CPU usage. This command updates its result for every 3 seconds. Information like how many users exists on computer, how much time since computer is on called up time, information about memory and more can be find out using this command. Press `Q` to return to shell prompt.
 
 ```bash
 me@linux ~ $ top
@@ -260,7 +263,7 @@ KiB Swap: 10485756 total,        0 used, 10485756 free,   633792 cached
    12 root      rt   0     0    0    0 S   0.0  0.0   0:00.10 migration/1
    13 root      20   0     0    0    0 S   0.0  0.0   0:00.11 ksoftirqd/1  
 ```
-Controlling Processes
+## Controlling Processes
 
 Some times we want to copy or move big files from one location to another. Or we want to execute a process which takes more time. Let's take program firefox as an example to understand process controlling.
 
@@ -269,13 +272,13 @@ me@linux ~ $ firefox
 (process:4248): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
 (firefox:4248): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::sm-connect after class was initialised
 ```
-Notice that the shell prompt (me@linux ~ $) is not returned (ignore warning messages).
+Notice that the shell prompt (`me@linux ~ $`) is not returned (ignore warning messages).
 
-Terminating Process
+## Terminating Process
 
-Since shell prompt is not returned when run the command firefox, we can't enter other command. To terminate firefox press Ctrl+C.
+Since shell prompt is not returned when run the command firefox, we can't enter other command. To terminate firefox press `Ctrl`+`C`.
 
-Running Process in the Background
+## Running Process in the Background
 
 Since Linux is a multitasking system, there is a way to run more than one process through terminal. We can launch any program and can be placed it in the background. To run firefox program in background, use command firefox & .
 
@@ -291,7 +294,7 @@ ps
  4294 pts/0    00:00:01 firefox
  4341 pts/0    00:00:00 ps
 ```
-In the second line, [1] represents first process running in background. 4294 is the process id (PID) assigned to firefox program. Note that shell prompt is already returned in line 3. Next two lines 4th and 5th are warning messages and can be ignored now. Enter ps command and check total processes running through current terminal.
+In the second line, *[1]* represents first process running in background. *4294* is the process id (PID) assigned to firefox program. Note that shell prompt is already returned in line 3. Next two lines 4th and 5th are warning messages and can be ignored now. Enter ps command and check total processes running through current terminal.
 
 Let's run another process in the background.
 
@@ -299,7 +302,7 @@ Let's run another process in the background.
 me@linux ~ $ top &
 [2] 4352
 ```
-This time the process top is given job number [2] and PID 4352.
+This time the process top is given job number *[2]* and PID *4352*.
 
 To view all processes running in background, command jobs is used.
 
@@ -308,19 +311,19 @@ me@linux ~ $ jobs
 [1]-  Running                 firefox &
 [2]+  Running                 top & 
 ```
-Bringing Process to Foreground
+## Bringing Process to Foreground
 
-To bring background process to foreground, command fg is used followed by job number along with symbol %.
+To bring background process to foreground, command ***fg*** is used followed by job number along with symbol ***%***.
 
 ```bash
 me@linux ~ $ fg %1
 firefox
 ```
-%1 is job number of firefox program preceded by symbol %.
+`%1` is job number of firefox program preceded by symbol %.
 
-Pausing a Process
+## Pausing a Process
 
-Pressing Ctrl+Z pauses or stops (not terminates) the process.
+Pressing `Ctrl`+`Z` pauses or stops (not terminates) the process.
 
 ```bash
 me@linux ~ $ fg %1
