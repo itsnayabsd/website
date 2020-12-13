@@ -69,3 +69,54 @@ Learning Linux Command Line
 A series of articles/tutorials explaining the everyday useful Linux commands along with the detailed examples.
 https://www.nayab.xyz/book/linux-cli-000-intro.html
 #cli #linux #linuxcommandline #linuxcommands
+
+Navigation around directories
+Linux commands to navigate around filesystem directories explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-020-navigation.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Command Line Options and Arguments
+Usage of Linux commands options and arguments explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-030-options.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Files and Directories Manipulation
+Linux commands to manipulate files and directories, copy, rename, delete, create commands explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-040-manipulation.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Accessing Root Privileges
+This tutorial explains how to access the administrative or root privileges in the Linux based system along withe examples.
+https://www.nayab.xyz/linux-cli/linux-cli-050-root.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Usage of Wildcards
+Usage of wildcards and wildcards patterns in Linux shell explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-060-wildcards.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Redirection to and from Files
+Linux shell redirection commands usage explained with examples. Redirection of streams stdio, stdout, stderr to files. Appending data to files etc.
+https://www.nayab.xyz/linux-cli/linux-cli-070-redirection.html
+#cli #linux #linuxcommandline #linuxcommands
+
+File and Directory Permissions
+This post explains what are the Linux file and directory permissions, different types of files in Linux, how to change and restrict access the files to others, changing ownership of files etc. explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-080-permissions.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Processes and Controlling
+This post explains how to monitor, control, terminate the processes, run process in the background , pause the process and brigh back the same process to foregroud in Linux along with the examples.
+https://www.nayab.xyz/linux-cli/linux-cli-090-processes.html
+#cli #linux #linuxcommandline #linuxcommands
+
+Vim Text Editor
+An introduction to VI text editor in Linux. Command mode and Insert mode explained with examples. Saving, exiting, copy, paster and delete operations explained with examples.
+https://www.nayab.xyz/linux-cli/linux-cli-100-vim.html
+#cli #linux #linuxcommandline #linuxcommands
+
+File Searching
+Linux commands to search for files and directories using commands locate, find, grep explained along with the examples.
+https://www.nayab.xyz/linux-cli/linux-cli-110-searching.html
+#cli #linux #linuxcommandline #linuxcommands
+
