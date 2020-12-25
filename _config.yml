@@ -1,6 +1,6 @@
-title: Nayab Basha Sayed | Sr. Embedded Software Engineer
+title: Nayab Basha Sayed | Embedded Systems Developer
 description: > # this means to ignore newlines until "baseurl:"
-    Sr. Embedded software engineer, blogger and Linux enthusiast. This blog includes posts related to Linux and Embedded Systems.
+    Embedded Systems developer, blogger and Linux enthusiast. This blog includes posts related to Linux and Embedded Systems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.nayab.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: none
