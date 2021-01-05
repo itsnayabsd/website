@@ -1,9 +1,18 @@
+apt-get install locales
+dpkg-reconfigure locales
+locale-gen en_US.UTF-8
+update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
+export LANG=en_US.UTF-8
+useradd nayab
+su - nayab
+
 cd
 wget https://bootlin.com/doc/training/yocto/yocto-labs.tar.xz
 tar xvf yocto-labs.tar.xz
 
 cd yocto-labs
-git clone -b dunfell git://git.yoctoproject.org/poky.git
+git clone git://git.yoctoproject.org/poky.git
 
 The /tmp/sysroots directory has the shared libraries and headers to compile applications for the target
 
@@ -13,17 +22,15 @@ The build/conf directory holds build specific configuration.
 
 
 cd $HOME/yocto-labs/poky
-git checkout tags/yocto-3.1 -b my-yocto-3.1
-#git checkout -b sumo-19.0.0 sumo-19.0.0
+git checkout -b sumo-19.0.0 sumo-19.0.0
 git am $HOME/yocto-labs/bootlin-lab-data/0001-bblayers-do-not-include-meta-yocto-bsp.patch
 
 cd $HOME/yocto-labs
 git clone git://git.yoctoproject.org/meta-ti.git
 cd $HOME/yocto-labs/meta-ti
-git checkout -b sumo ti2020.01.00
-# Need to resolve following patches
+git checkout -b sumo ti2018.02
 git am $HOME/yocto-labs/bootlin-lab-data/0001-Simplify-linux-ti-staging-recipe.patch
-#No need of this patch ###git am $HOME/yocto-labs/bootlin-lab-data/0002-do-not-use-base_read_file.patch
+git am $HOME/yocto-labs/bootlin-lab-data/0002-do-not-use-base_read_file.patch
 git am $HOME/yocto-labs/bootlin-lab-data/0003-recipes-bsp-u-boot-fix-non-booting-U-Boot.patch
 git am $HOME/yocto-labs/bootlin-lab-data/0004-fix-bitbake-warnings.patch
 
@@ -33,4 +40,11 @@ source poky/oe-init-build-env
 Update MACHINE value to beaglebone in the build/local.conf
 Add meta-ti layer to build/bblayers.conf file.
 
-bitbake core-image-minimal
+bitbake core-image-minimal # Minimal image without UI
+bitbake core-image-sato    # Image with GNOME mobile UI
+bitbake meta-toolchain	# Generates cross toolchain in an installable format
+bitbake meta-ide-support	# Generates cross toolchain and additional tools (gdb, qemu) for ide integration
+## You can use ide and integrate these tools for your blog
+
+build/conf/local.conf has configuration variables.
+build/conf/bblayers.conf has the available layers
