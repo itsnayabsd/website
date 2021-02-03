@@ -50,3 +50,45 @@ bitbake meta-toolchain	# Generates cross toolchain in an installable format
 bitbake meta-ide-support	# Generates cross toolchain and additional tools (gdb, qemu) for ide integration
 ## You can use ide and integrate these tools for your blog
 
+## How to compile individual packages?
+
+## Configure variables modification
+We can use _append, _prepend, _remove to the configuration variable.
+Write all the common configuration variable definition below.
+
+Append the machine name to a configuration variable so that the value will be applied to only that particular machine
+
+KERNEL_DEVICETREE_beaglebone = "am335x-bone.dtb" tells to use the kernel
+device tree am335x-bone.dtb only when the machine is beaglebone.
+
+The configuration variable IMAGE_INSTALL_append_beaglebone = " i2c-tools" tell the build system to append i2c-tools only for the machine beaglebone.
+
+## Operators
+Following operators can be used to assign value to configuration variables.
+
+= expand the value when using the variable
+:= immediately expand the value
+?= assign if no other value was previously assigned
+??= same as previous, with a lower precedence
+
+Usage of the following operators are discouraged due to ordering issues.
+
++= append (with space)
+=+ prepend (with space)
+.= append (without space)
+=. prepend (without space)
+
+## Virtual packages
+Build system can have more variants of the package with same purpose.
+
+For example: Available libraries - glibc, musl, newlib
+or
+ssh - openssh or dropbear
+
+We can specify which variant to consider for the build system using the PREFERRED_PROVIDER virtual configuration variable.
+
+PREFERRED_PROVIDER_virtual/libc = "glibc"
+
+Again the glibc package has different versions. By default the build system will choose highest version. To choose different version, use PREFERRED_VERSION_package_name = "version".
+
+PREFERRED_VERSION_linux-yocto = "3.10\%"
