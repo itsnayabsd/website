@@ -12,8 +12,19 @@ git config --global user.email "basha@nayab.xyz"
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
 echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+---------------------
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+rbenv init
+eval "$(rbenv init -)"
+source ~/.bashrc
+rbenv install 2.5.1
+gem install bundler -v 1.17.3
+gem install jekyll
+bundler install
+---------------------
 echo "export EDITOR=vim" >> ~/.bashrc
 echo "alias vi='vim'" >> ~/.bashrc
 echo "alias xo='xdg-open '" >> ~/.bashrc
