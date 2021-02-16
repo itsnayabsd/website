@@ -7,7 +7,7 @@ comments : true
 google_adsense: true
 excerpt : This post explains how to monitor, control, terminate the processes, run process in the background , pause the process and brigh back the same process to foregroud in Linux along with the examples.
 keywords : Linux top command, Linux ps command, Send process in the background, brigh process to foreground, Linux terminate process, Linux pause process, Linux fg command, Linux top command cpu usage, Linux kill command, Linux killall command, Linux ps aux, Linux ps pid, Linux top ps fg kill killall examples.
-image : /assets/img/rpi3b-elinux-toolchain.png
+image : /assets/img/linux-cli-processes.png
 toc : true
 ---
 ## Introduction
