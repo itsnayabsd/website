@@ -1,0 +1,60 @@
+## Install in Linux
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+rustup update
+
+Cargo - Build tool like `make` and also package manager
+
+## To check whether rust and cargo installed -
+
+cargo --version
+
+## Cargo commands
+Command to build  - cargo build
+Command to run - cargo run
+Command to test - cargo test
+Command to generate documentation - cargo doc
+Command to publish your library - cargo publish - This publishes library to crates.io
+
+There is a book for Cargo build tool and package manager at https://doc.rust-lang.org/cargo/index.html
+
+## Installing rust support for Vim editor
+### Install the Vundle plugin manager
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+### Add the following lines to .vimrc file
+```
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Rust plugin on GitHub repo
+Plugin 'rust-lang/rust.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+```
+
+### Run following command to run in the shell
+```
+vim +PluginInstall +qall
+```
+
+For more info like source browsing, code formatter and other plugins visit https://github.com/rust-lang/rust.vim
+
+## A Hello World program
+```
+mkdir -p ~/Rust/HelloWorld
+cd ~/Rust/HelloWorld
+cargo init
+```
+Above command creates `Cargo.toml` file which is a manifest file for the project
