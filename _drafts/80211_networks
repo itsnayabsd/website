@@ -1,0 +1,25 @@
+You must have solid background in below concpets before continuing for wireless networks.
+ - Basic understanding of IEEE 802 networks (especially Ethernet)
+ - OSI model
+ - TCP/IP protocols
+
+Wireless networks uses radio spectrum as physical medium. In USA, the radio spectrum allocation is done by FCC. To prevent overlapping uses of the radio waves, frequency is allocated in bands, which are simply ranges of frequencies available to specified applications.
+
+Abbr - ISM - Industrial, Scientific and Medical.
+
+|Band|Frequency Range|
+|----|---------------|
+|UHF ISM|902-928 MHz|
+|S-Band|2-4 GHz|
+|S-Band ISM|2.4-2.5 GHz|
+|C-Band|4-8 GHz|
+|C-Band satellite downlink|3.7-4.2 GHz|
+|C-Band Radar (weather)|5.25-5.925 GHz|
+|C-Band ISM|5.725-5.875 GHz|
+|C-Band satellite uplink|5.925-6.425|
+|X-Band|8-12 GHz|
+|X-Band Radar (police/weather)|8.5-10.55GHz|
+|Ku-Band|12-18 GHz|
+|Ku-Band Radar (police)|13.4-14 GHz and 15.7-17.7 GHz|
+
+Why stations need to be closer to the access point for wireless networks with faster encoding techniques
