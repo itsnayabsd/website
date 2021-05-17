@@ -2,3 +2,10 @@ Hard to track transactions.
 Optimized for general purpose CPUs and anybody can mine from their home systems. So decentralization will increase.
 How to mine - https://www.coinbureau.com/mining/monero-guide-cpu-randomx/
 Stock to flow model - https://moneroj.net/sfmodel/
+
+For CPU with 1000 H/S, the amount of XMR being mined in a day is 0.0002.
+For CPU with 10000 H/S, the amount of XMR mined per day is 0.002
+For CPU with 60000 H/S, the amount of XMR mined per day is 0.012
+
+For AMD 3990x -> Hash rate - 42000 H/S -> Per day 0.0084 XMR.
+To get the minumim 0.07 XMR -> Nine days mining is required -> That is $25 -> approximately 1832.
