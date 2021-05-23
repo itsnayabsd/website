@@ -3,10 +3,16 @@
 print_availble_commands() {
 	echo "Usage: kubuntu_setup.sh <command>"
 	echo "Available commands :"
-	echo "	dist_upgrade		- Execute 'apt update' and 'apt dist-upgrade' commands"
+	echo "	dist_upgrade	- Execute 'apt update' and 'apt dist-upgrade' commands"
 	echo "	install_brave	- Install Brave browser"
 	echo "	blog_configure	- Clone Blog from Github and configure the system to run blog"
 	echo "	cascadia_font	- Procedure to download and install Cascadia fonts"
+	echo "	install_dev	- Install developer packages including compiler, IDE etc."
+}
+
+install_dev() {
+	sudo apt update
+	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev
 }
 
 cascadia_font() {
@@ -38,6 +44,24 @@ blog_configure() {
 	else
 		echo "Git clone Blog success"
 	fi
+	install_dev
+	cd $HOME/Blog || exit
+	echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+	echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+	echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+
+	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+	echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bashrc
+	curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+	source ~/.bashrc
+	rbenv init
+	echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+	eval "$(rbenv init -)"
+	source ~/.bashrc
+	rbenv install 2.5.1
+	gem install bundler -v 1.17.3
+	gem install jekyll
+	bundler install
 }
 
 case $1 in
@@ -51,7 +75,10 @@ case $1 in
 		blog_configure
 		;;
 	( cascadia_font )
-		print_availble_commands
+		cascadia_font
+		;;
+	( install_dev )
+		install_dev
 		;;
 	( * )
 		print_availble_commands
