@@ -1,0 +1,30 @@
+Enable wireless debugging
+Download android command line tools only from https://developer.android.com/studio#downloads
+Use sdkmanager binaary to download additional android sdk tools.
+sdkmanager --install platform-tools
+
+Connect device wirelessly using
+adb pair 192.168.1.6:35133 And enter the pairing code
+
+adb connect 192.168.1.6:35133
+
+
+List installed packages
+adb shell pm list packages
+
+adb shell pm uninstall -k --user 0 com.coloros.gamespace
+adb shell pm uninstall -k --user 0 com.coloros.gamespaceui
+adb shell pm uninstall -k --user 0 com.heytap.cloud
+adb shell pm uninstall -k --user 0 com.heytap.browser
+adb shell pm uninstall -k --user 0 com.coloros.calculator
+adb shell pm uninstall -k --user 0 com.coloros.alarmclock
+adb shell pm uninstall -k --user 0 com.os.docvault
+adb shell pm uninstall -k --user 0 com.coloros.filemanager
+adb shell pm uninstall -k --user 0 com.finshell.fin
+adb shell pm uninstall -k --user 0 com.google.android.keep
+adb shell pm uninstall -k --user 0 com.redteamobile.roaming
+adb shell pm uninstall -k --user 0 com.coloros.video
+
+To re-install
+
+adb shell cmd package install-existing com.heytap.pictorial

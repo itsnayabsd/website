@@ -8,11 +8,25 @@ print_availble_commands() {
 	echo "	blog_configure	- Clone Blog from Github and configure the system to run blog"
 	echo "	cascadia_font	- Procedure to download and install Cascadia fonts"
 	echo "	install_dev	- Install developer packages including compiler, IDE etc."
+	echo "	android_tools	- Procedure to download command line only android tools"
+}
+
+android_tools() {
+	#sudo apt update
+	#sudo apt -y install default-jdk
+	#echo "alias sdkmanager='sdkmanager --sdk_root=/opt/cmdline-tools/'" >> ~/.bashrc
+	source ~/.bashrc
+	echo "Download command tools only from https://developer.android.com/studio#downloads"
+	echo "Unzip and copy the folder in /opt/ directory"
+	echo "Create link using 'sudo ln -s /opt/cmdline-tools/bin/sdkmanager /usr/sbin'"
+	echo "Use sdkmanager command to download additional android tools"
+	echo "Use command 'sdkmanager --install platform-tools' to install adb tool"
+	echo "sudo ln -s /opt/cmdline-tools/platform-tools/adb /usr/sbin/"
 }
 
 install_dev() {
 	sudo apt update
-	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev
+	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl
 }
 
 cascadia_font() {
@@ -79,6 +93,9 @@ case $1 in
 		;;
 	( install_dev )
 		install_dev
+		;;
+	( android_tools )
+		android_tools
 		;;
 	( * )
 		print_availble_commands
