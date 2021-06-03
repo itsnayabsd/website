@@ -9,12 +9,16 @@ print_availble_commands() {
 	echo "	cascadia_font	- Procedure to download and install Cascadia fonts"
 	echo "	install_dev	- Install developer packages including compiler, IDE etc."
 	echo "	android_tools	- Procedure to download command line only android tools"
+	echo "	popcornTime	- Download popcorn time"
 }
 
+popcornTime(){
+	echo "	Download from https://github.com/popcorn-time-ru/popcorn-desktop/releases"
+}
 android_tools() {
-	#sudo apt update
-	#sudo apt -y install default-jdk
-	#echo "alias sdkmanager='sdkmanager --sdk_root=/opt/cmdline-tools/'" >> ~/.bashrc
+	sudo apt update
+	sudo apt -y install default-jdk
+	echo "alias sdkmanager='sdkmanager --sdk_root=/opt/cmdline-tools/'" >> ~/.bashrc
 	source ~/.bashrc
 	echo "Download command tools only from https://developer.android.com/studio#downloads"
 	echo "Unzip and copy the folder in /opt/ directory"
@@ -26,7 +30,7 @@ android_tools() {
 
 install_dev() {
 	sudo apt update
-	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl
+	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent
 }
 
 cascadia_font() {
@@ -96,6 +100,9 @@ case $1 in
 		;;
 	( android_tools )
 		android_tools
+		;;
+	( popcornTime )
+		popcornTime
 		;;
 	( * )
 		print_availble_commands
