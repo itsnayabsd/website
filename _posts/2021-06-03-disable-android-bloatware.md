@@ -6,8 +6,8 @@ date: 2021-06-03 22:50:32 +5:30
 comments : true
 google_adsense: true
 excerpt : Remove or uninstall android bloatware apps shipped with your new android mobile phone without root access.
-keywords : Remove bloatware, uninstall bloatware, Uninstall android bloatware using adb, Uninstall android bloatware without root access using adb tool
-image : /assets/img/linux-cli-searching.png
+keywords : Remove bloatware, uninstall bloatware, Uninstall android bloatware using adb, Uninstall android bloatware without root access using adb tool, Uninstall OEM android apps, uninstalled bloatware from realme phone, Android bloatware remover tool, Stop bloatware on android
+image : /assets/img/disable-android-bloatware-apps.png
 toc : true
 ---
 ## Introduction
@@ -15,7 +15,7 @@ There are mobile phones with stock android experience with zero bloatware, mobil
 
 This tutorial helps you disable the bloatware shipped by default in your android smartphone. This is tested only on Android 11 operating system.
 
-{% include image.html url="linux-cli-searching.png" description="File Searching in Linux" %}
+{% include image.html url="disable-android-bloatware-apps.png" description="Disable Android Bloatware without Root Access" %}
 ## Prerequisites
 
  - Ubuntu Linux system
