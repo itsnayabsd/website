@@ -18,11 +18,11 @@ google_adsense: true
 #limit_posts: 10
 
 logo: /favicon.ico
-facebook_url: https://facebook.com/nayab.xyz
-twitter_url: https://twitter.com/nayabxyz
+facebook_url: https://facebook.com/itsnayabsd
+twitter_url: https://twitter.com/itsnayabsd
 linkedin_url: https://www.linkedin.com/in/nayabsd/
 pinterest_url:  
-instagram_url: https://www.instagram.com/nayab.xyz/
+instagram_url: https://www.instagram.com/itsnayabsd/
 
 # Build settings
 markdown: kramdown
@@ -41,19 +41,19 @@ toc:
     max_level: 2
 twitter:
     card: summary
-    username: nayabxyz
+    username: itsnayabsd
 
 facebook:
-    publisher: https://www.facebook.com/nayab.xyz/
+    publisher: https://www.facebook.com/itsnayabsd
 
 social:
     name: Nayab Basha Sayed
     links:
-        - https://facebook.com/nayab.xyz
-        - https://twitter.com/nayabxyz
+        - https://facebook.com/itsnayabsd
+        - https://twitter.com/itsnayabsd
         - https://www.linkedin.com/in/nayabsd/
         - https://github.com/nayabbashasayed
-        - https://www.instagram.com/nayab.xyz/
+        - https://www.instagram.com/itsnayabsd
 
 lang: en
 feed:
