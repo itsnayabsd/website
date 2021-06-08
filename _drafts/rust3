@@ -1,0 +1,66 @@
+functions
+
+fn func_name() -> return type
+{
+}
+
+struct Point
+{
+x:f54,
+y:f64
+}
+
+fn origin -> Point
+{
+  Point(x: 0, y: 1) //We don't have ; here. Why??
+}
+
+pub fn stack_heap()
+{
+	let a = origin();
+	let b = Box::new(origin()); // b is a pointer.
+}
+
+New .rs files can be includes using mod. ex: file name is point.rs. In the main.rs, include the line "mod point".
+
+println!("{}", b.x);
+
+
+Debugging Rust?? Any gdb like tool.
+
+
+Strings
+let temp = 30;
+let day = if temp > 30 { "hot"} else {"fine"};
+println!("{}", day);
+
+
+keywords -> loop, break
+
+
+for loop
+
+for x in 1..11
+{
+	println!("{}", x);
+}
+
+for (pos, y) in (1..11).enumerate()
+{
+	println!("{} {}", pos, x);
+}
+
+match
+
+let country_code = 44;
+
+let country = match country_code {
+33 => "India",
+44 -=> "UK",
+45..100 => "Others", // 45 to 99
+101..=200 => "Aliens", // 101 to 200 including 200 (=)
+_ => "Invalid"
+};
+
+
+String comparison uses == operator??

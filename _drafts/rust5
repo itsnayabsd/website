@@ -1,0 +1,36 @@
+Standard collections
+Vec - Dynamic array
+VecDeque - Double ended queue
+LinkedList - Double Linkedlist
+BinaryHeap - Max Heap
+Hashmap - Dictionary (key, value)
+BTreeMap - Sorted Dictionary
+HashSet - Hashtable
+BTreeSet - Sorted hash set
+
+
+Some, None -> Are these keywords??
+
+
+Vec - Dynamic array
+-------------
+let mut a = Vec::new();
+
+a.push(1);
+a.push(2);
+
+for x in &a { println!("{}", x); }
+
+HashMap
+-------
+let mut shapes = HashMap::new();
+
+shapes.insert(String::from("triangle"), 3);
+shapes.insert(String::from("square"), 4);
+println~("A square has {} sides", shapes["square".into()]);
+
+for (key, value) in &shapes {
+	println!("{} has {} sides", key, value);
+}
+
+shapes.entry("circle".into()).or_insert(0); // Insert circle if circle is not there.

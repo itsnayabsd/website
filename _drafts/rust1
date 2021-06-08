@@ -1,0 +1,40 @@
+```
+fn main() {
+    println!("Hello World!\nI'm a Rustacean");
+}
+```
+In the above example,
+
+* Why there aren't any function returns?
+* Does the function accespts any arguments?
+* What about command line arguments?
+* println! is macro. How macros are defined?
+
+
+##Comments supported types -
+### Single line of comments
+//
+/* */
+
+### Block comments
+/* line 1
+line 2
+line3
+*/
+Block comments can be nested. So very useful to comment out certain code. Is it possible in C too?
+
+/*line 1
+/* line 2 */
+*/
+
+## Formatted print
+Do the Rust library functions can be read using man pages?
+
+Printing is handled by macros defined in std::fmt module. (Moduele??? What the hell is that?)
+
+format! -> Stores formatted string to string buffer. Ok. I need man pages now. What is the format! prototype.
+print! ->
+
+Do all macros have ! character? ex - println!
+
+What is the coding style for Rust?

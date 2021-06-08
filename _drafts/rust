@@ -1,6 +1,11 @@
+## Main source.
+https://www.rust-lang.org/learn
+
+Above page has guides for everything. Rust language, Webassembly with Rust and Embedded with Rust
 ## Install in Linux
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 
 rustup update
 
@@ -58,3 +63,78 @@ cd ~/Rust/HelloWorld
 cargo init
 ```
 Above command creates `Cargo.toml` file which is a manifest file for the project
+### Hello World Example 1 from scratch
+```
+mkdir -p ~/Rust/hello_world
+cd ~/Rust/hello_world
+cat <<EOF>> ~/Rust/hello_world/main.rs
+fn main() {
+    println!("Hello, world!");
+}
+EOF
+cat << EOF >> ~/Rust/hello_world/Cargo.toml
+[package]
+name = "hello_world"
+version = "0.0.1"
+
+[[bin]]
+name = "hello_world"
+path = "main.rs"
+EOF
+cargo build
+./target/debug/hello_world
+```
+### Hello World Example 2 from scratch
+```
+mkdir -p ~/Rust/hello_world2
+cd -p ~/Rust/hello_world2
+mkdir src
+cat <<EOF>> main.rs
+fn main() {
+    println!("Hello, world!");
+}
+EOF
+cd ..
+
+cat << EOF >> ~/Rust/hello_world/Cargo.toml
+[package]
+name = "hello_world2"
+version = "0.0.1"
+EOF
+cargo build
+./target/debug/hello_world2
+```
+To learn more about manifest file [https://doc.rust-lang.org/cargo/reference/manifest.html](https://doc.rust-lang.org/cargo/reference/manifest.html).
+
+### Print the crab
+```
+mkdir ~/Rust/Crab/src
+cat << EOF >> ~/Rust/Crab/src/main.rs
+use ferris_says::say; // from the previous step
+use std::io::{stdout, BufWriter};
+
+fn main() {
+    let stdout = stdout();
+    let message = String::from("Hello fellow Rustaceans!");
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(message.as_bytes(), width, &mut writer).unwrap();
+}
+EOF
+```
+```
+cat << EOF >> ~/Rust/Crab/Cargo.toml
+[package]
+name = "crab"
+version = "0.0.1"
+edition = "2018"
+
+[dependencies]
+ferris-says = "0.2"
+```
+above, we included component to be used. ferris-says component will be downloaded from crates.io.
+```
+cargo run
+```
+editon is very important. Otherwise it may choose 2015 edition
