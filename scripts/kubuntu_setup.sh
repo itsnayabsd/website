@@ -10,9 +10,20 @@ print_availble_commands() {
 	echo "	install_dev	- Install developer packages including compiler, IDE etc."
 	echo "	android_tools	- Procedure to download command line only android tools"
 	echo "	popcornTime	- Download popcorn time"
+	echo "	jekyll_start	- Start Jekyll server when user login to Kubuntu"
 }
 
-popcornTime(){
+jekyll_start() {
+	echo '#!/bin/bash' >> ~/.config/autostart-scripts/jekyll-start
+	echo '' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'export GEM_HOME="$HOME/gems"' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'cd /home/nayab/Blog && bundle exec jekyll serve -B' >> ~/.config/autostart-scripts/jekyll-start
+}
+
+popcornTime() {
 	echo "	Download from https://github.com/popcorn-time-ru/popcorn-desktop/releases"
 }
 android_tools() {
@@ -30,7 +41,7 @@ android_tools() {
 
 install_dev() {
 	sudo apt update
-	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent
+	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent gimp
 }
 
 cascadia_font() {
@@ -103,6 +114,9 @@ case $1 in
 		;;
 	( popcornTime )
 		popcornTime
+		;;
+	( jekyll_start )
+		jekyll_start
 		;;
 	( * )
 		print_availble_commands
