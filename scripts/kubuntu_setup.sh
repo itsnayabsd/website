@@ -20,7 +20,7 @@ jekyll_start() {
 	echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
 	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
 	echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.config/autostart-scripts/jekyll-start
-	echo 'cd /home/nayab/Blog && bundle exec jekyll serve -B' >> ~/.config/autostart-scripts/jekyll-start
+	echo 'cd /home/nayab/Blog && killall -9 bundle; bundle exec jekyll serve --host=0.0.0.0 -B' >> ~/.config/autostart-scripts/jekyll-start
 }
 
 popcornTime() {
