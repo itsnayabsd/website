@@ -35,3 +35,6 @@ Search for the topic you have written, add category about it. If there are any q
 
 ## Minds
 https://www.minds.com/nayabsd/
+
+## BitClout
+https://bitclout.com/u/nayab

@@ -1,0 +1,28 @@
+```
+fn main() {
+    println!("Hello World!\nI'm a Rustacean");
+}
+```
+In the above example,
+
+* Why there aren't any function returns?
+* Does the function accespts any arguments?
+* What about command line arguments?
+* println! is macro. How macros are defined?
+
+
+##Comments supported types -
+### Single line of comments
+//
+/* */
+
+### Block comments
+/* line 1
+line 2
+line3
+*/
+Block comments can be nested. So very useful to comment out certain code. Is it possible in C too?
+
+/*line 1
+/* line 2 */
+*/
