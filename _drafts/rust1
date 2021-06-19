@@ -26,3 +26,7 @@ Block comments can be nested. So very useful to comment out certain code. Is it 
 /*line 1
 /* line 2 */
 */
+
+## Formatted print
+Do the Rust library functions can be read using man pages?
+
