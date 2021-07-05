@@ -30,3 +30,11 @@ Block comments can be nested. So very useful to comment out certain code. Is it 
 ## Formatted print
 Do the Rust library functions can be read using man pages?
 
+Printing is handled by macros defined in std::fmt module. (Moduele??? What the hell is that?)
+
+format! -> Stores formatted string to string buffer. Ok. I need man pages now. What is the format! prototype.
+print! ->
+
+Do all macros have ! character? ex - println!
+
+What is the coding style for Rust?

@@ -1,0 +1,43 @@
+Headerfile inclusions??
+
+Data types
+bool, char, u8, i8, u16, i16, f32, f64 ...
+
+For floating points, all are signed. No unsigned floating points.
+Default floating point size is f64.
+bool size is 1 byte.
+
+Format specifiers
+{}
+let a: u8 = 5;
+let mut b: i8 = 0;
+
+By default all variables are immutable. Can't change value later.
+
+usize, isize???
+
+Size of char is 4 bytes - 32bit unicode
+
+No -- or ++ operators.
+
+Redeclare of variables is allowed in Rust.
+
+Global variables can be declared with const and static.
+const val:u8 = 123;
+static mut val2:i32 = -123;
+And unsafe keyword??
+
+
+Stack is fast but limited memory.
+Heap is large
+
+Allocating memory to a pointer
+
+let x = box::new(5) -> Allocates 5 bytes of memory
+println!("{}", *x);
+
+pub fn ???
+pub fn func_name()
+{
+}
+

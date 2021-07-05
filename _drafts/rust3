@@ -1,0 +1,29 @@
+functions
+
+fn func_name() -> return type
+{
+}
+
+struct Point
+{
+x:f54,
+y:f64
+}
+
+fn origin -> Point
+{
+  Point(x: 0, y: 1) //We don't have ; here. Why??
+}
+
+pub fn stack_heap()
+{
+	let a = origin();
+	let b = Box::new(origin()); // b is a pointer.
+}
+
+New .rs files can be includes using mod. ex: file name is point.rs. In the main.rs, include the line "mod point".
+
+println!("{}", b.x);
+
+
+Debugging Rust?? Any gdb like tool.

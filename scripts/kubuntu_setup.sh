@@ -11,6 +11,11 @@ print_availble_commands() {
 	echo "	android_tools	- Procedure to download command line only android tools"
 	echo "	popcornTime	- Download popcorn time"
 	echo "	jekyll_start	- Start Jekyll server when user login to Kubuntu"
+	echo "	print_misc	- Other misc packages downloads"
+}
+
+print_misc() {
+	echo "Download OpenAudible from https://openaudible.org/"
 }
 
 jekyll_start() {
@@ -117,6 +122,9 @@ case $1 in
 		;;
 	( jekyll_start )
 		jekyll_start
+		;;
+	( print_misc )
+		print_misc
 		;;
 	( * )
 		print_availble_commands
