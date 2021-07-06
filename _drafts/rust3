@@ -27,3 +27,40 @@ println!("{}", b.x);
 
 
 Debugging Rust?? Any gdb like tool.
+
+
+Strings
+let temp = 30;
+let day = if temp > 30 { "hot"} else {"fine"};
+println!("{}", day);
+
+
+keywords -> loop, break
+
+
+for loop
+
+for x in 1..11
+{
+	println!("{}", x);
+}
+
+for (pos, y) in (1..11).enumerate()
+{
+	println!("{} {}", pos, x);
+}
+
+match
+
+let country_code = 44;
+
+let country = match country_code {
+33 => "India",
+44 -=> "UK",
+45..100 => "Others", // 45 to 99
+101..=200 => "Aliens", // 101 to 200 including 200 (=)
+_ => "Invalid"
+};
+
+
+String comparison uses == operator??

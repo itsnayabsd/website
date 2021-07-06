@@ -37,7 +37,6 @@ https://bitclout.com/u/nayab
 ## Ethereum World
 https://akasha.ethereum.world/
 
-## Google Hub
-https://questionhub.google.com/
-
-Search for the topic you have written, add category about it. If there are any questions related to that, link the post there.
+## Telegram
+https://t.me/bootembedded
+https://t.me/bootcurrency
