@@ -1,0 +1,49 @@
+Structures
+
+enum Color {
+	Black,
+	White,
+	RgbColor(u8, u8, u8),
+	Cmyk{cyan:u8, magenta:u8, yellow:u8, black:u8},
+}
+
+println!("{}", Color::Black);
+let c = Color::Cmyk{cyan:0, magent:0, yellow:0, black:0};
+
+match c {
+	Color::Black => println("Black"),
+	Color::RgbColor(r, g, b) => println!("rgb({},{},{})", r, g, b),
+	Color::Cmyk{cyan:_, magenta:_, yellow:_, black:0},
+}
+----------------------------------
+Unions
+
+union intOrFloat {
+	i: i32,
+	f: f32,
+}
+
+let mut num = intOrFloat {i:123};
+
+num.i = 234;
+
+let num2 = unsafe { num.i }; // unsafe is required
+
+match num {
+	intOrFloat{ i:23} => println!("int");
+}
+
+------------------------------------
+Need to understand following code
+
+let mut result = if x == 4 some_fn(4/2); else some_fn(2/2);
+
+match result {
+	some(z) => println("{} {} {}", x, y, z);
+}
+
+
+
+keywords -> if let, while let ????
+
+
