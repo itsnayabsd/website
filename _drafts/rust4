@@ -47,3 +47,55 @@ match result {
 keywords -> if let, while let ????
 
 
+Arrays
+
+let mut a:[i32;5] = [1, 2, 3, 4, 5];
+
+Debug - println!("{:?}", a);
+if a == [1, 2, 3, 4, 5] println!("Not match");
+
+let b = [0; 10] // Intializes an array of 10 elements with 0s. Takes 40 bytes.
+
+let b = [0u16; 10]; // Takes 20 bytes
+
+Matrix -
+
+let mtx:[[f32; 3]; 2] = [
+	[1.0, 2.0, 3.0],
+	[4.0, 5.0, 6.0]
+];
+println!("{:?}", mtx);
+
+
+Tuple -
+fn sum_product(x:i32, y:i32) -> (i32, i32)
+{
+	(x+y, x*y);
+}
+let (a,b) = sum_product(2, 3);
+println!("{}, {}", a, b);
+How in the above function, that fucntion does know which statement to return?
+
+
+// We can indicate the positions of the arguments to print
+println!("{1}, {0}", a, b); // Prints b first and then a;
+
+
+pattern_matching -
+match(x) {
+	0 => println!("no"),
+	_ if (x % 2 == 0) => println("{}", x);
+	(0, y) => println!("on x axis. y = {}", y);
+}
+
+Generics -
+
+// T is generic data type.
+struct Point<T>
+{
+	x:T,
+	y:T
+};
+
+let a = Point {x: 3, y: 2}; // Here the type is i32
+let b = Point {x: 3.0, y:2.1}; // Here the type is f64

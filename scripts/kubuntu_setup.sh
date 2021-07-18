@@ -46,7 +46,7 @@ android_tools() {
 
 install_dev() {
 	sudo apt update
-	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent gimp
+	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent gimp easytag
 }
 
 cascadia_font() {
