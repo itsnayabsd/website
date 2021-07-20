@@ -1,0 +1,101 @@
+Check whether wifi chip and Linux kernel supports monitor mode
+
+```bash
+iw list | grep -i "supported interface modes" -A 20 | grep "* monitor"
+```
+If you don't get any output, your system doesn't support monitoring wifi.
+
+When I try to use existing wifi interface wlp2s0 in monitor mode, the Ubuntu system keeps changing it back to managed. So let's create a new wifi interface and use that as monitor mode.
+
+```
+sudo iw phy phy0 interface add mon0 type monitor
+sudo iw dev wlp2s0 del
+sudo ip link set mon0 up
+iw dev
+# Use respective frequency of the channel
+sudo iw dev mon0 set freq 5220
+```
+```
+sudo iw dev mon0 del
+sudo iw phy phy0 interface add wlp2s0 type managed
+```
+```
+case $1 in
+        "1")
+                channel=2412
+                ;;
+        "6")
+                channel=2437
+                ;;
+        "11")
+                channel=2462
+                ;;
+        "36")
+                channel=5180
+                ;;
+        "40")
+                channel=5200
+                ;;
+        "44")
+                channel=5220
+                ;;
+        "48")
+                channel=5240
+                ;;
+        "52")
+                channel=5260
+                ;;
+        "56")
+                channel=5280
+                ;;
+        "60")
+                channel=5300
+                ;;
+        "64")
+                channel=5320
+                ;;
+        "100")
+                channel=5500
+                ;;
+        "104")
+                channel=5520
+                ;;
+        "108")
+                channel=5540
+                ;;
+        "112")
+                channel=5560
+                ;;
+        "116")
+                channel=5580
+                ;;
+        "120")
+                channel=5600
+                ;;
+        "124")
+                channel=5620
+                ;;
+        "128")
+                channel=5640
+                ;;
+        "132")
+                channel=5660
+                ;;
+        "136")
+                channel=5680
+                ;;
+        "140")
+                channel=5700
+                ;;
+        "144")
+                channel=5720
+                ;;
+        "149")
+                channel=5745
+                ;;
+        *)
+                echo "invalid channel"
+                exit 0
+                ;;
+        esac
+```
