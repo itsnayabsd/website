@@ -94,14 +94,24 @@ sudo iw dev mon0 set freq 5220
 ```
 
 ## Use wireshark to capture wifi traffic
+Wireshark is a packet analyzer. We can select the specific interface, in this case *mon0*, and then start capturing. Run the following command in terminal to install wireshark.
+```bash
+sudo apt install wireshark
+```
+When it prompts to select the installation for no-root users, select yes. You might need to run the following commands to make wireshark run properly.
+```bash
+sudo usermod -a -G wireshark $USER
+sudo adduser $USER wireshark
+```
+Launch the wireshark form Application Launcher. It should show all the interfaces available in the system as shown in the below figure. If the interfaces are not showing up, then logout and logging into the system might be needed to take effect the above wireshark configuration. In that case, you might need to follow the tutorial from the start.
+
+{% include image.html url="wireshark-mon0.png" description="Capture wireless packets in monitor mode in Linux" %}
+
+Select the interface to be captured (*mon0*) and start capturing the wireless traffic by clicking the blue button. Once you done with the capture, click on red button to stop the capture. Go to *File* -> *Save as* menu to save the capture.
 
 ## Restore your original wireless interface
-```
-iw dev
-# Use respective frequency of the channel
-```
-```
+To restore your original interface and to delete the *mon0* interface, run the following commands. Replace wlp2s0 with your original wifi interface noted at the starting of the tutorial.
+```bash
 sudo iw dev mon0 del
 sudo iw phy phy0 interface add wlp2s0 type managed
-```
 ```
