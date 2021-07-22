@@ -7,7 +7,7 @@ comments : true
 google_adsense: true
 excerpt : Learn how to create and setup a new wireless interface to capture the wifi traffic in monitor mode in your Linux operating system.
 keywords : capture wifi traffic in monitor mode, capture wifi packets in Linux in monitor mode, Linux wireless interface in monitor mode, wireshark capture wifi packets monitor mode, Linux commands to capture wireless packets in monitor mode, setup wireless interface to capture wireless traffic in monitor mode, wireless adapter in promiscuous or monitor mode.
-image : /assets/img/disable-android-bloatware-apps.png
+image : /assets/img/wireless_monitor.png
 toc : true
 ---
 ## Introduction
@@ -16,7 +16,7 @@ In this tutorial, I will be showing how to setup a wireless interface in monitor
 
 I have been using Kubuntu Linux system to demonstrate this tutorial. This tutorial can be adapted to other Linux based distributions easily.
 
-{% include image.html url="disable-android-bloatware-apps.png" description="Disable Android Bloatware without Root Access" %}
+{% include image.html url="wireless_monitor.png" description="Capture wireless packets in minitor mode Linux" %}
 
 ## Check if your Linux OS supports monitor mode
 
@@ -98,7 +98,7 @@ Wireshark is a packet analyzer. We can select the specific interface, in this ca
 ```bash
 sudo apt install wireshark
 ```
-When it prompts to select the installation for no-root users, select yes. You might need to run the following commands to make wireshark run properly.
+When it prompts to select the installation for non-root users, select yes. You might need to run the following commands to make wireshark run properly.
 ```bash
 sudo usermod -a -G wireshark $USER
 sudo adduser $USER wireshark
