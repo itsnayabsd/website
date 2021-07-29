@@ -1,0 +1,10 @@
+Strings
+--------
+let str:&'static str = "hello world!";
+
+let s = str[0]; //Why it is an error?
+How do we print the characters of the string?
+
+string is also vector
+
+let mut letters = String::new() // Allocates memory in heap
