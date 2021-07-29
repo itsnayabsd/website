@@ -8,3 +8,40 @@ How do we print the characters of the string?
 string is also vector
 
 let mut letters = String::new() // Allocates memory in heap
+
+String macros
+-------------
+format -> returns formatter string.
+
+let hey = "ding";
+let hi = format!("{} dong bell", hey);
+println!("{}", hi);
+
+
+Functions
+=========
+Returning values
+----------------
+Don't include semi colon.
+
+fn myfunc(x: &mut i32) -> i32
+{
+	let a = 10;
+	let b = 20;
+	a*b // No semi colon here. It retunrs.
+}
+
+Methods
+=======
+We can implement method for a structure.
+
+impl structName
+{
+	fn methodName(&self) -> return_type
+	{
+		//statements
+		return_value // without semicolon
+	}
+}
+
+Now we can use the method using stuctName.methodName which returns return_type
