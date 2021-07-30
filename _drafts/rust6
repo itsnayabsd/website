@@ -45,3 +45,32 @@ impl structName
 }
 
 Now we can use the method using stuctName.methodName which returns return_type
+
+Closures
+========
+It's like function pointers.
+
+let fun_name = |x:i32| -> i32 {
+	println!("closure 1");
+}
+
+let fn_name = |x| {
+	println!("closure 2");
+}
+
+let f_name = [x| -> x + 1;
+
+Closures have scope. If the closure is defined in the function or in a block (braces), the scope of the closure is only upto that block or function
+
+Function returning func
+------------------------
+
+fn my_func(x: u32) -> impl fn(u32) -> bool
+{
+	move |y| y > x; // |x| is the argument. and y > is the return value. The entire line is equivalent to a function definition.
+}
+Need to explore how to write function returning func. Above example is not good.
+
+What are these functions??
+
+.map(), .take_while(), .filter(), .fold()
