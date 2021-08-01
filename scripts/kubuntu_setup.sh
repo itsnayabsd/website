@@ -70,7 +70,7 @@ install_brave() {
 blog_configure() {
 	echo "Cloning Blog Repository from GitHub ......"
 	
-	cd && git clone git@github.com:nayabbashasayed/blog.git Blog
+	cd && git clone git@github.com:itsnayabsd/blog.git Blog
 	
 	if [ $? -ne 0 ]; then
 		echo "Git clone blog failed"

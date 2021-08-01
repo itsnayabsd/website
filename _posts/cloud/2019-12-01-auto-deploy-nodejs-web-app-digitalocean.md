@@ -31,7 +31,7 @@ Following are the contents.
 
 ## Prerequisites
 It's already assumed that,
- * Your node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/nayabbashasayed/node_hello_world.git) to your git hosting account.
+ * Your node app is already hosted on github / gitlab or bitbucket. If not, clone the *Hello World* app [from here](https://github.com/itsnayabsd/node_hello_world.git) to your git hosting account.
  * You already have a Digitalocean account. If not, [Signup one on digitalocean](https://m.do.co/c/e80679853c2f).
  * [Initial server setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10) has been done on digitalocean.
  * [Already installed nodejs](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-10) on digitalocean. I prefer installing node with *nvm*.
@@ -60,7 +60,7 @@ Git clone the node app repository to your droplet. Make sure you have access to 
 ```
 git clone CLONE_URL
 ```
-ex: `git clone https://github.com/nayabbashasayed/node_hello_world.git`
+ex: `git clone https://github.com/itsnayabsd/node_hello_world.git`
 
 The following script is needed and will be invoked from codeship. Run the following commands in the terminal to create a script called `node_app_start` in home directory.
 ```
@@ -123,7 +123,7 @@ Create some dummy file with dummy content on your local laptop or desktop. Push 
 
 ```
 # On your local laptop or system
-git clone https://github.com/nayabbashasayed/node_hello_world.git
+git clone https://github.com/itsnayabsd/node_hello_world.git
 cd node_hello_world
 echo "codeship" > codeship
 git add codeship
