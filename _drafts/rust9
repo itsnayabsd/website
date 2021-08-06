@@ -1,0 +1,59 @@
+Vec<Rc<RefCell<Course>>> // What the hell is this?
+
+Circular references???
+
+
+Threads
+=========
+
+let handle = thread::spawn( || {
+	// Thread code goes here.
+});
+
+
+Including Crates from crates.io
+===============================
+include the crate in the Cargo.html under dependencies.
+Use the rand crate in the programs like following ->
+
+extern crate rand;
+
+Creating our own crates and modules
+===================================
+Create lib.rs with the following syntax
+pub mod greetings{
+  pub mode english{
+    fn hello() -> String {
+      "hello".to_string()
+    }
+  }
+  pub mode french{
+    fn hello() -> String {
+      "bonjour".to_string()
+    }
+  }
+}
+
+And include by path in the Cargo.html under dependencies
+And use it in the rust file using extern crate lib
+
+Use the `use` keyword to shorten crate method paths.
+
+user lib::greetings::english;
+
+Now simply we can use with english::hello();
+
+Unit testing
+============
+#[test]
+#[should_panic]
+#[ignore]
+
+What the hell are those above?
+
+Comments and Documentation
+==========================
+Triple slash /// -> Applies to function follows the /// comments
+//! -> For entire module or crate.
+This documentation supports markdown language
+Explore others too.

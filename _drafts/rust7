@@ -59,3 +59,26 @@ Need to learn about trait parameters
 
 
 Read more about `into` trait
+------------------------------------------
+Drop
+
+It's like destroyer in other languages
+
+struct Creature {
+	name: String
+}
+
+impl Creature {
+	fn new(name: &str) -> Creature {
+		println!("{} enters the game", name);
+		Creature { name : name.into()}
+	}
+}
+
+imple Drop for Creature {
+	fn drop(&mut self) {
+		println!("{} is dead", self.name);
+	}
+}
+
+let goblin = Crature::new("jeff");
