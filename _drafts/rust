@@ -138,3 +138,7 @@ above, we included component to be used. ferris-says component will be downloade
 cargo run
 ```
 editon is very important. Otherwise it may choose 2015 edition
+
+## Other Rust Resources
+https://fuchsia.dev/fuchsia-src/development/languages/rust/learn_rust
+https://newrustacean.com/show_notes/
