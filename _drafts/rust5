@@ -34,3 +34,15 @@ for (key, value) in &shapes {
 }
 
 shapes.entry("circle".into()).or_insert(0); // Insert circle if circle is not there.
+
+HashSet
+-------
+Can't guarantee in which order the entries goes into hashset
+let _1_10:HashSet<_> = {1..=10}.collect(); // What is that <_>? and What is collect()?
+
+Iterations
+----------
+for x in vec.iter() { // Or for x in vec.iter_mut() or vec.iter().rev()
+	println!("{}", x);
+}
+What vec2.extend(vec); has to do with vec.iter()? Can we print vec after that?

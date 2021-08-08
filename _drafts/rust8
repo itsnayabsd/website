@@ -1,0 +1,76 @@
+Operator overloading
+=====================
+We can use traits to implement operator overloading..
+For example -
+struct Complex {
+	re: i32,
+	im: i32
+}
+
+let a = Complex {re: 3, im: 2};
+let b = Complex {re: 3, im: 2};
+
+println!("{}", a + b); // Won't work as a + b is not implemented for struct Complex
+
+We need to write a trait `Add` to make addition works for Complex
+
+Static dispatch --> ??? What the hell is this?
+===============
+Dynamic dispatch --> This too?
+=================
+----------
+Why static dispatch is faster than dynamic dispatch??
+
+Memory access
+===============
+Only one pointer at a time can access memory or data
+
+let a = vec![1, 2, 3]; // variable a is stored on stack. But the data [1, 2, 3] stored on heap. a is a pointer.
+let b = a;
+
+println!("{}", a); gives error. We an only print with b
+
+The following works as the variable is not pointer.
+let a = 2;
+let b = a;
+
+println ~("{}", a);
+
+The following won't work
+let a = Box::new(2);
+let b = a;
+println ....
+
+Borrowing
+---------
+passing vector by it's reference.
+
+let a = vec![1, 2, 3];
+let b = &a;
+But println for a still works?? If it doesn't, try to put braces around b and try
+
+Liftime
+-------
+static keyword with variable name -> lifetime is as long as program lives.
+
+struct ceoName {
+	name : String;
+}
+
+struct company <'z> {
+	ceo : &'z ceoName,
+	name : String
+}
+
+ceoName and company structure have same lifetime. That's why <'z> and &'z
+
+What is std::rc::Rc //Stores count of referenced variable. // Study more about it
+Rc is reference counted variable
+
+Atomic reference counted variables?
+std::sync::Arc
+Mutex
+------
+std::sync::Mutex
+Passing variables to other threads -> Use Arc
+Passing variables need to be modified in the other thread -> Use Mutex and Arc

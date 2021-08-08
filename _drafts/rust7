@@ -1,0 +1,84 @@
+Traits
+======
+Function decalrations can be inside traits.
+
+trait Animal
+{
+	fn func_3(name: & 'static str) -> Self;
+	// func 1 and 2 takes &self as arguments
+	func 1 def;
+	func 2 declaration; // This need to be defined when Animal trait is implemented for some structure. For example Human
+}
+
+struct Human
+{
+	name: &'static str
+}
+impl Animal for Human
+{
+	fn func_3(string argument) -> Human
+	{
+		Human { name: string argument}
+	}
+	func 1 def; // It can be redefined here. Takes priority
+	func 2 def; // Mandatory. Rust gives error otherwise
+}
+
+fn main()
+{
+	let h:Human = Animal::func_3("John"); // Mthod 1 to initialize a Human variable. Human type in h::Human is necessary
+	let h = Human::func_3("John"); // Method 2 to initialize (or create) a new Human variable.
+}
+
+
+We can create trait for generic types also. For example the Vec.
+trait Summable <T>
+{
+	fn sum(&self) -> <T>;
+}
+
+impl Summable<i32> for Vec <i32>
+{
+	fn sum(&self) -> i32
+	{
+		let mut sum_val = 0;
+		for x in self {
+			sum_val += x;
+		}
+		sum_val
+	}
+}
+
+let a = vec![1, 2, 3];
+println! of a.sum();
+
+
+--------
+
+Need to learn about trait parameters
+
+
+Read more about `into` trait
+------------------------------------------
+Drop
+
+It's like destroyer in other languages
+
+struct Creature {
+	name: String
+}
+
+impl Creature {
+	fn new(name: &str) -> Creature {
+		println!("{} enters the game", name);
+		Creature { name : name.into()}
+	}
+}
+
+imple Drop for Creature {
+	fn drop(&mut self) {
+		println!("{} is dead", self.name);
+	}
+}
+
+let goblin = Crature::new("jeff");

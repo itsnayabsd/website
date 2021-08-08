@@ -1,0 +1,76 @@
+Strings
+--------
+let str:&'static str = "hello world!";
+
+let s = str[0]; //Why it is an error?
+How do we print the characters of the string?
+
+string is also vector
+
+let mut letters = String::new() // Allocates memory in heap
+
+String macros
+-------------
+format -> returns formatter string.
+
+let hey = "ding";
+let hi = format!("{} dong bell", hey);
+println!("{}", hi);
+
+
+Functions
+=========
+Returning values
+----------------
+Don't include semi colon.
+
+fn myfunc(x: &mut i32) -> i32
+{
+	let a = 10;
+	let b = 20;
+	a*b // No semi colon here. It retunrs.
+}
+
+Methods
+=======
+We can implement method for a structure.
+
+impl structName
+{
+	fn methodName(&self) -> return_type
+	{
+		//statements
+		return_value // without semicolon
+	}
+}
+
+Now we can use the method using stuctName.methodName which returns return_type
+
+Closures
+========
+It's like function pointers.
+
+let fun_name = |x:i32| -> i32 {
+	println!("closure 1");
+}
+
+let fn_name = |x| {
+	println!("closure 2");
+}
+
+let f_name = [x| -> x + 1;
+
+Closures have scope. If the closure is defined in the function or in a block (braces), the scope of the closure is only upto that block or function
+
+Function returning func
+------------------------
+
+fn my_func(x: u32) -> impl fn(u32) -> bool
+{
+	move |y| y > x; // |x| is the argument. and y > is the return value. The entire line is equivalent to a function definition.
+}
+Need to explore how to write function returning func. Above example is not good.
+
+What are these functions??
+
+.map(), .take_while(), .filter(), .fold()

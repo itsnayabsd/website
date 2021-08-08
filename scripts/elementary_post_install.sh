@@ -65,7 +65,7 @@ sudo ln -s /bin/bash /bin/sh
 
 ## Cloning repositories
 #Personal website
-git clone https://github.com/nayabbashasayed/website.git
+git clone https://github.com/itsnayabsd/website.git
 cd ~/website
 bundle install
 git config user.email "nayabbashasyed@gmail.com"
@@ -82,7 +82,7 @@ sudo make install
 
 # Drivers
 cd
-git clone https://github.com/nayabbashasayed/rtl8723de.git
+git clone https://github.com/itsnayabsd/rtl8723de.git
 cd rtl8723de
 make
 sudo make install

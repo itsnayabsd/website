@@ -37,7 +37,7 @@ git clone --bare https://github.com/USERNAME/REPOSITORY.git
 
 For example, I am cloning my existing repository from the Github to digitalocean droplet.
 
-`git clone --bare https://github.com/nayabbashasayed/website.git`
+`git clone --bare https://github.com/itsnayabsd/website.git`
 
 The *--bare* option allows this repo to receive/send push operations from/to remote repositories.
 
@@ -48,13 +48,13 @@ Visit [https://gitlab.com/](https://gitlab.com/) and create an empty repository 
 ```
 https://gitlab.com/USERNAME/REPOSITORY.git
 ```
-ex: `https://gitlab.com/nayabbashasayed/website.git`
+ex: `https://gitlab.com/itsnayabsd/website.git`
 ### Create empty repo on Github
 Visit [https://github.com/](https://github.com/) and create an empty repository. The repo URL looks like following.
 ```
 https://github.com/USERNAME/REPOSITORY.git
 ```
-ex: `https://github.com/nayabbashasayed/website.git`
+ex: `https://github.com/itsnayabsd/website.git`
 ### Create empty repo on Bitbucket
 Visit [https://bitbucket.org/](https://bitbucket.org/) and create an empty repository. The repo URL looks like this.
 ```
