@@ -46,11 +46,7 @@ android_tools() {
 
 install_dev() {
 	sudo apt update
-<<<<<<< HEAD
-	sudo apt install -y cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent gimp easytag dos2unix minicom wireshark
-=======
 	sudo apt install -y vim cscope universal-ctags build-essential libssl-dev libreadline-dev zlib1g-dev network-manager-openvpn openssh-server youtube-dl libgconf-2-4 ktorrent gimp easytag dos2unix minicom wireshark
->>>>>>> a1e65ba411bd3c4d1e360fd857b51e44702bacf2
 }
 
 cascadia_font() {

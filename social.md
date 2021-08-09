@@ -30,6 +30,7 @@ https://in.pinterest.com/
 
 ## Minds
 https://www.minds.com/nayabsd/
+And pin the new post, Unpin the old post
 
 ## BitClout
 https://bitclout.com/u/nayab
@@ -40,3 +41,6 @@ https://akasha.ethereum.world/
 ## Telegram
 https://t.me/bootembedded
 https://t.me/bootcurrency
+
+## Hasnode
+Publish on https://hashnode.com/
