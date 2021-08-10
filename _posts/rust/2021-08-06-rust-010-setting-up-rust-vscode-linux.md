@@ -1,7 +1,7 @@
 ---
 date: 2021-08-06 15:23:17 +5:30
 title: Setting up Rust in VS Code for Linux
-layout : post
+layout : rust-post
 category : rust
 comments : true
 google_adsense: true

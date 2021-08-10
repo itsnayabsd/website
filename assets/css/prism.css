@@ -1,5 +1,5 @@
-/* PrismJS 1.19.0
-https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+javascript+bash+c+makefile+markdown&plugins=line-numbers */
+/* PrismJS 1.24.1
+https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+javascript+bash+c+makefile+markdown+rust+toml+wasm&plugins=line-numbers */
 /**
  * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
@@ -47,7 +47,7 @@ pre[class*="language-"]>code {
 	background-attachment: local;
 }
 
-code[class*="language"] {
+code[class*="language-"] {
 	max-height: inherit;
 	height: inherit;
 	padding: 0 1em;
@@ -95,7 +95,6 @@ pre[class*="language-"]:after {
 	transform: rotate(-2deg);
 }
 
-:not(pre) > code[class*="language-"]:after,
 pre[class*="language-"]:after {
 	right: 0.75em;
 	left: auto;
@@ -193,13 +192,6 @@ pre[class*="language-"]:after {
 
 }
 
-/* Plugin styles */
-.token.tab:not(:empty):before,
-.token.cr:before,
-.token.lf:before {
-	color: #e0d7d1;
-}
-
 /* Plugin styles: Line Numbers */
 pre[class*="language-"].line-numbers.line-numbers {
 	padding-left: 0;
@@ -256,7 +248,6 @@ pre[class*="language-"].line-numbers > code {
 }
 
 	.line-numbers-rows > span {
-		pointer-events: none;
 		display: block;
 		counter-increment: linenumber;
 	}
@@ -268,7 +259,6 @@ pre[class*="language-"].line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
-
 .isa_info {
     color: #00529B;
     background-color: #BDE5F8;

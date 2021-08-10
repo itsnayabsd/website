@@ -1,0 +1,95 @@
+Rust std lib
+============
+String  module
+
+let str = String::from("Hello "); // Try the same wiht let str = "Hello";
+let mystr = str + "World!";
+
+println of mystr.
+
+Reading input
+=============
+let str = String::new();
+
+std::io::stdin()
+	.readline(&mut str)
+	.expect("Failed to read");
+
+```
+use std::io::stdin;
+
+fn main() {
+    let mut str = String::new();
+
+    stdin().read_line(&mut str).expect("Input read failed");
+    println!("{}", str);
+}
+```
+
+Memory management
+=================
+let str = String::new();
+
+str is stored in stack and the string (since it's size is dynamic), it's stored in heap
+
+For any value in Rust has only one owner. Only one variable can poin to a memory location. Two pointers can't point to same memory location in heap.
+
+let str1 = str; // Shallow copy. We can't use str anymore
+
+let str2 = str1.clone(); // Deep copy. We can use both str1 and str2
+
+Inside stack, always deep copy. Like following ..
+let a = 2;
+let b = a; // Deep copy.
+
+Ownership with functions
+========================
+Write a funciton that acceps a string, calculates it's length and returns the length. The main function prints the length
+
+Array
+======
+let arr:[i32;5] = [0, 1, 2, 3, 4];
+
+fn main() {
+    let arr = [0, 1, 2, 3, 4];
+    for i in arr.iter().rev() {
+        println!("{}", i);
+    }
+    println!("{}", arr[0]);
+}
+
+Fix the warnings above.
+
+Tuple
+=====
+```
+fn main() {
+    let tup = (0, "1", '2', 3.5);
+    let tup2: (i32, f64, String) = (10, 4.4, "str");
+    println!("{}", tup.1);
+}
+```
+
+Vectors
+=======
+Vectors size is dynamic. Vectors stored in heap. Like arrays. Arrays stored in stack
+tup is called tuple. Tuple can have different datatypes.
+
+let arr = Vec![1, 2, 3];
+
+enum
+====
+enum Burger {
+    small,
+    medium,
+    large
+}
+fn main() {
+    let burger = Burger::Large;
+    //println!("{}", burger as u8);
+    println!("{}", burger);
+}
+
+Rust style
+==========
+Indent 4 spaces.

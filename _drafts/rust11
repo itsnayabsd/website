@@ -1,0 +1,92 @@
+If exclaimation mark is present, then it's a macro.. ex: println!
+
+Difference between `cargo build` and `cargo build --release` ?
+
+The binary generated with `cargo build --release` is super optimized to run faster on the system. But takes more time to build.
+
+To list the installed rust components -
+```
+rustup component list --installed
+```
+
+Data types
+==========
+i32 -> signed integer 32 bit
+u8 -> unsigned integer 8 bit
+isize -> signed integer based on architecture.
+usize -> unsigned integear based on architecture
+Check official doc for more datatypes
+
+```
+#[allow(overflowing_literals)]
+fn main() {
+    let my_num:i8;
+    my_num = 128;
+    println!("{}", my_num);
+}
+```
+
+Without allow() and with allow()
+---------
+fn main() {
+    let mut my_num:i8;
+    my_num = 127;
+    println!("{}", my_num);
+    my_num = 5;
+    println!("{}", my_num);
+}
+
+With and without mut
+
+--------
+Guess the output of following
+```
+fn main() {
+    const PI:f64 = 3.14;
+    println!("{}", PI);
+}
+```
+Specifying type for const is mandatory. Try to execute without the type.
+
+An example about value returns in a block
+```
+fn main() {
+    let vari = if true { false } else { true };
+    println!("{}", vari);
+}
+```
+
+Where are the man pages for loop(), while() and all other functions of Rust
+
+Structures
+----------
+struct Template {
+    x:u32,
+    y:i32,
+    flag:bool
+}
+
+fn main() {
+    let coor = Template {x : 30, y : 20, flag : true};
+    println!("{}", coor.x);
+}
+
+Example by replacing : with = in the coor initilization
+
+Errors
+=======
+let arr = [0, 1, 2, 3];
+println arr[100];
+
+
+let vec = Vec![0,1,2,3];
+println vec[100]; // Compiler won't show any error if stored in heap and access out of bound values.
+
+panic unrecoverable error
+-------------------------
+How to use panic macro??
+```
+fn main() {
+    panic!("Panic crashed");
+}
+``` //Is it right?
