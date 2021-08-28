@@ -1,3 +1,13 @@
+Rust Variables and Mutability with Examples
+Learn about Rust variables, mutability of variables, constants, shadowing in Rust with examples.
+https://www.nayab.xyz/rust/rust-020-variables-mutability.html
+#rust
+
+Formatted Print in Rust with Examples
+Print statements are very common in programming. Learn how to use print statements in Rust with the bunch of macros available in Rust.
+https://www.nayab.xyz/programming/rust-formatterd-print.html
+#rust
+
 Setting up Rust in VS Code for Linux
 Setup VS Code IDE in Ubuntu based Linux distributions along with the VS code extensions useful for Rust code development. Create, build, run and debug the rust project using VS Code.
 https://www.nayab.xyz/rust/setting-up-rust-vscode-linux.html

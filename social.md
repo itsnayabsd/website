@@ -44,3 +44,6 @@ https://t.me/bootcurrency
 
 ## Hasnode
 Publish on https://hashnode.com/
+
+## Quora
+https://bootembedded.quora.com/
