@@ -10,6 +10,8 @@ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
 
 git clone git://git.yoctoproject.org/poky
 
+Poky is a reference embedded OS
+
 cd poky && git fetch --tags
 
 git checkout tags/yocto-3.1 -b my-yocto-3.1
@@ -32,3 +34,47 @@ bitbake core-image-sato
 
 runqemu qemux86-64
 
+meta data consists of .conf, .bb, .bbapend and .bbclass files.
+
+.bbclass -> This file has build logic to build the software. Need to study more about this.
+
+
+For post -> How to compile single package, force compile, clean the package, fresh build with cache and without cache, speed up fresh build process
+
+PV -> Package Version
+
+inherit autotools tells bitbake to use autotools.bbclass logic to build the software.
+
+Build steps ->
+
+do_fetch
+do_unpack
+do_patch
+do_configure
+do_compile
+do_install
+do_package
+
+Where can I find the above build steps definitions?
+
+Patches are kept in the package recipe folder itself.
+
+If we define for example do_install in the package recipe (.bb) file, it overwrites the definiton of do_install from the autotools.bbclass logic
+
+inherit autotools pkgconfig update.rc.d
+
+pkgconfig locate the shared libraries used by the package.
+
+Learn more about pkgconfig and update.rc.d in the yocto.
+
+Layers in the yocto are set of .bbclass files, recipes, configuration files. ex: meta-raspberrypi layer.
+Useful to write post:
+https://witekio.com/blog/embedded-linux-demystified-3/
+
+TODO:
+Bitbake manual -> https://docs.yoctoproject.org/bitbake/index.html
+QEMU Documentation -> https://wiki.qemu.org/Documentation
+
+Interesting articles:
+https://lwn.net/Articles/682540/
+https://www.linux.com/topic/embedded-iot/real-world-build-tips-yocto/
