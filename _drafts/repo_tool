@@ -1,0 +1,5 @@
+repo init with --no-repo-verify -g all
+repo sync with --no-tags --no-verify
+post hooks
+repo sync -j`nproc`
+
