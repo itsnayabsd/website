@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-10-03 14:51:20 +5:30
-title: Escape Codes in Linux
+title: Colorize Terminal Text with Escape Sequences in Linux
 excerpt: Style Your Terminal Text With Escape codes (or Sequences) In Linux. Print colored output text or change text background color in Linux terminal using escape sequences.
 category: linux
 comments: true
