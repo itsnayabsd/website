@@ -1,5 +1,5 @@
 ---
-date: 2021-09-11 23:01:49 +5:30
+date: 2021-09-12 23:01:49 +5:30
 title: Archive or compress the files in Linux
 layout : linux-cli-post
 category : linux-cli
