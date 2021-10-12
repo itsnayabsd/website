@@ -28,7 +28,6 @@ instagram_url: https://www.instagram.com/itsnayabsd/
 markdown: kramdown
 
 gems:
-  - jekyll-toc
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
@@ -36,9 +35,6 @@ gems:
 exclude:
     #- Gemfile
     #- Gemfile.lock
-toc:
-    min_level: 2
-    max_level: 2
 twitter:
     card: summary
     username: itsnayabsd
@@ -54,6 +50,9 @@ social:
         - https://www.linkedin.com/in/nayabsd/
         - https://github.com/itsnayabsd
         - https://www.instagram.com/itsnayabsd
+
+toc_min: 2
+toc_max: 2
 
 lang: en
 feed:
