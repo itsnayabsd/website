@@ -1,0 +1,53 @@
+Used ubuntu 20.04 server for the following
+
+
+cd
+sudo apt update && sudo apt install git build-essential cmake libuv1-dev libzmq3-dev libsodium-dev libpgm-dev libnorm-dev libgss-dev
+git clone --recursive https://github.com/SChernykh/p2pool
+cd p2pool
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+
+
+cd
+sudo apt update && sudo apt install git build-essential cmake pkg-config libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev libpgm-dev qttools5-dev-tools libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-locale-dev libboost-program-options-dev libboost-regex-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev ccache doxygen graphviz
+git clone --recursive https://github.com/monero-project/monero/
+cd monero
+git checkout release-v0.17
+git submodule sync && git submodule update --init --force --recursive
+make release-static -j$(nproc)
+
+
+Prepare huge pages 
+
+sudo sysctl vm.nr_hugepages=3072
+cd
+
+Get xmrig binary from https://github.com/xmrig/xmrig/releases/latest
+20.04 is focal fossa
+
+
+~/monero/build/Linux/release-v0.17/release/bin/monerod --prune-blockchain --zmq-pub tcp://127.0.0.1:18083 --disable-dns-checkpoints --enable-dns-blocklist
+
+Once the blocks are synced, run the following command
+
+~/p2pool/build/p2pool --host 127.0.0.1 --wallet WALLET_ADDR
+~/p2pool/build/p2pool --host 127.0.0.1 --wallet 47WWQ7ADvZiCdiLZJtC6H2Yw6uLsd38EtXKmWAyc8RAH7EiPJ4cGqs4HoZqAs6UVzd2RiEaHLEeGVfPPJsBJ82W5LB5aMB5
+
+
+you only ever need to have one instance of p2pool on your local network.
+
+if you want to mine using another pc on the same network all your need to do is install xmrig on that computer and point xmrig to the pc with p2pool running on it.
+
+to do this, you need to know the local ip address of the pc running p2pool. typically local addresses start with 192.168. the port number should remain the same for both instances of xmrig.
+https://www.reddit.com/r/MoneroMining/comments/qycx1t/p2pool_zmq_reader_error/hlf6ii5/?context=3
+
+system1 = p2pool + monerod + xmrig
+
+ssystem2 = xmrig mining to system1
+
+
+
+sudo apt install gnome-tweaks
+Suspend lptop lid is closed
