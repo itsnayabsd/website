@@ -5,8 +5,13 @@ title: Tmux
 excerpt: Tmux shortcuts
 google_adsense: false
 ---
+tmux new -s sessionName
+tmux a -t sessionName
+tmux ls
+
 Enter `tmux` command in terminal. And then use following shortcuts.
 ~~~
+* Ctrl+b d - Detach session
 * Ctrl+b " - split pane horizontally.
 * Ctrl+b % - split pane vertically.
 * Ctrl+b arrow key - switch pane.

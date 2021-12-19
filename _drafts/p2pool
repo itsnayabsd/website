@@ -33,8 +33,6 @@ Get xmrig binary from https://github.com/xmrig/xmrig/releases/latest
 Once the blocks are synced, run the following command
 
 ~/p2pool/build/p2pool --host 127.0.0.1 --wallet WALLET_ADDR
-~/p2pool/build/p2pool --host 127.0.0.1 --wallet 47WWQ7ADvZiCdiLZJtC6H2Yw6uLsd38EtXKmWAyc8RAH7EiPJ4cGqs4HoZqAs6UVzd2RiEaHLEeGVfPPJsBJ82W5LB5aMB5
-
 
 you only ever need to have one instance of p2pool on your local network.
 
@@ -47,7 +45,9 @@ system1 = p2pool + monerod + xmrig
 
 ssystem2 = xmrig mining to system1
 
-
+cd
+ln -s xmrig-6.15.3 xmrig
+~/xmrig/xmrig -o 192.168.1.20:3333
 
 sudo apt install gnome-tweaks
 Suspend lptop lid is closed
