@@ -1,3 +1,8 @@
+Shellcheck - A Static Analysis Tool (linter) for Shell Scripts Introduction
+Shellcheck is a static analysis tool (or linter) for shell scripts. It detects various types of errors, gives suggestions and warnings for a shell script. It points out syntax issues, symantic problems that cause shell script to behave weird and some other corner cases. This guide explains various shellcheck features using examples.
+https://www.nayab.xyz/linux-tools/shellcheck.html
+#linux #shellcheck #ubuntu #bash
+
 Rust Variables and Mutability with Examples
 Learn about Rust variables, mutability of variables, constants, shadowing in Rust with examples.
 https://www.nayab.xyz/rust/rust-020-variables-mutability.html

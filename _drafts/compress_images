@@ -1,0 +1,9 @@
+## Installation
+sudo apt install jpegoptim optipng pngquant
+
+## Compressing jpeg images
+## Compressing png images
+### Lossy compression
+pngquant --speed 1 file.png
+### Lossless compression
+optipng -o7 file.png
