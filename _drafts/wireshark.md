@@ -73,3 +73,27 @@ At layer 4, the *port* number specifies the application in use.
 
 ## Wireshark display filters
 When wireshark is running in the monitor mode, the traffic being captured is huge. We can apply filters to live traffic also to minimize the capturing traffic. Use *Capture using this filter option* on the spcific interface.
+
+Reading telnet data
+---------------------
+- Open capture using wireshark.
+- Filter using *telnet*
+- Right click on any packet -> Follow -> TCP Stream
+
+Reading tftp data
+-----------------
+TFTP uses UDP. So Follow -> UDP Stream.
+
+When something like router configuration is pushed using tftp to the tftp server, command like *tftp put file* pushed entire file to the tftp server. Wireshark capture entire file content.
+
+Reading ftp data
+----------------
+TCP Stream
+
+Capturing HTTP
+--------------
+HTTP Stream
+
+Capturing VoIP
+--------------
+GNS3 makes capturing virtual VoIP calls easy. But to capture in the physical network, the VoIP port need to be mirrored or we need to use some kind of hub to connect a wireshark running client to capture traffic.
