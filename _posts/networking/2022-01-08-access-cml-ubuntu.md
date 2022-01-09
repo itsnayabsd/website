@@ -5,8 +5,8 @@ category : networking
 date: 2022-01-08 17:29:13 +5:30
 comments : true
 google_adsense: true
-excerpt : 
-keywords : 
+excerpt : Access the free Cisco Modelling Labs from your Ubuntu Linux system. Cisco is offering a free sandboxed version for free to practice labs for CCNA, CCNP and DevNet certifications. SEtup and access the free CML for Ubuntu.
+keywords : Free CML, free cisco modelling labs, install cisco anyconnect vpn ubuntu, access cisco modelling labs (cml) from ubuntu, Access DevNet CML sandbox from ubuntu, DevNet Cisco Modelling Labs Sandbox, CML for CCNA CCNP and DevNet, Cisco free cml.
 image : /assets/img/networking/free-cisco-cml.png
 toc : true
 ---
