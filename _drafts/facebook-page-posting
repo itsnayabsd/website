@@ -1,0 +1,32 @@
+Need to get the page access token through my facebook developers page myapps.
+
+From there go to facebook-login and enable.
+
+App review -> Permissions and features -> Enable the advanced request access for the following.
+
+    * pages_manage_metadata
+    * pages_manage_posts
+    * pages_show_list
+
+To get page access token, go to url https://developers.facebook.com/tools/explorer/ and generate page access token.
+
+To get user-id of your account
+curl -i -X GET "https://graph.facebook.com/me?access_token=ACCESS_TOKEN"
+
+To get page-id
+curl -i -X GET "https://graph.facebook.com/{user-id}/accounts?access_token=ACCESS_TOKEN"
+
+Above output might have page-ids for all of your pages.
+
+To post as page
+curl -i -X POST "https://graph.facebook.com/v13.0/105408865399482/feed?message=Helloo%20World!&access_token=ACCESS_TOKEN"
+
+Use the explorer tool to get the correct curl command to post to your page.
+
+
+
+
+
+
+Reference
+https://developers.facebook.com/docs/pages/getting-started

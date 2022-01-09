@@ -57,3 +57,9 @@ Cisco IOSv -> Cisco IOSv 15.6(2)T
 
 ### Cisco Switches
 Cisco vIOU L2 -> Cisco IOSvL2 15.2.4055
+
+## Cisco cml
+```bash
+sudo apt install openconnect
+sudo openconnect lab_network_address
+```

@@ -29,6 +29,7 @@ Layer 7 -> Application -> HTTP, Telnet, FTP etc.
 Layer 6 -> Presentation layer -> Makes sure data is in format the can be recognized by two systems.
 Layer 5 -> Session layer -> Makes sure two different systems can establish connection. ex:- RPCs, NetBIOS, PPTP (Peer ro Peer Tunneling Protocol)
 
+The process of encoding the data bits for transmission across the media occurs at Layer 1, the physical layer. The formatting of data so it can be interpreted by the network connection in your laptop or phone is described at Layer 2, the data link layer
 
 Sender side
 -----------

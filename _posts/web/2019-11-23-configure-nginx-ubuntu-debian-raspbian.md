@@ -6,7 +6,7 @@ comments: true
 google_adsense: true
 excerpt: Step by step tutorial on how to install nginx web server and configure it for multiple websites hosting. Raspbian, Ubuntu or Debian
 keywords: Install Nginx, Raspbian, Ubuntu. Debian, Digitalocean droplet, local development, multiple virtual hosts, certbot ssl certificates, namecheap domain, nginx troubleshooting nginx, redirect http to https
-date: 2019-11-23 01:46:16 +5:30
+date: 2022-04-20 12:21:46 +5:30
 image: /assets/img/nginx_conf_linux.png
 ---
 The following configuration is tested on Ubuntu 18.04 and later versions, Debian 10 (Buster) and the Raspbian Buster Lite operating systems.
@@ -30,16 +30,16 @@ If you are using [digitalocean](https://m.do.co/c/e80679853c2f) to host your app
 If you want to test the nginx configuration on your local Ubuntu/Debian system, open `Terminal` to proceed with the following tutorial.
 
 First step is to update the repositories with the following command.
-```
+```bash
 sudo apt update
 ```
 
 Install the Nginx web server.
-```
+```bash
 sudo apt install nginx
 ```
 Check whether Nginx is running successfully with the following command.
-```
+```bash
 sudo systemctl status nginx | grep "Active:"
 ```
 The output should have **active (running)** in the result.
@@ -71,11 +71,11 @@ Thank you for using nginx.
 
 There is a default config file present for *localhost* in the path */etc/nginx/sites-available/default*. We will keep this for reference. Instead we will remove the shortcut of this file present in the folder */etc/nginx/sites-enabled/*.
 
-```
+```bash
 sudo rm /etc/nginx/sites-enabled/default
 ```
 We will recreate the same file with our localhost / domain configuration.
-```
+```bash
 sudo vi /etc/nginx/sites-enabled/default
 ```
 If you don't have any domain name to configure, skip this section and proceed to [next](#domain_not_available) for localhost configuration.
@@ -85,7 +85,7 @@ You need to point your domain dns server settings to your app/website host provi
 Once the above step is completed, the domain settings might take upto 24 hrs to take effect.
 
 Meanwhile, put the following configuration in the *default* configuration file.
-```
+```bash
 server {
         listen 80;
 
@@ -114,7 +114,7 @@ Replace **root** path also with your website path for any one of above configura
 <span id="domain_not_available"></span>
 ### If domain name is not available :
 You can still configure server with localhost on your device. Put the following content in that file
-```
+```bash
 server {
         listen 80;
 
@@ -142,7 +142,7 @@ Replace **root** path with your website path for any one of above configurations
 ## Check the configuration syntax before reloading the server
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
-```
+```bash
 sudo nginx -t
 ```
 If syntax is correct, it will display following output.
@@ -151,7 +151,7 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 Reload the configuration with the following command.
-```
+```bash
 sudo systemctl reload nginx
 ```
 
@@ -166,7 +166,7 @@ The above configuration for a single website/app is called ***virtual host***. W
 
 First remove the configuration file created above to start fresh with multiple virtual hosts.
 
-```
+```bash
 sudo rm /etc/nginx/sites-enabled/default
 ```
 In the following configuration, we will be creating three virtual hosts with and without domain names.
@@ -177,10 +177,10 @@ We will be creating the virtual hosts for these three domains **nayab.xyz**, **a
 Replace above **domain** names with yours.
 
 Create same file with our configuration
-```
+```bash
 sudo vi /etc/nginx/sites-enabled/default
 ```
-```
+```bash
 server {
 	# Domain name below.
 	server_name www.asstracker.in asstracker.in;
@@ -238,7 +238,7 @@ Replace **root** path with your website or app path for everywhere.
 
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
-```
+```bash
 sudo nginx -t
 ```
 If syntax is correct, it will display following output.
@@ -247,13 +247,13 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 Reload the configuration with the following command.
-```
+```bash
 sudo systemctl reload nginx
 ```
 Now, open the browser and browse the websites using the domain names.
 
 ### If domain names not available :
-```
+```bash
 server {
 	listen 3000;
 
@@ -308,7 +308,7 @@ Replace **root** path with your website or app path for everywhere.
 
 Before reloading the configuration, test whether the configuration syntax is correct or not with the following command.
 
-```
+```bash
 sudo nginx -t
 ```
 If syntax is correct, it will display following output.
@@ -318,7 +318,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 Reload the configuration with the following command.
 
-```
+```bash
 sudo systemctl reload nginx
 ```
 
@@ -335,10 +335,10 @@ A few examples,
 We are going to use a tool called `certbot` which automates the ssl certificates installation process for domains.
 
 To install `Let's encrypt` certificates for domain name, in ther terminal, execute the following commands
+```bash
+sudo apt-get install certbot python3-certbot-nginx
 ```
-sudo apt-get install certbot python-certbot-nginx
-```
-```
+```bash
 sudo certbot --nginx
 ```
 Follow the onscreen instructions. The certbot will install SSL certificates and modify the Nginx configuration file so that all http traffic will redirect to https.
@@ -346,14 +346,14 @@ Follow the onscreen instructions. The certbot will install SSL certificates and 
 ## Some troubleshooting commands
 
 To see all the configuration at one place
-```
+```bash
 nginx -T
 ```
 To check whether the new configuration is without any errors before reloading nginx server,
-```
+```bash
 nginx -t
 ```
 To check with which configurations nginx is built,
-```
+```bash
 nginx -V
 ```

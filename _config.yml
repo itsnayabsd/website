@@ -67,3 +67,7 @@ compress_html:
   blanklines: false
   ignore:
     envs: []
+
+# Referrals
+digitalocean_ref: "https://m.do.co/c/f6da435a12aa"
+digitalocean_bitref: "https://bit.ly/3OHzzwq"

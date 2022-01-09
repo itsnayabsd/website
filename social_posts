@@ -1,3 +1,13 @@
+Access Free Cisco Modelling Labs from Ubuntu
+Access the free Cisco Modelling Labs from your Ubuntu Linux system. Cisco is offering a free sandboxed version for free to practice labs for CCNA, CCNP and DevNet certifications. SEtup and access the free CML for Ubuntu.
+https://www.nayab.xyz/networking/access-cml-ubuntu.html
+#ubuntu #cml #cisco #networking
+
+Install and Use Telnet on Ubuntu Linux
+Telnet is a client-server protocol to access remote system using virtual terminal connection. Learn how to install, use, access and check open ports on the remote Linux system using telnet
+https://www.nayab.xyz/linux/install-telnet-ubuntu.html
+#ubuntu #telnet #networking
+
 Shellcheck - A Static Analysis Tool (linter) for Shell Scripts Introduction
 Shellcheck is a static analysis tool (or linter) for shell scripts. It detects various types of errors, gives suggestions and warnings for a shell script. It points out syntax issues, symantic problems that cause shell script to behave weird and some other corner cases. This guide explains various shellcheck features using examples.
 https://www.nayab.xyz/linux-tools/shellcheck.html

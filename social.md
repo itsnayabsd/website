@@ -8,6 +8,8 @@ google_adsense: false
 Add feature hash tags when publishing.
 
 https://mastodon.social/@nayab
+
+## Fosstodon
 Go to https://fosstodon.org/settings/featured_tags and add feature hash tags
 https://fosstodon.org/@nayab
 
@@ -15,6 +17,8 @@ https://fosstodon.org/@nayab
 
 ## Facebook page
 https://www.facebook.com/itsnayabsd
+https://www.facebook.com/electronicsone
+https://www.facebook.com/nayabbashasayed
 
 Add the hashtags while posting.
 
@@ -50,3 +54,5 @@ https://bootembedded.quora.com/
 
 ## Discord channel
 
+## Vero Social
+Post in the App. Linux doesn't support yet.
