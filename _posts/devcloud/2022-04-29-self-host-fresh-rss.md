@@ -4,20 +4,51 @@ title: Self Host FressRSS on Ubuntu Server
 category: devcloud
 comments: true
 google_adsense: true
-excerpt: Digitalocean droplets are great to self-host a lot variety of tools and personal projects. This post explains how to properly setup a droplet with Ubuntu OS before setting up any tools/projects.
+excerpt: 
 keywords: 
 date: 2022-04-29 14:05:14 +5:30
 image: /assets/img/mirror_git_platforms.png
 toc: true
 ---
-## FreshRSS
-### Nginx
-```bash
-sudo apt install nginx
-sudo ufw allow "Nginx Full"
-sudo apt install php-fpm
-sudo apt install php-curl php-gmp php-intl php-mbstring php-sqlite3 php-xml php-zip
+RSS is a great way to get updates from your favorite blogs or websites. There are many RSS aggregators available online to fetch latest updates from your favorite blogs and websites and create a web feed for you. Most of these services offer free plan with limitations. You can use these services with limited functionality or you can host one for yourself either in your local system or in the cloud.
 
+This post explains how to self host a free opensource RSS aggregator called *FreshRSS*, assign a subdomain/domain if you are hosting the service in the cloud and access it from anywhere.
+
+If you want to host the FreshRSS in the cloud, I would recommend *DigitalOcean* cloud service. Please see [this guide to create and setup a DigitalOcean droplet first](/devcloud/digitalocean-droplet-setup.html).
+## Installing the Nginx web server and dependent packages
+### Install Nginx web server
+Run the following command to install Nginx web server.
+```bash
+sudo apt update && sudo apt -y install nginx
+```
+### Configure firewall for Nginx
+Add Nginx service to the firewall allow list.
+```bash
+sudo ufw allow "Nginx Full"
+```
+At this point make sure you see the Nginx default web page when you visit your droplet IP address in the web browser and the url [http://127.0.0.1/](http://127.0.0.1/) if you are configuring in your local system.
+{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+### Install php and other dependencies
+Installing *php-fpm* separately will somehow avoids installing Apache web server. We are using Nginx.
+```bash
+sudo apt -y install php-fpm
+```
+Install remaining packages.
+```bash
+sudo apt -y install php-curl php-gmp php-intl php-mbstring php-sqlite3 php-xml php-zip
+```
+### Pointing sub-domain/domain to droplet address.
+This step is optional if you are using FreshRSS locally. How ever if you want to run FreshRSS in the cloud, you need to configure your DNS settings such that the sub-domain/domain points to your droplet address.
+
+You need to create an *A record* in the DNS settings. I am using Cloudflare DNS settings and the setting looks like following. The setting is probably the same for all DNS providers.
+
+{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+
+To reflect these changes in effect, your DNS server might take upto 24 hours. Meanwhile let's proceed with next steps.
+
+### Configure Nginx configuration file
+Remove the default configuration file available. We will write the file from scratch in the next step.
+```bash
 sudo rm /etc/nginx/sites-enabled/default
 ```
 ```
