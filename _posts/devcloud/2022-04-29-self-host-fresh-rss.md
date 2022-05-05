@@ -15,21 +15,20 @@ RSS is a great way to get updates from your favorite blogs or websites. There ar
 This post explains how to self host a free opensource RSS aggregator called *FreshRSS*, assign a subdomain/domain if you are hosting the service in the cloud and access it from anywhere.
 
 If you want to host the FreshRSS in the cloud, I would recommend *DigitalOcean* cloud service. Please see [this guide to create and setup a DigitalOcean droplet first](/devcloud/digitalocean-droplet-setup.html).
-## Installing the Nginx web server and dependent packages
-### Install Nginx web server
+## Install Nginx web server
 Run the following command to install Nginx web server.
 ```bash
 sudo apt update && sudo apt -y install nginx
 ```
-### Configure firewall for Nginx
+## Configure firewall for Nginx
 Add Nginx service to the firewall allow list.
 ```bash
 sudo ufw allow "Nginx Full"
 ```
-At this point make sure you see the Nginx default web page when you visit your droplet IP address in the web browser and the url [http://127.0.0.1/](http://127.0.0.1/) if you are configuring in your local system.
+At this point you should see the Nginx default web page when you visit your droplet IP address in the web browser OR the url [http://127.0.0.1/](http://127.0.0.1/) if you are configuring in your local system.
 {% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
-### Install php and other dependencies
-Installing *php-fpm* separately will somehow avoids installing Apache web server. We are using Nginx.
+## Install php and other dependencies
+Installing *php-fpm* separately will somehow avoids installing another web server - Apache. We are already using Nginx.
 ```bash
 sudo apt -y install php-fpm
 ```
@@ -37,27 +36,36 @@ Install remaining packages.
 ```bash
 sudo apt -y install php-curl php-gmp php-intl php-mbstring php-sqlite3 php-xml php-zip
 ```
-### Pointing sub-domain/domain to droplet address.
-This step is optional if you are using FreshRSS locally. How ever if you want to run FreshRSS in the cloud, you need to configure your DNS settings such that the sub-domain/domain points to your droplet address.
-
-You need to create an *A record* in the DNS settings. I am using Cloudflare DNS settings and the setting looks like following. The setting is probably the same for all DNS providers.
-
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
-
-To reflect these changes in effect, your DNS server might take upto 24 hours. Meanwhile let's proceed with next steps.
-
-### Configure Nginx configuration file
+## Installing FreshRSS
+Install FreshRSS now
+```bash
+sudo apt -y install git
+```
+```bash
+cd /usr/share/
+sudo git clone https://github.com/FreshRSS/FreshRSS.git
+cd FreshRSS
+sudo chown -R :www-data .
+sudo chmod -R g+r .
+sudo chmod -R g+w ./data/
+sudo chmod -R g+w .
+sudo ln -s /usr/share/FreshRSS/p /var/www/html/
+```
+## Configure Nginx configuration file
 Remove the default configuration file available. We will write the file from scratch in the next step.
 ```bash
 sudo rm /etc/nginx/sites-enabled/default
 ```
-```
+```bash
 sudo vi /etc/nginx/sites-enabled/default
 ```
+Add the following configuration in the */etc/nginx/sites-enabled/default* file.
+
+Replace *DOMAIN_NAME* with *localhost* if you are running FreshRSS locally or with the sub-domain name (ex: *rss.nayab.xyz*).
 ```
 server {
         # Domain name below.
-        server_name rss.nayab.xyz;
+        server_name DOMAIN_NAME;
 
         # Replace the following root path to your website or app folder
         root  /var/www/html/p/;
@@ -88,42 +96,128 @@ server {
         }
 }
 ```
-```
+Make sure the configuration in the file is syntactically correct with the following command.
+```bash
 sudo nginx -t
+```
+Reload the Nginx service.
+```bash
 sudo systemctl reload nginx
 ```
+## Configuring FreshRSS
+Visit your droplet address or your localhost in the browser. You should see the following web page. Let's proceed with the FreshRSS configuration.
+{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+Complete the setup with the following configuration.
+
+ * Language -> Choose a language for FreshRSS -> Language -> English
+ * Checks -> Make sure all checks are *Okay*
+ * Database Configuration -> Type of database -> SQLite
+ * General configuration
+	* Username of default user -> Username of your choice
+	* Password -> your desired password
+	* Click on `Submit`
+ * This is the end -> Complete installation.
+
+Now log into the FreshRSS with your username and password. Congragulations on setting up FreshRSS successfully.
+
+{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+
+The following steps are optional. If you want to access FreshRSS with a domain or sub-domain so that you can access it with the memorable address, follow the steps mentioned below.
+## Pointing sub-domain/domain to droplet address.
+This step is not necessary if you are using FreshRSS locally. How ever if you want to run FreshRSS in the cloud, you need to configure your DNS settings such that the sub-domain/domain points to your droplet address.
+
+You need to create an *A record* in the DNS settings. I am using Cloudflare DNS settings and the setting looks like following. The setting is probably the same for all DNS providers.
+
+{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+
+To reflect these changes in effect, your DNS server might take upto 24 hours. Meanwhile let's proceed with next steps.
+
+## Configuring SSL certificate
+First Let's make sure you disable *Always User HTTPS* option in your DNS provider settings. For Cloudflare, it's available in the following path.
+
 Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Disable Always Use HTTPS
-```
-sudo apt-get install certbot python3-certbot-nginx
+
+Now log into your droplet and enter the following commands to configure SSL for your domain (ex: rss.nayab.xyz).
+```bash
+sudo apt -y install certbot python3-certbot-nginx
 sudo certbot --nginx
 ```
+A sample configuration log is shown below.
+```
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator nginx, Installer nginx
+Enter email address (used for urgent renewal and security notices) (Enter 'c' to
+cancel): bash@gmail.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You must
+agree in order to register with the ACME server at
+https://acme-v02.api.letsencrypt.org/directory
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(A)gree/(C)ancel: A
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Would you be willing to share your email address with the Electronic Frontier
+Foundation, a founding partner of the Let's Encrypt project and the non-profit
+organization that develops Certbot? We'd like to send you email about our work
+encrypting the web, EFF news, campaigns, and ways to support digital freedom.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: N
+
+Which names would you like to activate HTTPS for?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: rss.nayab.xyz
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate numbers separated by commas and/or spaces, or leave input
+blank to select all options shown (Enter 'c' to cancel):
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for rss.nayab.xyz
+Waiting for verification...
+Cleaning up challenges
+Deploying Certificate to VirtualHost /etc/nginx/sites-enabled/default
+
+Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
+Redirecting all traffic on port 80 to ssl in /etc/nginx/sites-enabled/default
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations! You have successfully enabled https://rss.nayab.xyz
+
+You should test your configuration at:
+https://www.ssllabs.com/ssltest/analyze.html?d=rss.nayab.xyz
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/rss.nayab.xyz/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/rss.nayab.xyz/privkey.pem
+   Your cert will expire on 2022-08-03. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot again
+   with the "certonly" option. To non-interactively renew *all* of
+   your certificates, run "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```
+Now enable back the *Always Use HTTPS* option using the same path.
+
 Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Enable Always Use HTTPS
 
-### Apache2
-Install apache2 and php. Because alternatively FreshRSS uses SQLite.
-```bash
-sudo apt update
-sudo apt install apache2
-sudo a2enmod headers expires rewrite ssl
-sudo ln -s /etc/apache2/sites-available/freshrss.conf /etc/apache2/sites-enabled/freshrss.conf
-sudo apt install php php-curl php-gmp php-intl php-mbstring php-sqlite3 php-xml php-zip
-sudo apt install libapache2-mod-php
-sudo service apache2 restart
-```
-Install FreshRSS now
-```bash
-sudo apt install git
-cd /usr/share/
-sudo git clone https://github.com/FreshRSS/FreshRSS.git
-sudo ufw allow "Apache Full"
-cd FreshRSS
-sudo chown -R :www-data .
-sudo chmod -R g+r .
-sudo chmod -R g+w ./data/
-sudo chmod -R g+w .
-sudo ln -s /usr/share/FreshRSS/p /var/www/html/
-sudo service apache2 restart
-```
 Access the FreshRSS at [http://DROP.LET.IP.ADDR/p/](http://DROP.LET.IP.ADDR/p/)
 
  * Step 1 -> Choose a language for FreshRSS -> English
