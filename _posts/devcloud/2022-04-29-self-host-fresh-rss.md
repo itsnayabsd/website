@@ -218,25 +218,10 @@ Now enable back the *Always Use HTTPS* option using the same path.
 
 Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Enable Always Use HTTPS
 
-Access the FreshRSS at [http://DROP.LET.IP.ADDR/p/](http://DROP.LET.IP.ADDR/p/)
+Now you can access your FreshRSS aggregator with the memorable domain/sub-domain name. For ex: [https://rss.nayab.xyz](https://rss.nayab.xyz)
 
- * Step 1 -> Choose a language for FreshRSS -> English
- * Step 2 -> Check if all requirements are met.
- * Step 3 -> Database configuration -> SQLite
- * Step 4 -> Enter desired username and password
- * STep 5 -> Complete installation.
-
-Go to Settings
+## A few extra personal FreshRSS settings
+Completely optional. These are my personal settings on how I use FreshRSS to read blog posts. Go to Settings (Gear icon on top right corner) -
 
  * Reading -> Mark article as read -> Uncheck "when the article is viewed" and "while scrolling" options. -> Submit
  * Archiving -> Maximum number of articles to keep -> 10000
- * Authentication -> Allow API access
-
-Pointing subdomain to FreshRSS
-
- * Go to the Cloudflare dashboard.
- * Click on domain name -> DNS tab
- * Add an *A* record => Type -> A, Name -> rss.nayab.xyz, Content -> DROP.LET.IP.ADDR
- * Wait for up to 48 hours
-
-
