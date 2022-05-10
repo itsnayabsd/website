@@ -5,7 +5,7 @@ category: devcloud
 comments: true
 google_adsense: true
 excerpt: Digitalocean droplets are great to self-host a lot variety of tools and personal projects. This post explains how to properly setup a droplet with Ubuntu OS before setting up any tools/projects.
-keywords: 
+keywords: digitalocean droplet setup, droplet setup ubuntu server, droplet setup ubuntu firewall, digitalocean droplet create new user, digitalocean droplet setup SSH key, Ubuntu Linux create new user, Ubuntu setup SSH key, Ubuntu Linux setup firewall, Digitalocean signup balance.
 date: 2022-04-24 14:05:14 +5:30
 image: /assets/img/digitalocean_droplet_setup.png
 toc: true
