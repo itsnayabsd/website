@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Self Host Algo VPN Server in the Cloud for Own VPN service
+title: Self Host Algo VPN Server in the Cloud
 category: devcloud
 comments: true
 google_adsense: true
-excerpt: 
-keywords: 
-date: 2022-05-05 14:05:14 +5:30
-image: /assets/img/digitalocean_droplet_setup.png
+excerpt: There are various reasons why I want to host my own VPN server in the cloud. While using any VPN service will give you benifits, it has drawbacks too. In this guide I will show you how to install, configure Algo VPN in the DigitalOcean Ubuntu droplet and how to configure VPN client in your local Ubuntu based Linux system.
+keywords: deploy own vpn server in the cloud, deploy algo vpn in the ubuntu server, self host vpn service, self host vpn server in the cloud, self host algo vpn in the cloud, self host algo vpn in the digitalocean, deploy your own vpn server in the dititalocean, setup personal vpn server in the cloud, run your own private vpn server in the cloud, run own private vpn server in the digitalocean, setup personal vpn server in the ubuntu cloud, setup wireguard vpn in the ubuntu
+date: 2022-05-16 00:30:29 +5:30
+image: /assets/img/devcloud/selfhost_algo_vpn_ubuntu.png
 toc: true
 ---
 There are various reasons why I want to host my own VPN server (Algo VPN particularly) in the cloud. While using any VPN service will give you benifits, it has drawbacks too.
@@ -15,28 +15,45 @@ There are various reasons why I want to host my own VPN server (Algo VPN particu
  * Can't trust third party VPN servers with your data, even with no-log policy.
  * Third party VPN services are costlier.
  * Algo VPN is based on Wiregaurd, which is most secure, simple and easy to use. Not all third party VPNs come with state of the art security and cryptography.
+ * To know more about why I avoid using commercial VPNs, check [this algo VPN release notes](https://blog.trailofbits.com/2016/12/12/meet-algo-the-vpn-that-works/)
 
-If you want to host the personal VPN server in the cloud, I would recommend *DigitalOcean* cloud service. Please see [this guide to create and setup a DigitalOcean droplet](/devcloud/digitalocean-droplet-setup.html) first.
+I would recommend *DigitalOcean* cloud service to host your personal VPN server in the cloud. Please see [this guide to create and setup a DigitalOcean droplet](/devcloud/digitalocean-droplet-setup.html) first.
 
 In this guide I will show you how to install, configure Algo VPN in the DigitalOcean Ubuntu droplet and how to configure VPN client in your local Ubuntu based Linux system to connect to the VPN server running in the DigitalOcean droplet.
 
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+{% include image.html url="/devcloud/selfhost_algo_vpn_ubuntu.png" description="Self host Algo VPN in the Ubuntu Server" %}
 
 ## Download Algo VPN
-After setting up the droplet, log into the droplet and run the following commands.
+After setting up a DigitalOcean droplet, log into the droplet and run the following command to download Algo VPN scripts.
 ```bash
 git clone https://github.com/trailofbits/algo.git
 ```
 ## Install dependencies for Algo VPN
+Run the following command to install Algo VPN dependency packages.
 ```bash
 sudo apt install -y --no-install-recommends python3-virtualenv
 ```
 ## Setup Algo VPN
+Now it's time to setup your own VPN service. Run the following commands.
 ```bash
 cd algo
+
 python3 -m virtualenv --python="$(command -v python3)" .env &&   source .env/bin/activate &&   python3 -m pip install -U pip virtualenv &&   python3 -m pip install -r requirements.txt
 ```
-Above command might take few minutes. Once done, add additional usernames under *users:* section in file *config.cfg* file. I have added an username called *nayab*. A configuration file will be created with this username in the later steps.
+Above command might take few minutes. Once done, add additional usernames under *users:* section in file *config.cfg* file.
+```bash
+vi config.cfg
+```
+Here is the list of users in my *config.cfg* file
+```
+users:
+  - phone
+  - laptop
+  - desktop
+  - nayab
+```
+
+I have added an username called *nayab*. A configuration file will be created with this username in the later steps.
 
 Now run the following command to setup Algo VPN
 ```bash
@@ -226,7 +243,7 @@ scp UBUNTU_DROPLET_USERNAME@DROPLET_IP_ADDRESS:~/algo/configs/DROPLET_IP_ADDRESS
  * Replace DROPLET_IP_ADDRESS with the droplet IP address.
  * Replace ALGO_USERNAME with the username you have added in the *config.cfg* file at the starting of the Algo VPN setup.
 
-Here is an example command for reference.
+Here is an example command for reference. In my case, both *ALGO_USERNAME* and * UBUNTU_DROPLET_USERNAME* are the same.
 ```
 scp nayab@167.71.21.18:~/algo/configs/167.71.21.18/wireguard/nayab.conf ~/
 ```
@@ -236,7 +253,7 @@ Update the system and reboot if required.
 sudo apt update && sudo apt upgrade
 [ -e /var/run/reboot-required ] && sudo reboot
 ```
-Install *wireguard* and *openresolv*
+Install the supported packages - *wireguard* and *openresolv*
 ```bash
 sudo apt install wireguard openresolv
 ```
@@ -244,16 +261,24 @@ Install the configuration file you downloaded from VPN server to the */etc/wireg
 ```bash
 sudo install -o root -g root -m 600 ~/ALGO_USERNAME.conf /etc/wireguard/wg0.conf
 ```
-Start wireguard service.
+Don't forget to replace ALGO_USERNAME with yours.
+## VPN client commands to start/stop/auto-run in your local system
+### Start VPN client service
+To start wireguard VPN client, run the following command.
 ```bash
 sudo systemctl start wg-quick@wg0
+```
+You can check the status of the service using following command.
+```bash
 sudo systemctl status wg-quick@wg0
 ```
-To stop wireguard service
+### Stop the VPN client service
+To stop wireguard VPN client service, run the following command.
 ```bash
 sudo systemctl stop wg-quick@wg0
 ```
-Autostart the VPN service on reboot
+### Autostart the VPN service on reboot
+You do not have to enter the above command each time you start your systems. Instead run the following command to self start the wireguard VPN client on it's own.
 ```bash
 sudo systemctl enable wg-quick@wg0
 ```
@@ -262,4 +287,6 @@ sudo systemctl enable wg-quick@wg0
 sudo wg
 curl ipv4.icanhazip.com
 ```
+Above command should display your droplet IP address instead of your ISP global IP address.
+
 Hope this post helps configuring your personal VPN service in the cloud, helps you unblocking websites and take full control of your VPN usage data and probably save some bucks.

@@ -71,7 +71,7 @@ Finish droplet creation with the following configuration
 
  * Choose an image -> *Ubuntu 20.04 (LTS) x64* under Distributions tab.
  * Choose a plan -> *Basic*
- * CPU Options -> *Premium AMD with NVMe SSD* with *$6/month* **or** *Regular SSD* with *$5/month*. Premium AMD with NVMe SSD is faster.
+ * CPU Options -> *Premium AMD with NVMe SSD* with *$7/month* **or** *Regular SSD* with *$4/month*. Premium AMD with NVMe SSD is faster.
  * Choose a datacenter region -> *Singapore*
  * Authenticaion i-> Select *SSH keys* radio button and then make sure your SSH key is selected.
  * Select addtional options

@@ -59,3 +59,6 @@ Post in the App. Linux doesn't support yet.
 
 ## Joinentre
 https://joinentre.com/
+
+## Fishbowlapp
+https://www.fishbowlapp.com/
