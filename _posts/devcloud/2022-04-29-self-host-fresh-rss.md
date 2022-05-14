@@ -4,9 +4,9 @@ title: Self Host FressRSS on Ubuntu Server
 category: devcloud
 comments: true
 google_adsense: true
-excerpt: 
-keywords: 
-date: 2022-04-29 14:05:14 +5:30
+excerpt: RSS is a great way to get updates from your favorite blogs or websites. You can host one for yourself either in your local system or in the cloud instead of using paid/limited functionality online RSS aggregators.
+keywords: DigitalOcean FreshRSS install, Install FreshRSS Ubuntu, Install FreshRSS Nginx, Self-host FreshRSS, Self-host FreshRSS in DigitalOcean droplet, Self-host FreshRSS with Nginx web server, point domain/sub-domain to freshRSS, Configure SSL for FreshRSS, Configure Let's Encrypt for FreshRSS Nginx
+date: 2022-05-14 21:08:04 +5:30
 image: /assets/img/mirror_git_platforms.png
 toc: true
 ---
