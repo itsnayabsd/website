@@ -15,20 +15,27 @@ RSS is a great way to get updates from your favorite blogs or websites. There ar
 This post explains how to self host a free opensource RSS aggregator called *FreshRSS*, assign a subdomain/domain if you are hosting the service in the cloud and access it from anywhere.
 
 If you want to host the FreshRSS in the cloud, I would recommend *DigitalOcean* cloud service. Please see [this guide to create and setup a DigitalOcean droplet first](/devcloud/digitalocean-droplet-setup.html).
+
+Either log into the Ubuntu droplet using above guide or open the *Termainal* in you local Ubuntu Linux system and follow the steps below.
+
 ## Install Nginx web server
 Run the following command to install Nginx web server.
+
 ```bash
 sudo apt update && sudo apt -y install nginx
 ```
+
 ## Configure firewall for Nginx
 Add Nginx service to the firewall allow list.
 ```bash
 sudo ufw allow "Nginx Full"
 ```
-At this point you should see the Nginx default web page when you visit your droplet IP address in the web browser OR the url [http://127.0.0.1/](http://127.0.0.1/) if you are configuring in your local system.
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+At this point you should see the Nginx default web page when you visit your droplet IP address in the web browser. Access [http://127.0.0.1/](http://127.0.0.1/) if you are configuring in your local system.
+
+{% include image.html url="/devcloud/nginx_default_page_screenshot.png" description="Default Nginx web server page" %}
+
 ## Install php and other dependencies
-Installing *php-fpm* separately will somehow avoids installing another web server - Apache. We are already using Nginx.
+Installing *php-fpm* separately will somehow avoids installing another web server - *Apache*. We are already using Nginx. So dont' want that.
 ```bash
 sudo apt -y install php-fpm
 ```
@@ -61,7 +68,6 @@ sudo vi /etc/nginx/sites-enabled/default
 ```
 Add the following configuration in the */etc/nginx/sites-enabled/default* file.
 
-Replace *DOMAIN_NAME* with *localhost* if you are running FreshRSS locally or with the sub-domain name (ex: *rss.nayab.xyz*).
 ```
 server {
         # Domain name below.
@@ -96,6 +102,9 @@ server {
         }
 }
 ```
+
+Replace *DOMAIN_NAME* with *localhost*. if you have a domain/sub-domain with which you want to access FreshRSS later, then, replace *DOMAIN_NAME* with the domain/sub-domain name (ex: *nayab.xyz* or *rss.nayab.xyz*).
+
 Make sure the configuration in the file is syntactically correct with the following command.
 ```bash
 sudo nginx -t
@@ -105,8 +114,10 @@ Reload the Nginx service.
 sudo systemctl reload nginx
 ```
 ## Configuring FreshRSS
-Visit your droplet address or your localhost in the browser. You should see the following web page. Let's proceed with the FreshRSS configuration.
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+Enter your droplet address (or [http://localhost/](http://localhost/) for local installation) into the browser. You should see the following installation web page. Let's proceed with the FreshRSS configuration.
+
+{% include image.html url="/devcloud/freshrss_conf_page_screenshot.png" description="FreshRSS Installation Page" %}
+
 Complete the setup with the following configuration.
 
  * Language -> Choose a language for FreshRSS -> Language -> English
@@ -118,9 +129,11 @@ Complete the setup with the following configuration.
 	* Click on `Submit`
  * This is the end -> Complete installation.
 
-Now log into the FreshRSS with your username and password. Congragulations on setting up FreshRSS successfully.
+Now log into the FreshRSS with your username and password.
 
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+**Congragulations on setting up FreshRSS successfully.**
+
+{% include image.html url="/devcloud/freshrss_ready_screenshot.png" description="FreshRSS Installation Done" %}
 
 The following steps are optional. If you want to access FreshRSS with a domain or sub-domain so that you can access it with the memorable address, follow the steps mentioned below.
 ## Pointing sub-domain/domain to droplet address.
@@ -128,14 +141,14 @@ This step is not necessary if you are using FreshRSS locally. How ever if you wa
 
 You need to create an *A record* in the DNS settings. I am using Cloudflare DNS settings and the setting looks like following. The setting is probably the same for all DNS providers.
 
-{% include image.html url="/devcloud/digitalocean_droplet_setup.png" description="Digitalocean Ubuntu Droplet Initial Setup" %}
+{% include image.html url="/devcloud/dns_sub_domain_rss_screensot.png" description="Adding 'A' record for sub-domain in DNS settings" %}
 
 To reflect these changes in effect, your DNS server might take upto 24 hours. Meanwhile let's proceed with next steps.
 
 ## Configuring SSL certificate
 First Let's make sure you disable *Always User HTTPS* option in your DNS provider settings. For Cloudflare, it's available in the following path.
 
-Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Disable Always Use HTTPS
+**Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Disable Always Use HTTPS**
 
 Now log into your droplet and enter the following commands to configure SSL for your domain (ex: rss.nayab.xyz).
 ```bash
@@ -216,12 +229,16 @@ IMPORTANT NOTES:
 ```
 Now enable back the *Always Use HTTPS* option using the same path.
 
-Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Enable Always Use HTTPS
+**Cloudflare dashboard -> Click on Domain name -> SSL/TLS -> Edge Certificates -> Enable Always Use HTTPS**
 
 Now you can access your FreshRSS aggregator with the memorable domain/sub-domain name. For ex: [https://rss.nayab.xyz](https://rss.nayab.xyz)
+
+The FreshRSS supports many useful plugins. To know more about plugin installations visit the [project official page](https://github.com/FreshRSS/Extensions)
 
 ## A few extra personal FreshRSS settings
 Completely optional. These are my personal settings on how I use FreshRSS to read blog posts. Go to Settings (Gear icon on top right corner) -
 
- * Reading -> Mark article as read -> Uncheck "when the article is viewed" and "while scrolling" options. -> Submit
- * Archiving -> Maximum number of articles to keep -> 10000
+ * *Reading -> Mark article as read -> Uncheck "when the article is viewed" and "while scrolling" options. -> Submit*
+ * *Archiving -> Maximum number of articles to keep -> 10000*
+
+
