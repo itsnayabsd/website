@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "linux-tools/partitioning-using-fdisk*"
+  to = "https://www.embedded.pub/linux/tools/fdisk-partitioning.html"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
